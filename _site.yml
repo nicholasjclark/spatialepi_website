@@ -6,7 +6,7 @@ navbar:
   - text: Research
     icon: fa-globe
     menu:
-    - text: Mapping Emerging and Re-emerging Diseases
+    - text: Forecasting and Mapping Parasite Risk
     - text: Avian influenza
       href: page-a.html
     - text: Rabies
@@ -15,12 +15,14 @@ navbar:
       href: page-c.html
     - text: Leptospirosis
       href: page-d.html
+    - text: Ticks and tick-borne disease
+      href: page-e.html
     - text: '---------'
     - text: Helminth-associated Morbidity
     - text: Worms and cognitive development
-      href: page-e.html
-    - text: Gut microbiome dysbiosis
       href: page-f.html
+    - text: Gut microbiome dysbiosis
+      href: page-g.html
   - text: People
     icon: fa-user
     href: people.html
@@ -35,7 +37,7 @@ navbar:
     href: opportunities.html
 output:
   html_document:
-    theme: paper
+    theme: flatly
     css: styles.css
     lib_dir: site_libs
     self_contained: no

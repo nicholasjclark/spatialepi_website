@@ -5,7 +5,7 @@
 
 <img src="images/epilogosmall.png" style="width:45%; border:4px solid; margin-right: 20px; margin-bottom: 20px" align="left">
 
-The *SpatialEpiLab* is a [One Health](https://www.who.int/features/qa/one-health/en/) medical geography research group based at the University of Queensland, Australia, headed by Associate Professor Ricardo Soares Magalhães.
+The *SpatialEpiLab* is a [One Health](https://www.who.int/features/qa/one-health/en/) medical geography research group based at the [University of Queensland](https://veterinary-science.uq.edu.au/), Australia, headed by Associate Professor Ricardo Soares Magalhães.
 
 Research at the *SpatialEpiLab* lies at the interface between animal and human public health and aims to inform disease control policy through a better understanding of the major determinants in the geographical distribution of animal and human infections and associated morbidity.
 

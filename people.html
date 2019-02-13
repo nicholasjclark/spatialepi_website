@@ -15,10 +15,13 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -101,34 +104,34 @@ button.code-folding-btn:focus {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 64px;
+  padding-top: 60px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 
 .section h2 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h3 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h4 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h5 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h6 {
-  padding-top: 69px;
-  margin-top: -69px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 </style>
 
@@ -165,6 +168,101 @@ $(document).ready(function () {
 
 
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
 
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
@@ -188,7 +286,7 @@ $(document).ready(function () {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li class="dropdown-header">Mapping Emerging and Re-emerging Diseases</li>
+    <li class="dropdown-header">Forecasting and Mapping Parasite Risk</li>
     <li>
       <a href="page-a.html">Avian influenza</a>
     </li>
@@ -201,13 +299,16 @@ $(document).ready(function () {
     <li>
       <a href="page-d.html">Leptospirosis</a>
     </li>
+    <li>
+      <a href="page-e.html">Ticks and tick-borne disease</a>
+    </li>
     <li class="divider"></li>
     <li class="dropdown-header">Helminth-associated Morbidity</li>
     <li>
-      <a href="page-e.html">Worms and cognitive development</a>
+      <a href="page-f.html">Worms and cognitive development</a>
     </li>
     <li>
-      <a href="page-f.html">Gut microbiome dysbiosis</a>
+      <a href="page-g.html">Gut microbiome dysbiosis</a>
     </li>
   </ul>
 </li>
@@ -256,32 +357,94 @@ $(document).ready(function () {
 
 
 <p><link rel="stylesheet" href="styles.css" type="text/css"></p>
-<div id="team-members" class="section level1">
-<h1>Team Members</h1>
 <p>Members of our team a wealth of expertise owing to their diverse backgrounds in veterinary science, ecology, spatial epidemiology and mathematical modellings. We apply spatial epidemiology and risk mapping approaches for projects at interface between animal and human public health to develop a broader understanding of what mechanisms influence the geographical distributions of animal and human infections.</p>
-<div id="lab-leader" class="section level2">
-<h2>Lab Leader</h2>
-<p>Associate Professor Ricardo Soares Magalhães</p>
-<div id="ricardos-publication-output" class="section level3">
-<h3>Ricardo’s publication output</h3>
-<p><img src="people_files/figure-html/unnamed-chunk-1-1.png" width="432" style="display: block; margin: auto;" /></p>
+<div id="ricardo-soares-magalhaes" class="section level2">
+<h2>Ricardo Soares Magalhães</h2>
+<p>Position: Lab Head</p>
+<p>Ricardo’s publication output <img src="people_files/figure-html/unnamed-chunk-1-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
+<div id="postdoctoral-fellows" class="section level2">
+<h2>Postdoctoral Fellows</h2>
+<div id="nicholas-clark" class="section level3">
+<h3>Nicholas Clark</h3>
+<p>Position: Postdoctoral Fellow</p>
+<p>Nick’s publication output <img src="people_files/figure-html/unnamed-chunk-2-1.png" width="384" style="display: block; margin: auto;" /></p>
 </div>
-<div id="postdoctoral-researchers" class="section level2">
-<h2>Postdoctoral Researchers</h2>
-<p>Dr Nicholas Clark</p>
-<div id="nicks-publication-output" class="section level3">
-<h3>Nick’s publication output</h3>
-<p><img src="people_files/figure-html/unnamed-chunk-2-1.png" width="432" style="display: block; margin: auto;" /></p>
+<div id="javier-cortes-ramirez" class="section level3">
+<h3>Javier Cortes Ramirez</h3>
+<p>Position: Postdoctoral Fellow</p>
 </div>
 </div>
 <div id="phd-students" class="section level2">
 <h2>PhD Students</h2>
+<div id="pandji-dhewantara" class="section level3">
+<h3>Pandji Dhewantara</h3>
+<p>Position: PhD Student</p>
+</div>
+<div id="tarni-cooper" class="section level3">
+<h3>Tarni Cooper</h3>
+<p>Position: PhD Student</p>
+</div>
+<div id="hester-rynhoud" class="section level3">
+<h3>Hester Rynhoud</h3>
+<p>Position: PhD Student</p>
+</div>
+<div id="tuhin-biswas" class="section level3">
+<h3>Tuhin Biswas</h3>
+<p>Position: PhD Student</p>
+</div>
+<div id="md.-mehedi-hasan" class="section level3">
+<h3>Md. Mehedi Hasan</h3>
+<p>Position: PhD Student</p>
+</div>
+<div id="xiaoyan-zhou" class="section level3">
+<h3>Xiaoyan Zhou</h3>
+<p>Position: PhD Student</p>
+</div>
+<div id="kei-owada" class="section level3">
+<h3>Kei Owada</h3>
+<p>Position: PhD Student</p>
+</div>
+<div id="alamzewod-assefa-gelaw" class="section level3">
+<h3>Alamzewod Assefa Gelaw</h3>
+<p>Position: PhD Student</p>
+</div>
+<div id="andrea-araujonavas" class="section level3">
+<h3>Andrea Araujonavas</h3>
+<p>Position: PhD Student</p>
+</div>
+<div id="angela-m.-cadavid" class="section level3">
+<h3>Angela M. Cadavid</h3>
+<p>Position: PhD Student</p>
+</div>
+</div>
+<div id="undergraduate-researchers" class="section level2">
+<h2>Undergraduate Researchers</h2>
+<div id="alex-pekin" class="section level3">
+<h3>Alex Pekin</h3>
+<p>Position: Undergraduate Researcher</p>
+</div>
+<div id="carlos-donoghue" class="section level3">
+<h3>Carlos Donoghue</h3>
+<p>Position: Undergraduate Researcher</p>
+</div>
+<div id="grace-henry" class="section level3">
+<h3>Grace Henry</h3>
+<p>Position: Undergraduate Researcher</p>
+</div>
+</div>
+<div id="alumni" class="section level2">
+<h2>Alumni</h2>
+<div id="mohamad-assoum" class="section level3">
+<h3>Mohamad Assoum</h3>
+<p>Position: Alumnus</p>
 </div>
 </div>
 
 
 
+</div>
+</div>
 
 </div>
 

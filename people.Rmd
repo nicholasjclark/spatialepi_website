@@ -1,32 +1,80 @@
 ---
+output:
+  html_document: 
+    toc: true
+    toc_float: true
 ---
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-# Team Members
-
 Members of our team a wealth of expertise owing to their diverse backgrounds in veterinary science, ecology, spatial epidemiology and mathematical modellings. We apply spatial epidemiology and risk mapping approaches for projects at interface between animal and human public health to develop a broader understanding of what mechanisms influence the geographical distributions of animal and human infections.
 
-## Lab Leader
+## Ricardo Soares Magalhães 
+Position: Lab Head
 
-Associate Professor Ricardo Soares Magalhães
-
-### Ricardo's publication output
-```{r, echo = FALSE, fig.align='center', warning=FALSE, message=FALSE, fig.height=3.5, fig.width=4.5}
+Ricardo's publication output
+```{r, echo = FALSE, fig.align='center', warning=FALSE, message=FALSE, fig.height=3, fig.width=4}
 source('functions/scholar_summary.R')
 scholar_summary('aAh0t1AAAAAJ&hl')
 ```
 
-## Postdoctoral Researchers
+## Postdoctoral Fellows
+### Nicholas Clark
+Position:  Postdoctoral Fellow
 
-Dr Nicholas Clark
-
-### Nick's publication output
-```{r, echo = FALSE, fig.align='center', warning=FALSE, message=FALSE, fig.height=3.5, fig.width=4.5}
+Nick's publication output
+```{r, echo = FALSE, fig.align='center', warning=FALSE, message=FALSE, fig.height=3, fig.width=4}
 source('functions/scholar_summary.R')
 scholar_summary('5bO9uxEAAAAJ')
 ```
 
+### Javier Cortes Ramirez
+Position:  Postdoctoral Fellow
+
 ## PhD Students
+### Pandji Dhewantara 
+Position: PhD Student
+
+### Tarni Cooper
+Position: PhD Student
+
+### Hester Rynhoud
+Position: PhD Student
+
+### Tuhin Biswas
+Position: PhD Student
+
+### Md. Mehedi Hasan
+Position: PhD Student
+
+### Xiaoyan Zhou
+Position: PhD Student
+
+### Kei Owada
+Position: PhD Student
+
+### Alamzewod Assefa Gelaw
+Position: PhD Student
+
+### Andrea Araujonavas
+Position: PhD Student
+
+### Angela M. Cadavid
+Position: PhD Student
+
+## Undergraduate Researchers
+### Alex Pekin 
+Position: Undergraduate Researcher
+
+### Carlos Donoghue
+Position: Undergraduate Researcher
+
+### Grace Henry
+Position: Undergraduate Researcher
+
+## Alumni
+### Mohamad Assoum 
+Position: Alumnus
+
 
 
