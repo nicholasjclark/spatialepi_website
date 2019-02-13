@@ -2,6 +2,7 @@
 #### Retreive publication details for a specified list of scholars ####
 scholar_allpubs = function(author_list){
   library(dplyr)
+  library(scholar)
   
   add_etals = function(x){
     split_authors <- stringr::str_split(x, ',')[[1]]
