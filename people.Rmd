@@ -1,0 +1,22 @@
+---
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+# Team Members
+
+Members of our team a wealth of expertise owing to their diverse backgrounds in veterinary science, ecology, spatial epidemiology and mathematical modellings. We apply spatial epidemiology and risk mapping approaches for projects at interface between animal and human public health to develop a broader understanding of what mechanisms influence the geographical distributions of animal and human infections.
+
+## Lab Leader
+
+Associate Professor Ricardo Soares Magalhães
+
+
+## Postdoctoral Researchers
+
+Dr Nicholas Clark
+
+
+## PhD Students
+
+

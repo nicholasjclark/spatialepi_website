@@ -1,0 +1,47 @@
+name: "Spatial Epidemiology Group"
+output_dir: "."
+navbar:
+  title: "Spatial Epidemiology Group"
+  left:
+    - text: "Our Research"
+      icon: fa-globe
+      menu:
+        - text: "Mapping Emerging and Re-emerging Diseases"
+        - text: "Avian influenza"
+          href: page-a.html
+        - text: "Rabies"
+          href: page-b.html
+        - text: "Q fever"
+          href: page-c.html
+        - text: "Leptospirosis"
+          href: page-e.html
+        - text: "---------"
+        - text: "Helminth-associated Morbidity"
+        - text: "Worms and cognitive development"
+          href: page-e.html
+        - text: " Gut microbiome dysbiosis"
+          href: page-f.html
+    - text: "People"
+      icon: fa-user
+      href: people.html
+    - text: "Publications"
+      icon: fa-map
+      href: publications.html
+    - text: "Teaching"
+      icon: fa-university
+      href: teaching.html
+    - text: "News"
+      icon: fa-calendar-plus-o
+      href: news.html
+    - text: "Opportunities"
+      icon: fa-search
+      href: opportunities.html
+  right:
+    - icon: fa-envelope fa-lg
+      href: contact.html
+    - icon: fa-twitter fa-lg
+      href: https://twitter.com/nj_clark
+output:
+  html_document:
+    theme: paper
+    css: 'styles.css'

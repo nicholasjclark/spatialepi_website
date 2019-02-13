@@ -1,0 +1,12 @@
+---
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+We'd love to hear from you, so feel free to reach out:
+
+Spatial Epidemiology Laboratory<br>
+University of Queensland, Gatton Campus<br>
+Gatton, Queensland, Australia 4343<br>
+646-888-8299<br>
+r.magalhaes@uq.edu.au<br>
