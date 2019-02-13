@@ -19,6 +19,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -165,6 +168,101 @@ $(document).ready(function () {
 
 
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
 
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
@@ -175,7 +273,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Spatial Epidemiology Group</a>
+      <a class="navbar-brand" href="index.html">SpatialEpiGroup</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -183,7 +281,7 @@ $(document).ready(function () {
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-globe"></span>
      
-    Our Research
+    Research
      
     <span class="caret"></span>
   </a>
@@ -199,7 +297,7 @@ $(document).ready(function () {
       <a href="page-c.html">Q fever</a>
     </li>
     <li>
-      <a href="page-e.html">Leptospirosis</a>
+      <a href="page-d.html">Leptospirosis</a>
     </li>
     <li class="divider"></li>
     <li class="dropdown-header">Helminth-associated Morbidity</li>
@@ -207,7 +305,7 @@ $(document).ready(function () {
       <a href="page-e.html">Worms and cognitive development</a>
     </li>
     <li>
-      <a href="page-f.html"> Gut microbiome dysbiosis</a>
+      <a href="page-f.html">Gut microbiome dysbiosis</a>
     </li>
   </ul>
 </li>
@@ -226,13 +324,6 @@ $(document).ready(function () {
   </a>
 </li>
 <li>
-  <a href="teaching.html">
-    <span class="fa fa-university"></span>
-     
-    Teaching
-  </a>
-</li>
-<li>
   <a href="news.html">
     <span class="fa fa-calendar-plus-o"></span>
      
@@ -248,18 +339,7 @@ $(document).ready(function () {
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="contact.html">
-    <span class="fa fa-envelope fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="https://twitter.com/nj_clark">
-    <span class="fa fa-twitter fa-lg"></span>
-     
-  </a>
-</li>
+        
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -274,13 +354,2059 @@ $(document).ready(function () {
 
 
 <p><link rel="stylesheet" href="styles.css" type="text/css"></p>
-<div id="relevant-publications" class="section level1">
-<h1>Relevant Publications</h1>
-<p>To fill in</p>
+<p>An example of using Google Scholar to pull in all publications</p>
+<div id="section" class="section level2">
+<h2>2019</h2>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Title
+</th>
+<th style="text-align:left;">
+Journal
+</th>
+<th style="text-align:left;">
+Authors
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Hiv Prevalence among Tuberculosis Patients in Sub-Saharan Africa: a Systematic Review and Meta-Analysis
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Aids and Behavior
+</td>
+<td style="text-align:left;width: 20em; ">
+YA Gelaw, G Williams, RJS Magalhães, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Determinants of Spatial Heterogeneity of Functional Illiteracy among School-Aged Children in the Philippines: An Ecological Study
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+International Journal of Environmental Research and Public Health
+</td>
+<td style="text-align:left;width: 20em; ">
+K Owada, M Nielsen, C Lau, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Modeling Schistosoma Japonicum Infection under Pure Specification Bias: Impact of Environmental Drivers of Infection
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+International Journal of Environmental Research and Public Health
+</td>
+<td style="text-align:left;width: 20em; ">
+AL Araujo Navas, F Osei, LR Leonardo, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Climate Variation Influences Host Specificity in Avian Malaria Parasites
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Ecology Letters
+</td>
+<td style="text-align:left;width: 20em; ">
+A Fecchio, K Wells, JA Bell, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Microbial Associations and Spatial Proximity Predict North American Moose (Alces Alces) Gastrointestinal Community Composition
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Biorxiv
+</td>
+<td style="text-align:left;width: 20em; ">
+NM Fountain-Jones, N Clark, A Kinsley, et al
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+</div>
+<div id="section-1" class="section level2">
+<h2>2018</h2>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Title
+</th>
+<th style="text-align:left;">
+Journal
+</th>
+<th style="text-align:left;">
+Authors
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Epidemiological Shift and Geographical Heterogeneity in the Burden of Leptospirosis in China
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Infectious Diseases of Poverty
+</td>
+<td style="text-align:left;width: 20em; ">
+PW Dhewantara, AA Mamun, WY Zhang, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Airborne Geographical Dispersal of q Fever from Livestock Holdings to Human Communities: a Systematic Review and Critical Appraisal of Evidence
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Bmc Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, RJS Magalhães
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Effectiveness of Market-Level Biosecurity at Reducing Exposure of Poultry and Humans to Avian Influenza: a Systematic Review and Meta-Analysis
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+The Journal of Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+X Zhou, Y Wang, H Liu, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+a Systematic Literature Review and Critical Appraisal of Epidemiological Studies on Outdoor Air Pollution and Tuberculosis Outcomes
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Environmental Research
+</td>
+<td style="text-align:left;width: 20em; ">
+I Popovic, RJS Magalhaes, E Ge, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Spatial Distribution and Populations at Risk of A. Lumbricoides and T. Trichiura Co-Infections and Infection Intensity Classes: An Ecological Study
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasites &amp; Vectors
+</td>
+<td style="text-align:left;width: 20em; ">
+K Owada, CL Lau, L Leonardo, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Modelling Local Areas of Exposure to Schistosoma Japonicum in a Limited Survey Data Environment
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasites &amp; Vectors
+</td>
+<td style="text-align:left;width: 20em; ">
+ALA Navas, RJS Magalhães, F Osei, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Spatiotemporal Patterns and Environmental Drivers of Human Echinococcoses over a Twenty-Year Period in Ningxia Hui Autonomous Region, China
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasites &amp; Vectors
+</td>
+<td style="text-align:left;width: 20em; ">
+AMC Restrepo, YR Yang, DP McManus, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The Extensive Networks of Frequent Population Mobility in the Samoan Islands and their Implications for Infectious Disease Transmission
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Scientific Reports
+</td>
+<td style="text-align:left;width: 20em; ">
+Z Xu, CL Lau, X Zhou, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The Role of Neonatal Pulmonary Morbidity in the Longitudinal Patterns of Hospitalisation for Respiratory Infection During the First Year of Life
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Epidemiology &amp; Infection
+</td>
+<td style="text-align:left;width: 20em; ">
+KS Betts, RJS Magalhães, R Alati
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Spatiotemporal Patterns and Environmental Drivers of Human Echinococcoses over a Twenty-Year Period in Ningxia Hui Autonomous Region, China
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasites and Vectors
+</td>
+<td style="text-align:left;width: 20em; ">
+AM Cadavid Restrepo, YR Yang, DP McManus, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Spatial Epidemiological Approaches to Inform Leptospirosis Surveillance and Control: a Systematic Review and Critical Appraisal of Methods
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Zoonoses and Public Health
+</td>
+<td style="text-align:left;width: 20em; ">
+PW Dhewantara, CL Lau, KJ Allan, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Labrador Retrievers under Primary Veterinary Care in the Uk: Demography, Mortality and Disorders
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Canine Genetics and Epidemiology
+</td>
+<td style="text-align:left;width: 20em; ">
+PD McGreevy, BJ Wilson, CS Mansfield, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Risk Factors for Recurrence of Fmd Outbreaks in Iran: a Case-Control Study in a Highly Endemic Area
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Bmc Veterinary Research
+</td>
+<td style="text-align:left;width: 20em; ">
+K Ilbeigi, S Bokaie, S Aghasharif, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Environmental Risk Factors and Changing Spatial Patterns of Human Seropositivity for Echinococcus Spp. in Xiji County, Ningxia Hui Autonomous Region, China
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasites &amp; Vectors
+</td>
+<td style="text-align:left;width: 20em; ">
+AMC Restrepo, YR Yang, DP McManus, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Geographical and Temporal Distribution of the Residual Clusters of Human Leptospirosis in China, 2005–2016
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Scientific Reports
+</td>
+<td style="text-align:left;width: 20em; ">
+PW Dhewantara, A Al Mamun, WY Zhang, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Characteristics of Livestock Husbandry and Management Practice in the Central Dry Zone of Myanmar
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Tropical Animal Health and Production
+</td>
+<td style="text-align:left;width: 20em; ">
+TTZ Win, A Campbell, RJS Magalhães, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Epidemiology of Pseudorabies in Intensive Pig Farms in Shanghai, China: Herd-Level Prevalence and Risk Factors
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Preventive Veterinary Medicine
+</td>
+<td style="text-align:left;width: 20em; ">
+L Xia, Q Sun, J Wang, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Spatial Prediction of the Risk of Exposure to Echinococcus Spp. among Schoolchildren and Dogs in Ningxia Hui Autonomous Region, People’s Republic of China
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Geospatial Health
+</td>
+<td style="text-align:left;width: 20em; ">
+AMC Restrepo, YR Yang, DP McManus, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Chronic Helminth Infection Perturbs the Gut-Brain Axis, Promotes Neuropathology and Alters Behaviour
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+The Journal of Infectious Diseases, Jiy
+</td>
+<td style="text-align:left;width: 20em; ">
+PR Giacomin, AK Kraeuter, EA Albornoz, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Spatiotemporal Heterogeneity of Malnutrition Indicators in Children under 5 Years of Age in Bangladesh, 1999–2011
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Public Health Nutrition
+</td>
+<td style="text-align:left;width: 20em; ">
+MT Hasan, AA Mamun, GM Williams, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Parasite Spread at the Domestic Animal-Wildlife Interface: Anthropogenic Habitat Use, Phylogeny and Body Mass Drive Risk of Cat and Dog Flea (Ctenocephalides Spp.) Infestation …
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasites &amp; Vectors
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, JM Seddon, J Šlapeta, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Climate, Host Phylogeny and the Connectivity of Host Communities Govern Regional Parasite Assembly
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Diversity and Distributions
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, SM Clegg, K Sam, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Global Spread of Helminth Parasites at the Human–domestic Animal–wildlife Interface
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Global Change Biology
+</td>
+<td style="text-align:left;width: 20em; ">
+K Wells, DI Gibson, NJ Clark, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Phylogenetic Uniqueness, not Latitude, Explains the Diversity of Avian Blood Parasite Communities Worldwide
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Global Ecology and Biogeography
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Mrfcov: Markov Random Fields with Additional Covariates
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+r Package Version
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, K Wells, O Lindberg
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Emergence of Canine Parvovirus Subtype 2b (Cpv-2b) Infections in Australian Dogs
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Infection, Genetics and Evolution
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, JM Seddon, M Kyaw-Tanner, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Global Patterns in Helminth Host Specificity: Phylogenetic and Functional Diversity of Regional Host Species Pools Matter
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Ecography
+</td>
+<td style="text-align:left;width: 20em; ">
+K Wells, DI Gibson, NJ Clark
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Unravelling Changing Interspecific Interactions Across Environmental Gradients using Markov Random Fields
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Ecology
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, K Wells, O Lindberg
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+</div>
+<div id="section-2" class="section level2">
+<h2>2017</h2>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Title
+</th>
+<th style="text-align:left;">
+Journal
+</th>
+<th style="text-align:left;">
+Authors
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Gut Microbiota Disturbance During Helminth Infection: can it Affect Cognition and Behaviour of Children?
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Bmc Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+V Guernier, B Brennan, L Yakob, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Countrywide Reassessment of Schistosoma Mansoni Infection in Burundi using a Urine-Circulating Cathodic Antigen Rapid Test: Informing the National Control Program
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+American Journal of Tropical Medicine and Hygiene
+</td>
+<td style="text-align:left;width: 20em; ">
+G Ortu, O Ndayishimiye, M Clements, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Land Cover Change During a Period of Extensive Landscape Restoration in Ningxia Hui Autonomous Region, China
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Science of the Total Environment
+</td>
+<td style="text-align:left;width: 20em; ">
+AMC Restrepo, YR Yang, NAS Hamm, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Vetcompass Australia: a National Big Data Collection System for Veterinary Science
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Animals
+</td>
+<td style="text-align:left;width: 20em; ">
+P McGreevy, P Thomson, NK Dhand, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Measuring the Effect of Soil-Transmitted Helminth Infections on Cognitive Function in Children: Systematic Review and Critical Appraisal of Evidence
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Advances in Parasitology
+</td>
+<td style="text-align:left;width: 20em; ">
+K Owada, M Nielsen, CL Lau, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Molecular Epidemiology and Pathology of Spirorchiid Infection in Green Sea Turtles (Chelonia Mydas)
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+International Journal for Parasitology: Parasites and Wildlife
+</td>
+<td style="text-align:left;width: 20em; ">
+PA Chapman, H Owen, M Flint, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Assessing the Social and Environmental Determinants of Pertussis Epidemics in Queensland, Australia: a Bayesian Spatio-Temporal Analysis
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Epidemiology &amp; Infection
+</td>
+<td style="text-align:left;width: 20em; ">
+X Huang, S Lambert, C Lau, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Spatiotemporal Distribution and Population at Risk of Soil-Transmitted Helminth Infections Following an Eight-Year School-Based Deworming Programme in Burundi, 2007–2014
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasites &amp; Vectors
+</td>
+<td style="text-align:left;width: 20em; ">
+M Assoum, G Ortu, MG Basáñez, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Factors Influencing the Success of Aerial Rabies Vaccination of Foxes
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Scientific Reports
+</td>
+<td style="text-align:left;width: 20em; ">
+J Henning, E Giorgi, RJS Magalhães, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Economic Cost Estimation of Selected Strategies to Control Soil Transmitted Helminth Infections in the Philippines
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Philippine Journal of Health Research and Development
+</td>
+<td style="text-align:left;width: 20em; ">
+FB Garcia Jr, K Halton, N Graves, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Integrating Phylogenetic and Ecological Distances Reveals New Insights into Parasite Host Specificity
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Molecular Ecology
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, SM Clegg
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+a New Look at the Origins of Gibbon Ape Leukemia Virus
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Virus Genes
+</td>
+<td style="text-align:left;width: 20em; ">
+J McKee, N Clark, F Shapter, et al
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+</div>
+<div id="section-3" class="section level2">
+<h2>2016</h2>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Title
+</th>
+<th style="text-align:left;">
+Journal
+</th>
+<th style="text-align:left;">
+Authors
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Co-Distribution and Co-Infection of Chikungunya and Dengue Viruses
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Bmc Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+L Furuya-Kanamori, S Liang, G Milinovich, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The Landscape Epidemiology of Echinococcoses
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Infectious Diseases of Poverty
+</td>
+<td style="text-align:left;width: 20em; ">
+AMC Restrepo, YR Yang, DP McManus, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Complexities and Perplexities: a Critical Appraisal of the Evidence for Soil-Transmitted Helminth Infection-Related Morbidity
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Negl Trop Dis
+</td>
+<td style="text-align:left;width: 20em; ">
+SJ Campbell, SV Nery, SA Doi, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+a Critical Appraisal of Control Strategies for Soil-Transmitted Helminths
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Trends in Parasitology
+</td>
+<td style="text-align:left;width: 20em; ">
+SJ Campbell, SV Nery, JS McCarthy, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Spatiotemporal Dynamics of Scrub Typhus Transmission in Mainland China, 2006-2014
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Negl Trop Dis
+</td>
+<td style="text-align:left;width: 20em; ">
+YC Wu, Q Qian, RJS Magalhaes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Heterogeneous and Dynamic Prevalence of Asymptomatic Influenza Virus Infections
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Emerging Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+L Furuya-Kanamori, M Cox, GJ Milinovich, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Mapping Soil Transmitted Helminths and Schistosomiasis under Uncertainty: a Systematic Review and Critical Appraisal of Evidence
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+ALA Navas, NAS Hamm, RJS Magalhães, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Use of Big Data in the Surveillance of Veterinary Diseases: Early Detection of Tick Paralysis in Companion Animals
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasites &amp; Vectors
+</td>
+<td style="text-align:left;width: 20em; ">
+V Guernier, GJ Milinovich, MAB Santos, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The Impact of an 8-Year Mass Drug Administration Programme on Prevalence, Intensity and Co-Infections of Soil-Transmitted Helminthiases in Burundi
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasites &amp; Vectors
+</td>
+<td style="text-align:left;width: 20em; ">
+G Ortu, M Assoum, U Wittmann, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Determination of Ancylostoma Caninum Ova Viability using Metabolic Profiling
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasitology Research
+</td>
+<td style="text-align:left;width: 20em; ">
+P Gyawali, DJ Beale, W Ahmed, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Community-Based Interventions to Enhance Knowledge, Protective Attitudes and Behaviors Towards Canine Rabies: Results from a Health Communication Intervention Study in Guangxi …
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Bmc Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+H Wu, J Chen, L Zou, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Long-Term Changes in Childhood Malnutrition are Associated with Long-Term Changes in Maternal Bmi: Evidence from Bangladesh, 1996–2011
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+The American Journal of Clinical Nutrition, Ajcn
+</td>
+<td style="text-align:left;width: 20em; ">
+MT Hasan, RJS Magalhães, GM Williams, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Vitamin-d Status is not a Confounder of the Relationship Between Zinc and Diarrhoea: a Study in 6–24-Month-Old Underweight and Normal-Weight Children of Urban Bangladesh
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+European Journal of Clinical Nutrition
+</td>
+<td style="text-align:left;width: 20em; ">
+AMS Ahmed, RJS Magalhaes, T Ahmed, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Determinants of Patient Survival During the 2014 Ebola Virus Disease Outbreak in Bong County, Liberia
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Global Health Research and Policy
+</td>
+<td style="text-align:left;width: 20em; ">
+TA Weppelmann, B Donewell, U Haque, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Association of Vitamin d Status with Incidence of Enterotoxigenic, Enteropathogenic and Enteroaggregative Escherichia Coli Diarrhoea in Children of Urban Bangladesh
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Tropical Medicine &amp; International Health
+</td>
+<td style="text-align:left;width: 20em; ">
+AM Shamsir Ahmed, RJ Soares Magalhaes, KZ Long, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Association Between Serum Vitamin D, Retinol and Zinc Status, and Acute Respiratory Infections in Underweight and Normal-Weight Children Aged 6–24 Months Living in an Urban …
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Epidemiology and Infection
+</td>
+<td style="text-align:left;width: 20em; ">
+AMS AHMED, T Ahmed, RJS MAGALHAES, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Migration Strategy and Pathogen Risk: Non‐breeding Distribution Drives Malaria Prevalence in Migratory Waders
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Oikos
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, SM Clegg, M Klaassen
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Co‐infections and Environmental Conditions Drive the Distributions of Blood Parasites in Wild Birds
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Journal of Animal Ecology
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, K Wells, D Dimitrov, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Why Fly the Extra Mile? using Stress Biomarkers to Assess Wintering Habitat Quality in Migratory Shorebirds
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Oecologia
+</td>
+<td style="text-align:left;width: 20em; ">
+Y Aharon-Rotman, KL Buchanan, NJ Clark, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Molecular and Morphological Description of Haemoproteus (Parahaemoproteus) Bukaka (Species Nova), a Haemosporidian Associated with the Strictly Australo-Papuan Host Subfamily …
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasitology Research
+</td>
+<td style="text-align:left;width: 20em; ">
+W Goulding, RD Adlard, SM Clegg, et al
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+</div>
+<div id="section-4" class="section level2">
+<h2>2015</h2>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Title
+</th>
+<th style="text-align:left;">
+Journal
+</th>
+<th style="text-align:left;">
+Authors
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Role of Big Data in the Early Detection of Ebola and Other Emerging Infectious Diseases.
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+The Lancet. Global Health
+</td>
+<td style="text-align:left;width: 20em; ">
+GJ Milinovich, RJ Magalhães, W Hu
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The Role of Live Poultry Movement and Live Bird Market Biosecurity in the Epidemiology of Influenza a (H7n9): a Cross-Sectional Observational Study in Four Eastern China Provinces
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Journal of Infection
+</td>
+<td style="text-align:left;width: 20em; ">
+X Zhou, Y Li, Y Wang, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Mechanisms of Hypervirulent Clostridium Difficile Ribotype 027 Displacement of Endemic Strains: An Epidemiological Model
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Scientific Reports
+</td>
+<td style="text-align:left;width: 20em; ">
+L Yakob, TV Riley, DL Paterson, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Earth Observation, Spatial Data Quality, and Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+NAS Hamm, RJS Magalhães, ACA Clements
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Mapping the Risk of Soil-Transmitted Helminthic Infections in the Philippines
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Negl Trop Dis
+</td>
+<td style="text-align:left;width: 20em; ">
+RJS Magalhães, MS Salamat, L Leonardo, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The Social Network of Cystic Fibrosis Centre Care and Shared Pseudomonas Aeruginosa Strain Infection: a Cross-Sectional Analysis
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+The Lancet Respiratory Medicine
+</td>
+<td style="text-align:left;width: 20em; ">
+TJ Kidd, RJS Magalhães, S Paynter, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The Role of Maternal Education in the 15‐year Trajectory of Malnutrition in Children under 5 Years of Age in Bangladesh
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Maternal &amp; Child Nutrition
+</td>
+<td style="text-align:left;width: 20em; ">
+MT Hasan, RJ Soares Magalhaes, GM Williams, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Rapid Increase in Scrub Typhus Incidence in Mainland China, 2006–2014
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+The American Journal of Tropical Medicine and Hygiene
+</td>
+<td style="text-align:left;width: 20em; ">
+YC Wu, Q Qian, RJS Magalhaes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Factors Associated with the Emergence of Highly Pathogenic Avian Influenza a (H5n1) Poultry Outbreaks in China: Evidence from an Epidemiological Investigation in Ningxia, 2012
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Transboundary and Emerging Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+H Liu, X Zhou, Y Zhao, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Spatiotemporal Clustering Analysis and Risk Assessments of Human Cutaneous Anthrax in China, 2005–2012
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos One
+</td>
+<td style="text-align:left;width: 20em; ">
+WY Zhang, LY Wang, XS Zhang, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Forecasting the Progress Towards the Target of Millennium Development Goal 1c in Children under 5 Years of Age in Bangladesh
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Public Health Nutrition
+</td>
+<td style="text-align:left;width: 20em; ">
+MT Hasan, RJ Soares Magalhaes, GM Williams, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Prevalence and Risk Factors of Vitamin d Insufficiency and Deficiency among 6–24-Month-Old Underweight and Normal-Weight Children Living in an Urban Slum of Bangladesh
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Public Health Nutrition
+</td>
+<td style="text-align:left;width: 20em; ">
+AMS Ahmed, T Ahmed, KZ Long, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The’magic Glasses’ Research Programme for the Global Control of Intestinal Worms
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Tropical Medicine
+</td>
+<td style="text-align:left;width: 20em; ">
+DJ Gray, G Williams, F Bieri, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Differences in Host Species Relationships and Biogeographic Influences Produce Contrasting Patterns of Prevalence, Community Composition and Genetic Structure in Two Genera Of …
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Journal of Animal Ecology
+</td>
+<td style="text-align:left;width: 20em; ">
+S Olsson‐Pons, NJ Clark, F Ishtiaq, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The Influence of Vagrant Hosts and Weather Patterns on the Colonization and Persistence of Blood Parasites in an Island Bird
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Journal of Biogeography
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, SM Clegg
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Specialist Enemies, Generalist Weapons and the Potential Spread of Exotic Pathogens: Malaria Parasites in a Highly Invasive Bird
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+International Journal for Parasitology
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, S Olsson-Pons, F Ishtiaq, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Molecular and Morphological Characterization of Haemoproteus (Parahaemoproteus) Ptilotis, a Parasite Infecting Australian Honeyeaters (Meliphagidae), with Remarks on Prevalence …
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasitology Research
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, RD Adlard, SM Clegg
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+</div>
+<div id="pre-2015" class="section level2">
+<h2>Pre-2015</h2>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Title
+</th>
+<th style="text-align:left;">
+Journal
+</th>
+<th style="text-align:left;">
+Authors
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Role of Big Data in the Early Detection of Ebola and Other Emerging Infectious Diseases.
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+The Lancet. Global Health
+</td>
+<td style="text-align:left;width: 20em; ">
+GJ Milinovich, RJ Magalhães, W Hu
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The Role of Live Poultry Movement and Live Bird Market Biosecurity in the Epidemiology of Influenza a (H7n9): a Cross-Sectional Observational Study in Four Eastern China Provinces
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Journal of Infection
+</td>
+<td style="text-align:left;width: 20em; ">
+X Zhou, Y Li, Y Wang, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Mechanisms of Hypervirulent Clostridium Difficile Ribotype 027 Displacement of Endemic Strains: An Epidemiological Model
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Scientific Reports
+</td>
+<td style="text-align:left;width: 20em; ">
+L Yakob, TV Riley, DL Paterson, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Earth Observation, Spatial Data Quality, and Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+NAS Hamm, RJS Magalhães, ACA Clements
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Mapping the Risk of Soil-Transmitted Helminthic Infections in the Philippines
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Negl Trop Dis
+</td>
+<td style="text-align:left;width: 20em; ">
+RJS Magalhães, MS Salamat, L Leonardo, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The Social Network of Cystic Fibrosis Centre Care and Shared Pseudomonas Aeruginosa Strain Infection: a Cross-Sectional Analysis
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+The Lancet Respiratory Medicine
+</td>
+<td style="text-align:left;width: 20em; ">
+TJ Kidd, RJS Magalhães, S Paynter, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The Role of Maternal Education in the 15‐year Trajectory of Malnutrition in Children under 5 Years of Age in Bangladesh
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Maternal &amp; Child Nutrition
+</td>
+<td style="text-align:left;width: 20em; ">
+MT Hasan, RJ Soares Magalhaes, GM Williams, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Rapid Increase in Scrub Typhus Incidence in Mainland China, 2006–2014
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+The American Journal of Tropical Medicine and Hygiene
+</td>
+<td style="text-align:left;width: 20em; ">
+YC Wu, Q Qian, RJS Magalhaes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Factors Associated with the Emergence of Highly Pathogenic Avian Influenza a (H5n1) Poultry Outbreaks in China: Evidence from an Epidemiological Investigation in Ningxia, 2012
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Transboundary and Emerging Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+H Liu, X Zhou, Y Zhao, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Spatiotemporal Clustering Analysis and Risk Assessments of Human Cutaneous Anthrax in China, 2005–2012
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos One
+</td>
+<td style="text-align:left;width: 20em; ">
+WY Zhang, LY Wang, XS Zhang, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Forecasting the Progress Towards the Target of Millennium Development Goal 1c in Children under 5 Years of Age in Bangladesh
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Public Health Nutrition
+</td>
+<td style="text-align:left;width: 20em; ">
+MT Hasan, RJ Soares Magalhaes, GM Williams, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Prevalence and Risk Factors of Vitamin d Insufficiency and Deficiency among 6–24-Month-Old Underweight and Normal-Weight Children Living in an Urban Slum of Bangladesh
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Public Health Nutrition
+</td>
+<td style="text-align:left;width: 20em; ">
+AMS Ahmed, T Ahmed, KZ Long, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The’magic Glasses’ Research Programme for the Global Control of Intestinal Worms
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Tropical Medicine
+</td>
+<td style="text-align:left;width: 20em; ">
+DJ Gray, G Williams, F Bieri, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Differences in Host Species Relationships and Biogeographic Influences Produce Contrasting Patterns of Prevalence, Community Composition and Genetic Structure in Two Genera Of …
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Journal of Animal Ecology
+</td>
+<td style="text-align:left;width: 20em; ">
+S Olsson‐Pons, NJ Clark, F Ishtiaq, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The Influence of Vagrant Hosts and Weather Patterns on the Colonization and Persistence of Blood Parasites in an Island Bird
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Journal of Biogeography
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, SM Clegg
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Specialist Enemies, Generalist Weapons and the Potential Spread of Exotic Pathogens: Malaria Parasites in a Highly Invasive Bird
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+International Journal for Parasitology
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, S Olsson-Pons, F Ishtiaq, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Molecular and Morphological Characterization of Haemoproteus (Parahaemoproteus) Ptilotis, a Parasite Infecting Australian Honeyeaters (Meliphagidae), with Remarks on Prevalence …
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasitology Research
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, RD Adlard, SM Clegg
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Water, Sanitation, and Hygiene (Wash): a Critical Component for Sustainable Soil-Transmitted Helminth and Schistosomiasis Control
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+SJ Campbell, GB Savage, DJ Gray, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Spatiotemporal Transmission Dynamics of Hemorrhagic Fever with Renal Syndrome in China, 2005–2012
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+WY Zhang, LY Wang, YX Liu, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Seroprevalence and Spatial Epidemiology of Lymphatic Filariasis in American Samoa after Successful Mass Drug Administration
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+CL Lau, KY Won, L Becker, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Control of Neglected Tropical Diseases in Burundi: Partnerships, Achievements, Challenges, and Lessons Learned after Four Years of Programme Implementation
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+O Ndayishimiye, G Ortu, RJS Magalhaes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The Role of Environmental Factors in the Spatial Distribution of Japanese Encephalitis in Mainland China
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Environment International
+</td>
+<td style="text-align:left;width: 20em; ">
+L Wang, W Hu, RJ Soares Magalhaes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Geographical Distribution of Human&lt; I&gt; Schistosoma Japonicum&lt;/I&gt; Infection in the Philippines: Tools to Support Disease Control and Further Elimination
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+International Journal for Parasitology
+</td>
+<td style="text-align:left;width: 20em; ">
+RJS Magalhães, MS Salamat, L Leonardo, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Health Education and the Control of Intestinal Worm Infections in China: a New Vision
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasit Vectors
+</td>
+<td style="text-align:left;width: 20em; ">
+DP McManus, FA Bieri, YS Li, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+a Population-Based Spatio-Temporal Analysis Of&lt; I&gt; Clostridium Difficile&lt;/I&gt; Infection in Queensland, Australia over a 10-Year Period
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Journal of Infection
+</td>
+<td style="text-align:left;width: 20em; ">
+L Furuya-Kanamori, J Robson, RJS Magalhães, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Modelling Parasite Aggregation: Disentangling Statistical and Ecological Approaches
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+International Journal for Parasitology
+</td>
+<td style="text-align:left;width: 20em; ">
+L Yakob, RJ Soares Magalhães, DJ Gray, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Environmental Correlates of Mental Health Measures for Women in Western Australia
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Ecohealth
+</td>
+<td style="text-align:left;width: 20em; ">
+EJ Fearnley, RJS Magalhães, P Speldewinde, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Developing an Epidemic Forecasting Model for Influenza a in Brisbane, Australia Based on Climate and Hong Kong Influenza a Surveillance Data
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Clinical Infectious Diseases, Ciu
+</td>
+<td style="text-align:left;width: 20em; ">
+XL Wang, CM Wong, L Yang, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+a Review of Global Diversity in Avian Haemosporidians (Plasmodium and Haemoproteus: Haemosporida): New Insights from Molecular Data
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+International Journal for Parasitology
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, SM Clegg, MR Lima
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+First Evidence of Avian Malaria in Capricorn Silvereyes (Zosterops Lateralis Chlorocephalus) on Heron Island
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Sunbird: Journal of the Queensland Ornithological Society, the
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, RD Adlard, SM Clegg
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Epidemiological Features of Severe Fever with Thrombocytopenia Syndrome Cases in China, 2011-2012.
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Clinical Infectious Diseases: An Official Publication of the Infectious …
+</td>
+<td style="text-align:left;width: 20em; ">
+F Ding, W Zhang, L Wang, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Scrub Typhus in Mainland China, 2006–2012: The Need for Targeted Public Health Interventions
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+WY Zhang, LY Wang, F Ding, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Spatiotemporal Patterns of Japanese Encephalitis in China, 2002–2010
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+LY Wang, WY Zhang, F Ding, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Geographical Analysis of the Distribution and Spread of Human Rabies in China from 2005 to 2011
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos One
+</td>
+<td style="text-align:left;width: 20em; ">
+D Guo, Z Hang, W Yan, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Association Between Hemorrhagic Fever with Renal Syndrome Epidemic and Climate Factors in Heilongjiang Province, China
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+The American Journal of Tropical Medicine and Hygiene
+</td>
+<td style="text-align:left;width: 20em; ">
+CP Li, Z Cui, SL Li, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Extending Helminth Control Beyond Sth and Schistosomiasis: The Case of Human Hymenolepiasis
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+RJS Magalhães, C Fançony, D Gamboa, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Predictive vs. Empiric Assessment of Schistosomiasis: Implications for Treatment Projections in Ghana
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+A Kabore, NK Biritwum, PW Downs, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Geographic Co-Distribution of Influenza Virus Subtypes H7n9 and H5n1 in Humans, China
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Emerging Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+CYL Liya Wang, Wenyi Zhang, Ricardo J. Soares
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Helminth Infections in an Indigenous Community of Nepal: The Role of Individual and Household Socio-Economic Factors
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Global Journal of Medical Research
+</td>
+<td style="text-align:left;width: 20em; ">
+P Gyawali, S Khanal, RJ Soares Magalhaes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Epidemiology of Malaria, Schistosomiasis, Geohelminths, Anemia and Malnutrition in the Context of a Demographic Surveillance System in Northern Angola
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos One
+</td>
+<td style="text-align:left;width: 20em; ">
+JC Sousa-Figueiredo, D Gamboa, JM Pedro, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Spatial Parasite Ecology and Epidemiology: a Review of Methods and Applications
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasitology
+</td>
+<td style="text-align:left;width: 20em; ">
+RL PULLAN, HJW STURROCK, RJ SOARES MAGALHÃES, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Live Poultry Trade in Southern China Provinces and Hpaiv H5n1 Infection in Humans and Poultry: The Role of Chinese New Year Festivities
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos One
+</td>
+<td style="text-align:left;width: 20em; ">
+RJS Magalhães, X Zhou, B Jia, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Combined Spatial Prediction of Schistosomiasis and Soil-Transmitted Helminthiasis in Sierra Leone: a Tool for Integrated Disease Control
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+MH Hodges, RJS Magalhães, J Paye, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Role of Malnutrition and Parasite Infections in the Spatial Variation in Children’s Anaemia Risk in Northern Angola
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+</td>
+<td style="text-align:left;width: 20em; ">
+RJ Magalhães, A Langa, JM Pedro, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Finding Malaria Hot-Spots in Northern Angola: The Role of Individual, Household and Environmental Factors Within a Meso-Endemic Area
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Malaria Journal
+</td>
+<td style="text-align:left;width: 20em; ">
+RJ Soares Magalhaes, A Langa, JC Sousa-Figueiredo, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Finding Malaria Hot-Spots in Northern Angola: The Role of Individual, Household and Environmental Factors Within a Meso-Endemic Area
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Malar j
+</td>
+<td style="text-align:left;width: 20em; ">
+RJ Magalhães, A Langa, JC Sousa-Figueiredo, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Ontogenetic Shifts in the Habitat Associations of Butterflyfishes (F. Chaetodontidae)
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Environmental Biology of Fishes
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, GR Russ
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Mapping the Risk of Anaemia in Preschool-Age Children: The Contribution of Malnutrition, Malaria, and Helminth Infections in West Africa
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Medicine
+</td>
+<td style="text-align:left;width: 20em; ">
+RJS Magalhães, ACA Clements
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Risk-Based Surveillance for Avian Influenza Control along Poultry Market Chains in South China: The Value of Social Network Analysis
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Preventive Veterinary Medicine
+</td>
+<td style="text-align:left;width: 20em; ">
+V Martin, X Zhou, E Marshall, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The Applications of Model-Based Geostatistics in Helminth Epidemiology and Control
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Advances in Parasitology
+</td>
+<td style="text-align:left;width: 20em; ">
+RJS Magalhães, ACA Clements, AP Patil, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Prevalence of and Risk Factors for Mrsa Carriage in Companion Animals: a Survey of Dogs, Cats and Horses
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Epidemiology and Infection
+</td>
+<td style="text-align:left;width: 20em; ">
+A Loeffler, DU Pfeiffer, JA Lindsay, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Mapping Helminth Co-Infection and Co-Intensity: Geostatistical Prediction in Ghana
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+RJS Magalhães, NK Biritwum, JO Gyapong, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Distribution of Complementary and Alternative Medicine (Cam) Providers in Rural New South Wales, Australia: a Step Towards Explaining High Cam Use in Rural Health?
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Australian Journal of Rural Health
+</td>
+<td style="text-align:left;width: 20em; ">
+J Wardle, J Adams, RJS Magalhães, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Geographical Analysis of the Role of Water Supply and Sanitation in the Risk of Helminth Infections of Children in West Africa
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Proceedings of the National Academy of Sciences
+</td>
+<td style="text-align:left;width: 20em; ">
+RJS Magalhães, AG Barnett, ACA Clements
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Spatial Heterogeneity of Haemoglobin Concentration in Preschool-Age Children in Sub-Saharan Africa
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Bulletin of the World Health Organization
+</td>
+<td style="text-align:left;width: 20em; ">
+RJS Magalhães, ACA Clements
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The Role of Age, Ethnicity and Environmental Factors in Modulating Malaria Risk in Rajasthali, Bangladesh
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Malaria Journal
+</td>
+<td style="text-align:left;width: 20em; ">
+U Haque, RJS Magalhaes, D Mitra, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+An Assessment of the Feasibility of a Poultry Tracing Scheme for Smallholders in Vietnam.
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Revue Scientifique et Technique (International Office of Epizootics)
+</td>
+<td style="text-align:left;width: 20em; ">
+R Métras, RJ Magalhaes, QH Dinh, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Spatial Epidemiological Approaches for the Control of Infection and Morbidity Associated with Neglected Tropical Diseases in Sub-Saharan Africa
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+</td>
+<td style="text-align:left;width: 20em; ">
+R Soares Magalhaes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+&lt; I&gt; Clostridium Difficile&lt;/I&gt; Pcr Ribotype 027: Assessing the Risks of Further Worldwide Spread
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+The Lancet Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+ACA Clements, RJS Magalhães, AJ Tatem, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Risk Factors for Methicillin-Resistant Staphylococcus Aureus (Mrsa) Infection in Dogs and Cats: a Case-Control Study
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Veterinary Research
+</td>
+<td style="text-align:left;width: 20em; ">
+RJS Magalhães, A Loeffler, J Lindsay, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Meticillin-Resistant&lt; I&gt; Staphylococcus Aureus&lt;/I&gt; Carriage in Uk Veterinary Staff and Owners of Infected Pets: New Risk Groups
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Journal of Hospital Infection
+</td>
+<td style="text-align:left;width: 20em; ">
+A Loeffler, DU Pfeiffer, DH Lloyd, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Associations Between Attributes of Live Poultry Trade and Hpai H5n1 Outbreaks: a Descriptive and Network Analysis Study in Northern Vietnam
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Bmc Veterinary Research
+</td>
+<td style="text-align:left;width: 20em; ">
+RS Magalhães, A Ortiz-Pelaez, K Thi, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Lack of Transmission of Methicillin-Resistant&lt; I&gt; Staphylococcus Aureus&lt;/I&gt;(Mrsa) Between Apparently Healthy Dogs in a Rescue Kennel
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Veterinary Microbiology
+</td>
+<td style="text-align:left;width: 20em; ">
+A Loeffler, DU Pfeiffer, JA Lindsay, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Heifer Nutrition During Early-and Mid-Pregnancy Alters Fetal Growth Trajectory and Birth Weight
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Animal Reproduction Science
+</td>
+<td style="text-align:left;width: 20em; ">
+GC Micke, TM Sullivan, RJ Soares Magalhaes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Research Spatial Prediction of Malaria Prevalence in an Endemic Area of Bangladesh
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+</td>
+<td style="text-align:left;width: 20em; ">
+U Haque, RJS Magalhães, HL Reid, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Geographical Distribution of Intestinal Schistosomiasis and Soil-Transmitted Helminthiasis and Preventive Chemotherapy Strategies in Sierra Leone
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+JB Koroma, J Peterson, AA Gbakima, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Evaluating the Control of Hpaiv H5n1 in Vietnam: Virus Transmission Within Infected Flocks Reported Before and after Vaccination
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Bmc Veterinary Research
+</td>
+<td style="text-align:left;width: 20em; ">
+RS Magalhães, D Pfeiffer, J Otte
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Geographical Information Systems and Tropical Medicine
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Annals of Tropical Medicine and Parasitology
+</td>
+<td style="text-align:left;width: 20em; ">
+OA Khan, W Davenhall, M Ali, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Pilot Study for the Implementation of a Traceability Scheme for Small Holder Poultry Farms in Northern Viet Nam
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+</td>
+<td style="text-align:left;width: 20em; ">
+R Métras, RJS Magalhaes, QH Dinh, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Industrial Food Animal Production and Global Health Risks: Exploring the Ecosystems and Economics of Avian Influenza
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Ecohealth
+</td>
+<td style="text-align:left;width: 20em; ">
+JH Leibler, J Otte, D Roland-Holst, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Assessment of the Diagnostic Accuracy of Circulating Natriuretic Peptide Concentrations to Distinguish Between Cats with Cardiac and Non-Cardiac Causes of Respiratory Distress
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Journal of Veterinary Cardiology
+</td>
+<td style="text-align:left;width: 20em; ">
+DJ Connolly, RJ Soares Magalhaes, VL Fuentes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Dietary Protein During Gestation Affects Placental Development in Heifers
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Theriogenology
+</td>
+<td style="text-align:left;width: 20em; ">
+TM Sullivan, GC Micke, RS Magalhaes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Dietary Protein During Gestation Affects Circulating Indicators of Placental Function and Fetal Development in Heifers
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Placenta
+</td>
+<td style="text-align:left;width: 20em; ">
+TM Sullivan, GC Micke, RS Magalhaes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Circulating Natriuretic Peptides Concentrations in Cats with Respiratory Distress
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Journal of Veterinary Internal Medicine
+</td>
+<td style="text-align:left;width: 20em; ">
+DJ Connolly, RJS Magalhaes, VL Fuentes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Circulating Natriuretic Peptides in Cats with Heart Disease
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Journal of Veterinary Internal Medicine
+</td>
+<td style="text-align:left;width: 20em; ">
+DJ Connolly, RJ Soares Magalhaes, HM Syme, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Flock Size and Hpai Risk in Cambodia, Thailand, and Viet Nam
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Food and Agricultural Organisation of the United Nations
+</td>
+<td style="text-align:left;width: 20em; ">
+J Otte, D Pfeiffer, R Soares-Magalhaes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Factors Affecting Width of the Canine Femorotibial Joint Space in Nonweight‐bearing Radiographs
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Veterinary Radiology &amp; Ultrasound
+</td>
+<td style="text-align:left;width: 20em; ">
+C Whatmough, AP Moores, RS MAGALHAES, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Industrial Livestock Production and Global Health Risks
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Food and Agriculture Organization of the United Nations, Pro-Poor Livestock …
+</td>
+<td style="text-align:left;width: 20em; ">
+J Otte, D Roland-Holst, D Pfeiffer, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Farm Gate Trade Patterns and Trade at Live Poultry Markets Supplying Ha Noi: Results of a Rapid Rural Appraisal
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Pro-Poor Livestock Policy Initiative (Pplpi) Research Report (Fao)
+</td>
+<td style="text-align:left;width: 20em; ">
+R Soares Magalhaes, HD Quoc, LT Kim Lan
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Quantitative Assessment of the Risk of Introduction of Hpai H5n1 to Ethiopia via the Legal Import of Day-Old-Chicks
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Proceedings of the
+</td>
+<td style="text-align:left;width: 20em; ">
+RJS Magalhaes, F Goutard, A Demissie, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+The Use of Spatial Multi-Criteria Decision Analysis to Investigate Bovine Tb Infection in the Southeast of England
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Gisvet
+</td>
+<td style="text-align:left;width: 20em; ">
+RJ Soares-Magalhaes, K Stevens, DU Pfeiffer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Simulation Modelling of Highly Pathogenic Avian Influenza (Hpai) H5n1 Poultry Outbreaks in Viet Nam.
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Proceedings of the
+</td>
+<td style="text-align:left;width: 20em; ">
+RJS Magalhaes, B Wieland, J Otte, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Use of Social Network Analysis to Characterize the Pattern of Animal Movements in the Initial Phases of the 2001 Foot and Mouth Disease (Fmd) Epidemic in the Uk
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Preventive Veterinary Medicine
+</td>
+<td style="text-align:left;width: 20em; ">
+A Ortiz-Pelaez, DU Pfeiffer, RJ Soares-Magalhaes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+a Retrospective Analysis of Case Series using Home‐prepared and Chicken Hydrolysate Diets in the Diagnosis of Adverse Food Reactions in 181 Pruritic Dogs
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Veterinary Dermatology
+</td>
+<td style="text-align:left;width: 20em; ">
+A Loeffler, R Soares‐Magalhaes, R Bond, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Migratory Birds and their Possible Role in the Spread of Highly Pathogenic Avian Influenza
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Efsa-Scientific Report
+</td>
+<td style="text-align:left;width: 20em; ">
+DU Pfeiffer, IH Brown, RA Fouchier, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Commune-Level Simulation Model of Hpai H5n1 Poultry Infection and Control in Viet Nam
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Pro-Poor Livestock Policy Initiative (Pplpi) Research Report (Fao)
+</td>
+<td style="text-align:left;width: 20em; ">
+R Soares Magalhaes, D Pfeiffer, B Wieland, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Development of the Epidemiological Component of Spada (Strategic Pathogen Assessment for Domestic Animals)
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Pro-Poor Livestock Policy Initiative (Pplpi) Research Report (Fao)
+</td>
+<td style="text-align:left;width: 20em; ">
+R Soares Magalhaes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Opinion of the Scientific Panel Animal Health and Welfare (Ahaw) Related with the Migratory Birds and their Possible Role in the Spread of Highly Pathogenic Avian Influenza
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Efsa Journal
+</td>
+<td style="text-align:left;width: 20em; ">
+DU Pfeiffer, I Brown, RAM Fouchier, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Investigating the Cluster of Mycobacterium Bovis Spoligotype 13 in the Southeast of England
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Annual Meeting of the Society of Veterinary Epidemiology and Preventive …
+</td>
+<td style="text-align:left;width: 20em; ">
+RJ Soares-Magalhaes, J Dale, K Gover, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Investigating the Cluster of Mycobacterium Bovis Spoligotype 13 Strains in the Southeast of England.
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Society for Veterinary Epidemiology and Preventive Medicine. Proceedings Of …
+</td>
+<td style="text-align:left;width: 20em; ">
+R Soares-Magalhaes, NH Smith, J Dale, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Investigation of Mrsa in Small Animal Practice
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Veterinary Record
+</td>
+<td style="text-align:left;width: 20em; ">
+D Pfeiffer, D Lloyd, A Loeffler, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 30em; ">
+Identifying Risk Factors Associated with Mrsa Infection in Companion Animals.
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+The Journal of Small Animal Practice
+</td>
+<td style="text-align:left;width: 20em; ">
+D Pfeiffer, D Lloyd, A Loeffler, et al
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
 
+</div>
+</div>
 
 </div>
 

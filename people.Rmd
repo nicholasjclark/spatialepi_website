@@ -11,11 +11,21 @@ Members of our team a wealth of expertise owing to their diverse backgrounds in 
 
 Associate Professor Ricardo Soares Magalhães
 
+### Ricardo's publication output
+```{r, echo = FALSE, fig.align='center', warning=FALSE, message=FALSE, fig.height=3.5, fig.width=4.5}
+source('functions/scholar_summary.R')
+scholar_summary('aAh0t1AAAAAJ&hl')
+```
 
 ## Postdoctoral Researchers
 
 Dr Nicholas Clark
 
+### Nick's publication output
+```{r, echo = FALSE, fig.align='center', warning=FALSE, message=FALSE, fig.height=3.5, fig.width=4.5}
+source('functions/scholar_summary.R')
+scholar_summary('5bO9uxEAAAAJ')
+```
 
 ## PhD Students
 

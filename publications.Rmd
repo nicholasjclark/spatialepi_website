@@ -1,8 +1,100 @@
 ---
+output:
+  html_document: 
+    toc: true
+    toc_float: true
 ---
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-# Relevant Publications
+An example of using Google Scholar to pull in all publications
 
-To fill in
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+library(kableExtra)
+library(knitr)
+source('functions/scholar_allpubs.R')
+all_pubs <- scholar_allpubs(c('aAh0t1AAAAAJ&hl', '5bO9uxEAAAAJ'))
+```
+
+## 2019
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+kable(data.frame(all_pubs %>%
+          dplyr::filter(Year == 2019) %>%
+            dplyr::select(-Year)), row.names = F,
+      format = 'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  column_spec(1, width = '30em') %>%
+  column_spec(2, italic = T, width = '20em') %>%
+  column_spec(3, width = '20em') %>%
+  scroll_box(width = "100%", height = "400px")
+```
+<br>
+  
+## 2018
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+kable(data.frame(all_pubs %>%
+          dplyr::filter(Year == 2018) %>%
+            dplyr::select(-Year)), row.names = F,
+      format = 'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  column_spec(1, width = '30em') %>%
+  column_spec(2, italic = T, width = '20em') %>%
+  column_spec(3, width = '20em') %>%
+  scroll_box(width = "100%", height = "400px")
+```
+<br>
+  
+## 2017
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+kable(data.frame(all_pubs %>%
+          dplyr::filter(Year == 2017) %>%
+            dplyr::select(-Year)), row.names = F,
+      format = 'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  column_spec(1, width = '30em') %>%
+  column_spec(2, italic = T, width = '20em') %>%
+  column_spec(3, width = '20em') %>%
+  scroll_box(width = "100%", height = "400px")
+```
+<br>
+  
+## 2016
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+kable(data.frame(all_pubs %>%
+          dplyr::filter(Year == 2016) %>%
+            dplyr::select(-Year)), row.names = F,
+      format = 'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  column_spec(1, width = '30em') %>%
+  column_spec(2, italic = T, width = '20em') %>%
+  column_spec(3, width = '20em') %>%
+  scroll_box(width = "100%", height = "400px")
+```
+<br>
+  
+## 2015
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+kable(data.frame(all_pubs %>%
+          dplyr::filter(Year == 2015) %>%
+            dplyr::select(-Year)), row.names = F,
+      format = 'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  column_spec(1, width = '30em') %>%
+  column_spec(2, italic = T, width = '20em') %>%
+  column_spec(3, width = '20em') %>%
+  scroll_box(width = "100%", height = "400px")
+```
+<br>
+  
+## Pre-2015
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+kable(data.frame(all_pubs %>%
+          dplyr::filter(Year < 2016) %>%
+            dplyr::select(-Year)), row.names = F,
+      format = 'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  column_spec(1, width = '30em') %>%
+  column_spec(2, italic = T, width = '20em') %>%
+  column_spec(3, width = '20em') %>%
+  scroll_box(width = "100%", height = "400px")
+```
