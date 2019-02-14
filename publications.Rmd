@@ -11,7 +11,8 @@ output:
 library(kableExtra)
 library(knitr)
 source('functions/scholar_allpubs.R')
-all_pubs <- scholar_allpubs(c('aAh0t1AAAAAJ&hl', '5bO9uxEAAAAJ'))
+source('./scholar_ids/scholar_ids.R')
+all_pubs <- scholar_allpubs(scholar_ids)
 ```
 
 ## 2019

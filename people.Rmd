@@ -16,8 +16,9 @@ A/Prof Soares Magalhães recent publications
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 library(kableExtra)
 library(knitr)
+source('./scholar_ids/scholar_ids.R')
 source('functions/scholar_allpubs.R')
-all_pubs <- scholar_allpubs(c('aAh0t1AAAAAJ&hl'))
+all_pubs <- scholar_allpubs(ricardo_id)
 ```
 
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
@@ -28,7 +29,7 @@ kable(data.frame(all_pubs %>%
   column_spec(2, width = '30em') %>%
   column_spec(3, italic = T, width = '20em') %>%
   column_spec(4, width = '20em') %>%
-  scroll_box(width = "100%", height = "400px")
+  scroll_box(width = "100%", height = "300px")
 ```
 <br>
 
@@ -41,7 +42,7 @@ Dr Clark's recent publications
 library(kableExtra)
 library(knitr)
 source('functions/scholar_allpubs.R')
-all_pubs <- scholar_allpubs(c('5bO9uxEAAAAJ'))
+all_pubs <- scholar_allpubs(nick_id)
 ```
 
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
@@ -52,7 +53,7 @@ kable(data.frame(all_pubs %>%
   column_spec(2, width = '30em') %>%
   column_spec(3, italic = T, width = '20em') %>%
   column_spec(4, width = '20em') %>%
-  scroll_box(width = "100%", height = "400px")
+  scroll_box(width = "100%", height = "300px")
 ```
 <br>
 
@@ -68,8 +69,26 @@ Position: PhD Student
 <br>
 
 ### Tarni Cooper
-Position: PhD Student
+Tarni is a veterinarian interested in One Health, particularly the human aspects of agricultural research for development (R4D). Tarni’s current research is supporting efforts to improve veterinary antimicrobial stewardship in Vietnam using a systems approach, combining epidemiological and participatory tools. Tarni’s advisors are A/Prof. Ricardo Soares Magalhaes, A/Prof Elske Van de Fliert from the [Centre for Communication and Social Change](http://www.uq.edu.au/ccsc/) and Dr Delia Grace of the [International Livestock Research Institute](https://www.ilri.org/). Read more about Tarni's work on her [ResearchGate](https://www.researchgate.net/profile/Tarni_Cooper) and [Google Scholar](https://scholar.google.com.au/citations?user=yZ2YwK8AAAAJ&hl=en) pages.
 
+Tarni's recent publications
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+library(kableExtra)
+library(knitr)
+source('functions/scholar_allpubs.R')
+all_pubs <- scholar_allpubs(tarni_id)
+```
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+kable(data.frame(all_pubs %>%
+          dplyr::filter(Year > 2015)), row.names = F,
+      format = 'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  column_spec(2, width = '30em') %>%
+  column_spec(3, italic = T, width = '20em') %>%
+  column_spec(4, width = '20em') %>%
+  scroll_box(width = "100%", height = "300px")
+```
 <br>
 
 ### Hester Rynhoud
