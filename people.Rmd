@@ -35,7 +35,7 @@ kable(data.frame(all_pubs %>%
 
 ## Postdoctoral Fellows
 ### Nicholas Clark
-Dr Clark is a Postdoctoral Fellow interested in spatial epidemiology, molecular ecology and the spread of disease at the human-wildlife interface. His role with the group is to conduct spatial modelling of zoonotic pathogens, primarily Q fever and rabies, as well as to lead efforts to forecast risks of tick infestation for Australian domestic animals. Read more about Dr Clark's work on his [personal website](https://nicholasjclark.weebly.com/) and [Google Scholar](https://scholar.google.com.au/citations?user=5bO9uxEAAAAJ&hl=en) pages.
+Dr Clark is a Postdoctoral Fellow interested in spatial epidemiology, molecular ecology and the spread of disease at the human-wildlife interface. He graduated with a PhD from [Griffith University](https://www.griffith.edu.au/environmental-futures-research-institute){target="_blank"} under primary supervision of [Dr Sonya Clegg](https://www.zoo.ox.ac.uk/people/dr-sonya-clegg){target="_blank"}, where he used mathematical models to study avian malaria parasites. His role with the group is to conduct spatial modelling of zoonotic pathogens, primarily Q fever and rabies, as well as to lead efforts to forecast risks of tick infestation for Australian domestic animals. Read more about Dr Clark's work on his [personal website](https://nicholasjclark.weebly.com/){target="_blank"} and [Google Scholar](https://scholar.google.com.au/citations?user=5bO9uxEAAAAJ&hl=en){target="_blank"} pages.
   
 Dr Clark's recent publications
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
@@ -69,7 +69,7 @@ Position: PhD Student
 <br>
 
 ### Tarni Cooper
-Tarni is a veterinarian interested in One Health, particularly the human aspects of agricultural research for development (R4D). Tarni’s current research is supporting efforts to improve veterinary antimicrobial stewardship in Vietnam using a systems approach, combining epidemiological and participatory tools. Tarni’s advisors are A/Prof. Ricardo Soares Magalhaes, A/Prof Elske Van de Fliert from the [Centre for Communication and Social Change](http://www.uq.edu.au/ccsc/) and Dr Delia Grace of the [International Livestock Research Institute](https://www.ilri.org/). Read more about Tarni's work on her [ResearchGate](https://www.researchgate.net/profile/Tarni_Cooper) and [Google Scholar](https://scholar.google.com.au/citations?user=yZ2YwK8AAAAJ&hl=en) pages.
+Tarni is a veterinarian interested in One Health, particularly the human aspects of agricultural research for development (R4D). Tarni’s current research is supporting efforts to improve veterinary antimicrobial stewardship in Vietnam using a systems approach, combining epidemiological and participatory tools. Tarni’s advisors are A/Prof. Ricardo Soares Magalhaes, A/Prof Elske Van de Fliert from the [Centre for Communication and Social Change](http://www.uq.edu.au/ccsc/){target="_blank"} and Dr Delia Grace of the [International Livestock Research Institute](https://www.ilri.org/){target="_blank"}. Read more about Tarni's work on her [ResearchGate](https://www.researchgate.net/profile/Tarni_Cooper){target="_blank"} and [Google Scholar](https://scholar.google.com.au/citations?user=yZ2YwK8AAAAJ&hl=en){target="_blank"} pages.
 
 Tarni's recent publications
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
