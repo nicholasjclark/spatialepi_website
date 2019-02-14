@@ -100,7 +100,14 @@ kable(data.frame(all_pubs %>%
 <br>
 
 ## Our papers in graphs
-```{r, echo = FALSE, warning=FALSE, message=FALSE, fig.align='center', fig.height=3.5, fig.width=5}
+```{r, echo = FALSE, warning=FALSE, message=FALSE, fig.align='center', fig.height=3.5, fig.width=5.5}
 source('functions/scholar_summary.R')
-scholar_summary(author_list = c('aAh0t1AAAAAJ&hl', '5bO9uxEAAAAJ'))
+source('./scholar_ids/scholar_ids.R')
+scholar_summary(author_list = scholar_ids)
+```
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, fig.align='center', fig.height=5, fig.width=5.5}
+source('functions/scholar_allpubs.R')
+source('./scholar_ids/scholar_ids.R')
+scholar_topjournals(author_list = scholar_ids)
 ```

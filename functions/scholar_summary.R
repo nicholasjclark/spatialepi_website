@@ -33,5 +33,5 @@ ggplot2:: ggplot(citations, ggplot2::aes(x = year, y = cites)) +
            size = 3) +
   ggplot2::theme(panel.grid.major = ggplot2::element_blank(), 
                  panel.grid.minor = ggplot2::element_blank(),
-                 axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
+                 axis.text.x = ggplot2::element_text(angle = 55, hjust = 1))
 }
