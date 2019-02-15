@@ -9,10 +9,11 @@ output:
 
 Members of our team a wealth of expertise owing to their diverse backgrounds in veterinary science, ecology, spatial epidemiology and mathematical modellings. We apply spatial epidemiology and risk mapping approaches for projects at interface between animal and human public health to develop a broader understanding of what mechanisms influence the geographical distributions of animal and human infections.
 
-## Ricardo Soares Magalhães 
+## Ricardo Soares Magalhães
 Position: Lab Head
 
-A/Prof Soares Magalhães recent publications
+<br>
+<center>`A/Prof Soares Magalhães recent publications`</center>
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 library(kableExtra)
 library(knitr)
@@ -35,9 +36,12 @@ kable(data.frame(all_pubs %>%
 
 ## Postdoctoral Fellows
 ### Nicholas Clark
-Dr Clark is a Postdoctoral Fellow interested in spatial epidemiology, molecular ecology and the spread of disease at the human-wildlife interface. He graduated with a PhD from [Griffith University](https://www.griffith.edu.au/environmental-futures-research-institute){target="_blank"} under primary supervision of [Dr Sonya Clegg](https://www.zoo.ox.ac.uk/people/dr-sonya-clegg){target="_blank"}, where he used mathematical models to study avian malaria parasites. His role with the group is to conduct spatial modelling of zoonotic pathogens, primarily Q fever and rabies, as well as to lead efforts to forecast risks of tick infestation for Australian domestic animals. Read more about Dr Clark's work on his [personal website](https://nicholasjclark.weebly.com/){target="_blank"} and [Google Scholar](https://scholar.google.com.au/citations?user=5bO9uxEAAAAJ&hl=en){target="_blank"} pages.
-  
-Dr Clark's recent publications
+<img src="images/nick_profile.JPG" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Nicholas J Clark is a postdoctoral fellow at the Spatial Epidemiology Group, University of Queensland"/>
+
+<center>Dr Clark is a Postdoctoral Fellow interested in spatial epidemiology, molecular ecology and the spread of disease at the human-wildlife interface. He graduated with a PhD from [Griffith University](https://www.griffith.edu.au/environmental-futures-research-institute){target="_blank"} under primary supervision of [Dr Sonya Clegg](https://www.zoo.ox.ac.uk/people/dr-sonya-clegg){target="_blank"}, where he used mathematical models to study avian malaria parasites. His role with the group is to conduct spatial modelling of zoonotic pathogens, primarily Q fever and rabies, as well as to lead efforts to forecast risks of tick infestation for Australian domestic animals. Read more about Dr Clark's work on his [personal website](https://nicholasjclark.weebly.com/){target="_blank"} and [Google Scholar](https://scholar.google.com.au/citations?user=5bO9uxEAAAAJ&hl=en){target="_blank"} pages.</center>
+
+<br>
+<center>`Dr Clark's recent publications`</center>
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 library(kableExtra)
 library(knitr)
@@ -62,6 +66,7 @@ Position:  Postdoctoral Fellow
 
 <br>
 
+
 ## PhD Students
 ### Pandji Dhewantara 
 Position: PhD Student
@@ -69,9 +74,12 @@ Position: PhD Student
 <br>
 
 ### Tarni Cooper
-Tarni is a veterinarian interested in One Health, particularly the human aspects of agricultural research for development (R4D). Tarni’s current research is supporting efforts to improve veterinary antimicrobial stewardship in Vietnam using a systems approach, combining epidemiological and participatory tools. Tarni’s advisors are A/Prof. Ricardo Soares Magalhaes, A/Prof Elske Van de Fliert from the [Centre for Communication and Social Change](http://www.uq.edu.au/ccsc/){target="_blank"} and Dr Delia Grace of the [International Livestock Research Institute](https://www.ilri.org/){target="_blank"}. Read more about Tarni's work on her [ResearchGate](https://www.researchgate.net/profile/Tarni_Cooper){target="_blank"} and [Google Scholar](https://scholar.google.com.au/citations?user=yZ2YwK8AAAAJ&hl=en){target="_blank"} pages.
+<img src="images/tarni_profile.png" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Tarni Cooper is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
 
-Tarni's recent publications
+<center>Tarni is a veterinarian interested in One Health, particularly the human aspects of agricultural research for development (R4D). Tarni’s current research is supporting efforts to improve veterinary antimicrobial stewardship in Vietnam using a systems approach, combining epidemiological and participatory tools. Tarni’s advisors are A/Prof. Ricardo Soares Magalhaes, A/Prof Elske Van de Fliert from the [Centre for Communication and Social Change](http://www.uq.edu.au/ccsc/){target="_blank"} and Dr Delia Grace of the [International Livestock Research Institute](https://www.ilri.org/){target="_blank"}. Read more about Tarni's work on her [ResearchGate](https://www.researchgate.net/profile/Tarni_Cooper){target="_blank"} and [Google Scholar](https://scholar.google.com.au/citations?user=yZ2YwK8AAAAJ&hl=en){target="_blank"} pages.</center>
+
+<br>
+<center>`Tarni's recent publications`</center>
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 library(kableExtra)
 library(knitr)
@@ -131,7 +139,7 @@ Position: PhD Student
 
 <br>
 
-## Undergraduate Researchers
+<center><h2>Undergraduate Researchers</h2></center>
 ### Alex Pekin 
 Position: Undergraduate Researcher
 
