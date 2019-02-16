@@ -1,7 +1,7 @@
-name: Spatial Epidemiology Group
+name: Spatial Epidemiology Lab
 output_dir: '.'
 navbar:
-  title: SpatialEpiGroup
+  title: SpatialEpiLab
   left:
   - text: Research
     icon: fa-globe
