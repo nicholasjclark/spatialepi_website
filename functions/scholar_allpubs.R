@@ -54,10 +54,10 @@ scholar_topjournals = function(author_list){
   }
 
   ggplot2:: ggplot(top_journals, ggplot2::aes(x = Journal, y = Total)) +
-    ggplot2::geom_bar(stat = 'identity') +
     ggplot2::theme_bw() +
+    ggplot2::geom_bar(stat = 'identity', fill = 'darkblue') +
     ggplot2::xlab('Journal') +
-    ggplot2::ylab('Total Papers\nper Journal')+
+    ggplot2::ylab('Total papers\nper journal')+
     ggplot2::annotate('text', label = 'SpatialEpiLab Top Journals',
                       x = -Inf, y = Inf, hjust = -0.03, vjust = 1.5, size = 4) +
     ggplot2::annotate('text', label = format(Sys.time(), "%Y-%m-%d"),
@@ -68,6 +68,7 @@ scholar_topjournals = function(author_list){
     ggplot2::scale_y_continuous(breaks = c(0,3,6,9,12,15,18)) +
     ggplot2::theme(panel.grid.major = ggplot2::element_blank(), 
                    panel.grid.minor = ggplot2::element_blank(),
-                   axis.text.x = ggplot2::element_text(angle = 55, hjust = 1))
+                   axis.text.x = ggplot2::element_text(angle = 55, hjust = 1),
+                   legend.position = 'none')
 }
 

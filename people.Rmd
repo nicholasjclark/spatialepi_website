@@ -9,7 +9,7 @@ output:
 
 Members of our team a wealth of expertise owing to their diverse backgrounds in veterinary science, ecology, spatial epidemiology and mathematical modellings. We apply spatial epidemiology and risk mapping approaches for projects at interface between animal and human public health to develop a broader understanding of what mechanisms influence the geographical distributions of animal and human infections.
 
-## Ricardo Soares Magalhães
+## Ricardo Soares Magalhães {#ricardo}
 Position: Lab Head
 
 <br>
@@ -71,7 +71,7 @@ Position:  Postdoctoral Fellow
 ### Pandji Dhewantara 
 <img src="images/pandji_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Pandji Dhewantara is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
 
-<center>Pandji is an early-career researcher working at the [National Institute of Health Research and Development (NIHRD)-Ministry of Health of Indonesia](https://www.litbang.kemkes.go.id/){target="_blank"}. He obtained his Master's degree on Environmental science in Padjajaran University, Bandung, Indonesia. In Indonesia, his research particularly focuses on the epidemiology of vector-borne diseases such as dengue, malaria and lymphatic filariasis. Currently, his PhD project is focusing on leptospirosis – a zoonotic bacterial disease caused by Leptospira in China. His project is aiming at estimating the burden of human leptospirosis in China and using spatial analytical tools to understand the spatial epidemiology of human leptospirosis in China and the effects of demographical, ecological and socio-economic factors on the geographical and temporal pattern of human leptospirosis. Pandji’s advisors are A/Prof. Ricardo Soares Magalhães, [A/Prof. Abdullah Mamun](https://researchers.uq.edu.au/researcher/1318){target="_blank"} from UQ's Institute of Social Science Research and [Prof. Wenbiao Hu](https://staff.qut.edu.au/staff/w2.hu){target="_blank"} from the School of Public Health and Social Work, Queensland University of Technology.  Read more about Pandji's work on his [ResearchGate](https://www.researchgate.net/profile/Pandji_Dhewantara){target="_blank"} and [Google Scholar](https://scholar.google.com/citations?user=awhMGaAAAAAJ&hl=id){target="_blank"} pages.</center>
+<center>Pandji is an early-career researcher working at the [National Institute of Health Research and Development (NIHRD)-Ministry of Health of Indonesia](https://www.litbang.kemkes.go.id/){target="_blank"}. He obtained his Master's degree on Environmental science in Padjajaran University, Bandung, Indonesia. In Indonesia, his research particularly focuses on the epidemiology of vector-borne diseases such as dengue, malaria and lymphatic filariasis. Currently, his PhD project is focusing on leptospirosis – a zoonotic bacterial disease caused by Leptospira in China. His project is aiming at estimating the burden of human leptospirosis in China and using spatial analytical tools to understand the spatial epidemiology of human leptospirosis in China and the effects of demographical, ecological and socio-economic factors on the geographical and temporal pattern of human leptospirosis. Pandji’s advisors are [A/Prof Ricardo Soares Magalhães](#ricardo), [A/Prof. Abdullah Mamun](https://researchers.uq.edu.au/researcher/1318){target="_blank"} from UQ's Institute of Social Science Research and [Prof. Wenbiao Hu](https://staff.qut.edu.au/staff/w2.hu){target="_blank"} from the School of Public Health and Social Work, Queensland University of Technology.  Read more about Pandji's work on his [ResearchGate](https://www.researchgate.net/profile/Pandji_Dhewantara){target="_blank"} and [Google Scholar](https://scholar.google.com/citations?user=awhMGaAAAAAJ&hl=id){target="_blank"} pages.</center>
 
 <br>
 <center>`Pandji's recent publications`</center>
@@ -95,9 +95,9 @@ kable(data.frame(all_pubs %>%
 <br>
 
 ### Tarni Cooper
-<img src="images/tarni_profile.png" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Tarni Cooper is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+<img src="images/tarni_profile.png" class="round" style="border:4px solid; margin-bottom: 20px" alt="Tarni Cooper is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
 
-<center>Tarni is a veterinarian interested in One Health, particularly the human aspects of agricultural research for development (R4D). Tarni’s current research is supporting efforts to improve veterinary antimicrobial stewardship in Vietnam using a systems approach, combining epidemiological and participatory tools. Tarni’s advisors are A/Prof. Ricardo Soares Magalhães, A/Prof Elske Van de Fliert from the [Centre for Communication and Social Change](http://www.uq.edu.au/ccsc/){target="_blank"} and Dr Delia Grace of the [International Livestock Research Institute](https://www.ilri.org/){target="_blank"}. Read more about Tarni's work on her [ResearchGate](https://www.researchgate.net/profile/Tarni_Cooper){target="_blank"} and [Google Scholar](https://scholar.google.com.au/citations?user=yZ2YwK8AAAAJ&hl=en){target="_blank"} pages.</center>
+<center>Tarni is a veterinarian interested in One Health, particularly the human aspects of agricultural research for development (R4D). Tarni’s current research is supporting efforts to improve veterinary antimicrobial stewardship in Vietnam using a systems approach, combining epidemiological and participatory tools. Tarni’s advisors are [A/Prof Ricardo Soares Magalhães](#ricardo), A/Prof Elske Van de Fliert from the [Centre for Communication and Social Change](http://www.uq.edu.au/ccsc/){target="_blank"} and Dr Delia Grace of the [International Livestock Research Institute](https://www.ilri.org/){target="_blank"}. Read more about Tarni's work on her [ResearchGate](https://www.researchgate.net/profile/Tarni_Cooper){target="_blank"} and [Google Scholar](https://scholar.google.com.au/citations?user=yZ2YwK8AAAAJ&hl=en){target="_blank"} pages.</center>
 
 <br>
 <center>`Tarni's recent publications`</center>
@@ -121,7 +121,9 @@ kable(data.frame(all_pubs %>%
 <br>
 
 ### Hester Rynhoud
-Position: PhD Student
+<img src="images/hester_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Hester Rynhoud is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+
+<center>Hester is a PhD student interested in the study of zoonotic bacterial diseases and how they contribute to the One Health concept. Hester’s current research focuses on the molecular and spatial epidemiology of methicillin resistant *Staphylococcus* spp. carriage in Brisbane's domestic and shelter animals. Hester’s advisors at UQ are [A/Prof Ricardo Soares Magalhães](#ricardo), [Dr Justine Gibson](https://researchers.uq.edu.au/researcher/1359) and [Dr Erika Meler](https://researchers.uq.edu.au/researcher/11041). Read more about Hester’s work on her [ResearchGate](https://www.researchgate.net/profile/Hester_Rynhoud) page.</center>
 
 <br>
 

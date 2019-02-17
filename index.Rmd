@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-<img src="images/spatialepi_banner.png" style="width:60%; margin-bottom: 5px" align="top">
+<img src="images/spatial_website_logo.png" style="width:90%; margin-bottom: 1px" align="top">
 
 <div class = 'col'>**Who we are**
 <br>
@@ -17,7 +17,7 @@ Research at the *SpatialEpiLab* lies at the interface between animal and human p
 Our work is routinely published in high impact peer reviewed journals in the international literature. Most of the maps and tools derived from our research are available to other researchers and disease control programme managers. 
 <br>
 <br>
-**Browse around to find our more**
+**Browse around to find out more**
 <br>
-Please navigate these pages to access more information about the studies that we are currently involved in and the outputs we have produced. If you are interested or want to discuss potential projects, we readily welcome visitors to our lab, especially for our monthly lab chat.</div>
+Please navigate the content on these pages to access more information about the studies that we are currently involved in and the outputs we are producing. If you are interested in our work and would like to discuss potential projects, please see our contact details. We also readily welcome visitors to our lab, especially for our monthly lab chat, so let us know if you're keen for a visit.</div>
 

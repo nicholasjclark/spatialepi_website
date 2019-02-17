@@ -17,8 +17,8 @@ tot_articles <- sum(unlist(lapply(seq_len(length(author_list)), function(x){
 })))
 
 ggplot2:: ggplot(citations, ggplot2::aes(x = year, y = cites)) +
-  ggplot2::geom_bar(stat = 'identity') +
   ggplot2::theme_bw() +
+  ggplot2::geom_bar(stat = 'identity', fill = 'darkblue') +
   ggplot2::xlab('Year') +
   ggplot2::ylab('Google Scholar\n citations')+
   ggplot2::annotate('text', label = 'SpatialEpiLab Publications',
@@ -33,5 +33,6 @@ ggplot2:: ggplot(citations, ggplot2::aes(x = year, y = cites)) +
            size = 3) +
   ggplot2::theme(panel.grid.major = ggplot2::element_blank(), 
                  panel.grid.minor = ggplot2::element_blank(),
-                 axis.text.x = ggplot2::element_text(angle = 55, hjust = 1))
+                 axis.text.x = ggplot2::element_text(angle = 55, hjust = 1),
+                 legend.position = 'none')
 }
