@@ -127,6 +127,32 @@ kable(data.frame(all_pubs %>%
 
 <br>
 
+### Yalemzewod Assefa Gelaw (Yalem)
+<img src="images/yalemzewod_profile.png" class="round" style="border:4px solid; margin-bottom: 20px" alt="Yalemzewod Assefa Gelaw is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+
+<center>Yalemzewod is a PhD candidate interested in infectious disease, particularly in Human Immunodeficiency Virus (HIV) and tuberculosis (TB). Yalme’s current research focuses on the epidemiology of tuberculosis and HIV associated TB co-infection in Ethiopia.  Yalem joined the University of Queensland after ten years of experience working in the Ministry of Health as a senior environmental health officer, as well as holding an academic position at the [University of Gondar](http://www.uog.edu.et/en/) in Ethiopia. He obtained his master’s degree on Master of public health in Epidemiology and Biostatistics in University of Gondar, Ethiopia. Yalem’s advisors are [Prof Gail Williams](https://researchers.uq.edu.au/researcher/668), [Dr Yibeltal Alemu](https://researchers.uq.edu.au/researcher/15240) and [A/Prof Ricardo Soares Magalhães](#ricardo). Read more about Yalem’s work on [Google scholar](https://scholar.google.com.au/citations?user=yVWRy2wAAAAJ&hl=en) and [ResearchGate](https://www.researchgate.net/profile/Yalemzewod_Gelaw) pages. </center>
+
+<br>
+<center>`Yalem's recent publications`</center>
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+library(kableExtra)
+library(knitr)
+source('functions/scholar_allpubs.R')
+all_pubs <- scholar_allpubs(yalem_id)
+```
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+kable(data.frame(all_pubs %>%
+          dplyr::filter(Year > 2016)), row.names = F,
+      format = 'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  column_spec(2, width = '30em') %>%
+  column_spec(3, italic = T, width = '20em') %>%
+  column_spec(4, width = '20em') %>%
+  scroll_box(width = "100%", height = "300px")
+```
+<br>
+
 ### Tuhin Biswas
 Position: PhD Student
 
@@ -143,11 +169,6 @@ Position: PhD Student
 <br>
 
 ### Kei Owada
-Position: PhD Student
-
-<br>
-
-### Alamzewod Assefa Gelaw
 Position: PhD Student
 
 <br>
