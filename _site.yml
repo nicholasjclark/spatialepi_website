@@ -6,22 +6,24 @@ navbar:
   - text: Research
     icon: fa-globe
     menu:
-    - text: Forecasting and Mapping Parasite Risk
-    - text: Avian influenza
+    - text: Spatial epidemiology of zoonotic and neglected tropical infections
+    - text: Geographical co-variation in human and animal disease risks
       href: page-a.html
-    - text: Rabies
+    - text: How climate, environment and behaviour influence geographical disease variation
       href: page-b.html
-    - text: Q fever
+    - text: Mechanistic studies of helminth-associated childhood morbidity
       href: page-c.html
-    - text: Leptospirosis
+    - text: '---------'
+    - text: Outbreak response for emerging infectious diseases
+    - text: Geographical management plans for emerging animal diseases
       href: page-d.html
-    - text: Ticks and tick-borne disease
+    - text: Roles of animal movement in emerging disease outbreak size and geographical propagation
       href: page-e.html
     - text: '---------'
-    - text: Helminth-associated Morbidity
-    - text: Worms and cognitive development
+    - text: Safeguarding animal health through biosecurity management
+    - text: Designing on-farm / abattoir environmental risk assessment management plans
       href: page-f.html
-    - text: Gut microbiome dysbiosis
+    - text: Identifying, quantifying and mitigating environmental drivers of zoonotic infections
       href: page-g.html
   - text: People
     icon: fa-user

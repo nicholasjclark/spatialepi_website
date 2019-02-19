@@ -156,54 +156,45 @@ kable(data.frame(all_pubs %>%
 <br>
 
 ### Tuhin Biswas
-Position: PhD Student
 
 <br>
 
 ### Md. Mehedi Hasan
-Position: PhD Student
 
 <br>
 
 ### Xiaoyan Zhou
-Position: PhD Student
-
-<br>
-
-### Kei Owada
-Position: PhD Student
 
 <br>
 
 ### Andrea Araujonavas
-Position: PhD Student
 
 <br>
 
-### Angela M. Cadavid
-Position: PhD Student
-
-<br>
-
-<center><h2>Undergraduate Researchers</h2></center>
+## Undergraduate Researchers
 ### Alex Pekin 
-Position: Undergraduate Researcher
 
 <br>
 
 ### Carlos Donoghue
-Position: Undergraduate Researcher
 
 <br>
 
 ### Grace Henry
-Position: Undergraduate Researcher
 
 <br>
 
 ## Alumni
 ### Mohamad Assoum 
-Position: Alumnus
 
+<br>
+
+### Angela M. Cadavid
+
+<br>
+
+### Kei Owada
+
+<br>
 
 
