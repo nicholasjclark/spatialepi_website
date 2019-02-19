@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-<img src="images/spatial_website_logo.png" style="width:90%; margin-bottom: 1px" align="top">
+<img src="images/spatial_website_logo.png" style="width:90%; margin-bottom: 1px" align="top" alt="The Spatial Epidemiology Lab (SpatialEpi) is a medical geography research group based at the University of Queensland">
 
 <div class = 'col'>**Who we are**
 <br>
