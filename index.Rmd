@@ -3,18 +3,18 @@
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-<img src="images/spatial_website_logo.png" style="width:90%; margin-bottom: 1px" align="top" alt="The Spatial Epidemiology Lab (SpatialEpi) is a medical geography research group based at the University of Queensland">
+<img src="images/spatial_website_logo.png" style="width:90%; margin-bottom: 1px" align="top" alt="The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland">
 
 <div class = 'col'>**Who we are**
 <br>
-The *SpatialEpiLab* is a [One Health](https://www.who.int/features/qa/one-health/en/){target="_blank"} medical geography research group based at the [University of Queensland](https://veterinary-science.uq.edu.au/){target="_blank"}, Australia, headed by Associate Professor Ricardo Soares Magalhães. With a diversity of backgrounds and perspectives, we have broad expertise in health sciences, mathematical modelling, social sciences, ecology and epidemiology.
+The *SpatialEpiLab* is a [One Health](https://www.who.int/features/qa/one-health/en/){target="_blank"} medical geography research group based at the [University of Queensland](https://veterinary-science.uq.edu.au/){target="_blank"}, Australia, headed by [Associate Professor Ricardo Soares Magalhães](people.html){target="_blank"}. With a diversity of backgrounds and perspectives, we have broad expertise in health sciences, mathematical modelling, social sciences, ecology and epidemiology.
 <br>
 <br>
 **What we do**
 <br>
 Research at the *SpatialEpiLab* lies at the interface between animal and human public health and aims to inform disease control policy by identifying major determinants of the geographical distributions of infections and their associated morbidities. We work with international partners to blend our multidisciplinary expertise and deliver in-depth investigations for many important pathogens.
 
-Our work is routinely published in high impact peer reviewed journals in the international literature. Most of the maps and tools derived from our research are available to other researchers and disease control programme managers. 
+Our work is routinely published in high impact peer reviewed journals in the international literature ([see our publications here](publications.html){target="_blank"}). Most of the maps and tools derived from our research are available to other researchers and disease control programme managers. 
 <br>
 <br>
 **Browse around to find out more**
