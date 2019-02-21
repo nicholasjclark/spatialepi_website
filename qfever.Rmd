@@ -30,8 +30,8 @@ Read more about the project's developments by following the Qfever_Group on [Twi
 <br>
 
 ### Team members on the project
-<center>Ricardo Soares Magalhães  
-Nicholas Clark</center>
+<center>[Ricardo Soares Magalhães](people.html){target="_blank"}    
+[Nicholas Clark](people.html#nicholas_clark){target="_blank"}</center>
 
 <br>
 
