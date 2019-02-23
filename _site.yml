@@ -31,12 +31,17 @@ navbar:
   - text: Publications
     icon: fa-map
     href: publications.html
-  - text: News
-    icon: fa-calendar-plus-o
-    href: news.html
-  - text: Opportunities
-    icon: fa-search
-    href: opportunities.html
+  - text: More
+    menu:
+    - text: News
+      icon: fa-calendar-plus-o
+      href: news.html
+    - text: Opportunities
+      icon: fa-search
+      href: opportunities.html
+    - text: Twitter
+      icon: fa-twitter
+      href: https://twitter.com/nj_clark
 output:
   html_document:
     theme: flatly
