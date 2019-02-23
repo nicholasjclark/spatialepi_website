@@ -9,7 +9,7 @@ output:
 
 <center><p style="font-weight:600; font-size:29px">Q fever: a zoonotic pathogen of high biosecurity risk</p> </center>
 
-<img src="images/qfever_routes.jpg" style="width:65%; margin-bottom: 1px" align="top" alt="Q fever is a zoonotic bacterial disease caused by Coxiella burnetii. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in biosecurity managmenet of Q fever risk in Australia.">
+<img src="images/qfever_routes.jpg" style="width:65%; margin-bottom: 1px" align="top" alt="Q fever is a zoonotic bacterial disease caused by Coxiella burnetii. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in biosecurity management of Q fever risk in Australia.">
 
 ## What is Q fever?
 <center>Q fever is an illness of both humans and animals caused by the bacterium *Coxiella burnetii*. This is an environmentally resistant and extremely infectious organism which is typically transmitted to people by either direct or indirect contact with infected animals, animal products or contaminated materials. Sheep, goats and cattle are the main sources of infection for people, however other animals including dogs, cats and macropods may also be implicated. </center>

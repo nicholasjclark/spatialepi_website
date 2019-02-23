@@ -1,0 +1,74 @@
+---
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<center><p style="font-weight:600; font-size:29px">Environmental and animal drivers of antimicrobial resistance</p> </center>
+<br>
+
+## Veterinary antimicrobial stewardship in Thai Nguyen, Vietnam
+<img src="images/vietnam_amr.png" style="width:70%; margin-bottom: 1px" align="top" alt="A systems approach to livelihood-sensitive veterinary antimicrobial stewardship in Thai Nguyen, Vietnam. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in antimicrobial resistance investigations in Vietnam.">
+
+<center>In response to the threat posed by antimicrobial resistance (AMR), global attention is increasingly focussed on antimicrobial stewardship (AMS). AMS involves the coordinated effort of all stakeholders to use antimicrobials appropriately, to reduce the development and spread of AMR. In some countries characterised by industrialised livestock systems, veterinary AMS has seen considerable success, largely attributed to greater regulation.  
+<br>
+Countries dominated by smallholder systems are likely to be less responsive to such ‘top-down’ approaches. Vietnam has developed a National Action Plan on AMR and AMU reduction in livestock and aquaculture and is working to increase awareness of the problem. However, there remain significant challenges to achieving widespread AMS in farming communities. Effective AMS policy and action in Vietnam will need to be sensitive to the needs of farming communities.</center>
+
+<br>
+
+### *SpatialEpiLab*'s involvement
+<center>Our lab is involved in a project that aims to build an understanding of how antimicrobials were used in the livelihood strategies of smallholder farmers and their animal health networks. The project followed an iterative, mixed-methods design and combined epidemiological and Communication for Development approaches. The first study, in two provinces, revealed complex livelihoods interacting with decisions around antimicrobial use. Based on these findings, cross-sectional and longitudinal surveys were conducted. The final stage involved stakeholder workshops interpreting data and co-constructing an understanding of the system in which AMS decisions were made. Finally, stakeholders came together to identify leverage points for livelihood-sensitive intervention.  
+<br>
+This research contributes to the global effort for greater antimicrobial stewardship (AMS). Beyond implications for the communities studied, the research yields a transferrable approach to contextualising antimicrobial practices in smallholder farming communities. Further, systems practice brings community stakeholders together in support of livelihood-sensitive policy and action for AMS. Concrete, community-developed recommendations for improving AMS are being considered and/or implemented.</center>
+
+<br>
+
+### Team members on the project
+<center>[Ricardo Soares Magalhães](people.html){target="_blank"}    
+[Tarni Cooper](people.html#tarni_cooper){target="_blank"}</center>
+
+<br>
+
+### Key collaborators
+<center> 
+[Centre for Communication and Social Change, School of Communication and Arts, The University of Queensland, Australia](https://communication-arts.uq.edu.au/team/centre-communication-social-change){target="_blank"}  
+[International Livestock Research Institute, Vietnam](https://www.ilri.org/vietnam){target="_blank"}  
+[Faculty of Animal Science and Veterinary Medicine, Thai Nguyen University of Agriculture and Forestry, Vietnam](http://tuaf.edu.vn/en-Us){target="_blank"}  
+[Centre for Public Health and Ecosystem Research, Hanoi University of Public Health, Hanoi, Vietnam](http://cenpher.huph.edu.vn/){target="_blank"}  
+[Faculty of Economics and Rural Development, Vietnam National University of Agriculture](https://edirc.repec.org/data/fevnavn.html){target="_blank"}  
+*FocusGroupGo* Vietnam</center> 
+
+<br>
+
+### Publications
+<center></center>
+
+<br>
+
+## World Health Organization TriCycle
+
+<br>
+
+### *SpatialEpiLab*'s involvement
+<center></center>
+
+<br>
+
+### Team members on the project
+<center>[Ricardo Soares Magalhães](people.html){target="_blank"}    
+[Nicholas Clark](people.html#nicholas_clark){target="_blank"}  
+[Pandji Dhewantara](people.html#pandji_hewantara){target="_blank"}  
+[Javier Cortes Ramirez](people.html#javier_cortes_ramirez){target="_blank"}  </center>
+
+<br>
+
+### Key collaborators
+<center> </center> 
+
+<br>
+
+### Publications
+<center></center>
