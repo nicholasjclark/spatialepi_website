@@ -26,6 +26,8 @@ scholar_allpubs = function(author_list){
     dplyr::mutate(Journal = tools::toTitleCase(tolower(as.character(journal))),
                   Title = tools::toTitleCase(tolower(as.character(title))),
                   Year = year) %>%
+    dplyr::mutate(Journal = gsub('Journal', 'J', Journal)) %>%
+    dplyr::mutate(Journal = gsub('International', 'Int', Journal)) %>%
     dplyr::rowwise() %>%
     dplyr::mutate(Authors = add_etals(author)) %>%
     dplyr::select(Year, Title, Journal, Authors) %>%
