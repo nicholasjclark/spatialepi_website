@@ -1,0 +1,54 @@
+---
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<center><p style="font-weight:600; font-size:29px">Co-variation in human and animal disease risk</p> </center>
+
+<img src="images/echinococcus_map.gif" style="width:65%; margin-bottom: 1px" align="top" alt="Echinococcus granulosus is a zoonotic parasite that infects humans and animals. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in biosecurity management of zoonoses in Australia and elsewhere.">
+
+## What are zoonotic pathogens?
+<center>[Zoonotic diseases](https://www.cdc.gov/onehealth/basics/zoonotic-diseases.html){target="_blank"} are caused by pathogens that spread between humans and other animal host species. Many people closely interact with animals on a daily basis. Our pets provide us with a sense of companionship, surrounding wildlife provide us with a strong connection to nature, and livestock provide us with key food sources. However, some animals can act as reservoirs for harmful pathogens that are also able to infect people. These zoonotic diseases can lead to many different types of illnesses in people and animals.</center>
+
+<br>
+
+## How can we track the risk and spread of zoonotic diseases?
+<center>[Model-based geostatistical tools](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5790124/){target="_blank"} are being increasingly used to study the geographical patterns of infectious diseases and to quantify their associations with potential risk factors. These methods use geostatistics to describe the spatial correlation structure of the data along with with the effects of particular risk factors (such as temperature, animal density or humidity) to understand how the risk of a disease varies across space. These methods provide a valuable and flexible framework that can be used to support the process of decision-making during the implementation of disease control programmes.</center>
+
+<br>
+
+<img src="images/scrub_typhus.png" style="width:65%; margin-bottom: 1px" align="top" alt="Scrub typhus is a zoonotic disease caused by the bacterium Orientia tsutsugamushi, which infects humans and animals. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in biosecurity management of zoonoses in Australia and elsewhere.">
+
+## *SpatialEpiLab*'s involvement
+<center>Our lab uses geostatistical models to create risk maps that can be used for developing targeted intervention programmes aimed at reducing risk of disease caused by pathogens that infect humans and animals. We are involved in a number of ongoing collaborative projects. These include producing investigations of:  
+[Avian influenza](https://www.cdc.gov/flu/avianflu/index.htm){target="_blank"}  
+[Rabies virus](https://www.cdc.gov/rabies/index.html){target="_blank"}  
+[Scrub typhus](https://www.cdc.gov/typhus/scrub/index.html){target="_blank"}.</center>
+
+<br>
+
+### Team members on the project
+<center>[Ricardo Soares Magalhães](people.html){target="_blank"}    
+[Xiaoyan Zhou](people.html#xiaoyan_zhou){target="_blank"}
+</center>
+
+<br>
+
+### Key collaborators
+<center>[Archie Clements (Australian National University)](https://researchers.anu.edu.au/researchers/clements-a){target="_blank"}  
+[The Chinese Centre for Disease Control and Prevention](http://www.chinacdc.cn/en/){target="_blank"}  
+[Food and Agriculture Organization of the United Nations in China](http://www.fao.org/china/en/){target="_blank"}  
+[Australian Rickettsial Reference Laboratory](https://www.rickettsialab.org.au/){target="_blank"}</center>  
+
+<br>
+
+## Publications
+<center>Wu, Y.C., Qian, Q., Soares Magalhaes, R.J., Han, Z.H., Hu, W.B., Haque, U., Weppelmann, T.A., Wang, Y., Liu, Y.X., Li, X.L., Sun, H.L., Sun, Y.S., Clements, A.C.A., Li, S.L. & Zhang, W.Y. (2016) [Spatiotemporal Dynamics of Scrub Typhus Transmission in Mainland China, 2006-2014](https://journals.plos.org/plosntds/article?id=10.1371/journal.pntd.0004875){target="_blank"}. *PLOS Neglected Tropical Diseases*, 10, e0004875.  
+  
+Cadavid Restrepo, A.M., Yang, Y.R., McManus, D.P., Gray, D.J., Barnes, T.S., Williams, G.M., Soares Magalhães, R.J. & Clements, A.C.A. (2018) [Environmental risk factors and changing spatial patterns of human seropositivity for Echinococcus spp. in Xiji County, Ningxia Hui Autonomous Region, China](https://parasitesandvectors.biomedcentral.com/articles/10.1186/s13071-018-2764-1#Sec1){target="_blank"}. *Parasites & Vectors*, 11, 159.  
+  
+Guo, D., Zhou, H., Zou, Y., Yin, W., Yu, H., Si, Y., Li, J., Zhou, Y., Zhou, X. & Magalhães, R.J.S. (2013) [Geographical analysis of the distribution and spread of human rabies in China from 2005 to 2011](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0072352){target="_blank"}. *PLOS One*, 8, e72352.</center>

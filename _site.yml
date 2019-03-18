@@ -8,23 +8,19 @@ navbar:
     menu:
     - text: Spatial epidemiology of zoonotic and neglected tropical infections
     - text: Geographical co-variation in human and animal disease risks
-      href: page-a.html
+      href: geo_covariation.html
     - text: How climate, environment and behaviour influence geographical disease variation
       href: page-b.html
     - text: Mechanistic studies of helminth-associated childhood morbidity
       href: page-c.html
     - text: '---------'
-    - text: Outbreak response for emerging infectious diseases
-    - text: Geographical management plans for emerging animal diseases
-      href: page-d.html
-    - text: Roles of animal movement in emerging disease outbreak size and geographical propagation
-      href: page-e.html
-    - text: '---------'
-    - text: Animal health and the environment / biosecurity
+    - text: One health and the environment / biosecurity
     - text: Q fever environmental risk assessment and management plans
       href: qfever.html
     - text: Quantification of environmental and animal drivers of antimicrobial resistance
       href: antimicrobial_resistance.html
+    - text: Outbreak response for emerging infectious diseases
+      href: page-d.html
   - text: People
     icon: fa-user
     href: people.html
@@ -33,9 +29,6 @@ navbar:
     href: publications.html
   - text: More
     menu:
-    - text: News
-      icon: fa-calendar-plus-o
-      href: news.html
     - text: Opportunities
       icon: fa-search
       href: opportunities.html

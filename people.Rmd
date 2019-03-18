@@ -204,10 +204,6 @@ kable(data.frame(all_pubs %>%
 
 <br>
 
-### Carlos Donoghue
-
-<br>
-
 ### Grace Henry
 
 <br>

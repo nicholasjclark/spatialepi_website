@@ -21,6 +21,8 @@ output:
 
 <br>
 
+<img src="images/qfever_prevention.png" style="width:65%; margin-bottom: 1px" align="top" alt="Q fever is a zoonotic bacterial disease caused by Coxiella burnetii. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in biosecurity management of Q fever risk in Australia.">
+
 ## *SpatialEpiLab*'s involvement
 <center>Our lab is involved in a large collaborative project with overall objectives to:  
 1. Develop a better understanding of factors influencing the risk of Q fever spread within and between Australian ruminant livestock enterprises  
@@ -46,4 +48,6 @@ Read more about the project's developments by following the Qfever_Group on [Twi
 <br>
 
 ## Publications
-<center>Clark, NJ and Soares Magalhães, RJ. 2018. [Airborne geographical dispersal of Q fever from livestock holdings to human communities: a systematic review and critical appraisal of evidence](https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-018-3135-4){target="_blank"}. *BMC Infectious Diseases*. 18:218.</center>
+<center>Clark, NJ and Soares Magalhães, RJ. 2018. [Airborne geographical dispersal of Q fever from livestock holdings to human communities: a systematic review and critical appraisal of evidence](https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-018-3135-4){target="_blank"}. *BMC Infectious Diseases*. 18:218.  
+  
+Clark, NJ, Caraguel, C, Heller, J, Soares Magalhães, RJ and Firestone, S. [Australia’s drought could be increasing Q fever risk, but there are ways we can protect ourselves](https://theconversation.com/australias-drought-could-be-increasing-q-fever-risk-but-there-are-ways-we-can-protect-ourselves-112297){target="_blank"}. *The Conversation*. March 12, 2019</center>
