@@ -203,7 +203,9 @@ kable(data.frame(all_pubs %>%
 
 ## Undergraduate Researchers
 ### Alex Pekin 
+<img src="images/alex_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Alex Pekin  is an Honours student at the Spatial Epidemiology Group, University of Queensland"/>
 
+<center>Alex is currently an Honours scholar at the University of Queensland. He graduated with a Bachelor of Science (Animal and Veterinary Bioscience) in 2018 and is researching risk factors and spatial distribution of dog bite attacks in South-East Queensland; a collaborative project between the University of Queensland and Queensland Health. He is committed to utilizing a One Health approach as a method of improving healthcare infrastructure in developed and developing countries. As an undergraduate he contributed to work quantifying the temporal relationship between H7N9 avian influenza onset in humans with poultry surveillance, live bird movements, and sociodemographic factors. He plans to pursue further study into One Health issues, with a focus on veterinary solutions and interventions. Alex’s advisor is [A/Prof Ricardo Soares Magalhães](#ricardo).</center>
 <br>
 
 ### Grace Henry
