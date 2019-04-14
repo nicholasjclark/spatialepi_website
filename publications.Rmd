@@ -15,6 +15,10 @@ source('./scholar_ids/scholar_ids.R')
 all_pubs <- scholar_allpubs(scholar_ids)
 ```
 
+<center>Here you can find an overview of our research publications. Please contact us ([our contact details are found here](contact.html){target="_blank"}) if you would like access to full texts.</center>
+
+<br>
+
 ## 2019
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 kable(data.frame(all_pubs %>%
@@ -99,6 +103,22 @@ kable(data.frame(all_pubs %>%
 ```
 <br>
 
+## Our top-10 cited papers
+```{r, echo = FALSE, warning=FALSE, message=FALSE, fig.align='center', fig.height=3.5, fig.width=5.5}
+source('functions/scholar_summary.R')
+source('./scholar_ids/scholar_ids.R')
+top10 <- scholar_top10(author_list = scholar_ids)
+kable(data.frame(top10), row.names = F,
+      format = 'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  column_spec(1, width = '30em') %>%
+  column_spec(2, italic = T, width = '20em') %>%
+  column_spec(3, width = '20em') %>%
+  scroll_box(width = "100%", height = "400px")
+```
+
+<br>
+
 ## Our papers in graphs
 ```{r, echo = FALSE, warning=FALSE, message=FALSE, fig.align='center', fig.height=3.5, fig.width=5.5}
 source('functions/scholar_summary.R')
@@ -111,3 +131,5 @@ source('functions/scholar_allpubs.R')
 source('./scholar_ids/scholar_ids.R')
 scholar_topjournals(author_list = scholar_ids)
 ```
+
+

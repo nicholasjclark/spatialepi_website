@@ -36,3 +36,28 @@ ggplot2:: ggplot(citations, ggplot2::aes(x = year, y = cites)) +
                  axis.text.x = ggplot2::element_text(angle = 55, hjust = 1),
                  legend.position = 'none')
 }
+
+#### Return citation data from GoogleScholar User profiles for top 10 articles ####
+#'@param user Character string representing Google Scholar user profile ID
+#'@return A \code{dataframe}
+#' 
+scholar_top10 = function(author_list){
+  library(scholar)
+  library(dplyr)
+  
+  citations <- do.call(rbind, lapply(seq_len(length(author_list)), function(x){
+    cit <- scholar::get_publications(author_list[x])
+  })) %>%
+    dplyr::mutate(Journal = tools::toTitleCase(tolower(as.character(journal))),
+                  Title = tools::toTitleCase(tolower(as.character(title))),
+                  Year = year,
+                  Citations = cites,
+                  Authors = author) %>%
+    dplyr::arrange(-Citations) %>%
+    dplyr::select(Title, Journal, Authors, Year, Citations,
+                  -cid, -pubid, -journal, -title, -year, -cites, -author, -number)
+    
+  citations$Title <- gsub('<I>|< I>|</I>', '', citations$Title)
+  citations <- citations[1:10,]
+  return(citations)
+}
