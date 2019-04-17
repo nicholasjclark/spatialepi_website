@@ -10,7 +10,7 @@ navbar:
     - text: Geographical co-variation in human and animal disease risks
       href: geo_covariation.html
     - text: How climate, environment and behaviour influence geographical disease variation
-      href: page-b.html
+      href: geovariation.html
     - text: Mechanistic studies of helminth-associated childhood morbidity
       href: page-c.html
     - text: '---------'
