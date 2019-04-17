@@ -203,6 +203,25 @@ kable(data.frame(all_pubs %>%
 working in infectious disease surveillance programs in Bangladesh. He completed One Health Epidemiology Fellowship from Massey University, New Zealand in 2016 and is a life member of One Health Bangladesh. Prior to joining the *SpatialEpiLab* at the School of Veterinary Science at the UQ, he worked as a National Technical Advisor (Epidemiology) for Emergency Centre for Transboundary Animal Diseases (ECTAD) of the [UN Food and Agriculture Organization in Bangladesh](http://www.fao.org/bangladesh/en/){target="_blank"}, focusing particularly on avian influenza virus (AIV) and antimicrobial resistance (AMR) surveillance systems in live bird markets and livestock disease outbreak investigation. As a researcher, he implemented the first known study of zoonotic agents carried by non-indigenous rodents living in the Australian wet-tropical forest interface. His PhD project will evaluate the risk of live bird market environmental contamination heterogeneity with avian influenza over space and time in Bangladesh, which will then be linked to health outcomes in poultry and humans. Outside of work and study, he enjoys playing cricket and site-seeing.</center>
 
 <br>
+<center>`Shovon's recent publications`</center>
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+library(kableExtra)
+library(knitr)
+source('functions/scholar_allpubs.R')
+all_pubs <- scholar_allpubs(shovon_id)
+```
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+kable(data.frame(all_pubs), row.names = F,
+      format = 'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  column_spec(2, width = '30em') %>%
+  column_spec(3, italic = T, width = '20em') %>%
+  column_spec(4, width = '20em') %>%
+  scroll_box(width = "100%", height = "300px")
+```
+
+<br> 
 
 ## Undergraduate Researchers
 ### Alex Pekin 
