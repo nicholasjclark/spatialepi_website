@@ -230,6 +230,15 @@ kable(data.frame(all_pubs), row.names = F,
 
 <br>
 
+### Xiaoyan Zhou
+<img src="images/xiaoyan_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Xiaoyan Zhou is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+
+<center>Xiaoyan is currently a PhD student studying the spatial epidemiology of emerging infectious diseases. Xiaoyan’s research topic is Spatial Risk Assessment of the Zoonotic Influenza A (H7N9) along the Live Meat Chicken Market Chain in Southeast China. Her research aims to get a better understanding of live poultry market chains in eastern China, with the specific aim to define the risks of sustained transmission of H7N9 virus along the live meat chicken market chain in eastern China. Before she started her PhD, she has been working as national GIS specialist for the [Food and Agriculture Organization of the United Nations in China](http://www.fao.org/china/en/){target="_blank"} for over four years. Here she mainly focused on applying statistical modeling and simulation approaches to conduct risk assessment and spatial prediction to better understand the epidemiological features of zoonotic  diseases in Asian countries. Xiaoyan obtained her master’s degree in Geospatial Sciences and Remote Sensing from the [Chinese Academy of Sciences](http://english.cas.cn/){target="_blank"}.  
+   
+Xiaoyan’s PhD advisors are [A/Prof Ricardo Soares Magalhães](#ricardo), [Dr Carl Smith](https://researchers.uq.edu.au/researcher/732){target="_blank"} from UQ, [Prof Archie C.A. Clements](https://research.curtin.edu.au/supervisor/prof-archie-clements/){target="_blank"} from Curtin University and [Prof John Edwards](http://www.murdoch.edu.au/Murdoch-Commission/Commissions/Second-Murdoch-Commission/Commission-Members/Professor-John-Edwards/){target="_blank"} from Murdoch University. Xiaoyan is funded through a University of Queensland International Postgraduate Research Scholarship (UQ IPRS). Xiaoyan’s field survey was funded by the [Emergency Center for Transboundary Animal Diseases (ECTAD)](http://www.fao.org/emergencies/fao-in-action/ectad/en/){target="_blank"} in China, FAO of the United Nations and the [China Animal Health and Epidemiology Center (CAHEC)](http://safeedpap.feedsafety.org/partners/cahec-china-animal-health-and-epidemiology-cente/){target="_blank"}. Read more about Xiaoyan’s work on her [ResearchGate](https://www.researchgate.net/profile/Xiaoyan_Zhou6){target="_blank"} page.</center>
+
+<br> 
+
 ## Undergraduate Researchers
 ### Alex Pekin 
 <img src="images/alex_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Alex Pekin  is an Honours student at the Spatial Epidemiology Group, University of Queensland"/>
