@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>people.utf8.md</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,7 +25,9 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -74,9 +76,7 @@ h6 {
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -95,8 +95,14 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
@@ -112,7 +118,6 @@ body {
   padding-top: 65px;
   margin-top: -65px;
 }
-
 .section h2 {
   padding-top: 65px;
   margin-top: -65px;
@@ -132,6 +137,43 @@ body {
 .section h6 {
   padding-top: 65px;
   margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -153,18 +195,75 @@ $(document).ready(function () {
 });
 </script>
 
-
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -252,6 +351,16 @@ div.tocify {
 
 
 </style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
@@ -381,20 +490,20 @@ A/Prof Magalhães is an infectious disease epidemiologist with qualifications in
 <center>
 <code>A/Prof Soares Magalhães recent publications</code>
 </center>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 Year
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Title
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Journal
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Authors
 </th>
 </tr>
@@ -615,6 +724,20 @@ ALA Navas, RJS Magalhães, F Osei, et al
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
+Environmental Risk Factors and Changing Spatial Patterns of Human Seropositivity for Echinococcus Spp. in Xiji County, Ningxia Hui Autonomous Region, China
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasites &amp; Vectors
+</td>
+<td style="text-align:left;width: 20em; ">
+AMC Restrepo, YR Yang, DP McManus, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;width: 30em; ">
 The Extensive Networks of Frequent Population Mobility in the Samoan Islands and their Implications for Infectious Disease Transmission
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -664,20 +787,6 @@ Bmc Veterinary Research
 </td>
 <td style="text-align:left;width: 20em; ">
 K Ilbeigi, S Bokaie, S Aghasharif, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Environmental Risk Factors and Changing Spatial Patterns of Human Seropositivity for Echinococcus Spp. in Xiji County, Ningxia Hui Autonomous Region, China
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Parasites &amp; Vectors
-</td>
-<td style="text-align:left;width: 20em; ">
-AMC Restrepo, YR Yang, DP McManus, et al
 </td>
 </tr>
 <tr>
@@ -907,20 +1016,20 @@ Dr Clark is a Postdoctoral Fellow with broad interests in spatial epidemiology, 
 <center>
 <code>Dr Clark's recent publications</code>
 </center>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 Year
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Title
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Journal
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Authors
 </th>
 </tr>
@@ -1085,20 +1194,6 @@ NJ Clark, K Wells, O Lindberg
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
-Unravelling Changing Interspecific Interactions Across Environmental Gradients using Markov Random Fields
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Ecology
-</td>
-<td style="text-align:left;width: 20em; ">
-NJ Clark, K Wells, O Lindberg
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
 Emergence of Canine Parvovirus Subtype 2b (Cpv-2b) Infections in Australian Dogs
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1106,6 +1201,20 @@ Infection, Genetics and Evolution
 </td>
 <td style="text-align:left;width: 20em; ">
 NJ Clark, JM Seddon, M Kyaw-Tanner, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;width: 30em; ">
+Unravelling Changing Interspecific Interactions Across Environmental Gradients using Markov Random Fields
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Ecology
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, K Wells, O Lindberg
 </td>
 </tr>
 <tr>
@@ -1162,20 +1271,20 @@ Pandji is an early-career researcher working at the <a href="https://www.litbang
 <center>
 <code>Pandji's recent publications</code>
 </center>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 Year
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Title
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Journal
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Authors
 </th>
 </tr>
@@ -1207,6 +1316,20 @@ Malaria J
 </td>
 <td style="text-align:left;width: 20em; ">
 PW Dhewantara, M Ipa, M Widawati
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:left;width: 30em; ">
+using Dengue Epidemics and Local Weather in Bali, Indonesia to Predict Imported Dengue in Australia
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Environmental Research
+</td>
+<td style="text-align:left;width: 20em; ">
+Z Xu, H Bambrick, L Yakob, et al
 </td>
 </tr>
 <tr>
@@ -1308,20 +1431,20 @@ Tarni is a veterinarian interested in One Health, particularly the human aspects
 <center>
 <code>Tarni's recent publications</code>
 </center>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 Year
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Title
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Journal
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Authors
 </th>
 </tr>
@@ -1406,20 +1529,20 @@ Yalemzewod is a PhD candidate interested in infectious disease, particularly in 
 <center>
 <code>Yalem's recent publications</code>
 </center>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 Year
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Title
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Journal
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Authors
 </th>
 </tr>
@@ -1570,20 +1693,6 @@ DL Gita Devi Mishra, Hsin-Fang Chung, Yalemzewod Assefa Gelaw
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
-3-Month Daily Rifampicin and Isoniazid Compared to 6-or 9-Month Isoniazid for Treating Latent Tuberculosis Infection in Children and Adolescents less than 15 Years of Age: An …
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-European Respiratory J
-</td>
-<td style="text-align:left;width: 20em; ">
-Y Assefa, Y Assefa, S Woldeyohannes, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
 Mothers’ Health Service Utilization and Attitude Were the Main Predictors of Incomplete Childhood Vaccination in East-Central Ethiopia: a Case-Control Study
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1591,6 +1700,20 @@ Archives of Public Health
 </td>
 <td style="text-align:left;width: 20em; ">
 MK Yenit, YA Gelaw, AM Shiferaw
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;width: 30em; ">
+3-Month Daily Rifampicin and Isoniazid Compared to 6-or 9-Month Isoniazid for Treating Latent Tuberculosis Infection in Children and Adolescents less than 15 Years of Age: An …
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+European Respiratory J
+</td>
+<td style="text-align:left;width: 20em; ">
+Y Assefa, Y Assefa, S Woldeyohannes, et al
 </td>
 </tr>
 <tr>
@@ -1756,20 +1879,20 @@ Tuhin started his research career as a research fellow in one of the centre of e
 <center>
 <code>Tuhin's recent publications</code>
 </center>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 Year
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Title
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Journal
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Authors
 </th>
 </tr>
@@ -2032,20 +2155,6 @@ LB Rawal, T Biswas, NN Khandker, et al
 2017
 </td>
 <td style="text-align:left;width: 30em; ">
-Socio-Demographic Characteristics and Tobacco Use among the Adults in Urban Slums of Dhaka, Bangladesh
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Tobacco Induced Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-NN Khandker, T Biswas, ANS Khan, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
 Impact of Mobile Phone-Based Technology to Improve Health, Population and Nutrition Services in Rural Bangladesh: a Study Protocol
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -2053,6 +2162,20 @@ Bmc Medical Informatics and Decision Making
 </td>
 <td style="text-align:left;width: 20em; ">
 J Uddin, T Biswas, G Adhikary, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2017
+</td>
+<td style="text-align:left;width: 30em; ">
+Socio-Demographic Characteristics and Tobacco Use among the Adults in Urban Slums of Dhaka, Bangladesh
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Tobacco Induced Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+NN Khandker, T Biswas, ANS Khan, et al
 </td>
 </tr>
 <tr>
@@ -2133,20 +2256,20 @@ Shovon Chakma is a veterinarian from Bangladesh with an over four years of exper
 <center>
 <code>Shovon's recent publications</code>
 </center>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 Year
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Title
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Journal
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 Authors
 </th>
 </tr>
@@ -2323,26 +2446,6 @@ Xiaoyan’s PhD advisors are <a href="#ricardo">A/Prof Ricardo Soares Magalhães
 <center>
 Alex is currently an Honours scholar at the University of Queensland. He graduated with a Bachelor of Science (Animal and Veterinary Bioscience) in 2018 and is researching risk factors and spatial distribution of dog bite attacks in South-East Queensland; a collaborative project between the University of Queensland and Queensland Health. He is committed to utilizing a One Health approach as a method of improving healthcare infrastructure in developed and developing countries. As an undergraduate he contributed to work quantifying the temporal relationship between H7N9 avian influenza onset in humans with poultry surveillance, live bird movements, and sociodemographic factors. He plans to pursue further study into One Health issues, with a focus on veterinary solutions and interventions. Alex’s advisor is <a href="#ricardo">A/Prof Ricardo Soares Magalhães</a>.
 </center>
-<p><br></p>
-</div>
-<div id="grace-henry" class="section level3">
-<h3>Grace Henry</h3>
-<p><br></p>
-</div>
-</div>
-<div id="alumni" class="section level2">
-<h2>Alumni</h2>
-<div id="mohamad-assoum" class="section level3">
-<h3>Mohamad Assoum</h3>
-<p><br></p>
-</div>
-<div id="angela-m.-cadavid" class="section level3">
-<h3>Angela M. Cadavid</h3>
-<p><br></p>
-</div>
-<div id="kei-owada" class="section level3">
-<h3>Kei Owada</h3>
-<p><br></p>
 </div>
 </div>
 
