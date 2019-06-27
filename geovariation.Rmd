@@ -1,4 +1,5 @@
 ---
+title: Disease Geography
 output:
   html_document: 
     toc: true
