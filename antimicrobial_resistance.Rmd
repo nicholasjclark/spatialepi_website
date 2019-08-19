@@ -43,23 +43,29 @@ This research contributes to the global effort for greater antimicrobial steward
 
 <br>
 
-## World Health Organization TriCycle
+## World Health Organization EpiX
+<img src="images/epix_jakarta.jpeg" style="width:70%; margin-bottom: 1px" align="top" alt="EpiX protocol for investigation of anti-microbial resistance. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in antimicrobial resistance investigations.">
+
+<center>Despite growing worldwide attention, there are substantial limitations to our understanding of the burden, distribution and determinants of anti-microbial resistance at the population level. To understand and be prepared for emerging threats, it is imperative to monitor the rise and spread of drug-resistant pathogenic strains and lineages.
+<br>
+DNA sequencing-based approaches combined with phylodynamic algorithms and statistical network theory can play an important role in this endeavour. The World Health Organization is leading to multi-year, multi-population epidemiological surveys of anti-microbial resistance in naturally occurring populations of key bacterial pathogens. This project will generate a more complete understanding of transmission events that mediate the spread of resistant isolates and facilitate population-specific monitoring and prevention programmes aimed at limiting the emergence of disease-causing bacteria.</center>
 
 <br>
 
 ### *SpatialEpiLab*'s involvement
-<center></center>
+<center>Our lab is working with non-goverment bodies to lead a multi-source epidemiological investigation into the spread of Extended-spectrum beta-lactamase-producing *Escherichia coli* (ESBL-Ec). These are diverse and ubiquitous microorganisms that are responsible for severe morbidity and mortality in humans. Moreover, ESBL-Ec can readily cross barriers between humans, animals and the environment in a cyclic and reciprocating manner. They can be considered a highly relevant and representative contemporaneous indicator of the magnitude and leading edge of the global anti-microbial resistance problem.</center>
 
 <br>
 
 ### Team members on the project
 <center>[Ricardo Soares Magalhães](people.html){target="_blank"}    
 [Nicholas Clark](people.html#nicholas_clark){target="_blank"}  
-[Pandji Dhewantara](people.html#pandji_hewantara){target="_blank"}  
-[Javier Cortes Ramirez](people.html#javier_cortes_ramirez){target="_blank"}  </center>
+[Pandji Dhewantara](people.html#pandji_dhewantara){target="_blank"}  
+[Javier Cortes Ramirez](people.html#javier_cortes_ramirez){target="_blank"}</center>
 
 <br>
 
 ### Key collaborators
-<center> </center> 
+<center>[World Health Organisation - Southeast Asia Regional Office](http://www.searo.who.int/en/){target="_blank"}  
+[Food and Agriculture Organization of the United Nations](http://www.fao.org/home/en/){target="_blank"}</center> 
 

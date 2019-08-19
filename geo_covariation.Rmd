@@ -25,10 +25,12 @@ output:
 <img src="images/scrub_typhus.png" style="width:65%; margin-bottom: 1px" align="top" alt="Scrub typhus is a zoonotic disease caused by the bacterium Orientia tsutsugamushi, which infects humans and animals. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in biosecurity management of zoonoses in Australia and elsewhere.">
 
 ## *SpatialEpiLab*'s involvement
-<center>Our lab uses geostatistical models to create risk maps that can be used for developing targeted intervention programmes aimed at reducing risk of disease caused by pathogens that infect humans and animals. We are involved in a number of ongoing collaborative projects. These include producing investigations of:  
+<center>Our lab uses geostatistical models to create risk maps that can be used for developing targeted intervention programmes aimed at reducing risk of disease caused by pathogens that infect humans and animals. We are involved in a number of ongoing collaborative projects. These include producing investigations of: 
+<br>
+<br>
 [Avian influenza](https://www.cdc.gov/flu/avianflu/index.htm){target="_blank"}  
 [Rabies virus](https://www.cdc.gov/rabies/index.html){target="_blank"}  
-[Scrub typhus](https://www.cdc.gov/typhus/scrub/index.html){target="_blank"}.</center>
+[Scrub typhus](https://www.cdc.gov/typhus/scrub/index.html){target="_blank"}</center>
 
 <br>
 

@@ -14,6 +14,40 @@ output:
 
 <br>
 
+## Neglected tropical parasite infections
+
+<center>[Neglected tropical diseases](https://www.who.int/neglected_diseases/diseases/en/){target="_blank"} are a diverse group of communicable diseases that commonly infect people in tropical and subtropical areas around the world. These diseases are often caused by pathogens that collectively infect more than one billion people around the world, costing many billions of dollars to public health systems. People that live in poverty and do not have adequate access to sanitation are commonly the worst affected. In recent years, the advent of geostatistical modelling approaches has helped to steer data-driven programmes that aim to understand how risk is distributed across the landscape and make more efficient decisions about where and when preventative treatments should be delivered.</center>
+
+<br>
+
+<img src="images/a_lumb.png" style="width:70%; margin-bottom: 1px" align="top" alt="Ascaris lumbridoides is a neglected tropical helminth parasite that causes major problems in developing countries. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is developing integrated biosecurity management tools for monitoring parasite infection risk in developing nations.">
+
+<br>
+
+
+### *SpatialEpiLab*'s involvement
+<center>Seveeral members of our lab are involved in collaborative studies that aim to characterise the spatial distributions of neglected pathogens and identify associated risk factors. All of these projects use sophisticated geospatial analytical techniques to develop spatial predictive models that can serve as decision-support tools for identifying areas in need of preventative treatments. </center>
+
+<br>
+
+### Team members on the project
+<center>[Ricardo Soares Magalhães](people.html){target="_blank"}    
+[Nicholas Clark](people.html#nicholas_clark){target="_blank"}  
+[Pandji Dhewantara](people.html#pandji_dhewantara){target="_blank"}  
+[Adrea Araujo Navas](people.html#andrea_araujo_navas){target="_blank"}  
+[Philip Mshelbwala](people.html#philip_mshelbwala){target="_blank"}</center>
+
+<br>
+
+### Key collaborators
+<center>[Rwanda Biomedical Center](http://www.rbc.gov.rw/index.php?id=188){target="_blank"}  
+[Schistosomiasis Control Initiative](https://schistosomiasiscontrolinitiative.org/){target="_blank"}  
+[The END Fund](https://end.org/){target="_blank"}  
+[Colleen Lau (Australian National University)](https://rsph.anu.edu.au/people/academics/associate-professor-colleen-lau){target="_blank"}  
+[Archie Clements (Curtin University)](https://research.curtin.edu.au/supervisor/prof-archie-clements/){target="_blank"}</center>  
+
+<br>
+
 ## Tick paralysis in Australian pets
 <center>[Tick paralysis](https://sashvets.com/tick-paralysis/){target="_blank"}, caused by neurotoxins contained in the saliva of *Ixodes* paralysis ticks, is a life-threatening condition for dogs and cats requiring immediate medical attention. In Australia tick paralysis is a leading cause of emergency admissions, with tens of thousands of cases admitted to veterinary emergency services each year. While preventative treatments and avoidance of tick-prone areas during periods of heightened risk are effective reduction measures, surveillance systems are inadequate to provide timely information to clinicians and pet owners located in areas most at-risk.</center>
 
@@ -23,7 +57,7 @@ output:
 
 <br>
 
-## *Ixodes* spp. in Australia
+### *Ixodes* spp. in Australia
 <center>*Ixodes holocyclus* and *I. cornuatus* are endemic tick species responsible for the debilitating and often fatal condition in companion animals known as tick paralysis. Symptoms include loss of appetite, poor mobility and coordination, respiratory problems and death. Both of the causative tick species are distributed along Australia’s east coast and are associated with wet and humid habitats (see the figure below). Unfortunately, these distributions coincide with some of Australia’s most populous centres, meaning that many pets are at risk of tick paralysis each year.</center>
 
 <br>
@@ -40,7 +74,7 @@ output:
 
 <br>
 
-## *SpatialEpiLab*'s involvement
+### *SpatialEpiLab*'s involvement
 <center>Our lab is involved in a large collaborative project, driven by a [University of Queensland Early Career Researcher Grant](https://research.uq.edu.au/research-support/research-management/funding-schemes/uq-internal-initiatives/uq-early-career-researcher-grant-scheme) to [Dr Nicholas Clark](people.html#nicholas_clark){target="_blank"}, with overall objectives to:  
 1. Develop a forecast model for tick paralysis risk using an automated, unsupervised learning pipeline to quantify spatiotemporal variation in tick paralysis cases.   
 2. Host real-time paralysis tick risk maps on a secure online server to provide up-to-date information to relevant end users.

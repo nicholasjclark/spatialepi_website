@@ -11,16 +11,12 @@ navbar:
       href: geo_covariation.html
     - text: How climate, environment and behaviour influence geographical disease variation
       href: geovariation.html
-    - text: Mechanistic studies of helminth-associated childhood morbidity
-      href: page-c.html
     - text: '---------'
     - text: One health and the environment / biosecurity
     - text: Q fever environmental risk assessment and management plans
       href: qfever.html
     - text: Quantification of environmental and animal drivers of antimicrobial resistance
       href: antimicrobial_resistance.html
-    - text: Outbreak response for emerging infectious diseases
-      href: page-d.html
   - text: People
     icon: fa-user
     href: people.html
