@@ -19,6 +19,18 @@ all_pubs <- scholar_allpubs(scholar_ids)
 <center>Here you can find an overview of our research publications. Please contact us ([our contact details are found here](contact.html){target="_blank"}) if you would like access to full texts.</center>
 
 <br>
+## 2020
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+kable(data.frame(all_pubs %>%
+          dplyr::filter(Year == 2020) %>%
+            dplyr::select(-Year)), row.names = F,
+      format = 'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  column_spec(1, width = '30em') %>%
+  column_spec(2, italic = T, width = '20em') %>%
+  column_spec(3, width = '20em') %>%
+  scroll_box(width = "100%", height = "400px")
+```
 
 ## 2019
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}

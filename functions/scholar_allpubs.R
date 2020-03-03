@@ -48,7 +48,8 @@ scholar_topjournals = function(author_list){
     dplyr::group_by(Journal) %>%
     dplyr::summarise(Total = n()) %>%
     dplyr::filter(!Journal == '') %>%
-    dplyr::filter(Total > 3)
+    dplyr::filter(Total > 3) %>%
+    dplyr::arrange(dplyr::desc(Total))
   top_journals$Journal <- factor(top_journals$Journal, 
                                  levels = top_journals$Journal[order(top_journals$Total)])
   if(nrow(top_journals) > 7){
