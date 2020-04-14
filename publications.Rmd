@@ -16,7 +16,7 @@ source('./scholar_ids/scholar_ids.R')
 all_pubs <- scholar_allpubs(scholar_ids)
 ```
 
-<center>Here you can find an overview of our research publications. Please contact us ([our contact details are found here](contact.html){target="_blank"}) if you would like access to full texts.</center>
+<center>Here you can find an overview of our research publications. Please contact us ([our contact details are found here](contact.html){target="_blank"}) if you would like access to full texts of any of our work.</center>
 
 <br>
 
