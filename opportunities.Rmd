@@ -4,6 +4,14 @@ title: Opportunities at SpatialEpiLab
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-# Needed: candidates with skills in data analysis and / or statistical programming 
-
-An increasing number of our current and future projects involve analysing large, multistructure *Big Data* outputs to prepare them for spatial and spatio-temporal analysis. Candidates with interests in applying these skills to spatial epidemiology or other aspects of [One Health](https://www.who.int/features/qa/one-health/en/){target="_blank"} should contact [Associate Professor Ricardo Soares Magalhães](people.html){target="_blank"} or [Dr Nicholas Clark](people.html#nicholas_clark){target="_blank"} to discuss opportunities
+**Needed: candidates with skills in data analysis and / or statistical programming**   
+  
+An increasing number of our current and future projects involve analysing large, multistructure *Big Data* outputs to prepare them for spatial and spatio-temporal analysis. Candidates with interests in applying these skills to spatial epidemiology or other aspects of [One Health](https://www.who.int/features/qa/one-health/en/){target="_blank"} should contact [Associate Professor Ricardo Soares Magalhães](people.html){target="_blank"} or [Dr Nicholas Clark](people.html#nicholas_clark){target="_blank"} to discuss opportunities.  
+  
+**Helpful links**  
+  
+[University of Queensland Postgraduate International Scholarships](https://graduate-school.uq.edu.au/scholarships): Information on scholarships offered by our university to support international and domestic applicants  
+  
+[UQ information on other scholarships available for new students](https://scholarships.uq.edu.au/future-students?combine=&field_uq_scholarship_country_tid=All&field_uq_scholarship_study_area_tid=All&field_uq_scholarship_career_lvl_tid=43): A range of other scholarships and awards are available  
+  
+[Australia Awards Scholarships](https://www.dfat.gov.au/people-to-people/australia-awards/Pages/australia-awards-scholarships): Scholarships that aim to contribute to the development needs of Australia's partner countries in line with bilateral and regional agreements.
