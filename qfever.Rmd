@@ -49,6 +49,8 @@ Read more about the project's developments by following the Qfever_Group on [Twi
 <br>
 
 ## Publications
-<center>Clark, NJ and Soares Magalhães, RJ. 2018. [Airborne geographical dispersal of Q fever from livestock holdings to human communities: a systematic review and critical appraisal of evidence](https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-018-3135-4){target="_blank"}. *BMC Infectious Diseases*. 18:218.  
+<center>Clark, NJ, Tozer, S, Wood, C, Firestone, SM, Stevenson, M, Caraguel, C, Chaber, AL, Heller, J and Soares Magalhães, RJ. 2020. [Unravelling animal exposure profiles of human Q fever cases in Queensland, Australia using natural language processing](https://onlinelibrary.wiley.com/doi/abs/10.1111/tbed.13565). *Transboundary and Emerging Diseases*. DOI: https://doi.org/10.1111/tbed.13565.
+  
+Clark, NJ and Soares Magalhães, RJ. 2018. [Airborne geographical dispersal of Q fever from livestock holdings to human communities: a systematic review and critical appraisal of evidence](https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-018-3135-4){target="_blank"}. *BMC Infectious Diseases*. 18:218.  
   
 Clark, NJ, Caraguel, C, Heller, J, Soares Magalhães, RJ and Firestone, S. [Australia’s drought could be increasing Q fever risk, but there are ways we can protect ourselves](https://theconversation.com/australias-drought-could-be-increasing-q-fever-risk-but-there-are-ways-we-can-protect-ourselves-112297){target="_blank"}. *The Conversation*. March 12, 2019</center>
