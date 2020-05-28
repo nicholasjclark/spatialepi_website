@@ -9,7 +9,7 @@ The *SpatialEpiLab* is a [One Health](https://www.who.int/features/qa/one-health
 <br>
 **What we do**
 <br>
-Research at the *SpatialEpiLab* lies at the interface between animal and human public health and aims to inform disease control policy by identifying major determinants of the geographical distributions of infections and their associated morbidities. We work with international partners to blend our multidisciplinary expertise and deliver in-depth investigations for many important pathogens around the world.
+Research at the *SpatialEpiLab* lies at the interface between animal and human public health and aims to inform disease control policy by identifying major determinants of the geographical distributions of infections and their associated morbidities. We work with a range of international partners to blend our multidisciplinary expertise and deliver in-depth investigations for many important pathogens around the world.
 
 Our work is routinely published in high impact peer reviewed journals in the international literature ([see our publications here](publications.html){target="_blank"}). Most of the risk-maps and analytical tools derived from our research are available to other researchers and disease control programme managers. 
 <br>

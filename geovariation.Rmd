@@ -48,6 +48,17 @@ output:
 
 <br>
 
+### Publications
+<center>Clark, NJ, Owada, K, Ruberanziza, E, Ortu, G, Umulisa, I, Bayisenge, UJB, Mbonigaba, JB Mucaca, Lancaster, W, Fenwick, A, Soares Magalhães, RJ and Mbituyumuremyi, A. 2020. [Parasite associations predict infection risk: incorporating co-infections in predictive models for neglected tropical diseases](https://parasitesandvectors.biomedcentral.com/articles/10.1186/s13071-020-04016-2). *Parasites & Vectors* 13:1-16.  
+  
+Ruberanziza, E, Owada, K, Clark, NJ, Umulisa, I, Ortu, G, Lancaster, W, Munyaneza, T, Mbituyumuremyi, A, Bayisenge, U, Fenwick, A, and Soares Magalhães, RJ. 2019. [Mapping soil-transmitted helminth parasite infection in Rwanda: estimating endemicity and identifying at-risk populations](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6630518/). *Tropical Medicine and Infectious Disease* 4:93.  
+  
+Dhewantara, PW, Mamun, AA, Zhang, Wy, Yin, WW, Ding, F, Guo, D, Hu, W, and Soares Magalhães, RJ. 2018. [Geographical and temporal distribution of the residual clusters of human leptospirosis in China, 2005–2016](https://www.nature.com/articles/s41598-018-35074-3). *Scientific Reports* 8:16650.  
+  
+Dhewantara, PW, Mamun, AA, Zhang, Wy, Yin, WW, Ding, F, Guo, D, Hu, W, Costa, F, Ko, AI, and Soares Magalhães, RJ. 2018. [Epidemiological shift and geographical heterogeneity in the burden of leptospirosis in China](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5985562/). *Infectious Diseases of Poverty* 7:57.</center>
+
+<br>
+
 ## Tick paralysis in Australian pets
 <center>[Tick paralysis](https://sashvets.com/tick-paralysis/){target="_blank"}, caused by neurotoxins contained in the saliva of *Ixodes* paralysis ticks, is a life-threatening condition for dogs and cats requiring immediate medical attention. In Australia tick paralysis is a leading cause of emergency admissions, with tens of thousands of cases admitted to veterinary emergency services each year. While preventative treatments and avoidance of tick-prone areas during periods of heightened risk are effective reduction measures, surveillance systems are inadequate to provide timely information to clinicians and pet owners located in areas most at-risk.</center>
 
@@ -91,5 +102,4 @@ output:
 ### Key collaborators
 <center>[GreenCross Veterinary Clinics](https://www.greencrossvets.com.au/){target="_blank"}  
 [VetCompass Australia](http://www.vetcompass.com.au/){target="_blank"}  
-[Henry Lydecker (University of Sydney)](https://sydney.edu.au/science/biology/hochuli/current.shtml){target="_blank"}  
 [Paul McGreevy (University of Sydney)](https://sydney.edu.au/science/people/paul.mcgreevy.php){target="_blank"} </center>  
