@@ -16,5 +16,5 @@ Our work is routinely published in high impact peer reviewed journals in the int
 <br>
 **Browse around to find out more**
 <br>
-Please navigate the content on these pages to access more information about the studies that we are currently involved in and the outputs we are producing. If you are interested in our work and would like to discuss potential projects, please see our contact details. We also readily welcome visitors to our lab, especially for our monthly lab chat, so let us know if you're keen for a visit ([our contact details are found here](contact.html){target="_blank"}).</div>
+Please navigate the content on these pages to access more information about the studies that we are currently involved in and the outputs we are producing. If you are interested in our work and would like to discuss potential projects, please see [our research opportunities](opportunities.html){target="_blank"} and [our contact details](contact.html){target="_blank"}. We also readily welcome visitors to our lab, especially for our monthly lab chats, so let us know if you're keen for a visit.</div>
 
