@@ -2,19 +2,38 @@
 
 <img src="images/spatial_website_logo.png" style="width:90%; margin-bottom: 1px" align="top" alt="The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland">
 
-<div class = 'col'>**Who we are**
+<div class = 'col'>**Who is the SpatialEpiLab?**
 <br>
 The *SpatialEpiLab* is a [One Health](https://www.who.int/features/qa/one-health/en/){target="_blank"} medical geography research group based at the [School of Veterinary Science at the University of Queensland](https://veterinary-science.uq.edu.au/){target="_blank"}, Australia, headed by [Associate Professor Ricardo Soares Magalhães](people.html){target="_blank"}. With a diversity of backgrounds and perspectives, we have broad expertise in health sciences, mathematical modelling, social sciences, ecology and epidemiology.
 <br>
 <br>
-**What we do**
+**What research is carried out at the SpatialEpiLab?**
 <br>
 Research at the *SpatialEpiLab* lies at the interface between animal and human public health and aims to inform disease control policy by identifying major determinants of the geographical distributions of infections and their associated morbidities. We work with a range of international partners to blend our multidisciplinary expertise and deliver in-depth investigations for many important pathogens around the world.
 
-Our work is routinely published in high impact peer reviewed journals in the international literature ([see our publications here](publications.html){target="_blank"}). Most of the risk-maps and analytical tools derived from our research are available to other researchers and disease control programme managers. 
+Our work is routinely published in high impact peer reviewed journals in the international literature (our most recent publications are shown below, [see our full list of publications here](publications.html){target="_blank"}). Most of the risk-maps and analytical tools derived from our research are available to other researchers and disease control programme managers. 
 <br>
 <br>
 **Browse around to find out more**
 <br>
-Please navigate the content on these pages to access more information about the studies that we are currently involved in and the outputs we are producing. If you are interested in our work and would like to discuss potential projects, please see [our research opportunities](opportunities.html){target="_blank"} and [our contact details](contact.html){target="_blank"}. We also readily welcome visitors to our lab, especially for our monthly lab chats, so let us know if you're keen for a visit.</div>
+Please navigate the content on these pages to access more information about the studies that we are currently involved in and some of the outputs we are producing. If you are interested in our work and would like to discuss potential projects, please see [our research opportunities](opportunities.html){target="_blank"} and [our contact details](contact.html){target="_blank"}. We also readily welcome visitors to our lab, especially for our monthly lab chats, so let us know if you're keen for a visit.</div>
+<br>
+**Some of our most recent publications**
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+library(dplyr)
+library(knitr)
+library(kableExtra)
+source('functions/scholar_allpubs.R')
+source('./scholar_ids/scholar_ids.R')
+all_pubs <- scholar_allpubs(scholar_ids)
+kable(data.frame(all_pubs %>%
+          dplyr::filter(Year == 2020) %>%
+            dplyr::select(-Year)), row.names = F,
+      format = 'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  column_spec(1, width = '30em') %>%
+  column_spec(2, italic = T, width = '20em') %>%
+  column_spec(3, width = '20em') %>%
+  scroll_box(width = "100%", height = "400px")
+```
 
