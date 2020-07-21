@@ -17,6 +17,9 @@ navbar:
       href: qfever.html
     - text: Quantification of environmental and animal drivers of antimicrobial resistance
       href: antimicrobial_resistance.html
+    - text: '---------'
+    - text: Multivariate ecological modelling
+      href: ecomodelling.html
   - text: People
     icon: fa-user
     href: people.html
