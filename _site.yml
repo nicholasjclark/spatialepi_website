@@ -18,7 +18,8 @@ navbar:
     - text: Quantification of environmental and animal drivers of antimicrobial resistance
       href: antimicrobial_resistance.html
     - text: '---------'
-    - text: Multivariate ecological modelling
+    - text: Multiresponse modelling and forecasting
+    - text: Multivariate ecological models
       href: ecomodelling.html
   - text: People
     icon: fa-user

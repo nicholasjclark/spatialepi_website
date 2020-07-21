@@ -7,7 +7,7 @@ output:
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-<center><p style="font-weight:600; font-size:29px">Multivariate ecological modelling</p> </center>
+<center><p style="font-weight:600; font-size:29px">Multivariate ecological models</p> </center>
 
 <img src="images/ecomodel1.jpg" style="width:95%; margin-bottom: 1px" align="top" alt="Multivariate network models allow deeper investigation of parasite co-infections and their impacts on infection risk. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in the development and application of multivariate ecological models for disease ecology problems.">
 
