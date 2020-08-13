@@ -1,4 +1,5 @@
 ---
+title: Multivariate ecological modelling
 output:
   html_document: 
     toc: true

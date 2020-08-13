@@ -1,4 +1,4 @@
-name: "Spatial Epidemiology Lab"
+name: "UQ Spatial Epidemiology Lab"
 output_dir: '.'
 navbar:
   title: "SpatialEpiLab"
