@@ -1,7 +1,7 @@
-name: Spatial Epidemiology Lab
+name: "Spatial Epidemiology Lab"
 output_dir: '.'
 navbar:
-  title: SpatialEpiLab
+  title: "SpatialEpiLab"
   left:
   - text: Research
     icon: fa-globe
