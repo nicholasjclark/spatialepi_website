@@ -6,9 +6,35 @@ title: Opportunities at SpatialEpiLab
 
 <img src="images/spatial_website_logo.png" style="width:90%; margin-bottom: 1px" align="top" alt="The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland. A number of Master's, Honours and PhD research opportunities are available.">
 
+**PhD scholarship opportunity**
+  
+The Spatial Epidemiology Laboratory at the University of Queensland seeks a PhD student to work on an exciting new project: forecasting ecosystem responses to environmental change  
+  
+There is a growing consensus that using models to anticipate the future is vital to mitigate the impacts of environmental change on ecosystems. Yet most ecological models are one-off attempts to predict what ecosystems might be like in many years or decades. This makes it hard for decision-makers to use these models. It also favours models that are not easily scrutinised and improved. A new international study will use an iterative cycle to 1) forecast how species occurrences and abundances will change over short timescales; 2) use predictions to inspect model failures and 3) improve models so that we can continue to learn. This represents a new way of thinking in ecology that, like weather forecasting, has the power to advance our understanding of ecological processes.  
+  
+The candidate will work within a vibrant team to tackle two major questions in ecological modelling:  
+(1) When can multivariate models improve forecasts of species distributions, abundances and biodiversity compared to simpler models?   
+(2) What aspects of models and data control forecast uncertainty across space and time?  
+  
+Applications will be judged on a competitive basis taking into account the applicant's previous academic record, publication record, honours and awards, and employment history. Skills in quantitative analysis, ecological modelling, forecasting or statistical programming are highly desired.    
+   
+*Benefits of the project*  
+The student will be based at The University of Queensland within the School of Veterinary Science, supervised by [Dr Nicholas Clark](people.html#nicholas_clark){target="_blank"} and [Associate Professor Ricardo Soares Magalhães](people.html){target="_blank"}. The candidate will work with a diverse group of international researchers. Support will be given by partners at the Ecological Forecasting Initiative and the Spatial Epidemiology Laboratory, including assistance in data analysis, model building and communication.  
+  
+This PhD scholarship is funded by the University of Queensland, providing a tax-free PhD stipend and full tuition fee support. The scholarship is for three years, with two possible six-month extensions. Funds are also available for the student to attend scientific conferences and workshops.  
+  
+*How to enquire*  
+For more information and to submit an expression of interest, please contact Dr. Nicholas Clark at [n.clark@uq.edu.au](n.clark@uq.edu.au). The expression of interest should include a cover letter and CV including names and contact details of 3 referees (2 pages max) and an academic transcript. Short-list applicants will be interviewed (via video conferencing if necessary) to better determine the applicant’s fit, motivations and capabilities.
+
+*COVID-19 information*  
+With current travel bans extending the timeframe for international applicants to commence, UQ will only accept on-shore (domestic and international) applicants for this scholarship. If the commencing candidate is onshore but interstate, they will be required to come to Queensland to begin.  
+  
+Expressions of interest will close 12th March 2021
+
+
 **Needed: candidates with skills in data analysis and / or statistical programming**   
   
-We are always on the lookout for new students to join the *SpatialEpiLab*. An increasing number of our current and future research projects involve analysing large, multistructure *Big Data* outputs to prepare them for spatial and spatio-temporal analysis. Candidates with interests in applying these skills to spatial epidemiology, time series modelling or other aspects of [One Health](https://www.who.int/features/qa/one-health/en/){target="_blank"} should contact [Associate Professor Ricardo Soares Magalhães](people.html){target="_blank"} or [Dr Nicholas Clark](people.html#nicholas_clark){target="_blank"} to discuss opportunities.  
+We are always on the lookout for new students to join the *SpatialEpiLab* through the University of Queensland's competitve postgraduate scholarships. An increasing number of our current and future research projects involve analysing large, multistructure *Big Data* outputs to prepare them for spatial and spatio-temporal analysis. Candidates with interests in applying these skills to spatial epidemiology, time series modelling or other aspects of [One Health](https://www.who.int/features/qa/one-health/en/){target="_blank"} should contact [Associate Professor Ricardo Soares Magalhães](people.html){target="_blank"} or [Dr Nicholas Clark](people.html#nicholas_clark){target="_blank"} to discuss opportunities.  
   
 **Helpful links**  
   
