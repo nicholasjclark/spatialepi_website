@@ -49,7 +49,9 @@ Read more about the project's developments by following the Qfever_Group on [Twi
 <br>
 
 ## Publications
-<center>Clark, NJ, Tozer, S, Wood, C, Firestone, SM, Stevenson, M, Caraguel, C, Chaber, AL, Heller, J and Soares Magalhães, RJ. 2020. [Unravelling animal exposure profiles of human Q fever cases in Queensland, Australia using natural language processing](https://onlinelibrary.wiley.com/doi/abs/10.1111/tbed.13565). *Transboundary and Emerging Diseases*. DOI: https://doi.org/10.1111/tbed.13565.
+<center>Clark, NJ, Tozer, S, Wood, C, Firestone, SM, Stevenson, M, Caraguel, C, Chaber, AL, Heller, J and Soares Magalhães, RJ. 2020. [Unravelling animal exposure profiles of human Q fever cases in Queensland, Australia using natural language processing](https://onlinelibrary.wiley.com/doi/abs/10.1111/tbed.13565). *Transboundary and Emerging Diseases*. DOI: https://doi.org/10.1111/tbed.13565.  
+  
+Abeykoon, AMH, Clark, NJ, Soares Magalhães, RJ,  Vincent, GA, Stevenson, MA, Firestone, SM, and Wiethoelter, AK. 2020. [Coxiella burnetii in the environment: A systematic review and critical appraisal of sampling methods](https://onlinelibrary.wiley.com/doi/abs/10.1111/zph.12791){target="_blank"}. *Zoonoses and Public Health*. DOI:  https://doi.org/10.1111/zph.12791.   
   
 Clark, NJ and Soares Magalhães, RJ. 2018. [Airborne geographical dispersal of Q fever from livestock holdings to human communities: a systematic review and critical appraisal of evidence](https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-018-3135-4){target="_blank"}. *BMC Infectious Diseases*. 18:218.  
   
