@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -19,6 +19,15 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
@@ -29,12 +38,16 @@
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
-<style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -47,32 +60,7 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -84,13 +72,8 @@ h6 {
   margin-left: auto;
   margin-right: auto;
 }
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -104,40 +87,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h2 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h3 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h4 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h5 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h6 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -165,7 +121,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -177,7 +133,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -188,10 +144,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -203,7 +172,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -239,6 +207,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -251,48 +220,9 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -306,6 +236,12 @@ $(document).ready(function ()  {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -361,13 +297,13 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
+<div class="row">
+<div class="col-sm-12 col-md-4 col-lg-3">
 <div id="TOC" class="tocify">
 </div>
 </div>
 
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+<div class="toc-content col-sm-12 col-md-8 col-lg-9">
 
 
 
@@ -386,7 +322,7 @@ div.tocify {
       <ul class="nav navbar-nav">
         <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fa fa-globe"></span>
+    <span class="fas fa-globe"></span>
      
     Research
      
@@ -417,14 +353,14 @@ div.tocify {
 </li>
 <li>
   <a href="people.html">
-    <span class="fa fa-user"></span>
+    <span class="fas fa-user"></span>
      
     People
   </a>
 </li>
 <li>
   <a href="publications.html">
-    <span class="fa fa-map"></span>
+    <span class="fas fa-map"></span>
      
     Publications
   </a>
@@ -438,21 +374,21 @@ div.tocify {
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="opportunities.html">
-        <span class="fa fa-search"></span>
+        <span class="fas fa-search"></span>
          
         Opportunities
       </a>
     </li>
     <li>
       <a href="https://twitter.com/spatial_epi_lab">
-        <span class="fa fa-twitter"></span>
+        <span class="fas fa-twitter"></span>
          
         Twitter
       </a>
     </li>
     <li>
       <a href="contact.html">
-        <span class="fa fa-phone"></span>
+        <span class="fas fa-phone"></span>
          
         Contact
       </a>
@@ -467,7 +403,7 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -512,6 +448,20 @@ Authors
 2021
 </td>
 <td style="text-align:left;width: 30em; ">
+Levels, Trends, and Inequalities in using Institutional Delivery Services in Low-and Middle-Income Countries: a Stratified Analysis by Facility Type
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Global Health: Science and Practice
+</td>
+<td style="text-align:left;width: 20em; ">
+MM Hasan, RJS Magalhaes, Y Fatima, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
 Epidemiology of Methicillin Resistant Staphylococcus Species Carriage in Companion Animals in the Greater Brisbane Area, Australia
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -540,13 +490,13 @@ T Nguyen, N Clark, MK Jones, et al
 2021
 </td>
 <td style="text-align:left;width: 30em; ">
-Levels, Trends, and Inequalities in using Institutional Delivery Services in Low-and Middle-Income Countries: a Stratified Analysis by Facility Type
+Molecular Epidemiology of Clinical and Colonising Methicillin-Resistant Staphylococcus Isolates in Companion Animals
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Global Health: Science and Practice
+Frontiers in Veterinary Science
 </td>
 <td style="text-align:left;width: 20em; ">
-MM Hasan, RJS Magalhaes, Y Fatima, et al
+H Rynhoud, BM Forde, SA Beatson, et al
 </td>
 </tr>
 <tr>
@@ -603,6 +553,20 @@ Parasites &amp; Vectors
 </td>
 <td style="text-align:left;width: 20em; ">
 NJ Clark, K Owada, E Ruberanziza, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:left;width: 30em; ">
+Interim Guidance for Health‐care Professionals and Administrators Providing Hospital Care to Adult Patients with Cognitive Impairment, in the Context of Covid‐19 Pandemic
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Australasian J on Ageing
+</td>
+<td style="text-align:left;width: 20em; ">
+M Martin‐Khan, K Bail, MW Yates, et al
 </td>
 </tr>
 <tr>
@@ -784,20 +748,6 @@ European J of Clinical Nutrition
 </td>
 <td style="text-align:left;width: 20em; ">
 T Biswas, N Townsend, RJS Magalhaes, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Interim Guidance for Health‐care Professionals and Administrators Providing Hospital Care to Adult Patients with Cognitive Impairment, in the Context of Covid‐19 Pandemic
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Australasian J on Ageing
-</td>
-<td style="text-align:left;width: 20em; ">
-M Martin‐Khan, K Bail, MW Yates, et al
 </td>
 </tr>
 <tr>
@@ -1085,6 +1035,20 @@ K Owada, M Nielsen, C Lau, et al
 2019
 </td>
 <td style="text-align:left;width: 30em; ">
+The Impact of Expanded Brucellosis Surveillance in Beef Cattle on Human Brucellosis in Korea: An Interrupted Time-Series Analysis
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Bmc Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+S Ryu, RJS Magalhães, BC Chun
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:left;width: 30em; ">
 Modeling Schistosoma Japonicum Infection under Pure Specification Bias: Impact of Environmental Drivers of Infection
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1106,20 +1070,6 @@ Int J for Parasitology: Parasites and Wildlife
 </td>
 <td style="text-align:left;width: 20em; ">
 L Harriott, M Gentle, R Traub, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-The Impact of Expanded Brucellosis Surveillance in Beef Cattle on Human Brucellosis in Korea: An Interrupted Time-Series Analysis
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmc Infectious Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-S Ryu, RJS Magalhães, BC Chun
 </td>
 </tr>
 <tr>
@@ -1323,6 +1273,20 @@ K Owada, CL Lau, L Leonardo, et al
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
+Effectiveness of Market-Level Biosecurity at Reducing Exposure of Poultry and Humans to Avian Influenza: a Systematic Review and Meta-Analysis
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+The J of Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+X Zhou, Y Wang, H Liu, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;width: 30em; ">
 The Extensive Networks of Frequent Population Mobility in the Samoan Islands and their Implications for Infectious Disease Transmission
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1344,20 +1308,6 @@ Bmc Veterinary Research
 </td>
 <td style="text-align:left;width: 20em; ">
 K Ilbeigi, S Bokaie, S Aghasharif, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Effectiveness of Market-Level Biosecurity at Reducing Exposure of Poultry and Humans to Avian Influenza: a Systematic Review and Meta-Analysis
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-The J of Infectious Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-X Zhou, Y Wang, H Liu, et al
 </td>
 </tr>
 <tr>
@@ -1491,20 +1441,6 @@ V Guernier, B Brennan, L Yakob, et al
 2017
 </td>
 <td style="text-align:left;width: 30em; ">
-Land Cover Change During a Period of Extensive Landscape Restoration in Ningxia Hui Autonomous Region, China
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Science of the Total Environment
-</td>
-<td style="text-align:left;width: 20em; ">
-AMC Restrepo, YR Yang, NAS Hamm, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
 Countrywide Reassessment of Schistosoma Mansoni Infection in Burundi using a Urine-Circulating Cathodic Antigen Rapid Test: Informing the National Control Program
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1512,6 +1448,20 @@ American J of Tropical Medicine and Hygiene
 </td>
 <td style="text-align:left;width: 20em; ">
 G Ortu, O Ndayishimiye, M Clements, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2017
+</td>
+<td style="text-align:left;width: 30em; ">
+Land Cover Change During a Period of Extensive Landscape Restoration in Ningxia Hui Autonomous Region, China
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Science of the Total Environment
+</td>
+<td style="text-align:left;width: 20em; ">
+AMC Restrepo, YR Yang, NAS Hamm, et al
 </td>
 </tr>
 <tr>
@@ -1918,20 +1868,6 @@ NJ Clark, JM Seddon, J Šlapeta, et al
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
-Airborne Geographical Dispersal of q Fever from Livestock Holdings to Human Communities: a Systematic Review and Critical Appraisal of Evidence
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmc Infectious Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-NJ Clark, RJS Magalhães
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
 Climate, Host Phylogeny and the Connectivity of Host Communities Govern Regional Parasite Assembly
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1939,6 +1875,20 @@ Diversity and Distributions
 </td>
 <td style="text-align:left;width: 20em; ">
 NJ Clark, SM Clegg, K Sam, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;width: 30em; ">
+Airborne Geographical Dispersal of q Fever from Livestock Holdings to Human Communities: a Systematic Review and Critical Appraisal of Evidence
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Bmc Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, RJS Magalhães
 </td>
 </tr>
 <tr>
@@ -2091,6 +2041,34 @@ Authors
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Decline of Notified Dengue Infections in Indonesia in 2017: Discussion of the Possible Determinants
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Narra j
+</td>
+<td style="text-align:left;width: 20em; ">
+PW Dhewantara, KF Jamil, JK Fajar, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Geographical Heterogeneity and Socio-Ecological Risk Profiles of Dengue in Jakarta, Indonesia
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Geospatial Health
+</td>
+<td style="text-align:left;width: 20em; ">
+H Prasetyowati, PW Dhewantara, J Hendri, et al
+</td>
+</tr>
 <tr>
 <td style="text-align:right;">
 2020
@@ -2316,20 +2294,6 @@ PW Dhewantara, R Marina, T Puspita, et al
 2019
 </td>
 <td style="text-align:left;width: 30em; ">
-Individual and Contextual Factors Predicting Self-Reported Malaria among Adults in Eastern Indonesia: Findings from Indonesian Community-Based Survey
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Malaria J
-</td>
-<td style="text-align:left;width: 20em; ">
-PW Dhewantara, M Ipa, M Widawati
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
 using Dengue Epidemics and Local Weather in Bali, Indonesia to Predict Imported Dengue in Australia
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -2337,6 +2301,20 @@ Environmental Research
 </td>
 <td style="text-align:left;width: 20em; ">
 Z Xu, H Bambrick, L Yakob, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:left;width: 30em; ">
+Individual and Contextual Factors Predicting Self-Reported Malaria among Adults in Eastern Indonesia: Findings from Indonesian Community-Based Survey
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Malaria J
+</td>
+<td style="text-align:left;width: 20em; ">
+PW Dhewantara, M Ipa, M Widawati
 </td>
 </tr>
 <tr>
@@ -2672,6 +2650,20 @@ Authors
 2021
 </td>
 <td style="text-align:left;width: 30em; ">
+Geographical Heterogeneity and Socio-Ecological Risk Profiles of Dengue in Jakarta, Indonesia
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Geospatial Health
+</td>
+<td style="text-align:left;width: 20em; ">
+H Prasetyowati, PW Dhewantara, J Hendri, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
 Covid-19 in Ethiopia: a Geospatial Analysis of Vulnerability to Infection, Case Severity and Death
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -2979,6 +2971,20 @@ M Agonafir, Y Assefa, F Girmachew, et al
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
+The Effect of Climate and Altitude Variability on Tuberculosis: a Systematic Review
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Isee Conference Abstracts
+</td>
+<td style="text-align:left;width: 20em; ">
+Y Gelaw, W Yu, RJS Magalhães, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;width: 30em; ">
 Erratum: Global, Regional, and National Age-Sex-Specific Mortality and Life Expectancy, 1950–2017: a Systematic Analysis for the Global Burden of Disease Study 2017 (the Lancet …
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -3114,20 +3120,6 @@ Northwest Ethiopia: Int Breastfeed j
 DA Chekol, GA Biks, YA Gelaw, et al
 </td>
 </tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-The Effect of Climate and Altitude Variability on Tuberculosis: a Systematic Review
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Environmental Health Perspectives
-</td>
-<td style="text-align:left;width: 20em; ">
-Y Gelaw, W Yu, S Magalhães, et al
-</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -3170,6 +3162,20 @@ Authors
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Global Incidence of Caesarean Deliveries on Maternal Request: a Systematic Review and Meta‐regression
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Bjog: An Int J of Obstetrics &amp; Gynaecology
+</td>
+<td style="text-align:left;width: 20em; ">
+T Begum, KM Saif‐Ur‐Rahman, F Yaqoot, et al
+</td>
+</tr>
 <tr>
 <td style="text-align:right;">
 2021
@@ -3252,20 +3258,6 @@ Bmj Open
 </td>
 <td style="text-align:left;width: 20em; ">
 LB Rawal, C Kharel, UN Yadav, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Global Incidence of Caesarean Deliveries on Maternal Request: a Systematic Review and Meta‐regression
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bjog: An Int J of Obstetrics &amp; Gynaecology
-</td>
-<td style="text-align:left;width: 20em; ">
-T Begum, KM Saif‐Ur‐Rahman, F Yaqoot, et al
 </td>
 </tr>
 <tr>
@@ -3406,6 +3398,20 @@ Osong Public Health and Research Perspectives
 </td>
 <td style="text-align:left;width: 20em; ">
 S Ahmed, S Pervin, T Biswas, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:left;width: 30em; ">
+Erratum: Global, Regional, and National Comparative Risk Assessment of 84 Behavioural, Environmental and Occupational, and Metabolic Risks or Clusters of Risks for 195 …
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+The Lancet
+</td>
+<td style="text-align:left;width: 20em; ">
+JD Stanaway, A Afshin, E Gakidou, et al
 </td>
 </tr>
 <tr>
@@ -3622,20 +3628,6 @@ A Pillai, TK Biswas
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
-Global, Regional, and National Age-Sex-Specific Mortality for 282 Causes of Death in 195 Countries and Territories, 1980-2017: a Systematic Analysis for the Global Burden Of …
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Lancet
-</td>
-<td style="text-align:left;width: 20em; ">
-GA ROTH, GBD COLLABOROTORS, D ABATE, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
 Double Burden of Malnutrition among Mother-Child Pairs of Bangladesh: Prevalence and Socio-Demographic Determinants
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -3733,20 +3725,6 @@ T Biswas, MJ Uddin, AA Mamun, et al
 2017
 </td>
 <td style="text-align:left;width: 30em; ">
-Patients’ Perspective of Disease and Medication Adherence for Type 2 Diabetes in an Urban Area in Bangladesh: a Qualitative Study
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmc Research Notes
-</td>
-<td style="text-align:left;width: 20em; ">
-SMS Islam, T Biswas, FA Bhuiyan, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
 Non-Communicable Disease (Ncd) Risk Factors and Diabetes among Adults Living in Slum Areas of Dhaka, Bangladesh
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -3754,6 +3732,20 @@ Plos One
 </td>
 <td style="text-align:left;width: 20em; ">
 LB Rawal, T Biswas, NN Khandker, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2017
+</td>
+<td style="text-align:left;width: 30em; ">
+Patients’ Perspective of Disease and Medication Adherence for Type 2 Diabetes in an Urban Area in Bangladesh: a Qualitative Study
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Bmc Research Notes
+</td>
+<td style="text-align:left;width: 20em; ">
+SMS Islam, T Biswas, FA Bhuiyan, et al
 </td>
 </tr>
 <tr>
@@ -4455,6 +4447,20 @@ Authors
 <tbody>
 <tr>
 <td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Global Epidemiology of Coronavirus Disease 2019 and Lessons for Effective Control of this and Future Pandemics
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+January-July
+</td>
+<td style="text-align:left;width: 20em; ">
+EO Njoga, YF Zakariya, IF Jaja, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
@@ -5005,13 +5011,56 @@ Alex is currently an Honours scholar at the University of Queensland. He graduat
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
