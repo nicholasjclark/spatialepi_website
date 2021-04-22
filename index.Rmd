@@ -1,5 +1,5 @@
 ---
-title: "UQ Spatial Epidemiology Lab"
+title: ""
 ---
 <link rel="stylesheet" href="styles.css" type="text/css">
 
@@ -22,9 +22,9 @@ Our work is routinely published in high impact peer reviewed journals in the int
 Please navigate the content on these pages to access more information about the studies that we are currently involved in and some of the outputs we are producing. If you are interested in our work and would like to discuss potential projects, please see [our research opportunities](opportunities.html){target="_blank"} and [our contact details](contact.html){target="_blank"}. We also readily welcome visitors to our lab, especially for our monthly lab chats, so let us know if you're keen for a visit.
 <br>
 <br>
-**New PhD opportunity: using time series analyses for ecological forecasting**
+**Two new Fully Funded PhD opportunities**
 <br>
-Thanks to an ARC DECRA fellowship awarded to our ECR [Dr Nicholas Clark](people.html#nicholas_clark){target="_blank"}, we have a fully funded PhD scholarship (tuition and living expenses) available for a quantitatively minded candidate. Please visit [our research opportunities](opportunities.html){target="_blank"} to see details of the project and to find out how to enquire. </div>
+Thanks to an ARC DECRA fellowship awarded to our ECR [Dr Nicholas Clark](people.html#nicholas_clark){target="_blank"} and an NHMRC fellowship to [Dr. Silvia Ciocchetta](https://researchers.uq.edu.au/researcher/22990), we have two fully funded PhD scholarships (tuition and living expenses) available for candidates interested in zoonoses, public health and modelling. Please visit [our research opportunities](opportunities.html){target="_blank"} to see details of the projects and to find out how to enquire. </div>
 <br>
 **Some of our most recent publications**
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
