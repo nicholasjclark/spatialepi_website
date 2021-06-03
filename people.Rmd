@@ -38,7 +38,7 @@ kable(data.frame(all_pubs %>%
 <br>
 
 ## Early Career Researchers
-### Nicholas Clark
+### Nicholas Clark {#nick}
 <img src="images/nick_profile.JPG" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Nicholas J Clark is a lecturer in molecular epidemiology at the Spatial Epidemiology Laboratory (SpatialEpiLab), University of Queensland"/>
 
 <center>Dr Clark is an ARC DECRA Fellow and Lecturer in Genetics and Molecular Epidemiology with broad interests in spatial epidemiology, ecologial forecasting and identifying mechanisms that influence the spread of pathogens at the human-wildlife interface. He graduated with a PhD from [Griffith University](https://www.griffith.edu.au/environmental-futures-research-institute){target="_blank"} under supervision of [Dr Sonya Clegg](https://www.zoo.ox.ac.uk/people/dr-sonya-clegg){target="_blank"}, where he used mathematical models to study factors that influence the ecology and evolution of [avian malaria](https://nicholasjclark.weebly.com/avian-parasites.html){target="_blank"} parasites. His role with the group is to conduct spatial modelling of zoonotic pathogens, primarily Q fever and rabies virus, develop multivariate statistical models and forecast risks of tick infestation for Australian domestic animals. He is currently seeking PhD candidates with skills in data analysis and / or statistical programming to contribute to projects linking Big Data to ecology and molecular epidemiology problems. See our [Opportunities](opportunities.html){target="_blank"} page for details of **a funded PhD position**. Read more about Dr Clark's work on his [UQ Researchers website](https://researchers.uq.edu.au/researcher/15140){target="_blank"} and at his [Google Scholar](https://scholar.google.com.au/citations?user=5bO9uxEAAAAJ&hl=en){target="_blank"} page. `R` code for Dr Clark's software programs can be found on his [Github](https://github.com/nicholasjclark) page.</center>
@@ -93,28 +93,28 @@ kable(data.frame(all_pubs %>%
 ### Kei Owada
 <img src="images/kei_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Kei Owada is a postdoctoral fellow at the Spatial Epidemiology Group, University of Queensland"/>
 
-<centr>Dr Owada is a post-doctoral fellow at UQ, specialising in infectious disease epidemiology. She completed her PhD thesis on the role of soil-transmitted helminths on the cognitive development of school aged children at the UQ faculty of medicine (2019). Her primary supervisor was Associate Professor Ricardo J Soares Magalhães. She has received field epidemiology training at the US CDC (2011), and worked as a field epidemiologist. Her past work includes integrated disease surveillance work in Sierra Leone (2012), Ebola outbreak front line response work in Sierra Leone (2014-2015), and Ebola outbreak response and preparedness work at the WHO regional office in Brazzaville, Congo (2018-2019). Her experience also extends to the field of medical entomology, after receiving field entomology training in Samoa as part of the Samoa Lymphatic filariasis xenomonitoring project (2018).</center>
+<centr>Dr Owada is a post-doctoral fellow at UQ, specialising in infectious disease epidemiology. She completed her PhD thesis on the role of soil-transmitted helminths on the cognitive development of school aged children at the UQ faculty of medicine (2019). Her primary supervisor was [A/Prof Ricardo J Soares Magalhães](#ricardo). She has received field epidemiology training at the US CDC (2011), and worked as a field epidemiologist. Her past work includes integrated disease surveillance work in Sierra Leone (2012), Ebola outbreak front line response work in Sierra Leone (2014-2015), and Ebola outbreak response and preparedness work at the WHO regional office in Brazzaville, Congo (2018-2019). Her experience also extends to the field of medical entomology, after receiving field entomology training in Samoa as part of the Samoa Lymphatic filariasis xenomonitoring project (2018).</center>
 
 <br>
 
-## PhD Students
-### Pandji Dhewantara 
-<img src="images/pandji_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Pandji Dhewantara is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+### Tatiana Proboste
+<img src="images/tatiana_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Tatiana proboste is a postdoctoral fellow at the Spatial Epidemiology Group, University of Queensland"/>
 
-<center>Pandji is an early-career researcher working at the [National Institute of Health Research and Development (NIHRD)-Ministry of Health of Indonesia](https://www.litbang.kemkes.go.id/){target="_blank"}. He obtained his Master's degree on Environmental science in Padjajaran University, Bandung, Indonesia. In Indonesia, his research particularly focuses on the epidemiology of vector-borne diseases such as dengue, malaria and lymphatic filariasis. Currently, his PhD project is focusing on leptospirosis – a zoonotic bacterial disease caused by Leptospira in China. His project is aiming at estimating the burden of human leptospirosis in China and using spatial analytical tools to understand the spatial epidemiology of human leptospirosis in China and the effects of demographical, ecological and socio-economic factors on the geographical and temporal pattern of human leptospirosis. Pandji’s advisors are [A/Prof Ricardo Soares Magalhães](#ricardo), [A/Prof. Abdullah Mamun](https://researchers.uq.edu.au/researcher/1318){target="_blank"} from UQ's Institute of Social Science Research and [Prof. Wenbiao Hu](https://staff.qut.edu.au/staff/w2.hu){target="_blank"} from the School of Public Health and Social Work, Queensland University of Technology.  Read more about Pandji's work on his [ResearchGate](https://www.researchgate.net/profile/Pandji_Dhewantara){target="_blank"} and [Google Scholar](https://scholar.google.com/citations?user=awhMGaAAAAAJ&hl=id){target="_blank"} pages.</center>
-
+<centr>Dr Proboste is a post-doctoral at UQ Spatial Epidemiology Laboratory. Her background is in Veterinary Medicine (DVM) and terrestrial ecology and biodiversity management (Msc) with a specialisation in wildlife disease ecology and molecular tools (PhD). As a researcher, Tatiana has worked on molecular detection of tick-borne pathogens under the supervision of [Dr Javier Millan](https://www.researchgate.net/profile/Javier-Millan-2){target="_blanck"} in Spain, and during her PhD, she work on developing tools to investigate the role of wildlife in disease transmission in urbanized environment under the supervision of [Prof Jenny Seddon](https://researchers.uq.edu.au/researcher/1349){target="_blank"}, [Dr Nick Clark](#nick), [Dr Hawthorne Beyer](https://researchers.uq.edu.au/researcher/2719){target="_blank"} and [Prof Jonathan Rhodes](https://researchers.uq.edu.au/researcher/1022){target="_blank"}. Tatiana is currently working on the ["Taking the Query out of Q Fever"](https://blogs.unimelb.edu.au/q-fever/#:~:text=About&text=Taking%20the%20query%20out%20of%20Q%20fever%20is%20a%20multidisciplinary,in%20Australia%20and%20more%20broadly){target="_blanck"} project and in the development of a zoonotic vector-borne disease early warning system to enhance surveillance in Australia.</center>
+ 
 <br>
-<center>`Pandji's recent publications`</center>
+
+<center>`Dr Proboste's recent publications`</center>
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 library(kableExtra)
 library(knitr)
 source('functions/scholar_allpubs.R')
-all_pubs <- scholar_allpubs(pandji_id)
+all_pubs <- scholar_allpubs(tatiana_id)
 ```
 
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 kable(data.frame(all_pubs %>%
-          dplyr::filter(Year > 2015)), row.names = F,
+          dplyr::filter(Year > 2014)), row.names = F,
       format = 'html') %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
   column_spec(2, width = '30em') %>%
@@ -122,8 +122,9 @@ kable(data.frame(all_pubs %>%
   column_spec(4, width = '20em') %>%
   scroll_box(width = "100%", height = "300px")
 ```
-<br>
-
+<br> 
+ 
+## PhD Students
 ### Tarni Cooper
 <img src="images/tarni_profile.png" class="round" style="border:4px solid; margin-bottom: 20px" alt="Tarni Cooper is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
 
@@ -155,65 +156,6 @@ kable(data.frame(all_pubs %>%
 
 <center>Hester is a PhD student interested in the study of zoonotic bacterial diseases and how they contribute to the One Health concept. Hester’s current research focuses on the molecular and spatial epidemiology of methicillin resistant *Staphylococcus* spp. carriage in Brisbane's domestic and shelter animals. Hester’s advisors at UQ are [A/Prof Ricardo Soares Magalhães](#ricardo), [Dr Justine Gibson](https://researchers.uq.edu.au/researcher/1359){target="_blank"} and [Dr Erika Meler](https://researchers.uq.edu.au/researcher/11041){target="_blank"}. Read more about Hester’s work on her [ResearchGate](https://www.researchgate.net/profile/Hester_Rynhoud){target="_blank"} page.</center>
 
-<br>
-
-### Yalemzewod Assefa Gelaw (Yalem)
-<img src="images/yalemzewod_profile.png" class="round" style="border:4px solid; margin-bottom: 20px" alt="Yalemzewod Assefa Gelaw is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
-
-<center>Yalemzewod is a PhD candidate interested in infectious disease, particularly in Human Immunodeficiency Virus (HIV) and tuberculosis (TB). Yalem’s current research focuses on the epidemiology of tuberculosis and HIV associated TB co-infection in Ethiopia. Yalem joined the University of Queensland after ten years of experience working in the Ministry of Health as a senior environmental health officer, as well as holding an academic position at the [University of Gondar](http://www.uog.edu.et/en/) in Ethiopia. He obtained his master’s degree on Master of public health in Epidemiology and Biostatistics in University of Gondar, Ethiopia. Yalem’s advisors are [Prof Gail Williams](https://researchers.uq.edu.au/researcher/668), [Dr Yibeltal Alemu](https://researchers.uq.edu.au/researcher/15240) and [A/Prof Ricardo Soares Magalhães](#ricardo). Read more about Yalem’s work on his [Google scholar](https://scholar.google.com.au/citations?user=yVWRy2wAAAAJ&hl=en){target="_blank"} and [ResearchGate](https://www.researchgate.net/profile/Yalemzewod_Gelaw){target="_blank"} pages. </center>
-
-<br>
-<center>`Yalem's recent publications`</center>
-```{r, echo = FALSE, warning=FALSE, message=FALSE}
-library(kableExtra)
-library(knitr)
-source('functions/scholar_allpubs.R')
-all_pubs <- scholar_allpubs(yalem_id)
-```
-
-```{r, echo = FALSE, warning=FALSE, message=FALSE}
-kable(data.frame(all_pubs %>%
-          dplyr::filter(Year > 2016)), row.names = F,
-      format = 'html') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
-  column_spec(2, width = '30em') %>%
-  column_spec(3, italic = T, width = '20em') %>%
-  column_spec(4, width = '20em') %>%
-  scroll_box(width = "100%", height = "300px")
-```
-<br>
-
-### Andrea Araujo Navas
-<img src="images/andrea_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Andrea Araujo Navas is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
-
-<center>Andrea is a geographer currently conducting PhD research into uncertainties related to spatial epidemiological studies. Her interest are to analyse spatial structures from epidemiological data as well as to focus on the relevance of different environmental risk factors that determine the exposure to *Schistosoma japonicum* infection in the Philippines. Andrea’s main research is at the [Faculty of Geo-information and Earth Observations Sciences](https://www.itc.nl/){target="_blank"} at the University of Twente in the Netherlands. Her advisors are [Prof Alfred Stein](https://research.utwente.nl/en/persons/alfred-stein){target="_blank"} and [Dr Frank Osei](https://research.utwente.nl/en/persons/frank-osei){target="_blank"} at UTwente, and [A/Prof Ricardo Soares Magalhães](#ricardo) at University of Queensland. Read more about Andrea’s work on her [ResearchGate](https://www.researchgate.net/profile/Andrea_Araujo){target="_blank"} page. </center>
-
-<br>
-
-### Tuhin Biswas
-<img src="images/tuhin_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Tuhin Biswas is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
-
-<center>Tuhin started his research career as a research fellow in one of the centre of excellence "Centre for Control of Chronic Diseases" at icddr,b which was established with funding support from [National Heart Lung and Blood Institute (NHLBI)](https://www.nhlbi.nih.gov/){target="_blank"}. He has experience working in a number of research projects that include diabetes & prediabetes, surveillance and community management of hypertension, metabolic syndrome, child obesity, mental health and its resultant health effects in Bangladesh. His major works included implementation of research projects; planning, organizing and carry out various research/field research and study activities. His PhD research will explore the double burden of malnutrition among the women in South and Southeast Asia and its geographical variation, health inequality and health achievement. Tuhin’s advisors are [A/Prof Abdullah Mamun](https://researchers.uq.edu.au/researcher/1318){target="_blank"} and [A/Prof Ricardo Soares Magalhães](#ricardo). Read more about Tuhin’s work on his [Google scholar](https://scholar.google.com.au/citations?user=8Jpp1CAAAAAJ&hl=en&oi=sra){target="_blank"} and [ResearchGate](https://www.researchgate.net/profile/Tuhin_Biswas2){target="_blank"} pages.</center>
-
-<br>
-<center>`Tuhin's recent publications`</center>
-```{r, echo = FALSE, warning=FALSE, message=FALSE}
-library(kableExtra)
-library(knitr)
-source('functions/scholar_allpubs.R')
-all_pubs <- scholar_allpubs(tuhin_id)
-```
-
-```{r, echo = FALSE, warning=FALSE, message=FALSE}
-kable(data.frame(all_pubs %>%
-          dplyr::filter(Year > 2016)), row.names = F,
-      format = 'html') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
-  column_spec(2, width = '30em') %>%
-  column_spec(3, italic = T, width = '20em') %>%
-  column_spec(4, width = '20em') %>%
-  scroll_box(width = "100%", height = "300px")
-```
 <br>
 
 ### Md. Mehedi Hasan
@@ -273,6 +215,57 @@ kable(data.frame(all_pubs), row.names = F,
   scroll_box(width = "100%", height = "300px")
 ```
 
+<br> 
+
+### Uttara Kennedy
+<img src="images/Uttara_profile1.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Uttara Kennedy is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+
+<center>Uttara Kennedy has worked for 18 years as a small animal veterinarian, practice manager and mentor to young vets across Australia and India, including volunteering in India with Vets Beyond Borders for their TNR (trap-neuter-release) program. She has an MSc in International Animal Welfare, Ethics and Law and a Member of the ANZVCS (Animal Welfare chapter). She currently works as a shelter veterinarian at the RSPCA Queensland’s largest city shelter. Her years with the RSPCA has given her deep insight into the challenges and issues pertaining to shelter medicine and control of endemic diseases in the shelter environment. She started her PhD in January 2021, to explore the epidemiology of diseases through animal shelters in Australia. She has co-authored papers on cattle welfare in India, and Australian invasive pest control strategies. She loves disappearing into the bush on long hiking-camping adventures with her family, when she is not working or studying.</center> 
+
+<br> 
+
+### Francisca Powell 
+<img src="images/fran_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Francisca Powell is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+
+Fran is a PhD candidate currently working on using multivariate modelling approaches to predict co-infections in both humans and animals. Her principal advisor is [Dr. Nicholas Clark](#nick), and her associate advisors are [A/Prof. Ricardo Soares Magalhães](#ricardo), [Dr. Nicholas Fountain-Jones](https://rmdb.research.utas.edu.au/public/rmdb/q/indiv_detail_warp_trans/30546){target="_blank"} and [Dr. Konstans Wells](https://www.swansea.ac.uk/staff/science/biosciences/wells-k-l/){target="_blank"}. Fran has broad interests in One Health research and infectious disease epidemiology and control, and has a multidisciplinary academic background in biomedical science, sociology, and French. 
+
+<br> 
+
+### Thomas Callaghan
+<img src="images/Thomas.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Thomas Cakkaghna is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+
+Thomas is a PhD student interested in zoonotic infectious diseases and a One Health approach to their management. His current research focuses on the spatial epidemiology of zoonotic foodborne disease in Queensland. This work will include identifying which risk factors and exposure pathways are associated with animal infection, human infection, morbidity, and hospitalisation. Thomas has worked as a scientist for several years at Safe Food Production Queensland, Biosecurity Queensland, and the Queensland Department of Agriculture and Fisheries.
+Thomas completed his prior tertiary studies at UQ with a Bachelor of Environmental Science (Honours) and Graduate Certificate in Animal Science. He is a member of the Australian Society for Microbiology and an alumnus of the Evolutionary Physiology Laboratory at UQ’s School of Biological Science. Thomas’s advisors at UQ are [A/Prof Ricardo Soares Magalhães](#ricardo), [Prof Colleen Lau](https://public-health.uq.edu.au/profile/6032/colleen-lau){target="_blank"}, [A/Prof Rowland Cobbold](https://researchers.uq.edu.au/researcher/544){target="_blank"} and [Dr Dwan Vilcins](https://researchers.uq.edu.au/researcher/25478){target="_blank"}. His external advisors are Robin Sherlock (Safe Food Production Queensland) and Adj A/Professor Jim Smith (Queensland Health and QUT). Read more about Thomas on his [ResearchGate](https://www.researchgate.net/profile/Thomas-Callaghan-7){target="_blank"} page.</center>
+
+<br> 
+
+## Former lab group members
+### Pandji Dhewantara 
+<img src="images/pandji_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Pandji Dhewantara is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+
+<center>Pandji is an early-career researcher working at the [National Institute of Health Research and Development (NIHRD)-Ministry of Health of Indonesia](https://www.litbang.kemkes.go.id/){target="_blank"}. He obtained his Master's degree on Environmental science in Padjajaran University, Bandung, Indonesia. In Indonesia, his research particularly focuses on the epidemiology of vector-borne diseases such as dengue, malaria and lymphatic filariasis. Currently, his PhD project is focusing on leptospirosis – a zoonotic bacterial disease caused by Leptospira in China. His project is aiming at estimating the burden of human leptospirosis in China and using spatial analytical tools to understand the spatial epidemiology of human leptospirosis in China and the effects of demographical, ecological and socio-economic factors on the geographical and temporal pattern of human leptospirosis. Pandji’s advisors are [A/Prof Ricardo Soares Magalhães](#ricardo), [A/Prof. Abdullah Mamun](https://researchers.uq.edu.au/researcher/1318){target="_blank"} from UQ's Institute of Social Science Research and [Prof. Wenbiao Hu](https://staff.qut.edu.au/staff/w2.hu){target="_blank"} from the School of Public Health and Social Work, Queensland University of Technology. Read more about Pandji's work on his [ResearchGate](https://www.researchgate.net/profile/Pandji_Dhewantara){target="_blank"} and [Google Scholar](https://scholar.google.com/citations?user=awhMGaAAAAAJ&hl=id){target="_blank"} pages.</center>
+
+<br>
+
+### Yalemzewod Assefa Gelaw (Yalem)
+<img src="images/yalemzewod_profile.png" class="round" style="border:4px solid; margin-bottom: 20px" alt="Yalemzewod Assefa Gelaw is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+
+<center>Yalemzewod is a PhD candidate interested in infectious disease, particularly in Human Immunodeficiency Virus (HIV) and tuberculosis (TB). Yalem’s current research focuses on the epidemiology of tuberculosis and HIV associated TB co-infection in Ethiopia. Yalem joined the University of Queensland after ten years of experience working in the Ministry of Health as a senior environmental health officer, as well as holding an academic position at the [University of Gondar](http://www.uog.edu.et/en/) in Ethiopia. He obtained his master’s degree on Master of public health in Epidemiology and Biostatistics in University of Gondar, Ethiopia. Yalem’s advisors are [Prof Gail Williams](https://researchers.uq.edu.au/researcher/668), [Dr Yibeltal Alemu](https://researchers.uq.edu.au/researcher/15240) and [A/Prof Ricardo Soares Magalhães](#ricardo). Read more about Yalem’s work on his [Google scholar](https://scholar.google.com.au/citations?user=yVWRy2wAAAAJ&hl=en){target="_blank"} and [ResearchGate](https://www.researchgate.net/profile/Yalemzewod_Gelaw){target="_blank"} pages. </center>
+
+<br>
+
+### Andrea Araujo Navas
+<img src="images/andrea_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Andrea Araujo Navas is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+
+<center>Andrea is a geographer currently conducting PhD research into uncertainties related to spatial epidemiological studies. Her interest are to analyse spatial structures from epidemiological data as well as to focus on the relevance of different environmental risk factors that determine the exposure to *Schistosoma japonicum* infection in the Philippines. Andrea’s main research is at the [Faculty of Geo-information and Earth Observations Sciences](https://www.itc.nl/){target="_blank"} at the University of Twente in the Netherlands. Her advisors are [Prof Alfred Stein](https://research.utwente.nl/en/persons/alfred-stein){target="_blank"} and [Dr Frank Osei](https://research.utwente.nl/en/persons/frank-osei){target="_blank"} at UTwente, and [A/Prof Ricardo Soares Magalhães](#ricardo) at University of Queensland. Read more about Andrea’s work on her [ResearchGate](https://www.researchgate.net/profile/Andrea_Araujo){target="_blank"} page. </center>
+
+<br>
+
+### Tuhin Biswas
+<img src="images/tuhin_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Tuhin Biswas is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+
+<center>Tuhin started his research career as a research fellow in one of the centre of excellence "Centre for Control of Chronic Diseases" at icddr,b which was established with funding support from [National Heart Lung and Blood Institute (NHLBI)](https://www.nhlbi.nih.gov/){target="_blank"}. He has experience working in a number of research projects that include diabetes & prediabetes, surveillance and community management of hypertension, metabolic syndrome, child obesity, mental health and its resultant health effects in Bangladesh. His major works included implementation of research projects; planning, organizing and carry out various research/field research and study activities. His PhD research will explore the double burden of malnutrition among the women in South and Southeast Asia and its geographical variation, health inequality and health achievement. Tuhin’s advisors are [A/Prof Abdullah Mamun](https://researchers.uq.edu.au/researcher/1318){target="_blank"} and [A/Prof Ricardo Soares Magalhães](#ricardo). Read more about Tuhin’s work on his [Google scholar](https://scholar.google.com.au/citations?user=8Jpp1CAAAAAJ&hl=en&oi=sra){target="_blank"} and [ResearchGate](https://www.researchgate.net/profile/Tuhin_Biswas2){target="_blank"} pages.</center>
+
 <br>
 
 ### Xiaoyan Zhou
@@ -282,12 +275,9 @@ kable(data.frame(all_pubs), row.names = F,
    
 Xiaoyan’s PhD advisors are [A/Prof Ricardo Soares Magalhães](#ricardo), [Dr Carl Smith](https://researchers.uq.edu.au/researcher/732){target="_blank"} from UQ, [Prof Archie C.A. Clements](https://research.curtin.edu.au/supervisor/prof-archie-clements/){target="_blank"} from Curtin University and [Prof John Edwards](http://www.murdoch.edu.au/Murdoch-Commission/Commissions/Second-Murdoch-Commission/Commission-Members/Professor-John-Edwards/){target="_blank"} from Murdoch University. Xiaoyan is funded through a University of Queensland International Postgraduate Research Scholarship (UQ IPRS). Xiaoyan’s field survey was funded by the [Emergency Center for Transboundary Animal Diseases (ECTAD)](http://www.fao.org/emergencies/fao-in-action/ectad/en/){target="_blank"} in China, FAO of the United Nations and the [China Animal Health and Epidemiology Center (CAHEC)](http://safeedpap.feedsafety.org/partners/cahec-china-animal-health-and-epidemiology-cente/){target="_blank"}. Read more about Xiaoyan’s work on her [ResearchGate](https://www.researchgate.net/profile/Xiaoyan_Zhou6){target="_blank"} page.</center>
 
-<br> 
+<br>
 
-## Undergraduate Researchers
 ### Alex Pekin 
 <img src="images/alex_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Alex Pekin  is an Honours student at the Spatial Epidemiology Group, University of Queensland"/>
 
-<center>Alex is currently an Honours scholar at the University of Queensland. He graduated with a Bachelor of Science (Animal and Veterinary Bioscience) in 2018 and is researching risk factors and spatial distribution of dog bite attacks in South-East Queensland; a collaborative project between the University of Queensland and Queensland Health. He is committed to utilizing a One Health approach as a method of improving healthcare infrastructure in developed and developing countries. As an undergraduate he contributed to work quantifying the temporal relationship between H7N9 avian influenza onset in humans with poultry surveillance, live bird movements, and sociodemographic factors. He plans to pursue further study into One Health issues, with a focus on veterinary solutions and interventions. Alex’s advisor is [A/Prof Ricardo Soares Magalhães](#ricardo).</center>
-
-
+<center>Alex was an Honours scholar at the University of Queensland. He graduated with a Bachelor of Science (Animal and Veterinary Bioscience) in 2018 and is researching risk factors and spatial distribution of dog bite attacks in South-East Queensland; a collaborative project between the University of Queensland and Queensland Health. He is committed to utilizing a One Health approach as a method of improving healthcare infrastructure in developed and developing countries. As an undergraduate he contributed to work quantifying the temporal relationship between H7N9 avian influenza onset in humans with poultry surveillance, live bird movements, and sociodemographic factors. He plans to pursue further study into One Health issues, with a focus on veterinary solutions and interventions. Alex’s advisor was [A/Prof Ricardo Soares Magalhães](#ricardo).</center>

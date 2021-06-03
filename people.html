@@ -19,22 +19,16 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -48,6 +42,11 @@
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -60,7 +59,32 @@ if (window.hljs) {
 
 
 
-
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -71,6 +95,10 @@ if (window.hljs) {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -87,13 +115,40 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
-pre code {
-  padding: 0;
-}
 </style>
 
 
 <style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
 .dropdown-submenu {
   position: relative;
 }
@@ -121,7 +176,7 @@ pre code {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
+  border-left-color: #ffffff;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -133,7 +188,7 @@ pre code {
 }
 </style>
 
-<script type="text/javascript">
+<script>
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -144,23 +199,10 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.tab('show');
+  menuAnchor.parent().addClass('active');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
 });
 </script>
 
@@ -172,6 +214,7 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
+  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -297,13 +340,13 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-sm-12 col-md-4 col-lg-3">
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
 </div>
 
-<div class="toc-content col-sm-12 col-md-8 col-lg-9">
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -322,7 +365,7 @@ div.tocify {
       <ul class="nav navbar-nav">
         <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fas fa-globe"></span>
+    <span class="fa fa-globe"></span>
      
     Research
      
@@ -353,14 +396,14 @@ div.tocify {
 </li>
 <li>
   <a href="people.html">
-    <span class="fas fa-user"></span>
+    <span class="fa fa-user"></span>
      
     People
   </a>
 </li>
 <li>
   <a href="publications.html">
-    <span class="fas fa-map"></span>
+    <span class="fa fa-map"></span>
      
     Publications
   </a>
@@ -374,21 +417,21 @@ div.tocify {
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="opportunities.html">
-        <span class="fas fa-search"></span>
+        <span class="fa fa-search"></span>
          
         Opportunities
       </a>
     </li>
     <li>
       <a href="https://twitter.com/spatial_epi_lab">
-        <span class="fas fa-twitter"></span>
+        <span class="fa fa-twitter"></span>
          
         Twitter
       </a>
     </li>
     <li>
       <a href="contact.html">
-        <span class="fas fa-phone"></span>
+        <span class="fa fa-phone"></span>
          
         Contact
       </a>
@@ -403,7 +446,7 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div id="header">
+<div class="fluid-row" id="header">
 
 
 
@@ -455,6 +498,34 @@ Global Health: Science and Practice
 </td>
 <td style="text-align:left;width: 20em; ">
 MM Hasan, RJS Magalhaes, Y Fatima, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Geographical Variation in Coxiella Burnetii Seroprevalence in a Dairy Farm Located in South-Western Ethiopia: Understanding the Broader Community Risk
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Pathogens
+</td>
+<td style="text-align:left;width: 20em; ">
+T Proboste, FB Deressa, Y Li, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Double Burden of Malnutrition among Women of Reproductive Age in 55 Low-and Middle-Income Countries: Progress Achieved and Opportunities for Meeting the Global Target
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+European J of Clinical Nutrition
+</td>
+<td style="text-align:left;width: 20em; ">
+MM Hasan, S Ahmed, RJS Magalhaes, et al
 </td>
 </tr>
 <tr>
@@ -616,6 +687,20 @@ J Kurscheid, B Laksono, MJ Park, et al
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
+Coxiella Burnetii in the Environment: a Systematic Review and Critical Appraisal of Sampling Methods
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Zoonoses and Public Health
+</td>
+<td style="text-align:left;width: 20em; ">
+AMH Abeykoon, NJ Clark, RJ Soares Magalhaes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:left;width: 30em; ">
 Tb and Hiv Epidemiology and Collaborative Service: Evidence from Ethiopia, 2011–2015
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -623,6 +708,20 @@ Hiv/Aids-Research and Palliative Care
 </td>
 <td style="text-align:left;width: 20em; ">
 YA Gelaw, Y Assefa, RJS Magalhaes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:left;width: 30em; ">
+Seroprevalence of and Risk Factors for q Fever in Dairy and Slaughterhouse Cattle of Jimma Town, South Western Ethiopia
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Bmc Veterinary Research
+</td>
+<td style="text-align:left;width: 20em; ">
+FB Deressa, DO Kal, BD Gelalcha, et al
 </td>
 </tr>
 <tr>
@@ -658,13 +757,13 @@ MM Hasan, RJS Magalhaes, S Ahmed, et al
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
-Interim Guidance for Health‐care Professionals and Administrators Providing Hospital Care to Adult Patients with Cognitive Impairment, in the Context of Covid‐19 Pandemic
+Interim Guidance for Health-care Professionals and Administrators Providing Hospital Care to Adult Patients with Cognitive Impairment, in the Context of Covid-19 Pandemic
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
 Australasian J on Ageing
 </td>
 <td style="text-align:left;width: 20em; ">
-M Martin‐Khan, K Bail, MW Yates, et al
+M Martin-Khan, K Bail, MW Yates, et al
 </td>
 </tr>
 <tr>
@@ -713,20 +812,6 @@ J Cortes-Ramirez, D Vilcins, P Jagals, et al
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
-Coxiella Burnetii in the Environment: a Systematic Review and Critical Appraisal of Sampling Methods
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Zoonoses and Public Health
-</td>
-<td style="text-align:left;width: 20em; ">
-AMH Abeykoon, NJ Clark, RJ Soares Magalhaes, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
 Dog Bite Emergency Department Presentations in Brisbane Metro South: Epidemiology and Exploratory Medical Geography for Targeted Interventions
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -734,20 +819,6 @@ One Health
 </td>
 <td style="text-align:left;width: 20em; ">
 A Pekin, H Rynhoud, B Brennan, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Seroprevalence of and Risk Factors for q Fever in Dairy and Slaughterhouse Cattle of Jimma Town, South Western Ethiopia
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmc Veterinary Research
-</td>
-<td style="text-align:left;width: 20em; ">
-FB Deressa, DO Kal, BD Gelalcha, et al
 </td>
 </tr>
 <tr>
@@ -895,21 +966,7 @@ E Ruberanziza, K Owada, NJ Clark, et al
 2019
 </td>
 <td style="text-align:left;width: 30em; ">
-Effect of Temperature and Altitude Difference on Tuberculosis Notification: a Systematic Review
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-J of Global Infectious Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-YA Gelaw, W Yu, RJS Magalhães, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Knowledge, Attitudes, and Practices Associated with Avian Influenza along the Live Chicken Market Chains in Eastern China: a Cross‐sectional Survey in Shanghai, Anhui, and Jiangsu
+Knowledge, Attitudes, and Practices Associated with Avian Influenza along the Live Chicken Market Chains in Eastern China: a Cross-sectional Survey in Shanghai, Anhui, and Jiangsu
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
 Transboundary and Emerging Diseases
@@ -930,6 +987,20 @@ Travel Medicine and Infectious Disease
 </td>
 <td style="text-align:left;width: 20em; ">
 PW Dhewantara, R Marina, T Puspita, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:left;width: 30em; ">
+Effect of Temperature and Altitude Difference on Tuberculosis Notification: a Systematic Review
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+J of Global Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+YA Gelaw, W Yu, RJS Magalhães, et al
 </td>
 </tr>
 <tr>
@@ -979,6 +1050,34 @@ S Swain, M Bhatt, D Biswal, et al
 2019
 </td>
 <td style="text-align:left;width: 30em; ">
+Current Progress and Future Directions in the Double Burden of Malnutrition among Women in South and Southeast Asian Countries
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Current Developments in Nutrition
+</td>
+<td style="text-align:left;width: 20em; ">
+T Biswas, N Townsend, RJS Magalhaes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:left;width: 30em; ">
+Spatial Clustering and Socio-Demographic Determinants of Hiv Infection in Ethiopia, 2015–2017
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Int J of Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+YA Gelaw, RJS Magalhães, Y Assefa, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:left;width: 30em; ">
 Sociodemographic Profiling of Tuberculosis Hotspots in Ethiopia, 2014–2017
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1021,34 +1120,6 @@ P McGreevy, S Masters, L Richards, et al
 2019
 </td>
 <td style="text-align:left;width: 30em; ">
-Current Progress and Future Directions in the Double Burden of Malnutrition among Women in South and Southeast Asian Countries
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Current Developments in Nutrition
-</td>
-<td style="text-align:left;width: 20em; ">
-T Biswas, N Townsend, RJS Magalhaes, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Spatial Clustering and Socio-Demographic Determinants of Hiv Infection in Ethiopia, 2015–2017
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Int J of Infectious Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-YA Gelaw, RJS Magalhães, Y Assefa, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
 Determinants of Spatial Heterogeneity of Functional Illiteracy among School-Aged Children in the Philippines: An Ecological Study
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1056,6 +1127,20 @@ Int J of Environmental Research and Public Health
 </td>
 <td style="text-align:left;width: 20em; ">
 K Owada, M Nielsen, C Lau, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:left;width: 30em; ">
+Geographical Distribution and Risk Factors for Echinococcus Granulosus Infection in Peri-Urban Wild Dog Populations
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Int J for Parasitology: Parasites and Wildlife
+</td>
+<td style="text-align:left;width: 20em; ">
+L Harriott, M Gentle, R Traub, et al
 </td>
 </tr>
 <tr>
@@ -1084,20 +1169,6 @@ Int J of Environmental Research and Public Health
 </td>
 <td style="text-align:left;width: 20em; ">
 AL Araujo Navas, F Osei, LR Leonardo, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Geographical Distribution and Risk Factors for Echinococcus Granulosus Infection in Peri-Urban Wild Dog Populations
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Int J for Parasitology: Parasites and Wildlife
-</td>
-<td style="text-align:left;width: 20em; ">
-L Harriott, M Gentle, R Traub, et al
 </td>
 </tr>
 <tr>
@@ -1287,20 +1358,6 @@ AM Cadavid Restrepo, YR Yang, DP McManus, et al
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
-Effectiveness of Market-Level Biosecurity at Reducing Exposure of Poultry and Humans to Avian Influenza: a Systematic Review and Meta-Analysis
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-The J of Infectious Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-X Zhou, Y Wang, H Liu, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
 Spatial Distribution and Populations at Risk of A. Lumbricoides and T. Trichiura Co-Infections and Infection Intensity Classes: An Ecological Study
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1308,6 +1365,20 @@ Parasites &amp; Vectors
 </td>
 <td style="text-align:left;width: 20em; ">
 K Owada, CL Lau, L Leonardo, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;width: 30em; ">
+Effectiveness of Market-Level Biosecurity at Reducing Exposure of Poultry and Humans to Avian Influenza: a Systematic Review and Meta-Analysis
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+The J of Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+X Zhou, Y Wang, H Liu, et al
 </td>
 </tr>
 <tr>
@@ -1385,6 +1456,20 @@ MT Hasan, AA Mamun, GM Williams, et al
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
+Characteristics of Livestock Husbandry and Management Practice in the Central Dry Zone of Myanmar
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Tropical Animal Health and Production
+</td>
+<td style="text-align:left;width: 20em; ">
+TTZ Win, A Campbell, RJS Magalhães, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;width: 30em; ">
 The Role of Neonatal Pulmonary Morbidity in the Longitudinal Patterns of Hospitalisation for Respiratory Infection During the First Year of Life
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1420,20 +1505,6 @@ Parasites &amp; Vectors
 </td>
 <td style="text-align:left;width: 20em; ">
 ALA Navas, RJS Magalhães, F Osei, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Characteristics of Livestock Husbandry and Management Practice in the Central Dry Zone of Myanmar
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Tropical Animal Health and Production
-</td>
-<td style="text-align:left;width: 20em; ">
-TTZ Win, A Campbell, RJS Magalhães, et al
 </td>
 </tr>
 <tr>
@@ -1597,7 +1668,7 @@ FB Garcia Jr, K Halton, N Graves, et al
 </div>
 <div id="early-career-researchers" class="section level2">
 <h2>Early Career Researchers</h2>
-<div id="nicholas-clark" class="section level3">
+<div id="nick" class="section level3">
 <h3>Nicholas Clark</h3>
 <p><img src="images/nick_profile.JPG" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Nicholas J Clark is a lecturer in molecular epidemiology at the Spatial Epidemiology Laboratory (SpatialEpiLab), University of Queensland"/></p>
 <center>
@@ -1631,20 +1702,6 @@ Authors
 2021
 </td>
 <td style="text-align:left;width: 30em; ">
-Perceptions of Dog Owners Towards Canine Gastrointestinal Parasitism and Associated Human Health Risk in Southeast Queensland
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-One Health
-</td>
-<td style="text-align:left;width: 20em; ">
-T Nguyen, N Clark, MK Jones, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2021
-</td>
-<td style="text-align:left;width: 30em; ">
 Coxiella Burnetii in the Environment: a Systematic Review and Critical Appraisal of Sampling Methods
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1652,6 +1709,20 @@ Zoonoses and Public Health
 </td>
 <td style="text-align:left;width: 20em; ">
 AMH Abeykoon, NJ Clark, RJ Soares Magalhaes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Perceptions of Dog Owners Towards Canine Gastrointestinal Parasitism and Associated Human Health Risk in Southeast Queensland
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+One Health
+</td>
+<td style="text-align:left;width: 20em; ">
+T Nguyen, N Clark, MK Jones, et al
 </td>
 </tr>
 <tr>
@@ -1679,7 +1750,7 @@ Microbial Associations and Spatial Proximity Predict North American Moose (Alces
 J of Animal Ecology
 </td>
 <td style="text-align:left;width: 20em; ">
-NM Fountain‐Jones, NJ Clark, AC Kinsley, et al
+NM Fountain-Jones, NJ Clark, AC Kinsley, et al
 </td>
 </tr>
 <tr>
@@ -1735,7 +1806,7 @@ Genetic Analysis of Porcine Circovirus Type 2 (Pcv2) in Queensland, Australia
 Australian Veterinary J
 </td>
 <td style="text-align:left;width: 20em; ">
-NK Mone, NJ Clark, M Kyaw‐Tanner, et al
+NK Mone, NJ Clark, M Kyaw-Tanner, et al
 </td>
 </tr>
 <tr>
@@ -2070,6 +2141,20 @@ J Cortes-Ramirez, D Vilcins, P Jagals, et al
 2021
 </td>
 <td style="text-align:left;width: 30em; ">
+Early Environmental Exposures and Life-Long Risk of Chronic Non-Respiratory Disease
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Paediatric Respiratory Reviews
+</td>
+<td style="text-align:left;width: 20em; ">
+D Vilcins, J Cortes-Ramirez, D Currie, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
 Environmental Risk Factors Associated with Respiratory Diseases in Children with Socioeconomic Disadvantage
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -2185,22 +2270,18 @@ J Cortes-Ramirez, S Naish, P Jagals
 <div id="kei-owada" class="section level3">
 <h3>Kei Owada</h3>
 <p><img src="images/kei_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Kei Owada is a postdoctoral fellow at the Spatial Epidemiology Group, University of Queensland"/></p>
-<centr>Dr Owada is a post-doctoral fellow at UQ, specialising in infectious disease epidemiology. She completed her PhD thesis on the role of soil-transmitted helminths on the cognitive development of school aged children at the UQ faculty of medicine (2019). Her primary supervisor was Associate Professor Ricardo J Soares Magalhães. She has received field epidemiology training at the US CDC (2011), and worked as a field epidemiologist. Her past work includes integrated disease surveillance work in Sierra Leone (2012), Ebola outbreak front line response work in Sierra Leone (2014-2015), and Ebola outbreak response and preparedness work at the WHO regional office in Brazzaville, Congo (2018-2019). Her experience also extends to the field of medical entomology, after receiving field entomology training in Samoa as part of the Samoa Lymphatic filariasis xenomonitoring project (2018).
+<centr>Dr Owada is a post-doctoral fellow at UQ, specialising in infectious disease epidemiology. She completed her PhD thesis on the role of soil-transmitted helminths on the cognitive development of school aged children at the UQ faculty of medicine (2019). Her primary supervisor was <a href="#ricardo">A/Prof Ricardo J Soares Magalhães</a>. She has received field epidemiology training at the US CDC (2011), and worked as a field epidemiologist. Her past work includes integrated disease surveillance work in Sierra Leone (2012), Ebola outbreak front line response work in Sierra Leone (2014-2015), and Ebola outbreak response and preparedness work at the WHO regional office in Brazzaville, Congo (2018-2019). Her experience also extends to the field of medical entomology, after receiving field entomology training in Samoa as part of the Samoa Lymphatic filariasis xenomonitoring project (2018).
 </center>
 <p><br></p>
 </div>
-</div>
-<div id="phd-students" class="section level2">
-<h2>PhD Students</h2>
-<div id="pandji-dhewantara" class="section level3">
-<h3>Pandji Dhewantara</h3>
-<p><img src="images/pandji_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Pandji Dhewantara is a PhD student at the Spatial Epidemiology Group, University of Queensland"/></p>
-<center>
-Pandji is an early-career researcher working at the <a href="https://www.litbang.kemkes.go.id/" target="_blank">National Institute of Health Research and Development (NIHRD)-Ministry of Health of Indonesia</a>. He obtained his Master’s degree on Environmental science in Padjajaran University, Bandung, Indonesia. In Indonesia, his research particularly focuses on the epidemiology of vector-borne diseases such as dengue, malaria and lymphatic filariasis. Currently, his PhD project is focusing on leptospirosis – a zoonotic bacterial disease caused by Leptospira in China. His project is aiming at estimating the burden of human leptospirosis in China and using spatial analytical tools to understand the spatial epidemiology of human leptospirosis in China and the effects of demographical, ecological and socio-economic factors on the geographical and temporal pattern of human leptospirosis. Pandji’s advisors are <a href="#ricardo">A/Prof Ricardo Soares Magalhães</a>, <a href="https://researchers.uq.edu.au/researcher/1318" target="_blank">A/Prof. Abdullah Mamun</a> from UQ’s Institute of Social Science Research and <a href="https://staff.qut.edu.au/staff/w2.hu" target="_blank">Prof. Wenbiao Hu</a> from the School of Public Health and Social Work, Queensland University of Technology. Read more about Pandji’s work on his <a href="https://www.researchgate.net/profile/Pandji_Dhewantara" target="_blank">ResearchGate</a> and <a href="https://scholar.google.com/citations?user=awhMGaAAAAAJ&amp;hl=id" target="_blank">Google Scholar</a> pages.
+<div id="tatiana-proboste" class="section level3">
+<h3>Tatiana Proboste</h3>
+<p><img src="images/tatiana_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Tatiana proboste is a postdoctoral fellow at the Spatial Epidemiology Group, University of Queensland"/></p>
+<centr>Dr Proboste is a post-doctoral at UQ Spatial Epidemiology Laboratory. Her background is in Veterinary Medicine (DVM) and terrestrial ecology and biodiversity management (Msc) with a specialisation in wildlife disease ecology and molecular tools (PhD). As a researcher, Tatiana has worked on molecular detection of tick-borne pathogens under the supervision of <a href="https://www.researchgate.net/profile/Javier-Millan-2" target="_blanck">Dr Javier Millan</a> in Spain, and during her PhD, she work on developing tools to investigate the role of wildlife in disease transmission in urbanized environment under the supervision of <a href="https://researchers.uq.edu.au/researcher/1349" target="_blank">Prof Jenny Seddon</a>, <a href="#nick">Dr Nick Clark</a>, <a href="https://researchers.uq.edu.au/researcher/2719" target="_blank">Dr Hawthorne Beyer</a> and <a href="https://researchers.uq.edu.au/researcher/1022" target="_blank">Prof Jonathan Rhodes</a>. Tatiana is currently working on the <a href="https://blogs.unimelb.edu.au/q-fever/#:~:text=About&amp;text=Taking%20the%20query%20out%20of%20Q%20fever%20is%20a%20multidisciplinary,in%20Australia%20and%20more%20broadly" target="_blanck">“Taking the Query out of Q Fever”</a> project and in the development of a zoonotic vector-borne disease early warning system to enhance surveillance in Australia.
 </center>
-<br>
+<p><br></p>
 <center>
-<code>Pandji's recent publications</code>
+<code>Dr Proboste's recent publications</code>
 </center>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
@@ -2226,41 +2307,13 @@ Authors
 2021
 </td>
 <td style="text-align:left;width: 30em; ">
-Spatial Analysis of Malaria in Kotabaru, South Kalimantan, Indonesia: An Evaluation to Guide Elimination Strategies
+Geographical Variation in Coxiella Burnetii Seroprevalence in a Dairy Farm Located in South-Western Ethiopia: Understanding the Broader Community Risk
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Transactions of the Royal Society of Tropical Medicine and Hygiene
+Pathogens
 </td>
 <td style="text-align:left;width: 20em; ">
-J Juhairiyah, D Andiarsa, L Indriyati, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2021
-</td>
-<td style="text-align:left;width: 30em; ">
-Decline of Notified Dengue Infections in Indonesia in 2017: Discussion of the Possible Determinants
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Narra j
-</td>
-<td style="text-align:left;width: 20em; ">
-PW Dhewantara, KF Jamil, JK Fajar, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2021
-</td>
-<td style="text-align:left;width: 30em; ">
-Geographical Heterogeneity and Socio-Ecological Risk Profiles of Dengue in Jakarta, Indonesia
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Geospatial Health
-</td>
-<td style="text-align:left;width: 20em; ">
-H Prasetyowati, PW Dhewantara, J Hendri, et al
+T Proboste, FB Deressa, Y Li, et al
 </td>
 </tr>
 <tr>
@@ -2268,163 +2321,12 @@ H Prasetyowati, PW Dhewantara, J Hendri, et al
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
-Variation of Preventive Practices and Its Association with Malaria Infection in Eastern Indonesia: Findings from Community-Based Survey
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Plos One
-</td>
-<td style="text-align:left;width: 20em; ">
-M Ipa, M Widawati, AD Laksono, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Spatial Distribution of Leptospirosis Incidence in the Upper Yangtze and Pearl River Basin, China: Tools to Support Intervention and Elimination
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Science of the Total Environment
-</td>
-<td style="text-align:left;width: 20em; ">
-PW Dhewantara, W Zhang, A Al Mamun, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Tb and Hiv Epidemiology and Collaborative Service: Evidence from Ethiopia, 2011–2015
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Hiv/Aids (Auckland, Nz)
-</td>
-<td style="text-align:left;width: 20em; ">
-YA Gelaw, Y Assefa, RJS Magalhaes, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Geographical and Temporal Dynamics of Dengue Fever in Java Island, Indonesia (2007–2018): Evidence Base to Guide Effective Interventions
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Int J of Infectious Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-P Dhewantara, M Riandi, T Wahono, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-The Application of Spatiotemporal Scan Statistics to Detect High-Risk Clusters for Dengue Fever in Jakarta, Indonesia
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Aip Conference Proceedings
-</td>
-<td style="text-align:left;width: 20em; ">
-PW Dhewantara, H Prasetyowati, W Ridwan, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Effect of Climate Change on the Geographical Distribution of Leptospirosis Risk in Western Java, Indonesia
+Genetic Analysis Tools to Investigate the Role of Wildlife in Disease Transmission in Modified Environments
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
 </td>
 <td style="text-align:left;width: 20em; ">
-PW Dhewantara
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Effects of El Nino Southern Oscillation and Dipole Mode Index on Chikungunya Infection in Indonesia
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Tropical Medicine and Infectious Disease
-</td>
-<td style="text-align:left;width: 20em; ">
-H Harapan, A Michie, A Yufika, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Spatial Epidemiological Approaches to Monitor and Measure the Risk of Human Leptospirosis
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-</td>
-<td style="text-align:left;width: 20em; ">
-P Dhewantara
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Faktor-Faktor Yang Mempengaruhi Praktik Keamanan Dalam Penggunaan Insektisida Rumah Tangga Di Kecamatan Pangandaran
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Aspirator-J of Vector-Borne Disease Studies
-</td>
-<td style="text-align:left;width: 20em; ">
-NH Kusumastuti, PW Dhewantara, N Pramestuti
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Identification of Filarial Parasites in Animals in Human Lymphatic Filariasis Endemic Areas in Central Kalimantan, Indonesia
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-</td>
-<td style="text-align:left;width: 20em; ">
-N Rahayu, Y Suryatinah, M Ipa, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Detection Dna Brugia Malayi Post Transmission Assessment Survey in North Hulu, Sungai District, South Kalimantan Province, Indonesia
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-</td>
-<td style="text-align:left;width: 20em; ">
-N Rahayu, Y Suryatinah, MR Ridha, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-The Potential of Rats and Bats as Reservoirs of Leptospirosis and Japanese Encephalitis (Je) in Muna Region, Southeast Sulawesi Province, Indonesia
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Global J of Health Science
-</td>
-<td style="text-align:left;width: 20em; ">
-PW Dhewantara, AH Wardhana
+T Proboste
 </td>
 </tr>
 <tr>
@@ -2432,153 +2334,13 @@ PW Dhewantara, AH Wardhana
 2019
 </td>
 <td style="text-align:left;width: 30em; ">
-Paediatric Dengue Infection in Cirebon, Indonesia: a Temporal and Spatial Analysis of Notified Dengue Incidence to Inform Surveillance
+Commensal Bacterial Sharing Does not Predict Host Social Associations in Kangaroos
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Parasites &amp; Vectors
+J of Animal Ecology
 </td>
 <td style="text-align:left;width: 20em; ">
-EP Astuti, PW Dhewantara, H Prasetyowati, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-using Dengue Epidemics and Local Weather in Bali, Indonesia to Predict Imported Dengue in Australia
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Environmental Research
-</td>
-<td style="text-align:left;width: 20em; ">
-Z Xu, H Bambrick, L Yakob, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Spatial and Temporal Variation of Dengue Incidence in the Island of Bali, Indonesia: An Ecological Study
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Travel Medicine and Infectious Disease
-</td>
-<td style="text-align:left;width: 20em; ">
-PW Dhewantara, R Marina, T Puspita, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Climate Variability, Satellite-Derived Physical Environmental Data and Human Leptospirosis: a Retrospective Ecological Study in China
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Environmental Research
-</td>
-<td style="text-align:left;width: 20em; ">
-PW Dhewantara, W Hu, W Zhang, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Individual and Contextual Factors Predicting Self-Reported Malaria among Adults in Eastern Indonesia: Findings from Indonesian Community-Based Survey
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Malaria J
-</td>
-<td style="text-align:left;width: 20em; ">
-PW Dhewantara, M Ipa, M Widawati
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Spatial Epidemiological Approaches to Inform Leptospirosis Surveillance and Control: a Systematic Review and Critical Appraisal of Methods
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Zoonoses and Public Health
-</td>
-<td style="text-align:left;width: 20em; ">
-PW Dhewantara, CL Lau, KJ Allan, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Leptospirosis, Climate and Satellite-Based Environmental Factors: a Temporal Modeling
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Online J of Public Health Informatics
-</td>
-<td style="text-align:left;width: 20em; ">
-PW Dhewantara, W Hu, W Zhang, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Geographical Distribution of Human Leptospirosis Incidence in the Upper Yangtze and Pearl River Basin, China: Tools to Support Surveillance and Focused Intervention
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-American J of Tropical Medicine and Hygiene
-</td>
-<td style="text-align:left;width: 20em; ">
-PW Dhewantara, AA Mamun, W Zhang, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Epidemiological Shift and Geographical Heterogeneity in the Burden of Leptospirosis in China
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Infectious Diseases of Poverty
-</td>
-<td style="text-align:left;width: 20em; ">
-PW Dhewantara, AA Mamun, WY Zhang, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Geographical and Temporal Distribution of the Residual Clusters of Human Leptospirosis in China, 2005–2016
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Scientific Reports
-</td>
-<td style="text-align:left;width: 20em; ">
-PW Dhewantara, A Al Mamun, WY Zhang, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Impact of Deltamethrin on Cockroaches (Periplaneta Americana) and Its Residue on Environment
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Health Science J of Indonesia
-</td>
-<td style="text-align:left;width: 20em; ">
-EP Astuti, PW Dhewantara
+T Proboste, P Corvalan, N Clark, et al
 </td>
 </tr>
 <tr>
@@ -2586,27 +2348,13 @@ EP Astuti, PW Dhewantara
 2017
 </td>
 <td style="text-align:left;width: 30em; ">
-The Distribution of Culex Spp (Diptera: Culicidae) in Selected Endemic Lymphatic Filariasis Villages in Bandung District West Java Indonesia
+Drivers of Bartonella Infection in Micromammals and their Fleas in a Mediterranean Peri-Urban Area
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Aspirator-J of Vector-Borne Disease Studies
+Veterinary Microbiology
 </td>
 <td style="text-align:left;width: 20em; ">
-EP Astuti, M Ipa, T Wahono, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-The Changing Epidemiology of Leptospirosis in Mainland China and Its Impact on Annual Disease Burden Estimates
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-American J of Tropical Medicine and Hygiene
-</td>
-<td style="text-align:left;width: 20em; ">
-PW Dhewantara, AA Mamun, WY Zhang, et al
+A Cevidanes, L Altet, AD Chirife, et al
 </td>
 </tr>
 <tr>
@@ -2614,13 +2362,41 @@ PW Dhewantara, AA Mamun, WY Zhang, et al
 2016
 </td>
 <td style="text-align:left;width: 30em; ">
-Kapasitas Vektor Dan Laju Inokulasi Entomologis Anopheles Vagus Dari Wilayah Endemis Malaria Di Provinsi Banten
+Molecular Detection of Vector-Borne Pathogens in Wild and Domestic Carnivores and their Ticks at the Human–wildlife Interface
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Vektora: Jurnal Vektor Dan Reservoir Penyakit
+Ticks and Tick-Borne Diseases
 </td>
 <td style="text-align:left;width: 20em; ">
-EP Astuti, M Ipa, H Prasetyowati, et al
+J Millán, T Proboste, IGF de Mera, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2016
+</td>
+<td style="text-align:left;width: 30em; ">
+Differences in the Ectoparasite Fauna Between Micromammals Captured in Natural and Adjacent Residential Areas are Better Explained by Sex and Season than by Type of Habitat
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasitology Research
+</td>
+<td style="text-align:left;width: 20em; ">
+A Cevidanes, T Proboste, AD Chirife, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2015
+</td>
+<td style="text-align:left;width: 30em; ">
+Infection and Exposure to Vector-Borne Pathogens in Rural Dogs and their Ticks, Uganda
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasites &amp; Vectors
+</td>
+<td style="text-align:left;width: 20em; ">
+T Proboste, G Kalema-Zikusoka, L Altet, et al
 </td>
 </tr>
 </tbody>
@@ -2628,6 +2404,9 @@ EP Astuti, M Ipa, H Prasetyowati, et al
 </div>
 <p><br></p>
 </div>
+</div>
+<div id="phd-students" class="section level2">
+<h2>PhD Students</h2>
 <div id="tarni-cooper" class="section level3">
 <h3>Tarni Cooper</h3>
 <p><img src="images/tarni_profile.png" class="round" style="border:4px solid; margin-bottom: 20px" alt="Tarni Cooper is a PhD student at the Spatial Epidemiology Group, University of Queensland"/></p>
@@ -2780,1295 +2559,6 @@ TL Cooper, Y Kirino, S Alonso, et al
 <center>
 Hester is a PhD student interested in the study of zoonotic bacterial diseases and how they contribute to the One Health concept. Hester’s current research focuses on the molecular and spatial epidemiology of methicillin resistant <em>Staphylococcus</em> spp. carriage in Brisbane’s domestic and shelter animals. Hester’s advisors at UQ are <a href="#ricardo">A/Prof Ricardo Soares Magalhães</a>, <a href="https://researchers.uq.edu.au/researcher/1359" target="_blank">Dr Justine Gibson</a> and <a href="https://researchers.uq.edu.au/researcher/11041" target="_blank">Dr Erika Meler</a>. Read more about Hester’s work on her <a href="https://www.researchgate.net/profile/Hester_Rynhoud" target="_blank">ResearchGate</a> page.
 </center>
-<p><br></p>
-</div>
-<div id="yalemzewod-assefa-gelaw-yalem" class="section level3">
-<h3>Yalemzewod Assefa Gelaw (Yalem)</h3>
-<p><img src="images/yalemzewod_profile.png" class="round" style="border:4px solid; margin-bottom: 20px" alt="Yalemzewod Assefa Gelaw is a PhD student at the Spatial Epidemiology Group, University of Queensland"/></p>
-<center>
-Yalemzewod is a PhD candidate interested in infectious disease, particularly in Human Immunodeficiency Virus (HIV) and tuberculosis (TB). Yalem’s current research focuses on the epidemiology of tuberculosis and HIV associated TB co-infection in Ethiopia. Yalem joined the University of Queensland after ten years of experience working in the Ministry of Health as a senior environmental health officer, as well as holding an academic position at the <a href="http://www.uog.edu.et/en/">University of Gondar</a> in Ethiopia. He obtained his master’s degree on Master of public health in Epidemiology and Biostatistics in University of Gondar, Ethiopia. Yalem’s advisors are <a href="https://researchers.uq.edu.au/researcher/668">Prof Gail Williams</a>, <a href="https://researchers.uq.edu.au/researcher/15240">Dr Yibeltal Alemu</a> and <a href="#ricardo">A/Prof Ricardo Soares Magalhães</a>. Read more about Yalem’s work on his <a href="https://scholar.google.com.au/citations?user=yVWRy2wAAAAJ&amp;hl=en" target="_blank">Google scholar</a> and <a href="https://www.researchgate.net/profile/Yalemzewod_Gelaw" target="_blank">ResearchGate</a> pages.
-</center>
-<br>
-<center>
-<code>Yalem's recent publications</code>
-</center>
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
-<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
-Year
-</th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
-Title
-</th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
-Journal
-</th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
-Authors
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-2021
-</td>
-<td style="text-align:left;width: 30em; ">
-Risk Factors for Covid-19 Infection, Disease Severity and Related Deaths in Africa: a Systematic Review
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmj Open
-</td>
-<td style="text-align:left;width: 20em; ">
-HA Gesesew, DN Koye, DM Fetene, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2021
-</td>
-<td style="text-align:left;width: 30em; ">
-Geographical Heterogeneity and Socio-Ecological Risk Profiles of Dengue in Jakarta, Indonesia
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Geospatial Health
-</td>
-<td style="text-align:left;width: 20em; ">
-H Prasetyowati, PW Dhewantara, J Hendri, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2021
-</td>
-<td style="text-align:left;width: 30em; ">
-Covid-19 in Ethiopia: a Geospatial Analysis of Vulnerability to Infection, Case Severity and Death
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmj Open
-</td>
-<td style="text-align:left;width: 20em; ">
-KA Alene, YA Gelaw, DM Fetene, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Tb and Hiv Epidemiology and Collaborative Service: Evidence from Ethiopia, 2011–2015
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Hiv/Aids (Auckland, Nz)
-</td>
-<td style="text-align:left;width: 20em; ">
-YA Gelaw, Y Assefa, RJS Magalhaes, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Predictors of Mortality among Multidrug-Resistant Tuberculosis Patients in Central Ethiopia: a Retrospective Follow-Up Study
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Epidemiology &amp; Infection
-</td>
-<td style="text-align:left;width: 20em; ">
-GM Kassa, A Tadesse, YA Gelaw, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Towards Sustainable Tb Control in Ethiopia–profiling High-Risk Geographical Areas using Spatial Modelling
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-</td>
-<td style="text-align:left;width: 20em; ">
-Y Gelaw
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Community Health Extension Program of Ethiopia, 2003–2018: Successes and Challenges Toward Universal Coverage for Primary Healthcare Services
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Globalization and Health
-</td>
-<td style="text-align:left;width: 20em; ">
-Y Assefa, YA Gelaw, PS Hill, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Hiv Prevalence among Tuberculosis Patients in Sub-Saharan Africa: a Systematic Review and Meta-Analysis
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Aids and Behavior
-</td>
-<td style="text-align:left;width: 20em; ">
-YA Gelaw, G Williams, RJS Magalhães, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Factors Associated with Overweight and Obesity among Adults in Northeast Ethiopia: a Cross-Sectional Study
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Diabetes, Metabolic Syndrome and Obesity: Targets and Therapy
-</td>
-<td style="text-align:left;width: 20em; ">
-S Dagne, YA Gelaw, Z Abebe, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Willingness to Pay for Community-Based Health Insurance and Associated Factors among Rural Households of Bugna District, Northeast Ethiopia
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmc Research Notes
-</td>
-<td style="text-align:left;width: 20em; ">
-YAG Amare Minyihun, Measho Gebreslassie Gebregziabher
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Effect of Temperature and Altitude Difference on Tuberculosis Notification: a Systematic Review
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-J of Global Infectious Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-YA Gelaw, W Yu, RJS Magalhães, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Screening Tools to Exclude Active Pulmonary Tb in High Tb Burden Countries: Systematic Review and Meta-Analysis
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-The Int J of Tuberculosis and Lung Disease
-</td>
-<td style="text-align:left;width: 20em; ">
-Y Assefa, S Woldeyohannes, YA Gelaw, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Sociodemographic Profiling of Tuberculosis Hotspots in Ethiopia, 2014–2017
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Transactions of the Royal Society of Tropical Medicine and Hygiene
-</td>
-<td style="text-align:left;width: 20em; ">
-YA Gelaw, G Williams, Y Assefa, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Spatial Clustering and Socio-Demographic Determinants of Hiv Infection in Ethiopia, 2015–2017
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Int J of Infectious Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-YA Gelaw, RJS Magalhães, Y Assefa, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Districts of Hiv Clustering in Ethiopia: 2015-2017
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Transactions of the Royal Society of Tropical Medicine and Hygiene
-</td>
-<td style="text-align:left;width: 20em; ">
-YA Gelaw, RJS Magalhaes, Y Assefa, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Epidemiology of Tuberculosis and Hiv Coinfection and Its Collaborative Services Towards Ending the Tb Epidemic in Ethiopia
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-American J of Tropical Medicine and Hygiene
-</td>
-<td style="text-align:left;width: 20em; ">
-YA Gelaw, RJS Magalhaes, Y Assefa, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Measuring Performance on the Healthcare Access and Quality Index for 195 Countries and Territories and Selected Subnational Locations: a Systematic Analysis from the Global …
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-The Lancet
-</td>
-<td style="text-align:left;width: 20em; ">
-N Fullman, J Yearwood, SM Abay, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Population and Fertility by Age and Sex for 195 Countries and Territories, 1950–2017: a Systematic Analysis for the Global Burden of Disease Study 2017
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-The Lancet
-</td>
-<td style="text-align:left;width: 20em; ">
-CJL Murray, CSKH Callender, XR Kulikoff, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Incidence and Risk Factors of First-Line Antiretroviral Treatment Failure among Human Immunodeficiency Virus-Infected Children in Amhara Regional State, Ethiopia: A …
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmj Open
-</td>
-<td style="text-align:left;width: 20em; ">
-MM Sisay, TA Ayele, YA Gelaw, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Mothers’ Health Service Utilization and Attitude Were the Main Predictors of Incomplete Childhood Vaccination in East-Central Ethiopia: a Case-Control Study
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Archives of Public Health
-</td>
-<td style="text-align:left;width: 20em; ">
-MK Yenit, YA Gelaw, AM Shiferaw
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-3-Month Daily Rifampicin and Isoniazid Compared to 6-or 9-Month Isoniazid for Treating Latent Tuberculosis Infection in Children and Adolescents less than 15 Years of Age: An …
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-European Respiratory J
-</td>
-<td style="text-align:left;width: 20em; ">
-Y Assefa, Y Assefa, S Woldeyohannes, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-The Role of Smoking in the Relationship Between Intimate Partner Violence and Age at Natural Menopause: a Mediation Analysis
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Women’s Midlife Health
-</td>
-<td style="text-align:left;width: 20em; ">
-DL Gita Devi Mishra, Hsin-Fang Chung, Yalemzewod Assefa Gelaw
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Factors Affectinsg the Utilization of Xpert Mtb/Rif Assay among Tb Clinic Health Workers in Addis Ababa
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-J of Clinical Tuberculosis and Other Mycobacterial Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-M Agonafir, Y Assefa, F Girmachew, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-The Effect of Climate and Altitude Variability on Tuberculosis: a Systematic Review
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Isee Conference Abstracts
-</td>
-<td style="text-align:left;width: 20em; ">
-Y Gelaw, W Yu, RJS Magalhães, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Erratum: Global, Regional, and National Age-Sex-Specific Mortality and Life Expectancy, 1950–2017: a Systematic Analysis for the Global Burden of Disease Study 2017 (the Lancet …
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-The Lancet
-</td>
-<td style="text-align:left;width: 20em; ">
-CJL Murray, D Dicker, G Nguyen, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Exclusive Breastfeeding and Mothers’ Employment Status in Gondar Town, Northwest Ethiopia: a Comparative Cross-Sectional Study
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Int Breastfeeding J
-</td>
-<td style="text-align:left;width: 20em; ">
-DA Chekol, GA Biks, YA Gelaw, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Maternal Health Care Service Seeking Behaviors and Associated Factors among Women in Rural Haramaya District, Eastern Ethiopia a Triangulated Community-Based Cross-Sectional Study
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Reproductive Health
-</td>
-<td style="text-align:left;width: 20em; ">
-YAGYAM Dereje Kifle, Telake Azale
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-The Prevalence of Impaired Fasting Glucose and Undiagnosed Diabetes Mellitus and Associated Risk Factors among Adults Living in a Rural Koladiba Town, Northwest Ethiopia
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmc Research Notes
-</td>
-<td style="text-align:left;width: 20em; ">
-A Worede, S Alemu, YA Gelaw, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Factors Associated with Utilization of Long-Acting and Permanent Contraceptive Methods among Women Who Have Decided not to Have more Children in Gondar City
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmc Women’s Health
-</td>
-<td style="text-align:left;width: 20em; ">
-CB Zenebe, M Adefris, MK Yenit, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Determinants to Antiretroviral Treatment Non-Adherence among Adult Hiv/Aids Patients in Northern Ethiopia
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Aids Research and Therapy
-</td>
-<td style="text-align:left;width: 20em; ">
-MAYAG Berhe Beyene Gebrezgabher, Yigzaw Kebede, Melaku Kindie, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Spatial Patterns of Childhood Diarrhea in Ethiopia: Data from Ethiopian Demographic and Health Surveys (2000, 2005, and 2011)
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmc Infectious Disease
-</td>
-<td style="text-align:left;width: 20em; ">
-DTDYAG Getahun Gebre BogaleEmail author, Kassahun Alemu Gelaye
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Pertussis Outbreak Investigation of Mekdela District, South Wollo Zone, Amhara Region, North-West Ethiopia
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmc Research Notes
-</td>
-<td style="text-align:left;width: 20em; ">
-SD Alamaw, AW Kassa, YA Gelaw
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Prevalence and Associated Factors of Khat Use among University Students in the University of Gondar, Northwest Ethiopia
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-J of Substance Use
-</td>
-<td style="text-align:left;width: 20em; ">
-WG Adane, GA Alemie, SM W/yhonnes, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Exclusive Breastfeeding and Mothers’ Employment Status in Gondar Town
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Northwest Ethiopia: Int Breastfeed j
-</td>
-<td style="text-align:left;width: 20em; ">
-DA Chekol, GA Biks, YA Gelaw, et al
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><br></p>
-</div>
-<div id="andrea-araujo-navas" class="section level3">
-<h3>Andrea Araujo Navas</h3>
-<p><img src="images/andrea_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Andrea Araujo Navas is a PhD student at the Spatial Epidemiology Group, University of Queensland"/></p>
-<center>
-Andrea is a geographer currently conducting PhD research into uncertainties related to spatial epidemiological studies. Her interest are to analyse spatial structures from epidemiological data as well as to focus on the relevance of different environmental risk factors that determine the exposure to <em>Schistosoma japonicum</em> infection in the Philippines. Andrea’s main research is at the <a href="https://www.itc.nl/" target="_blank">Faculty of Geo-information and Earth Observations Sciences</a> at the University of Twente in the Netherlands. Her advisors are <a href="https://research.utwente.nl/en/persons/alfred-stein" target="_blank">Prof Alfred Stein</a> and <a href="https://research.utwente.nl/en/persons/frank-osei" target="_blank">Dr Frank Osei</a> at UTwente, and <a href="#ricardo">A/Prof Ricardo Soares Magalhães</a> at University of Queensland. Read more about Andrea’s work on her <a href="https://www.researchgate.net/profile/Andrea_Araujo" target="_blank">ResearchGate</a> page.
-</center>
-<p><br></p>
-</div>
-<div id="tuhin-biswas" class="section level3">
-<h3>Tuhin Biswas</h3>
-<p><img src="images/tuhin_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Tuhin Biswas is a PhD student at the Spatial Epidemiology Group, University of Queensland"/></p>
-<center>
-Tuhin started his research career as a research fellow in one of the centre of excellence “Centre for Control of Chronic Diseases” at icddr,b which was established with funding support from <a href="https://www.nhlbi.nih.gov/" target="_blank">National Heart Lung and Blood Institute (NHLBI)</a>. He has experience working in a number of research projects that include diabetes &amp; prediabetes, surveillance and community management of hypertension, metabolic syndrome, child obesity, mental health and its resultant health effects in Bangladesh. His major works included implementation of research projects; planning, organizing and carry out various research/field research and study activities. His PhD research will explore the double burden of malnutrition among the women in South and Southeast Asia and its geographical variation, health inequality and health achievement. Tuhin’s advisors are <a href="https://researchers.uq.edu.au/researcher/1318" target="_blank">A/Prof Abdullah Mamun</a> and <a href="#ricardo">A/Prof Ricardo Soares Magalhães</a>. Read more about Tuhin’s work on his <a href="https://scholar.google.com.au/citations?user=8Jpp1CAAAAAJ&amp;hl=en&amp;oi=sra" target="_blank">Google scholar</a> and <a href="https://www.researchgate.net/profile/Tuhin_Biswas2" target="_blank">ResearchGate</a> pages.
-</center>
-<br>
-<center>
-<code>Tuhin's recent publications</code>
-</center>
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
-<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
-Year
-</th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
-Title
-</th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
-Journal
-</th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
-Authors
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-2021
-</td>
-<td style="text-align:left;width: 30em; ">
-Patterns and Determinants of the Double Burden of Malnutrition at the Household Level in South and Southeast Asia
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-European J of Clinical Nutrition
-</td>
-<td style="text-align:left;width: 20em; ">
-T Biswas, N Townsend, RJS Magalhaes, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2021
-</td>
-<td style="text-align:left;width: 30em; ">
-Global Incidence of Caesarean Deliveries on Maternal Request: a Systematic Review and Meta‐regression
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bjog: An Int J of Obstetrics &amp; Gynaecology
-</td>
-<td style="text-align:left;width: 20em; ">
-T Begum, KM Saif‐Ur‐Rahman, F Yaqoot, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2021
-</td>
-<td style="text-align:left;width: 30em; ">
-Double Burden of Malnutrition among Women in South and Southeast Asia: Geographical Variation, Health Inequality and Health Achievement
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-</td>
-<td style="text-align:left;width: 20em; ">
-T Biswas
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2021
-</td>
-<td style="text-align:left;width: 30em; ">
-Factors Associated with Low Adherence to Medication among Patients with Type 2 Diabetes at Different Healthcare Facilities in Southern Bangladesh
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Global Health Action
-</td>
-<td style="text-align:left;width: 20em; ">
-A Mannan, MM Hasan, F Akter, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Global Variation in the Prevalence of Bullying Victimisation Amongst Adolescents: Role of Peer and Parental Supports
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Eclinicalmedicine
-</td>
-<td style="text-align:left;width: 20em; ">
-T Biswas, JG Scott, K Munir, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Double Burden of Underweight and Overweight among Women in South and Southeast Asia: a Systematic Review and Meta-Analysis
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Advances in Nutrition
-</td>
-<td style="text-align:left;width: 20em; ">
-T Biswas, RJS Magalhaes, N Townsend, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Global Variation in the Prevalence of Suicidal Ideation, Anxiety and their Correlates among Adolescents: a Population Based Study of 82 Countries
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Eclinicalmedicine
-</td>
-<td style="text-align:left;width: 20em; ">
-T Biswas, JG Scott, K Munir, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Prevalence and Correlates of the Composite Index of Anthropometric Failure among Children under 5 Years Old in Bangladesh
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Maternal &amp; Child Nutrition
-</td>
-<td style="text-align:left;width: 20em; ">
-MS Islam, T Biswas
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Meeting the Global Target in Reproductive, Maternal, Newborn, and Child Health Care Services in Low-and Middle-Income Countries
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Global Health: Science and Practice
-</td>
-<td style="text-align:left;width: 20em; ">
-MM Hasan, RJS Magalhaes, S Ahmed, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Community Health Workers for Non-Communicable Disease Prevention and Control in Nepal: a Qualitative Study
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmj Open
-</td>
-<td style="text-align:left;width: 20em; ">
-LB Rawal, C Kharel, UN Yadav, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Healthcare Seeking Behavior and Glycemic Control in Patients with Type 2 Diabetes Attending a Tertiary Hospital
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Int J of Diabetes in Developing Countries
-</td>
-<td style="text-align:left;width: 20em; ">
-SMS Islam, R Uddin, SB Zaman, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Prevalence and Factors Associated with Overweight and Obesity among Primary School Children (9–14 Years) in a Selected Area of Dhaka, Bangladesh: a Cross-Sectional Study
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Indian J of Community Medicine
-</td>
-<td style="text-align:left;width: 20em; ">
-MT Hossain, SK Luies, T Biswas
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Double Burden of Malnutrition among Women of Reproductive Age in Low-and Middle-Income Countries: Progress Achieved and Opportunities for Meeting the Global Target
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Current Developments in Nutrition
-</td>
-<td style="text-align:left;width: 20em; ">
-MM Hasan, S Ahmed, RJS Magalhaes, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Prevalence and Sociodemographic Determinants of Household-Level Double Burden of Malnutrition in Bangladesh
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Public Health Nutrition
-</td>
-<td style="text-align:left;width: 20em; ">
-S Das, SM Fahim, MS Islam, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Association Between Socioeconomic Status and Prevalence of Non-Communicable Diseases Risk Factors and Comorbidities in Bangladesh: Findings from a Nationwide Cross-Sectional Survey
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmj Open
-</td>
-<td style="text-align:left;width: 20em; ">
-T Biswas, N Townsend, MS Islam, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Non-Communicable Disease (Ncd) Corners in Public Sector Health Facilities in Bangladesh: a Qualitative Study Assessing Challenges and Opportunities for Improving Ncd Services …
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmj Open
-</td>
-<td style="text-align:left;width: 20em; ">
-LB Rawal, K Kanda, T Biswas, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Current Progress and Future Directions in the Double Burden of Malnutrition among Women in South and Southeast Asian Countries
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Current Developments in Nutrition
-</td>
-<td style="text-align:left;width: 20em; ">
-T Biswas, N Townsend, RJS Magalhaes, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Undiagnosed Isolated Systolic and Diastolic Hypertension Subtypes and their Correlates in Bangladesh: a Nationwide Survey
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Osong Public Health and Research Perspectives
-</td>
-<td style="text-align:left;width: 20em; ">
-S Ahmed, S Pervin, T Biswas, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Erratum: Global, Regional, and National Comparative Risk Assessment of 84 Behavioural, Environmental and Occupational, and Metabolic Risks or Clusters of Risks for 195 …
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-The Lancet
-</td>
-<td style="text-align:left;width: 20em; ">
-JD Stanaway, A Afshin, E Gakidou, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-An Optimization Model for Aggregate Production Planning and Control: a Genetic Algorithm Approach
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Int J of Research in Industrial Engineering
-</td>
-<td style="text-align:left;width: 20em; ">
-SM Ahmed, TK Biswas, CK Nundy
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Late Onset Huntington’s Disease.
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-J of the Indian Academy of Geriatrics
-</td>
-<td style="text-align:left;width: 20em; ">
-A Pillai, TK Biswas
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Heritability and Genetic Advance Estimates from the Parental Lines of Hybrid Maize (Zea Mays L.)
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-J of Environmental Science and Natural Resources
-</td>
-<td style="text-align:left;width: 20em; ">
-T Biswas, MS Islam, NJ Methela
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Greenhouse Gases Emissions of India (Subnational Estimates): Manufacturing Sector (2005-2015 Series) Dated September 25, 2019
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-</td>
-<td style="text-align:left;width: 20em; ">
-V Gupta, T Biswas, D Janakiraman, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Patterns and Determinants of Household Level Double Burden of Malnutrition in South and Southeast Asia
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Annals of Nutrition and Metabolism
-</td>
-<td style="text-align:left;width: 20em; ">
-T Biswas
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Global, Regional, and National Age-Sex-Specific Mortality for 282 Causes of Death in 195 Countries and Territories, 1980–2017: a Systematic Analysis for the Global Burden Of …
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-The Lancet
-</td>
-<td style="text-align:left;width: 20em; ">
-GA Roth, D Abate, KH Abate, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Global, Regional, and National Comparative Risk Assessment of 84 Behavioural, Environmental and Occupational, and Metabolic Risks or Clusters of Risks for 195 Countries And …
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-The Lancet
-</td>
-<td style="text-align:left;width: 20em; ">
-JD Stanaway, A Afshin, E Gakidou, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Global, Regional, and National Age-Sex-Specific Mortality and Life Expectancy, 1950–2017: a Systematic Analysis for the Global Burden of Disease Study 2017
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-The Lancet
-</td>
-<td style="text-align:left;width: 20em; ">
-D Dicker, G Nguyen, D Abate, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Measuring Progress from 1990 to 2017 and Projecting Attainment to 2030 of the Health-Related Sustainable Development Goals for 195 Countries and Territories: a Systematic …
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-The Lancet
-</td>
-<td style="text-align:left;width: 20em; ">
-R Lozano, N Fullman, D Abate, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Population and Fertility by Age and Sex for 195 Countries and Territories, 1950–2017: a Systematic Analysis for the Global Burden of Disease Study 2017
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-The Lancet
-</td>
-<td style="text-align:left;width: 20em; ">
-CJL Murray, CSKH Callender, XR Kulikoff, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Assessing the Readiness of Health Facilities for Diabetes and Cardiovascular Services in Bangladesh: a Cross-Sectional Survey
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmj Open
-</td>
-<td style="text-align:left;width: 20em; ">
-T Biswas, MM Haider, RD Gupta, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Ethnic Predisposition of Diabetes Mellitus in the Patients with Previous History of Gestational Diabetes Mellitus: a Review
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Expert Review of Endocrinology &amp; Metabolism
-</td>
-<td style="text-align:left;width: 20em; ">
-R Das Gupta, S Gupta, A Das, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Influence of Organic Manures on the Growth of Diabetes Preventive Medicinal Plant Gynura, Gynura Procumbens
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-J of Biodiversity Conservation and Bioresource Management
-</td>
-<td style="text-align:left;width: 20em; ">
-MOS Akon, DK Datta, T Biswas, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Septicemia, Meningitis and Bilateral Subdural Empyema in an Infant Caused by Staphylococcus Aureus.
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Mymensingh Medical J: Mmj
-</td>
-<td style="text-align:left;width: 20em; ">
-S Ahmed, T Biswas, SP Paul
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-a Tale of Camouflaged Pain.
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-J of the Indian Academy of Geriatrics
-</td>
-<td style="text-align:left;width: 20em; ">
-A Pillai, TK Biswas
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Double Burden of Malnutrition among Mother-Child Pairs of Bangladesh: Prevalence and Socio-Demographic Determinants
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-</td>
-<td style="text-align:left;width: 20em; ">
-M Islam, M Mahfuz, SM Fahim, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Erratum: Global, Regional, and National Age-Sex-Specific Mortality and Life Expectancy, 1950–2017: a Systematic Analysis for the Global Burden of Disease Study 2017 (the Lancet …
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-The Lancet
-</td>
-<td style="text-align:left;width: 20em; ">
-CJL Murray, D Dicker, G Nguyen, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Greenhouse Gases Emission
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Nor Does it Accept any Responsibility for the Consequences of Its Use.
-</td>
-<td style="text-align:left;width: 20em; ">
-T Biswas, K Ganesan, V Gupta
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-a Clinical Study of Copd in Elderly with Special Reference to Hrct Chest and Pft
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Educational Society for Excellence
-</td>
-<td style="text-align:left;width: 20em; ">
-S Kane, S Bajpai, TK Biswas
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-The Prevalence of Underweight, Overweight and Obesity in Bangladeshi Adults: Data from a National Survey
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Plos One
-</td>
-<td style="text-align:left;width: 20em; ">
-T Biswas, SP Garnett, S Pervin, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Overweight and Obesity among Children and Adolescents in Bangladesh: a Systematic Review and Meta-Analysis
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Public Health
-</td>
-<td style="text-align:left;width: 20em; ">
-T Biswas, A Islam, MS Islam, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Increasing Prevalence of Overweight and Obesity in Bangladeshi Women of Reproductive Age: Findings from 2004 to 2014
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Plos One
-</td>
-<td style="text-align:left;width: 20em; ">
-T Biswas, MJ Uddin, AA Mamun, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Bangladesh Policy on Prevention and Control of Non-Communicable Diseases: a Policy Analysis
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmc Public Health
-</td>
-<td style="text-align:left;width: 20em; ">
-T Biswas, S Pervin, MIA Tanim, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Non-Communicable Disease (Ncd) Risk Factors and Diabetes among Adults Living in Slum Areas of Dhaka, Bangladesh
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Plos One
-</td>
-<td style="text-align:left;width: 20em; ">
-LB Rawal, T Biswas, NN Khandker, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Patients’ Perspective of Disease and Medication Adherence for Type 2 Diabetes in an Urban Area in Bangladesh: a Qualitative Study
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmc Research Notes
-</td>
-<td style="text-align:left;width: 20em; ">
-SMS Islam, T Biswas, FA Bhuiyan, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Impact of Mobile Phone-Based Technology to Improve Health, Population and Nutrition Services in Rural Bangladesh: a Study Protocol
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmc Medical Informatics and Decision Making
-</td>
-<td style="text-align:left;width: 20em; ">
-J Uddin, T Biswas, G Adhikary, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Age at Menarche and Its Socioeconomic Determinants among Female Students in an Urban Area in Bangladesh
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Sexual &amp; Reproductive Healthcare
-</td>
-<td style="text-align:left;width: 20em; ">
-MS Islam, MA Hussain, S Islam, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Socio-Demographic Characteristics and Tobacco Use among the Adults in Urban Slums of Dhaka, Bangladesh
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Tobacco Induced Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-NN Khandker, T Biswas, ANS Khan, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Performance of Promising Herbicides on Growth and Yield Attributes of Late Sown Wheat (Triticum Aestivum L.) and Its Associated Weeds.
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-J of Crop and Weed
-</td>
-<td style="text-align:left;width: 20em; ">
-S Paul, S Shil, T Biswas, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-End Organ Damage in Hypertensive Geriatric Age Group: a Cross Sectional Study
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-J of Medical Research and Innovation
-</td>
-<td style="text-align:left;width: 20em; ">
-P Kyada, K Jadhav, TK Biswas, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Evaluation of Risk Factors and End Organ Damage in Hypertensive Geriatric Age Group
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-J of Medical Research and Innovation
-</td>
-<td style="text-align:left;width: 20em; ">
-P Kyada, K Jadhav, TK Biswas, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Increasing Prevalence of Overweight and Obesity in Bangladeshi Women of Reproductive Age: Findings from 2004 to 2014
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Public Library of Science
-</td>
-<td style="text-align:left;width: 20em; ">
-S Garnett, T Biswas, AA Mamun, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-The Prevalence of Underweight, Overweight and Obesity in Bangladeshi Adults: Data from a National Survey
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Public Library of Science
-</td>
-<td style="text-align:left;width: 20em; ">
-S Garnett, T Biswas, S Pervin, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Sexual &amp; Reproductive Healthcare
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-</td>
-<td style="text-align:left;width: 20em; ">
-AZ Islam, M Rahman, MG Mostofa
-</td>
-</tr>
-</tbody>
-</table>
-</div>
 <p><br></p>
 </div>
 <div id="md.-mehedi-hasan" class="section level3">
@@ -4266,7 +2756,7 @@ M Osmani, H Akwar, Z Hasan, et al
 2017
 </td>
 <td style="text-align:left;width: 30em; ">
-a Survey of Zoonotic Pathogens Carried by Non‐indigenous Rodents at the Interface of the Wet Tropics of North Queensland, Australia
+a Survey of Zoonotic Pathogens Carried by Non-indigenous Rodents at the Interface of the Wet Tropics of North Queensland, Australia
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
 Transboundary and Emerging Diseases
@@ -5171,6 +3661,62 @@ SS Okeme, GS Kia, PP Mshelbwala, et al
 </div>
 <p><br></p>
 </div>
+<div id="uttara-kennedy" class="section level3">
+<h3>Uttara Kennedy</h3>
+<p><img src="images/Uttara_profile1.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Uttara Kennedy is a PhD student at the Spatial Epidemiology Group, University of Queensland"/></p>
+<center>
+Uttara Kennedy has worked for 18 years as a small animal veterinarian, practice manager and mentor to young vets across Australia and India, including volunteering in India with Vets Beyond Borders for their TNR (trap-neuter-release) program. She has an MSc in International Animal Welfare, Ethics and Law and a Member of the ANZVCS (Animal Welfare chapter). She currently works as a shelter veterinarian at the RSPCA Queensland’s largest city shelter. Her years with the RSPCA has given her deep insight into the challenges and issues pertaining to shelter medicine and control of endemic diseases in the shelter environment. She started her PhD in January 2021, to explore the epidemiology of diseases through animal shelters in Australia. She has co-authored papers on cattle welfare in India, and Australian invasive pest control strategies. She loves disappearing into the bush on long hiking-camping adventures with her family, when she is not working or studying.
+</center>
+<p><br></p>
+</div>
+<div id="francisca-powell" class="section level3">
+<h3>Francisca Powell</h3>
+<p><img src="images/fran_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Francisca Powell is a PhD student at the Spatial Epidemiology Group, University of Queensland"/></p>
+<p>Fran is a PhD candidate currently working on using multivariate modelling approaches to predict co-infections in both humans and animals. Her principal advisor is <a href="#nick">Dr. Nicholas Clark</a>, and her associate advisors are <a href="#ricardo">A/Prof. Ricardo Soares Magalhães</a>, <a href="https://rmdb.research.utas.edu.au/public/rmdb/q/indiv_detail_warp_trans/30546" target="_blank">Dr. Nicholas Fountain-Jones</a> and <a href="https://www.swansea.ac.uk/staff/science/biosciences/wells-k-l/" target="_blank">Dr. Konstans Wells</a>. Fran has broad interests in One Health research and infectious disease epidemiology and control, and has a multidisciplinary academic background in biomedical science, sociology, and French.</p>
+<p><br></p>
+</div>
+<div id="thomas-callaghan" class="section level3">
+<h3>Thomas Callaghan</h3>
+<p><img src="images/Thomas.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Thomas Cakkaghna is a PhD student at the Spatial Epidemiology Group, University of Queensland"/></p>
+Thomas is a PhD student interested in zoonotic infectious diseases and a One Health approach to their management. His current research focuses on the spatial epidemiology of zoonotic foodborne disease in Queensland. This work will include identifying which risk factors and exposure pathways are associated with animal infection, human infection, morbidity, and hospitalisation. Thomas has worked as a scientist for several years at Safe Food Production Queensland, Biosecurity Queensland, and the Queensland Department of Agriculture and Fisheries. Thomas completed his prior tertiary studies at UQ with a Bachelor of Environmental Science (Honours) and Graduate Certificate in Animal Science. He is a member of the Australian Society for Microbiology and an alumnus of the Evolutionary Physiology Laboratory at UQ’s School of Biological Science. Thomas’s advisors at UQ are <a href="#ricardo">A/Prof Ricardo Soares Magalhães</a>, <a href="https://public-health.uq.edu.au/profile/6032/colleen-lau" target="_blank">Prof Colleen Lau</a>, <a href="https://researchers.uq.edu.au/researcher/544" target="_blank">A/Prof Rowland Cobbold</a> and <a href="https://researchers.uq.edu.au/researcher/25478" target="_blank">Dr Dwan Vilcins</a>. His external advisors are Robin Sherlock (Safe Food Production Queensland) and Adj A/Professor Jim Smith (Queensland Health and QUT). Read more about Thomas on his <a href="https://www.researchgate.net/profile/Thomas-Callaghan-7" target="_blank">ResearchGate</a> page.
+</center>
+<p><br></p>
+</div>
+</div>
+<div id="former-lab-group-members" class="section level2">
+<h2>Former lab group members</h2>
+<div id="pandji-dhewantara" class="section level3">
+<h3>Pandji Dhewantara</h3>
+<p><img src="images/pandji_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Pandji Dhewantara is a PhD student at the Spatial Epidemiology Group, University of Queensland"/></p>
+<center>
+Pandji is an early-career researcher working at the <a href="https://www.litbang.kemkes.go.id/" target="_blank">National Institute of Health Research and Development (NIHRD)-Ministry of Health of Indonesia</a>. He obtained his Master’s degree on Environmental science in Padjajaran University, Bandung, Indonesia. In Indonesia, his research particularly focuses on the epidemiology of vector-borne diseases such as dengue, malaria and lymphatic filariasis. Currently, his PhD project is focusing on leptospirosis – a zoonotic bacterial disease caused by Leptospira in China. His project is aiming at estimating the burden of human leptospirosis in China and using spatial analytical tools to understand the spatial epidemiology of human leptospirosis in China and the effects of demographical, ecological and socio-economic factors on the geographical and temporal pattern of human leptospirosis. Pandji’s advisors are <a href="#ricardo">A/Prof Ricardo Soares Magalhães</a>, <a href="https://researchers.uq.edu.au/researcher/1318" target="_blank">A/Prof. Abdullah Mamun</a> from UQ’s Institute of Social Science Research and <a href="https://staff.qut.edu.au/staff/w2.hu" target="_blank">Prof. Wenbiao Hu</a> from the School of Public Health and Social Work, Queensland University of Technology. Read more about Pandji’s work on his <a href="https://www.researchgate.net/profile/Pandji_Dhewantara" target="_blank">ResearchGate</a> and <a href="https://scholar.google.com/citations?user=awhMGaAAAAAJ&amp;hl=id" target="_blank">Google Scholar</a> pages.
+</center>
+<p><br></p>
+</div>
+<div id="yalemzewod-assefa-gelaw-yalem" class="section level3">
+<h3>Yalemzewod Assefa Gelaw (Yalem)</h3>
+<p><img src="images/yalemzewod_profile.png" class="round" style="border:4px solid; margin-bottom: 20px" alt="Yalemzewod Assefa Gelaw is a PhD student at the Spatial Epidemiology Group, University of Queensland"/></p>
+<center>
+Yalemzewod is a PhD candidate interested in infectious disease, particularly in Human Immunodeficiency Virus (HIV) and tuberculosis (TB). Yalem’s current research focuses on the epidemiology of tuberculosis and HIV associated TB co-infection in Ethiopia. Yalem joined the University of Queensland after ten years of experience working in the Ministry of Health as a senior environmental health officer, as well as holding an academic position at the <a href="http://www.uog.edu.et/en/">University of Gondar</a> in Ethiopia. He obtained his master’s degree on Master of public health in Epidemiology and Biostatistics in University of Gondar, Ethiopia. Yalem’s advisors are <a href="https://researchers.uq.edu.au/researcher/668">Prof Gail Williams</a>, <a href="https://researchers.uq.edu.au/researcher/15240">Dr Yibeltal Alemu</a> and <a href="#ricardo">A/Prof Ricardo Soares Magalhães</a>. Read more about Yalem’s work on his <a href="https://scholar.google.com.au/citations?user=yVWRy2wAAAAJ&amp;hl=en" target="_blank">Google scholar</a> and <a href="https://www.researchgate.net/profile/Yalemzewod_Gelaw" target="_blank">ResearchGate</a> pages.
+</center>
+<p><br></p>
+</div>
+<div id="andrea-araujo-navas" class="section level3">
+<h3>Andrea Araujo Navas</h3>
+<p><img src="images/andrea_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Andrea Araujo Navas is a PhD student at the Spatial Epidemiology Group, University of Queensland"/></p>
+<center>
+Andrea is a geographer currently conducting PhD research into uncertainties related to spatial epidemiological studies. Her interest are to analyse spatial structures from epidemiological data as well as to focus on the relevance of different environmental risk factors that determine the exposure to <em>Schistosoma japonicum</em> infection in the Philippines. Andrea’s main research is at the <a href="https://www.itc.nl/" target="_blank">Faculty of Geo-information and Earth Observations Sciences</a> at the University of Twente in the Netherlands. Her advisors are <a href="https://research.utwente.nl/en/persons/alfred-stein" target="_blank">Prof Alfred Stein</a> and <a href="https://research.utwente.nl/en/persons/frank-osei" target="_blank">Dr Frank Osei</a> at UTwente, and <a href="#ricardo">A/Prof Ricardo Soares Magalhães</a> at University of Queensland. Read more about Andrea’s work on her <a href="https://www.researchgate.net/profile/Andrea_Araujo" target="_blank">ResearchGate</a> page.
+</center>
+<p><br></p>
+</div>
+<div id="tuhin-biswas" class="section level3">
+<h3>Tuhin Biswas</h3>
+<p><img src="images/tuhin_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Tuhin Biswas is a PhD student at the Spatial Epidemiology Group, University of Queensland"/></p>
+<center>
+Tuhin started his research career as a research fellow in one of the centre of excellence “Centre for Control of Chronic Diseases” at icddr,b which was established with funding support from <a href="https://www.nhlbi.nih.gov/" target="_blank">National Heart Lung and Blood Institute (NHLBI)</a>. He has experience working in a number of research projects that include diabetes &amp; prediabetes, surveillance and community management of hypertension, metabolic syndrome, child obesity, mental health and its resultant health effects in Bangladesh. His major works included implementation of research projects; planning, organizing and carry out various research/field research and study activities. His PhD research will explore the double burden of malnutrition among the women in South and Southeast Asia and its geographical variation, health inequality and health achievement. Tuhin’s advisors are <a href="https://researchers.uq.edu.au/researcher/1318" target="_blank">A/Prof Abdullah Mamun</a> and <a href="#ricardo">A/Prof Ricardo Soares Magalhães</a>. Read more about Tuhin’s work on his <a href="https://scholar.google.com.au/citations?user=8Jpp1CAAAAAJ&amp;hl=en&amp;oi=sra" target="_blank">Google scholar</a> and <a href="https://www.researchgate.net/profile/Tuhin_Biswas2" target="_blank">ResearchGate</a> pages.
+</center>
+<p><br></p>
+</div>
 <div id="xiaoyan-zhou" class="section level3">
 <h3>Xiaoyan Zhou</h3>
 <p><img src="images/xiaoyan_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Xiaoyan Zhou is a PhD student at the Spatial Epidemiology Group, University of Queensland"/></p>
@@ -5180,14 +3726,11 @@ Xiaoyan’s PhD advisors are <a href="#ricardo">A/Prof Ricardo Soares Magalhães
 </center>
 <p><br></p>
 </div>
-</div>
-<div id="undergraduate-researchers" class="section level2">
-<h2>Undergraduate Researchers</h2>
 <div id="alex-pekin" class="section level3">
 <h3>Alex Pekin</h3>
 <p><img src="images/alex_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Alex Pekin  is an Honours student at the Spatial Epidemiology Group, University of Queensland"/></p>
 <center>
-Alex is currently an Honours scholar at the University of Queensland. He graduated with a Bachelor of Science (Animal and Veterinary Bioscience) in 2018 and is researching risk factors and spatial distribution of dog bite attacks in South-East Queensland; a collaborative project between the University of Queensland and Queensland Health. He is committed to utilizing a One Health approach as a method of improving healthcare infrastructure in developed and developing countries. As an undergraduate he contributed to work quantifying the temporal relationship between H7N9 avian influenza onset in humans with poultry surveillance, live bird movements, and sociodemographic factors. He plans to pursue further study into One Health issues, with a focus on veterinary solutions and interventions. Alex’s advisor is <a href="#ricardo">A/Prof Ricardo Soares Magalhães</a>.
+Alex was an Honours scholar at the University of Queensland. He graduated with a Bachelor of Science (Animal and Veterinary Bioscience) in 2018 and is researching risk factors and spatial distribution of dog bite attacks in South-East Queensland; a collaborative project between the University of Queensland and Queensland Health. He is committed to utilizing a One Health approach as a method of improving healthcare infrastructure in developed and developing countries. As an undergraduate he contributed to work quantifying the temporal relationship between H7N9 avian influenza onset in humans with poultry surveillance, live bird movements, and sociodemographic factors. He plans to pursue further study into One Health issues, with a focus on veterinary solutions and interventions. Alex’s advisor was <a href="#ricardo">A/Prof Ricardo Soares Magalhães</a>.
 </center>
 </div>
 </div>
@@ -5221,7 +3764,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
+    $(this).parent().toggleClass('nav-tabs-open')
   });
 });
 </script>
