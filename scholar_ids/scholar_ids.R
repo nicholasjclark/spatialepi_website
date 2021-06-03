@@ -8,8 +8,8 @@ tuhin_id <- '8Jpp1CAAAAAJ&hl'
 shovon_id <- 'SJx37JsAAAAJ&hl'
 philip_id <- 'BfWGpaUAAAAJ&hl'
 javier_id <- 'a0m2kUYAAAAJ&hl'
-tatiana_ir <- '8k6aPjIAAAAJ&hl'
+tatiana_id <- '8k6aPjIAAAAJ&hl'
 
 # All IDs
 scholar_ids <- c(ricardo_id, nick_id, tarni_id, pandji_id, yalem_id, tuhin_id,
-                 shovon_id, philip_id, javier_id)
+                 shovon_id, philip_id, javier_id, tatiana_id)
