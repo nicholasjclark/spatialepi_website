@@ -35,7 +35,7 @@ source('functions/scholar_allpubs.R')
 source('./scholar_ids/scholar_ids.R')
 all_pubs <- scholar_allpubs(scholar_ids)
 kable(data.frame(all_pubs %>%
-          dplyr::filter(Year == 2020) %>%
+          dplyr::filter(Year == 2021) %>%
             dplyr::select(-Year)), row.names = F,
       format = 'html') %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
