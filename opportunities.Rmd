@@ -1,11 +1,55 @@
 ---
 title: Opportunities at SpatialEpiLab
+output:
+  html_document: 
+    toc: true
+    toc_float: true
 ---
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
 <img src="images/spatial_website_logo.png" style="width:90%; margin-bottom: 1px" align="top" alt="The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland. A number of Master's, Honours and PhD research opportunities are available.">
-   
+
+## Job opportunity 
+**Position Title: Business Analyst**  
+Organisation Unit: School of Veterinary Science, The University of Queensland  
+Type of Employment: Casual part time  
+Classification: HEW level 7  
+ 
+**Primary Purpose of Position**  
+The School of Veterinary Science is establishing a new One Health Surveillance and Analytics team (OHSARK). The Business Analyst position within OHSARK will help bridge the gap between data collaborators and technical teams to ensure business requirements are translated into effective technology solutions and desired outcomes. The Business Analyst will be responsible for developing, maintaining, and improving end to end business data management and analytic processes for the management, analysis and reporting of human and animal health data. This will include undertaking business analysis activities by liaising with data owners to identify, define and convert business requirements into system and user requirements across a number of health projects within the School of Veterinary Science. The role works closely with the project leads, project manager and project partners located across Australia. The position reports to the project lead, and will be required to direct other professional or technical staff on work relating to specific tasks or projects. 
+
+**Duties**  
+*Duties and responsibilities include, but are not limited to*:  
+* Undertake analysis of business processes, investigate data management technical/software operational requirements, problems, opportunities and identify innovative solutions through improvements in automated and non-automated components of new or changed processes.  
+*	Create, analyse, and validate detailed functional, non-functional, system and user-interface specifications.  
+*	Translate business and user requirements into system specifications in accordance with agreed standards.  
+*	Involved in planning of system and development deployment as well as responsible for meeting software compliance standards.  
+*	Develop test strategies, test plans and test scenarios for QA of proposed solutions.  
+*	Assist solution team to design new IT solutions, modify, enhance or adapt existing systems and integrate new features or improvements, all with the aim of improving business efficiency and productivity.  
+*	Write requirements and user stories that have relevant details to ensure the systems specifications meet user/project requirements.  
+*	Documents testing and maintenance of system corrections.  
+*	Own and maintain design documentation through the project life-cycle.  
+*	Undertake continuous improvement activities within the team to ensure services are delivered more efficiently and provide support to stakeholders through appropriate change management activities.  
+*	Work collaboratively with the project team, stakeholders, project manager, software engineers and data scientists to ensure successful and timely delivery.  
+* Any other duties as reasonably directed by the Program Lead.  
+
+**Selection criteria**  
+*Essential*  
+* Tertiary qualifications in IT, Business or related discipline together with previous experiences in IT business/ systems analysis.  
+* Strong analytical and problem-solving skills, ensuring that the underlying problem is understood, and a robust approach / solution is developed.  
+* Demonstrated experience delivering services in an agile development environment and a demonstrated understanding of agile principles.  
+* Demonstrated understanding of principles of Data Science (data preparation, data on-boarding, business intelligence, visualisation)  
+* Demonstrated competency in the use of professional business analysis tools and techniques (such as User Requirements models, Use Case Analysis, UML, business domain models, functional and non-functional specification).  
+* Demonstrated experience applying user-centred techniques and knowledge of artefacts (such as Journey Maps, user stories, storyboards, personas).  
+* Demonstrated experience of software development lifecycles, their associated artefacts and how different approaches are needed in different scenarios.  
+* Demonstrated experience of current programming and cloud technologies such as Python, JavaScript, PHP, OpenStack and AWS coupled with good knowledge in data and information modelling.  
+* Demonstrated understanding of software container design, testing, maintenance and deployment on cloud HPCs  
+* Exceptional analytical and problem solving skills including the ability to conceptualise, establish and implement new initiatives and innovative solutions within a specified framework.  
+* Excellent written communication skills, including the demonstrated ability to write clear and precise user and technical specifications.  
+* Strong interpersonal skills, including the demonstrated ability to communicate and negotiate effectively with a diverse range of stakeholders to achieve outcomes.   
+
+## PhD opportunities
 **PhD scholarship in targeted surveillance of major zoonotic arboviral and other vector-borne diseases in Australia using spectroscopy technology**  
 Infectious diseases transmitted by vectors represent a significant health threat to the Australian biosecurity. Detection methods used in current surveillance of these pathogens are expensive, time consuming and require highly trained personnel. The PhD project: We propose to conduct a set of experiments to test the best spectroscopy technique to identify infected vectors and demonstrate its capacity as surveillance tool for vector control programs against these pathogens. The candidate will be based at The University of Queensland within the School of Veterinary Science, Gatton Campus, and will be supervised by [Dr. Silvia Ciocchetta](https://researchers.uq.edu.au/researcher/22990), [Dr. Maggy Lord](https://researchers.uq.edu.au/researcher/16992), [Prof. Malcolm Jones](https://researchers.uq.edu.au/researcher/171), and [Associate Professor Ricardo Soares Magalhães](people.html){target="_blank"}.  
 
