@@ -220,7 +220,29 @@ kable(data.frame(all_pubs), row.names = F,
 ### Uttara Kennedy
 <img src="images/Uttara_profile1.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Uttara Kennedy is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
 
-<center>Uttara Kennedy has worked for 18 years as a small animal veterinarian, practice manager and mentor to young vets across Australia and India, including volunteering in India with Vets Beyond Borders for their TNR (trap-neuter-release) program. She has an MSc in International Animal Welfare, Ethics and Law and a Member of the ANZVCS (Animal Welfare chapter). She currently works as a shelter veterinarian at the RSPCA Queensland’s largest city shelter. Her years with the RSPCA has given her deep insight into the challenges and issues pertaining to shelter medicine and control of endemic diseases in the shelter environment. She started her PhD in January 2021, to explore the epidemiology of diseases through animal shelters in Australia. She has co-authored papers on cattle welfare in India, and Australian invasive pest control strategies. She loves disappearing into the bush on long hiking-camping adventures with her family, when she is not working or studying.</center> 
+<center>Uttara Kennedy has worked for over 18 years as a small animal veterinarian, practice manager and mentor across Australia and India. She has an MSc in International Animal Welfare, Ethics and Law and is a Member of the ANZVCS (Animal Welfare chapter). Alongside pursuing her PhD, she is a veterinarian at RSPCA Queensland’s largest city shelter. Her experience has given her deep insight into the issues pertaining to shelter medicine and control of endemic diseases in the shelter environment. 
+Her PhD work involves using machine learning technology to categorise clinical notes within the RSPCA database for case ascertainment. Accurate case ascertainment is vital in informing shelter policy to improve animal management practices to have a direct positive impact on animal welfare and shelter resource management worldwide. 
+She loves disappearing into the bush on long hiking-camping adventures with her family when she is not working or studying.
+.</center> 
+
+<br>
+<center>`Uttara's recent publications`</center>
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+library(kableExtra)
+library(knitr)
+source('functions/scholar_allpubs.R')
+all_pubs <- scholar_allpubs(uttara_id)
+```
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+kable(data.frame(all_pubs), row.names = F,
+      format = 'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  column_spec(2, width = '30em') %>%
+  column_spec(3, italic = T, width = '20em') %>%
+  column_spec(4, width = '20em') %>%
+  scroll_box(width = "100%", height = "300px")
+```
 
 <br> 
 
