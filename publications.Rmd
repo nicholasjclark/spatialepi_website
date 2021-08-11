@@ -20,6 +20,19 @@ all_pubs <- scholar_allpubs(scholar_ids)
 
 <br>
 
+## 2021
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+kable(data.frame(all_pubs %>%
+          dplyr::filter(Year == 2021) %>%
+            dplyr::select(-Year)), row.names = F,
+      format = 'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  column_spec(1, width = '30em') %>%
+  column_spec(2, italic = T, width = '20em') %>%
+  column_spec(3, width = '20em') %>%
+  scroll_box(width = "100%", height = "400px")
+```
+
 ## 2020
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 kable(data.frame(all_pubs %>%
@@ -75,38 +88,11 @@ kable(data.frame(all_pubs %>%
 ```
 <br>
   
-## 2016
+
+## Pre-2017
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 kable(data.frame(all_pubs %>%
-          dplyr::filter(Year == 2016) %>%
-            dplyr::select(-Year)), row.names = F,
-      format = 'html') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
-  column_spec(1, width = '30em') %>%
-  column_spec(2, italic = T, width = '20em') %>%
-  column_spec(3, width = '20em') %>%
-  scroll_box(width = "100%", height = "400px")
-```
-<br>
-  
-## 2015
-```{r, echo = FALSE, warning=FALSE, message=FALSE}
-kable(data.frame(all_pubs %>%
-          dplyr::filter(Year == 2015) %>%
-            dplyr::select(-Year)), row.names = F,
-      format = 'html') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
-  column_spec(1, width = '30em') %>%
-  column_spec(2, italic = T, width = '20em') %>%
-  column_spec(3, width = '20em') %>%
-  scroll_box(width = "100%", height = "400px")
-```
-<br>
-  
-## Pre-2015
-```{r, echo = FALSE, warning=FALSE, message=FALSE}
-kable(data.frame(all_pubs %>%
-          dplyr::filter(Year < 2016) %>%
+          dplyr::filter(Year < 2017) %>%
             dplyr::select(-Year)), row.names = F,
       format = 'html') %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
