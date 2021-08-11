@@ -125,7 +125,7 @@ kable(data.frame(all_pubs %>%
 <br> 
  
 ### Silvia Ciocchetta 
-<img src="images/Silvia_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Silvia Ciocchetta is a Research Fellow at the University of Queensland"/>
+<img src="images/Silvia_profile1.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Silvia Ciocchetta is a Research Fellow at the University of Queensland"/>
 
 <centr>Dr Ciocchetta is a veterinarian, parasitologist and medical entomologist. She is a Research Fellow at the University of Queensland Schools of Veterinary Science and a member of the University of Queensland School of Public Health Infectious Disease Diagnostics team, developing near-infrared spectroscopy applications for novel non-invasive diagnosis of infectious diseases. She is a chief investigator on an innovative project funded by the Bill and Melinda Gates Foundation that uses near-infrared spectroscopy as a rapid detection method for the quantification of intestinal worm burden in humans. Dr Ciocchetta is also leading an NHMRC Ideas Grant on the applications of NIRS technology to the surveillance of vector-borne diseases. Her key strengths are her extensive field and laboratory experience in Biosecurity, Parasitology, Medical Entomology, Infectious Diseases and Zoonoses, Vector-Borne Diseases Surveillance, Vector Biology and Control, and Near-infrared Spectroscopy.</center>
  
