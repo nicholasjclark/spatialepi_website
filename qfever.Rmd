@@ -34,8 +34,8 @@ Read more about the project's developments by following the Qfever_Group on [Twi
 
 ### Team members on the project
 <center>[Ricardo Soares Magalhães](people.html){target="_blank"}    
-[Nicholas Clark](people.html#nicholas_clark){target="_blank"}</center>
-<center>[Tatiana Proboste](people.html){target="_blank"}</center>
+[Nicholas Clark](people.html#nicholas_clark){target="_blank"}    
+[Tatiana Proboste](people.html){target="_blank"}</center>
 
 <br>
 
