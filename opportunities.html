@@ -13,20 +13,28 @@
 
 <title>Opportunities at SpatialEpiLab</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -40,11 +48,6 @@
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -57,32 +60,7 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -93,10 +71,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -113,40 +87,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h2 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h3 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h4 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h5 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h6 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -174,7 +121,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -186,7 +133,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -197,10 +144,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -212,7 +172,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -338,7 +297,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -444,7 +403,7 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -455,43 +414,6 @@ div.tocify {
 
 <p><link rel="stylesheet" href="styles.css" type="text/css"></p>
 <p><img src="images/spatial_website_logo.png" style="width:90%; margin-bottom: 1px" align="top" alt="The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland. A number of Master's, Honours and PhD research opportunities are available."></p>
-<div id="job-opportunity" class="section level2">
-<h2>Job opportunity</h2>
-<p><strong>Position Title: Business Analyst</strong><br />
-Organisation Unit: School of Veterinary Science, The University of Queensland<br />
-Type of Employment: Casual part time<br />
-Classification: HEW level 7</p>
-<p><strong>Primary Purpose of Position</strong><br />
-The School of Veterinary Science is establishing a new One Health Surveillance and Analytics team (OHSARK). The Business Analyst position within OHSARK will help bridge the gap between data collaborators and technical teams to ensure business requirements are translated into effective technology solutions and desired outcomes. The Business Analyst will be responsible for developing, maintaining, and improving end to end business data management and analytic processes for the management, analysis and reporting of human and animal health data. This will include undertaking business analysis activities by liaising with data owners to identify, define and convert business requirements into system and user requirements across a number of health projects within the School of Veterinary Science. The role works closely with the project leads, project manager and project partners located across Australia. The position reports to the project lead, and will be required to direct other professional or technical staff on work relating to specific tasks or projects.</p>
-<p><strong>Duties</strong><br />
-<em>Duties and responsibilities include, but are not limited to</em>:<br />
-* Undertake analysis of business processes, investigate data management technical/software operational requirements, problems, opportunities and identify innovative solutions through improvements in automated and non-automated components of new or changed processes.<br />
-* Create, analyse, and validate detailed functional, non-functional, system and user-interface specifications.<br />
-* Translate business and user requirements into system specifications in accordance with agreed standards.<br />
-* Involved in planning of system and development deployment as well as responsible for meeting software compliance standards.<br />
-* Develop test strategies, test plans and test scenarios for QA of proposed solutions.<br />
-* Assist solution team to design new IT solutions, modify, enhance or adapt existing systems and integrate new features or improvements, all with the aim of improving business efficiency and productivity.<br />
-* Write requirements and user stories that have relevant details to ensure the systems specifications meet user/project requirements.<br />
-* Documents testing and maintenance of system corrections.<br />
-* Own and maintain design documentation through the project life-cycle.<br />
-* Undertake continuous improvement activities within the team to ensure services are delivered more efficiently and provide support to stakeholders through appropriate change management activities.<br />
-* Work collaboratively with the project team, stakeholders, project manager, software engineers and data scientists to ensure successful and timely delivery.<br />
-* Any other duties as reasonably directed by the Program Lead.</p>
-<p><strong>Selection criteria</strong><br />
-<em>Essential</em><br />
-* Tertiary qualifications in IT, Business or related discipline together with previous experiences in IT business/ systems analysis.<br />
-* Strong analytical and problem-solving skills, ensuring that the underlying problem is understood, and a robust approach / solution is developed.<br />
-* Demonstrated experience delivering services in an agile development environment and a demonstrated understanding of agile principles.<br />
-* Demonstrated understanding of principles of Data Science (data preparation, data on-boarding, business intelligence, visualisation)<br />
-* Demonstrated competency in the use of professional business analysis tools and techniques (such as User Requirements models, Use Case Analysis, UML, business domain models, functional and non-functional specification).<br />
-* Demonstrated experience applying user-centred techniques and knowledge of artefacts (such as Journey Maps, user stories, storyboards, personas).<br />
-* Demonstrated experience of software development lifecycles, their associated artefacts and how different approaches are needed in different scenarios.<br />
-* Demonstrated experience of current programming and cloud technologies such as Python, JavaScript, PHP, OpenStack and AWS coupled with good knowledge in data and information modelling.<br />
-* Demonstrated understanding of software container design, testing, maintenance and deployment on cloud HPCs<br />
-* Exceptional analytical and problem solving skills including the ability to conceptualise, establish and implement new initiatives and innovative solutions within a specified framework.<br />
-* Excellent written communication skills, including the demonstrated ability to write clear and precise user and technical specifications.<br />
-* Strong interpersonal skills, including the demonstrated ability to communicate and negotiate effectively with a diverse range of stakeholders to achieve outcomes.</p>
-</div>
 <div id="phd-opportunities" class="section level2">
 <h2>PhD opportunities</h2>
 <p><strong>PhD scholarship in targeted surveillance of major zoonotic arboviral and other vector-borne diseases in Australia using spectroscopy technology</strong><br />
@@ -565,7 +487,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -574,6 +496,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')
