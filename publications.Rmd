@@ -20,6 +20,20 @@ all_pubs <- scholar_allpubs(scholar_ids)
 
 <br>
 
+## 2022
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+kable(data.frame(all_pubs %>%
+          dplyr::filter(Year == 2022) %>%
+            dplyr::select(-Year)), row.names = F,
+      format = 'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  column_spec(1, width = '30em') %>%
+  column_spec(2, italic = T, width = '20em') %>%
+  column_spec(3, width = '20em') %>%
+  scroll_box(width = "100%", height = "400px")
+```
+
+
 ## 2021
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 kable(data.frame(all_pubs %>%
