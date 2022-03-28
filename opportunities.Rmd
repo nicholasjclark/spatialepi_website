@@ -11,34 +11,7 @@ output:
 <img src="images/spatial_website_logo.png" style="width:90%; margin-bottom: 1px" align="top" alt="The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland. A number of Master's, Honours and PhD research opportunities are available.">
 
 ## PhD opportunities
-**PhD scholarship in targeted surveillance of major zoonotic arboviral and other vector-borne diseases in Australia using spectroscopy technology**  
-Infectious diseases transmitted by vectors represent a significant health threat to the Australian biosecurity. Detection methods used in current surveillance of these pathogens are expensive, time consuming and require highly trained personnel. The PhD project: We propose to conduct a set of experiments to test the best spectroscopy technique to identify infected vectors and demonstrate its capacity as surveillance tool for vector control programs against these pathogens. The candidate will be based at The University of Queensland within the School of Veterinary Science, Gatton Campus, and will be supervised by [Dr. Silvia Ciocchetta](https://researchers.uq.edu.au/researcher/22990), [Dr. Maggy Lord](https://researchers.uq.edu.au/researcher/16992), [Prof. Malcolm Jones](https://researchers.uq.edu.au/researcher/171), and [Associate Professor Ricardo Soares Magalhães](people.html){target="_blank"}.  
 
-This **PhD scholarship** is funded by the Australian Government, providing a tax-free PhD stipend of $28,597 per annum tax free (2021 rate), indexed annually, and full tuition fee support. The scholarship is for three years, with two possible six-month extensions. 
-Applications will be judged on a competitive basis considering the applicant’s previous academic record, publication record, honours and awards, and employment history.
-
-*Competitive applicants should have*  
-* A BSc with First Class Honours or Masters degree with distinction, majoring in a relevant discipline (parasitology or molecular biology including cell culture and PCR or molecular epidemiology or ecology).  
-* Research experience combining laboratory and epidemiological/disease or species ecology skills.  
-* Academic achievement in the field(s) of life science, biology, entomology, infectious disease epidemiology, species ecology and the potential for scholastic success.  
-* A working knowledge of molecular biology techniques including DNA/RNA extractions and qualitative and quantitative PCRs, microbiology techniques, handling biosecurity samples and geographical information systems would be of benefit to someone working on this project.  
-* Excellent time and data management and interpersonal skills.  
-* Demonstrated evidence of good oral and written communication skills. 
-
-*Desirable characteristics*  
-* Publication record in international peer-reviewed journals.   
-* A background or knowledge of biology, entomology, medical entomology, and geospatial modelling is highly desirable.  
-* Knowledge of script-based statistical languages such as R or Python.
-  
-*How to enquire*  
-For more information please refer to the [UQ Category 1 Scholarship webpage](https://graduate-school.uq.edu.au/phd-scholarships-health?fbclid=IwAR0HdYFQ0xHHdWV4MICDLLLOMYnIb1IAuzxtXqJ7KiK2qqE7Y-Xzm-hydxg). To submit an expression of interest contact Dr. Silvia Ciocchetta at [s.ciocchetta@uq.edu.au](s.ciocchetta@uq.edu.au). The expression of interest should include a cover letter and CV including names and contact details of 3 referees (2 pages max) and an academic transcript. To verify if you meet the Academic Entry Requirements refer to: https://future-students.uq.edu.au/study/programs/doctor-philosophy-7501#overview 
-
-*COVID-19 information*  
-With current travel bans extending the timeframe for international applicants to commence, UQ will only accept on-shore (domestic and international) applicants for this scholarship. If the commencing candidate is onshore but interstate, they will be required to come to Queensland to begin.
-  
-*The successful candidate must commence by Research Quarter 1, 2022. You should apply at least 3 months prior to the research quarter commencement date. International applicants may need to apply much earlier for visa reasons.
-<br>
-<br>  
 **PhD scholarship in multivariate ecological forecasting**
   
 The Spatial Epidemiology Laboratory at the University of Queensland seeks a PhD student to work on an exciting new project: forecasting ecosystem responses to environmental change  

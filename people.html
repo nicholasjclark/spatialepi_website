@@ -13,20 +13,28 @@
 
 <title>People at SpatialEpiLab</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
@@ -42,11 +50,6 @@
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -59,32 +62,7 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -95,10 +73,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -115,40 +89,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h2 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h3 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h4 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h5 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
-.section h6 {
-  padding-top: 65px;
-  margin-top: -65px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -176,7 +123,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -188,7 +135,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -199,10 +146,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -214,7 +174,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -340,7 +299,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -446,7 +405,7 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -488,6 +447,34 @@ Authors
 <tbody>
 <tr>
 <td style="text-align:right;">
+2022
+</td>
+<td style="text-align:left;width: 30em; ">
+Near-Term Forecasting of Companion Animal Tick Paralysis Incidence: An Iterative Ensemble Model
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Computational Biology
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, T Proboste, G Weerasinghe, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2022
+</td>
+<td style="text-align:left;width: 30em; ">
+Knowledge, Attitudes, and Common Practices of Livestock and Poultry Veterinary Practitioners Regarding the Amu and Amr in Bangladesh
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Antibiotics
+</td>
+<td style="text-align:left;width: 20em; ">
+M Kalam, M Rahman, M Alim, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
 2021
 </td>
 <td style="text-align:left;width: 30em; ">
@@ -498,20 +485,6 @@ Pathogens
 </td>
 <td style="text-align:left;width: 20em; ">
 T Tapia, MF Olivares, J Stenos, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2021
-</td>
-<td style="text-align:left;width: 30em; ">
-The Application of Spectroscopy Techniques for Diagnosis of Malaria Parasites and Arboviruses and Surveillance of Mosquito Vectors: a Systematic Review and Critical Appraisal …
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Plos Neglected Tropical Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-B Goh, K Ching, RJ Soares Magalhães, et al
 </td>
 </tr>
 <tr>
@@ -547,6 +520,62 @@ H Rynhoud, J Gibson, E Meler, et al
 2021
 </td>
 <td style="text-align:left;width: 30em; ">
+The Application of Spectroscopy Techniques for Diagnosis of Malaria Parasites and Arboviruses and Surveillance of Mosquito Vectors: a Systematic Review and Critical Appraisal …
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+B Goh, K Ching, RJ Soares Magalhães, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Perceptions of Dog Owners Towards Canine Gastrointestinal Parasitism and Associated Human Health Risk in Southeast Queensland
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+One Health
+</td>
+<td style="text-align:left;width: 20em; ">
+T Nguyen, N Clark, MK Jones, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Temporal Trends in Between and Within-country Inequalities in Caesarean Delivery in Low-and Middle-income Countries: a Bayesian Analysis
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Bjog: An Int J of Obstetrics &amp; Gynaecology
+</td>
+<td style="text-align:left;width: 20em; ">
+MM Hasan, S Ahmed, RJ Soares Magalhaes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Rabies Epidemiology, Prevention and Control in Nigeria: Scoping Progress Towards Elimination
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+PP Mshelbwala, JS Weese, OA Sanni-Adeniyi, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
 Geographical Variation and Temporal Trend in Anemia among Children 6-59 Months of Age in Low-and Middle-Income Countries During 2000-2018: Forecasting the 2030 Sdg Target
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -568,20 +597,6 @@ Animals
 </td>
 <td style="text-align:left;width: 20em; ">
 O Ramirez-Garzon, R Soares Magalhaes, N Satake, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2021
-</td>
-<td style="text-align:left;width: 30em; ">
-Geographical Variation in Coxiella Burnetii Seroprevalence in a Dairy Farm Located in South-Western Ethiopia: Understanding the Broader Community Risk
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Pathogens
-</td>
-<td style="text-align:left;width: 20em; ">
-T Proboste, FB Deressa, Y Li, et al
 </td>
 </tr>
 <tr>
@@ -617,20 +632,6 @@ H Rynhoud, E Meler, JS Gibson, et al
 2021
 </td>
 <td style="text-align:left;width: 30em; ">
-Perceptions of Dog Owners Towards Canine Gastrointestinal Parasitism and Associated Human Health Risk in Southeast Queensland
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-One Health
-</td>
-<td style="text-align:left;width: 20em; ">
-T Nguyen, N Clark, MK Jones, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2021
-</td>
-<td style="text-align:left;width: 30em; ">
 Molecular Epidemiology of Clinical and Colonising Methicillin-Resistant Staphylococcus Isolates in Companion Animals
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -638,6 +639,75 @@ Frontiers in Veterinary Science
 </td>
 <td style="text-align:left;width: 20em; ">
 H Rynhoud, BM Forde, SA Beatson, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Extended Spectrum Beta-Lactamase-Producing Escherichia Coli Surveillance in the Human, Food Chain, and Environment Sectors: Tricycle Project (Pilot) in Indonesia
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+One Health
+</td>
+<td style="text-align:left;width: 20em; ">
+N Puspandari, S Sunarno, T Febrianti, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Risk Areas for Influenza a (H5) Environmental Contamination in Live Bird Markets, Dhaka, Bangladesh
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Emerging Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+S Chakma, MG Osmani, H Akwar, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Prevalence and Antibiotic Resistance Profile of Salmonella Spp. in Broiler Carcasses from Dominant Poultry Production Areas in Bhutan
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+</td>
+<td style="text-align:left;width: 20em; ">
+KP Penjor, MG Gurung, KI Islam, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Geographical Variation in Coxiella Burnetii Seroprevalence in a Dairy Farm Located in South-Western Ethiopia: Understanding the Broader Community Risk
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Pathogens
+</td>
+<td style="text-align:left;width: 20em; ">
+T Proboste, FB Deressa, Y Li, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Development and Validation of a Sub-National, Satellite-Based Land-Use Regression Model for Annual Nitrogen Dioxide Concentrations in North-Western China
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Int J of Environmental Research and Public Health
+</td>
+<td style="text-align:left;width: 20em; ">
+I Popovic, RJS Magalhães, S Yang, et al
 </td>
 </tr>
 <tr>
@@ -652,6 +722,20 @@ Advances in Nutrition
 </td>
 <td style="text-align:left;width: 20em; ">
 T Biswas, RJS Magalhaes, N Townsend, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:left;width: 30em; ">
+Parasite Associations Predict Infection Risk: Incorporating Co-Infections in Predictive Models for Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasites &amp; Vectors
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, K Owada, E Ruberanziza, et al
 </td>
 </tr>
 <tr>
@@ -687,62 +771,6 @@ PW Dhewantara, W Zhang, A Al Mamun, et al
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
-Meeting the Global Target in Reproductive, Maternal, Newborn, and Child Health Care Services in Low-and Middle-Income Countries
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Global Health: Science and Practice
-</td>
-<td style="text-align:left;width: 20em; ">
-MM Hasan, RJS Magalhaes, S Ahmed, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Coxiella Burnetii in the Environment: a Systematic Review and Critical Appraisal of Sampling Methods
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Zoonoses and Public Health
-</td>
-<td style="text-align:left;width: 20em; ">
-AMH Abeykoon, NJ Clark, RJ Soares Magalhaes, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Parasite Associations Predict Infection Risk: Incorporating Co-Infections in Predictive Models for Neglected Tropical Diseases
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Parasites &amp; Vectors
-</td>
-<td style="text-align:left;width: 20em; ">
-NJ Clark, K Owada, E Ruberanziza, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Interim Guidance for Health-care Professionals and Administrators Providing Hospital Care to Adult Patients with Cognitive Impairment, in the Context of Covid-19 Pandemic
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Australasian J on Ageing
-</td>
-<td style="text-align:left;width: 20em; ">
-M Martin-Khan, K Bail, MW Yates, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
 Unravelling Animal Exposure Profiles of Human q Fever Cases in Queensland, Australia using Natural Language Processing
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -771,13 +799,13 @@ J Kurscheid, B Laksono, MJ Park, et al
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
-Tb and Hiv Epidemiology and Collaborative Service: Evidence from Ethiopia, 2011–2015
+Meeting the Global Target in Reproductive, Maternal, Newborn, and Child Health Care Services in Low-and Middle-Income Countries
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Hiv/Aids-Research and Palliative Care
+Global Health: Science and Practice
 </td>
 <td style="text-align:left;width: 20em; ">
-YA Gelaw, Y Assefa, RJS Magalhaes, et al
+MM Hasan, RJS Magalhaes, S Ahmed, et al
 </td>
 </tr>
 <tr>
@@ -785,13 +813,13 @@ YA Gelaw, Y Assefa, RJS Magalhaes, et al
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
-Seroprevalence of and Risk Factors for q Fever in Dairy and Slaughterhouse Cattle of Jimma Town, South Western Ethiopia
+Interim Guidance for Health-care Professionals and Administrators Providing Hospital Care to Adult Patients with Cognitive Impairment, in the Context of Covid-19 Pandemic
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Bmc Veterinary Research
+Australasian J on Ageing
 </td>
 <td style="text-align:left;width: 20em; ">
-FB Deressa, DO Kal, BD Gelalcha, et al
+M Martin-Khan, K Bail, MW Yates, et al
 </td>
 </tr>
 <tr>
@@ -799,13 +827,13 @@ FB Deressa, DO Kal, BD Gelalcha, et al
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
-Conservation Epidemiology of Predators and Scavengers to Reduce Zoonotic Risk
+Coxiella Burnetii in the Environment: a Systematic Review and Critical Appraisal of Sampling Methods
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-The Lancet Planetary Health
+Zoonoses and Public Health
 </td>
 <td style="text-align:left;width: 20em; ">
-CJ O’Bryan, AR Braczkowski, RJS Magalhães, et al
+AMH Abeykoon, NJ Clark, RJ Soares Magalhaes, et al
 </td>
 </tr>
 <tr>
@@ -827,26 +855,13 @@ SS Okeme, GS Kia, PP Mshelbwala, et al
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
-Effect of Increased Influenza and Pneumococcal Vaccine Coverage on the Burden of Influenza among Elderly People in Hong Kong Versus Brisbane: Abridged Secondary Publication
+Geographical Variation in the Risk of H7n9 Human Infections in China: Implications for Risk-Based Surveillance
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Hong Kong Med j
+Scientific Reports
 </td>
 <td style="text-align:left;width: 20em; ">
-L Yang, WB Hu, CM Wong, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Covid-19 Propagation Prediction and Assessment Method with Imported Cases and Infection Generations: Shanxi Province as a Case
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-</td>
-<td style="text-align:left;width: 20em; ">
-J Zhang, GQ Sun, M Li, et al
+X Zhou, L Gao, Y Wang, et al
 </td>
 </tr>
 <tr>
@@ -868,13 +883,55 @@ J Cortes-Ramirez, D Vilcins, P Jagals, et al
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
-Dog Bite Emergency Department Presentations in Brisbane Metro South: Epidemiology and Exploratory Medical Geography for Targeted Interventions
+Tb and Hiv Epidemiology and Collaborative Service: Evidence from Ethiopia, 2011–2015
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-One Health
+Hiv/Aids-Research and Palliative Care
 </td>
 <td style="text-align:left;width: 20em; ">
-A Pekin, H Rynhoud, B Brennan, et al
+YA Gelaw, Y Assefa, RJS Magalhaes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:left;width: 30em; ">
+Conservation Epidemiology of Predators and Scavengers to Reduce Zoonotic Risk
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+The Lancet Planetary Health
+</td>
+<td style="text-align:left;width: 20em; ">
+CJ O’Bryan, AR Braczkowski, RJS Magalhães, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:left;width: 30em; ">
+Effect of Increased Influenza and Pneumococcal Vaccine Coverage on the Burden of Influenza among Elderly People in Hong Kong Versus Brisbane: Abridged Secondary Publication
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Hong Kong Med j
+</td>
+<td style="text-align:left;width: 20em; ">
+L Yang, WB Hu, CM Wong, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:left;width: 30em; ">
+Seroprevalence of and Risk Factors for q Fever in Dairy and Slaughterhouse Cattle of Jimma Town, South Western Ethiopia
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Bmc Veterinary Research
+</td>
+<td style="text-align:left;width: 20em; ">
+FB Deressa, DO Kal, BD Gelalcha, et al
 </td>
 </tr>
 <tr>
@@ -896,13 +953,12 @@ ALA Navas, F Osei, RJS Magalhães, et al
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
-Elective Caesarean Delivery Associated with Infant Hospitalisation for Intestinal but not Respiratory Infection
+Covid-19 Propagation Prediction and Assessment Method with Imported Cases and Infection Generations: Shanxi Province as a Case
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Maternal and Child Health J
 </td>
 <td style="text-align:left;width: 20em; ">
-KS Betts, RJS Magalhães, R Alati
+J Zhang, GQ Sun, M Li, et al
 </td>
 </tr>
 <tr>
@@ -910,13 +966,41 @@ KS Betts, RJS Magalhães, R Alati
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
-Geographical Variation in the Risk of H7n9 Human Infections in China: Implications for Risk-Based Surveillance
+Environmental Recovery of Nosocomial Bacteria in a Companion Animal Shelter Before and after Infection Control Procedures
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Scientific Reports
+Frontiers in Veterinary Science
 </td>
 <td style="text-align:left;width: 20em; ">
-X Zhou, L Gao, Y Wang, et al
+S Horsman, H Rynhoud, X Zhou, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:left;width: 30em; ">
+Dog Bite Emergency Department Presentations in Brisbane Metro South: Epidemiology and Exploratory Medical Geography for Targeted Interventions
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+One Health
+</td>
+<td style="text-align:left;width: 20em; ">
+A Pekin, H Rynhoud, B Brennan, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:left;width: 30em; ">
+Elective Caesarean Delivery Associated with Infant Hospitalisation for Intestinal but not Respiratory Infection
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Maternal and Child Health J
+</td>
+<td style="text-align:left;width: 20em; ">
+KS Betts, RJS Magalhães, R Alati
 </td>
 </tr>
 <tr>
@@ -938,12 +1022,13 @@ AL Araujo Navas, F Osei, RJ Soares Magalhães, et al
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
-Interim Guidance for the Care of Adult Patients with Cognitive Impairment Requiring Hospital Care During the Covid-19 Pandemic in Australia
+Estimation of Disability-Adjusted Life Years (Dalys) Averted over a 10-Year Period as Outcome Measure for Soil-Transmitted Helminthiasis (Sth) Control Strategies in the Philippines
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
+Southeast Asian J of Tropical Medicine and Public Health
 </td>
 <td style="text-align:left;width: 20em; ">
-M Martin-Khan, A Argo, K Bail, et al
+FB Garcia Jr, KH Balcon, N Graves, et al
 </td>
 </tr>
 <tr>
@@ -951,13 +1036,12 @@ M Martin-Khan, A Argo, K Bail, et al
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
-Environmental Recovery of Nosocomial Bacteria in a Companion Animal Shelter Before and after Infection Control Procedures
+Interim Guidance for the Care of Adult Patients with Cognitive Impairment Requiring Hospital Care During the Covid-19 Pandemic in Australia
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Frontiers in Veterinary Science
 </td>
 <td style="text-align:left;width: 20em; ">
-S Horsman, H Rynhoud, X Zhou, et al
+M Martin-Khan, A Argo, K Bail, et al
 </td>
 </tr>
 <tr>
@@ -979,20 +1063,6 @@ YA Gelaw, G Williams, RJS Magalhães, et al
 2019
 </td>
 <td style="text-align:left;width: 30em; ">
-Distribution of and Associated Factors for Dengue Burden in the State of Odisha, India During 2010–2016
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Infectious Diseases of Poverty
-</td>
-<td style="text-align:left;width: 20em; ">
-S Swain, M Bhatt, S Pati, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
 Risk Factors for Dengue Outbreaks in Odisha, India: a Case-Control Study
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1007,55 +1077,13 @@ S Swain, M Bhatt, D Biswal, et al
 2019
 </td>
 <td style="text-align:left;width: 30em; ">
-Mapping Soil-Transmitted Helminth Parasite Infection in Rwanda: Estimating Endemicity and Identifying at-Risk Populations
+Distribution of and Associated Factors for Dengue Burden in the State of Odisha, India During 2010–2016
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Tropical Medicine and Infectious Disease
+Infectious Diseases of Poverty
 </td>
 <td style="text-align:left;width: 20em; ">
-E Ruberanziza, K Owada, NJ Clark, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Effect of Temperature and Altitude Difference on Tuberculosis Notification: a Systematic Review
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-J of Global Infectious Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-YA Gelaw, W Yu, RJS Magalhães, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Knowledge, Attitudes, and Practices Associated with Avian Influenza along the Live Chicken Market Chains in Eastern China: a Cross-sectional Survey in Shanghai, Anhui, and Jiangsu
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Transboundary and Emerging Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-X Zhou, Y Zhang, C Shen, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Comparison of Influenza Disease Burden in Older Populations of Hong Kong and Brisbane: The Impact of Influenza and Pneumococcal Vaccination
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Bmc Infectious Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-L Yang, KP Chan, CM Wong, et al
+S Swain, M Bhatt, S Pati, et al
 </td>
 </tr>
 <tr>
@@ -1077,20 +1105,6 @@ PW Dhewantara, R Marina, T Puspita, et al
 2019
 </td>
 <td style="text-align:left;width: 30em; ">
-Climate Variability, Satellite-Derived Physical Environmental Data and Human Leptospirosis: a Retrospective Ecological Study in China
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Environmental Research
-</td>
-<td style="text-align:left;width: 20em; ">
-PW Dhewantara, W Hu, W Zhang, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
 Current Progress and Future Directions in the Double Burden of Malnutrition among Women in South and Southeast Asian Countries
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1098,6 +1112,62 @@ Current Developments in Nutrition
 </td>
 <td style="text-align:left;width: 20em; ">
 T Biswas, N Townsend, RJS Magalhaes, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:left;width: 30em; ">
+Knowledge, Attitudes, and Practices Associated with Avian Influenza along the Live Chicken Market Chains in Eastern China: a Cross-sectional Survey in Shanghai, Anhui, and Jiangsu
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Transboundary and Emerging Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+X Zhou, Y Zhang, C Shen, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:left;width: 30em; ">
+Effect of Temperature and Altitude Difference on Tuberculosis Notification: a Systematic Review
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+J of Global Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+YA Gelaw, W Yu, RJS Magalhães, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:left;width: 30em; ">
+Mapping Soil-Transmitted Helminth Parasite Infection in Rwanda: Estimating Endemicity and Identifying at-Risk Populations
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Tropical Medicine and Infectious Disease
+</td>
+<td style="text-align:left;width: 20em; ">
+E Ruberanziza, K Owada, NJ Clark, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:left;width: 30em; ">
+Climate Variability, Satellite-Derived Physical Environmental Data and Human Leptospirosis: a Retrospective Ecological Study in China
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Environmental Research
+</td>
+<td style="text-align:left;width: 20em; ">
+PW Dhewantara, W Hu, W Zhang, et al
 </td>
 </tr>
 <tr>
@@ -1133,6 +1203,34 @@ NJ Clark, I Umulisa, E Ruberanziza, et al
 2019
 </td>
 <td style="text-align:left;width: 30em; ">
+Determinants of Spatial Heterogeneity of Functional Illiteracy among School-Aged Children in the Philippines: An Ecological Study
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Int J of Environmental Research and Public Health
+</td>
+<td style="text-align:left;width: 20em; ">
+K Owada, M Nielsen, C Lau, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:left;width: 30em; ">
+Comparison of Influenza Disease Burden in Older Populations of Hong Kong and Brisbane: The Impact of Influenza and Pneumococcal Vaccination
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Bmc Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+L Yang, KP Chan, CM Wong, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:left;width: 30em; ">
 Identification of Microchip Implantation Events for Dogs and Cats in the Vetcompass Australia Database
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1161,13 +1259,13 @@ YA Gelaw, G Williams, Y Assefa, et al
 2019
 </td>
 <td style="text-align:left;width: 30em; ">
-Determinants of Spatial Heterogeneity of Functional Illiteracy among School-Aged Children in the Philippines: An Ecological Study
+Geographical Distribution and Risk Factors for Echinococcus Granulosus Infection in Peri-Urban Wild Dog Populations
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Int J of Environmental Research and Public Health
+Int J for Parasitology: Parasites and Wildlife
 </td>
 <td style="text-align:left;width: 20em; ">
-K Owada, M Nielsen, C Lau, et al
+L Harriott, M Gentle, R Traub, et al
 </td>
 </tr>
 <tr>
@@ -1182,20 +1280,6 @@ Bmc Infectious Diseases
 </td>
 <td style="text-align:left;width: 20em; ">
 S Ryu, RJS Magalhães, BC Chun
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-Geographical Distribution and Risk Factors for Echinococcus Granulosus Infection in Peri-Urban Wild Dog Populations
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Int J for Parasitology: Parasites and Wildlife
-</td>
-<td style="text-align:left;width: 20em; ">
-L Harriott, M Gentle, R Traub, et al
 </td>
 </tr>
 <tr>
@@ -1357,6 +1441,34 @@ PW Dhewantara, A Al Mamun, WY Zhang, et al
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
+Spatial Epidemiological Approaches to Inform Leptospirosis Surveillance and Control: a Systematic Review and Critical Appraisal of Methods
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Zoonoses and Public Health
+</td>
+<td style="text-align:left;width: 20em; ">
+PW Dhewantara, CL Lau, KJ Allan, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;width: 30em; ">
+Effectiveness of Market-Level Biosecurity at Reducing Exposure of Poultry and Humans to Avian Influenza: a Systematic Review and Meta-Analysis
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+The J of Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+X Zhou, Y Wang, H Liu, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;width: 30em; ">
 Spatiotemporal Patterns and Environmental Drivers of Human Echinococcoses over a Twenty-Year Period in Ningxia Hui Autonomous Region, China
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1385,10 +1497,10 @@ L Xia, Q Sun, J Wang, et al
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
-Spatiotemporal Patterns and Environmental Drivers of Human Echinococcoses over a Twenty-Year Period in Ningxia Hui Autonomous Region, China
+Environmental Risk Factors and Changing Spatial Patterns of Human Seropositivity for Echinococcus Spp. in Xiji County, Ningxia Hui Autonomous Region, China
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Parasites and Vectors
+Parasites &amp; Vectors
 </td>
 <td style="text-align:left;width: 20em; ">
 AM Cadavid Restrepo, YR Yang, DP McManus, et al
@@ -1406,34 +1518,6 @@ Parasites &amp; Vectors
 </td>
 <td style="text-align:left;width: 20em; ">
 K Owada, CL Lau, L Leonardo, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Effectiveness of Market-Level Biosecurity at Reducing Exposure of Poultry and Humans to Avian Influenza: a Systematic Review and Meta-Analysis
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-The J of Infectious Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-X Zhou, Y Wang, H Liu, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Spatial Epidemiological Approaches to Inform Leptospirosis Surveillance and Control: a Systematic Review and Critical Appraisal of Methods
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Zoonoses and Public Health
-</td>
-<td style="text-align:left;width: 20em; ">
-PW Dhewantara, CL Lau, KJ Allan, et al
 </td>
 </tr>
 <tr>
@@ -1483,20 +1567,6 @@ AMC Restrepo, YR Yang, DP McManus, et al
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
-Spatiotemporal Heterogeneity of Malnutrition Indicators in Children under 5 Years of Age in Bangladesh, 1999–2011
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Public Health Nutrition
-</td>
-<td style="text-align:left;width: 20em; ">
-MT Hasan, AA Mamun, GM Williams, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
 Characteristics of Livestock Husbandry and Management Practice in the Central Dry Zone of Myanmar
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1511,13 +1581,13 @@ TTZ Win, A Campbell, RJS Magalhães, et al
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
-Spatial Prediction of the Risk of Exposure to Echinococcus Spp. among Schoolchildren and Dogs in Ningxia Hui Autonomous Region, People’s Republic of China
+Spatiotemporal Heterogeneity of Malnutrition Indicators in Children under 5 Years of Age in Bangladesh, 1999–2011
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Geospatial Health
+Public Health Nutrition
 </td>
 <td style="text-align:left;width: 20em; ">
-AMC Restrepo, YR Yang, DP McManus, et al
+MT Hasan, AA Mamun, GM Williams, et al
 </td>
 </tr>
 <tr>
@@ -1539,6 +1609,20 @@ PR Giacomin, AK Kraeuter, EA Albornoz, et al
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
+Modelling Local Areas of Exposure to Schistosoma Japonicum in a Limited Survey Data Environment
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasites &amp; Vectors
+</td>
+<td style="text-align:left;width: 20em; ">
+ALA Navas, RJS Magalhães, F Osei, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;width: 30em; ">
 The Role of Neonatal Pulmonary Morbidity in the Longitudinal Patterns of Hospitalisation for Respiratory Infection During the First Year of Life
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1553,13 +1637,41 @@ KS Betts, RJS Magalhães, R Alati
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
-Modelling Local Areas of Exposure to Schistosoma Japonicum in a Limited Survey Data Environment
+Spatial Prediction of the Risk of Exposure to Echinococcus Spp. among Schoolchildren and Dogs in Ningxia Hui Autonomous Region, People’s Republic of China
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Parasites &amp; Vectors
+Geospatial Health
 </td>
 <td style="text-align:left;width: 20em; ">
-ALA Navas, RJS Magalhães, F Osei, et al
+AMC Restrepo, YR Yang, DP McManus, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;width: 30em; ">
+Spatiotemporal Patterns and Environmental Drivers of Human Echinococcoses over a Twenty-Year Period in Ningxia Hui Autonomous Region, China
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasites and Vectors
+</td>
+<td style="text-align:left;width: 20em; ">
+AM Cadavid Restrepo, YR Yang, DP McManus, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2017
+</td>
+<td style="text-align:left;width: 30em; ">
+Vetcompass Australia: a National Big Data Collection System for Veterinary Science
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Animals
+</td>
+<td style="text-align:left;width: 20em; ">
+P McGreevy, P Thomson, NK Dhand, et al
 </td>
 </tr>
 <tr>
@@ -1588,20 +1700,6 @@ Science of the Total Environment
 </td>
 <td style="text-align:left;width: 20em; ">
 AMC Restrepo, YR Yang, NAS Hamm, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
-Vetcompass Australia: a National Big Data Collection System for Veterinary Science
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Animals
-</td>
-<td style="text-align:left;width: 20em; ">
-P McGreevy, P Thomson, NK Dhand, et al
 </td>
 </tr>
 <tr>
@@ -1651,20 +1749,6 @@ X Huang, S Lambert, C Lau, et al
 2017
 </td>
 <td style="text-align:left;width: 30em; ">
-Spatiotemporal Distribution and Population at Risk of Soil-Transmitted Helminth Infections Following an Eight-Year School-Based Deworming Programme in Burundi, 2007–2014
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Parasites &amp; Vectors
-</td>
-<td style="text-align:left;width: 20em; ">
-M Assoum, G Ortu, MG Basáñez, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:left;width: 30em; ">
 Molecular Epidemiology and Pathology of Spirorchiid Infection in Green Sea Turtles (Chelonia Mydas)
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1672,6 +1756,20 @@ Int J for Parasitology: Parasites and Wildlife
 </td>
 <td style="text-align:left;width: 20em; ">
 PA Chapman, H Owen, M Flint, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2017
+</td>
+<td style="text-align:left;width: 30em; ">
+Spatiotemporal Distribution and Population at Risk of Soil-Transmitted Helminth Infections Following an Eight-Year School-Based Deworming Programme in Burundi, 2007–2014
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Parasites &amp; Vectors
+</td>
+<td style="text-align:left;width: 20em; ">
+M Assoum, G Ortu, MG Basáñez, et al
 </td>
 </tr>
 <tr>
@@ -1740,6 +1838,90 @@ Authors
 <tbody>
 <tr>
 <td style="text-align:right;">
+2022
+</td>
+<td style="text-align:left;width: 30em; ">
+Haemoprotozoa in Wild Short-beaked Echidnas (Tachyglossus Aculeatus)
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Australian Veterinary J
+</td>
+<td style="text-align:left;width: 20em; ">
+AG Hill, SP Boyd, NJ Clark, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2022
+</td>
+<td style="text-align:left;width: 30em; ">
+Near-Term Forecasting of Companion Animal Tick Paralysis Incidence: An Iterative Ensemble Model
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Computational Biology
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, T Proboste, G Weerasinghe, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2022
+</td>
+<td style="text-align:left;width: 30em; ">
+Dynamic Generalised Additive Models (Dgam) for Forecasting Discrete Ecological Time Series
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Biorxiv
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, K Wells
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Global Drivers of Avian Haemosporidian Infections Vary Across Zoogeographical Regions
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Global Ecology and Biogeography
+</td>
+<td style="text-align:left;width: 20em; ">
+A Fecchio, NJ Clark, JA Bell, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Mriml: Multi-response Interpretable Machine Learning to Model Genomic Landscapes
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Molecular Ecology Resources
+</td>
+<td style="text-align:left;width: 20em; ">
+NM Fountain-Jones, CP Kozakiewicz, BR Forester, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Perceptions of Dog Owners Towards Canine Gastrointestinal Parasitism and Associated Human Health Risk in Southeast Queensland
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+One Health
+</td>
+<td style="text-align:left;width: 20em; ">
+T Nguyen, N Clark, MK Jones, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
 2021
 </td>
 <td style="text-align:left;width: 30em; ">
@@ -1757,13 +1939,26 @@ AMH Abeykoon, NJ Clark, RJ Soares Magalhaes, et al
 2021
 </td>
 <td style="text-align:left;width: 30em; ">
-Perceptions of Dog Owners Towards Canine Gastrointestinal Parasitism and Associated Human Health Risk in Southeast Queensland
+Tick Paralysis in Australian Birds Caused by Ixodes Holocyclus
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-One Health
+Australian Veterinary J
 </td>
 <td style="text-align:left;width: 20em; ">
-T Nguyen, N Clark, MK Jones, et al
+AG Hill, NJ Clark, F Tokonami
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Direct and Indirect Viral Associations Predict Coexistence in Wild Plant Virus Communities
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+</td>
+<td style="text-align:left;width: 20em; ">
+A Norberg, H Susi, S Sallinen, et al
 </td>
 </tr>
 <tr>
@@ -1799,13 +1994,13 @@ NM Fountain-Jones, NJ Clark, AC Kinsley, et al
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
-Robust Geographical Determinants of Infection Prevalence and a Contrasting Latitudinal Diversity Gradient for Haemosporidian Parasites in Western Palearctic Birds
+Parasite Associations Predict Infection Risk: Incorporating Co-Infections in Predictive Models for Neglected Tropical Diseases
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Molecular Ecology
+Parasites &amp; Vectors
 </td>
 <td style="text-align:left;width: 20em; ">
-NJ Clark, SV Drovetski, G Voelker
+NJ Clark, K Owada, E Ruberanziza, et al
 </td>
 </tr>
 <tr>
@@ -1827,13 +2022,13 @@ NJ Clark, JT Kerry, CI Fraser
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
-Parasite Associations Predict Infection Risk: Incorporating Co-Infections in Predictive Models for Neglected Tropical Diseases
+Robust Geographical Determinants of Infection Prevalence and a Contrasting Latitudinal Diversity Gradient for Haemosporidian Parasites in Western Palearctic Birds
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Parasites &amp; Vectors
+Molecular Ecology
 </td>
 <td style="text-align:left;width: 20em; ">
-NJ Clark, K Owada, E Ruberanziza, et al
+NJ Clark, SV Drovetski, G Voelker
 </td>
 </tr>
 <tr>
@@ -1866,19 +2061,6 @@ NK Mone, NJ Clark, M Kyaw-Tanner, et al
 </tr>
 <tr>
 <td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Mriml: Multi-Response Interpretable Machine Learning to Map Genomic Landscapes
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-</td>
-<td style="text-align:left;width: 20em; ">
-N Fountain-Jones, C Kozakiewicz, B Forester, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
 2019
 </td>
 <td style="text-align:left;width: 30em; ">
@@ -1896,20 +2078,6 @@ A Fecchio, K Wells, JA Bell, et al
 2019
 </td>
 <td style="text-align:left;width: 30em; ">
-Out-of-Africa, Human-Mediated Dispersal of the Common Cat Flea, Ctenocephalides Felis: The Hitchhiker’s Guide to World Domination
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Int J for Parasitology
-</td>
-<td style="text-align:left;width: 20em; ">
-AL Lawrence, CE Webb, NJ Clark, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
 Synchronous Shedding of Multiple Bat Paramyxoviruses Coincides with Peak Periods of Hendra Virus Spillover
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -1917,6 +2085,20 @@ Emerging Microbes &amp; Infections
 </td>
 <td style="text-align:left;width: 20em; ">
 AJ Peel, K Wells, J Giles, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:left;width: 30em; ">
+Out-of-Africa, Human-Mediated Dispersal of the Common Cat Flea, Ctenocephalides Felis: The Hitchhiker’s Guide to World Domination
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Int J for Parasitology
+</td>
+<td style="text-align:left;width: 20em; ">
+AL Lawrence, CE Webb, NJ Clark, et al
 </td>
 </tr>
 <tr>
@@ -2008,13 +2190,13 @@ NJ Clark, JM Seddon, J Šlapeta, et al
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
-Climate, Host Phylogeny and the Connectivity of Host Communities Govern Regional Parasite Assembly
+Airborne Geographical Dispersal of q Fever from Livestock Holdings to Human Communities: a Systematic Review and Critical Appraisal of Evidence
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Diversity and Distributions
+Bmc Infectious Diseases
 </td>
 <td style="text-align:left;width: 20em; ">
-NJ Clark, SM Clegg, K Sam, et al
+NJ Clark, RJ Soares Magalhães
 </td>
 </tr>
 <tr>
@@ -2022,13 +2204,13 @@ NJ Clark, SM Clegg, K Sam, et al
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
-Airborne Geographical Dispersal of q Fever from Livestock Holdings to Human Communities: a Systematic Review and Critical Appraisal of Evidence
+Climate, Host Phylogeny and the Connectivity of Host Communities Govern Regional Parasite Assembly
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Bmc Infectious Diseases
+Diversity and Distributions
 </td>
 <td style="text-align:left;width: 20em; ">
-NJ Clark, RJS Magalhães
+NJ Clark, SM Clegg, K Sam, et al
 </td>
 </tr>
 <tr>
@@ -2050,20 +2232,6 @@ K Wells, DI Gibson, NJ Clark, et al
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
-Phylogenetic Uniqueness, not Latitude, Explains the Diversity of Avian Blood Parasite Communities Worldwide
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Global Ecology and Biogeography
-</td>
-<td style="text-align:left;width: 20em; ">
-NJ Clark
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
 Unravelling Changing Interspecific Interactions Across Environmental Gradients using Markov Random Fields
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -2071,6 +2239,20 @@ Ecology
 </td>
 <td style="text-align:left;width: 20em; ">
 NJ Clark, K Wells, O Lindberg
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;width: 30em; ">
+Phylogenetic Uniqueness, not Latitude, Explains the Diversity of Avian Blood Parasite Communities Worldwide
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Global Ecology and Biogeography
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark
 </td>
 </tr>
 <tr>
@@ -2165,6 +2347,34 @@ Authors
 <tbody>
 <tr>
 <td style="text-align:right;">
+2022
+</td>
+<td style="text-align:left;width: 30em; ">
+The Association of Wildfire Air Pollution with Covid-19 Incidence in New South Wales, Australia
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Science of the Total Environment
+</td>
+<td style="text-align:left;width: 20em; ">
+J Cortes-Ramirez, RN Michael, LD Knibbs, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2022
+</td>
+<td style="text-align:left;width: 30em; ">
+Mapping the Morbidity Risk Associated with Coal Mining in Queensland, Australia
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Int J of Environmental Research and Public Health
+</td>
+<td style="text-align:left;width: 20em; ">
+J Cortes-Ramirez, D Wraith, PD Sly, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
 2021
 </td>
 <td style="text-align:left;width: 30em; ">
@@ -2207,6 +2417,20 @@ J Cortes-Ramirez, JD Wilches-Vega, OM Paris-Pineda, et al
 </tr>
 <tr>
 <td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Workplace Health and Safety Consultation in Australia: a Scoping Review
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+J of Health, Safety and Environment
+</td>
+<td style="text-align:left;width: 20em; ">
+DDC Simao, N Karanikas, J Cortes-Ramirez, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
@@ -2241,7 +2465,7 @@ RSM Javier Cortes-Ramirez, Dwan Vilcins, Paul Jagals
 Collaboration Across Boundaries in the Amazon
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Science (New York, Ny)
+Science
 </td>
 <td style="text-align:left;width: 20em; ">
 PR Prist, N Levin, JP Metzger, et al
@@ -2343,6 +2567,34 @@ Authors
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:right;">
+2022
+</td>
+<td style="text-align:left;width: 30em; ">
+Haemoprotozoa in Wild Short-beaked Echidnas (Tachyglossus Aculeatus)
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Australian Veterinary J
+</td>
+<td style="text-align:left;width: 20em; ">
+AG Hill, SP Boyd, NJ Clark, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2022
+</td>
+<td style="text-align:left;width: 30em; ">
+Near-Term Forecasting of Companion Animal Tick Paralysis Incidence: An Iterative Ensemble Model
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Computational Biology
+</td>
+<td style="text-align:left;width: 20em; ">
+NJ Clark, T Proboste, G Weerasinghe, et al
+</td>
+</tr>
 <tr>
 <td style="text-align:right;">
 2021
@@ -2611,16 +2863,29 @@ Authors
 <tbody>
 <tr>
 <td style="text-align:right;">
-2020
+2021
 </td>
 <td style="text-align:left;width: 30em; ">
-Participatory Epidemiology: Principles, Practice, Utility, and Lessons Learnt. Front. Vet. Sci. 7: 532763. Doi: 10.3389/Fvets. 2020.532763 Participatory Epidemiology: Principles
+Investigating the Socio-Economic and Livelihoods Impacts of African Swine Fever in Timor-Leste: An Application of Spatial Group Model Building
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Practice, Utility, and Lessons Learnt
+Frontiers in Veterinary Science
 </td>
 <td style="text-align:left;width: 20em; ">
-RG Alders, SN Ali, AA Ameri, et al
+J Berends, J Bendita Da Costa Jong, TL Cooper, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Final Report: Developing a Regional African Swine Fever Socioeconomic and Livelihood Impact Assessment Framework
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+</td>
+<td style="text-align:left;width: 20em; ">
+D Smith, T Cooper
 </td>
 </tr>
 <tr>
@@ -2659,7 +2924,7 @@ D Smith, T Cooper, A Pereira, et al
 Engaging with Complexity for Improved Veterinary Antimicrobial Stewardship in Thai Nguyen, Vietnam
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-Ilri
+Int Livestock Research Institute
 </td>
 <td style="text-align:left;width: 20em; ">
 T Cooper, D Grace, E Fliert, et al
@@ -2773,6 +3038,48 @@ Authors
 <tbody>
 <tr>
 <td style="text-align:right;">
+2022
+</td>
+<td style="text-align:left;width: 30em; ">
+Spatiotemporal Heterogeneity and Determinants of Canine Rabies Evidence at Local Government Area Level in Nigeria: Implications for Rabies Prevention and Control
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+One Health
+</td>
+<td style="text-align:left;width: 20em; ">
+PP Mshelbwala, JS Weese, NJ Clark, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Rabies Epidemiology, Prevention and Control in Nigeria: Scoping Progress Towards Elimination
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+PP Mshelbwala, JS Weese, OA Sanni-Adeniyi, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Risk Areas for Influenza a (H5) Environmental Contamination in Live Bird Markets, Dhaka, Bangladesh
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Emerging Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+S Chakma, MG Osmani, H Akwar, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
 2020
 </td>
 <td style="text-align:left;width: 30em; ">
@@ -2782,20 +3089,7 @@ An Assessment on Potential Risk Pathways for the Incursion of Highly Pathogenic 
 Veterinary World
 </td>
 <td style="text-align:left;width: 20em; ">
-KI Islam, MM Ahsan, S Chakma, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2020
-</td>
-<td style="text-align:left;width: 30em; ">
-Raw Date Palm Sap Consumption and Human Exposure to Bat in Bangladesh
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-</td>
-<td style="text-align:left;width: 20em; ">
-IS Shanta, SP Luby, K Hossain, et al
+K Islam, MM Ahsan, S Chakma, et al
 </td>
 </tr>
 <tr>
@@ -2810,6 +3104,19 @@ Pharmacognosy J
 </td>
 <td style="text-align:left;width: 20em; ">
 RGP Panjaitan, A Maulidya, ARP Raharjeng, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:left;width: 30em; ">
+Raw Date Palm Sap Consumption and Human Exposure to Bat in Bangladesh
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+</td>
+<td style="text-align:left;width: 20em; ">
+IS Shanta, SP Luby, K Hossain, et al
 </td>
 </tr>
 <tr>
@@ -2852,6 +3159,20 @@ J of Advanced Veterinary and Animal Research
 </td>
 <td style="text-align:left;width: 20em; ">
 SKS Islam, S Chakma, AHMT Akhter, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;width: 30em; ">
+Sink Surveillance, an Innovative Approach to Identify Hpai and Other Emerging Zoonotic Pathogens in Live Bird Markets in Bangladesh
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Prince Mahidol Award Conference (Pmac), Poster a
+</td>
+<td style="text-align:left;width: 20em; ">
+M Osmani, H Akwar, Z Hasan, et al
 </td>
 </tr>
 <tr>
@@ -2908,20 +3229,6 @@ Prince Mahidol Award Conference
 </td>
 <td style="text-align:left;width: 20em; ">
 H Akwar, K Naher, AS Zubery, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-Sink Surveillance, an Innovative Approach to Identify Hpai and Other Emerging Zoonotic Pathogens in Live Bird Markets in Bangladesh
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Prince Mahidol Award Conference (Pmac), Poster a
-</td>
-<td style="text-align:left;width: 20em; ">
-M Osmani, H Akwar, Z Hasan, et al
 </td>
 </tr>
 <tr>
@@ -3253,19 +3560,6 @@ Internation J of Bioresearch
 M Aktar, PM Das, J Hassan, et al
 </td>
 </tr>
-<tr>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:left;width: 30em; ">
-Early Release-Evaluation of Risk Areas for Influenza a (H5) Environmental Contamination in Live Bird Markets, Dhaka, Bangladesh
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-</td>
-<td style="text-align:left;width: 20em; ">
-S Chakma, MG Osmani, H Akwar, et al
-</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -3275,7 +3569,7 @@ S Chakma, MG Osmani, H Akwar, et al
 <h3>Philip Mshelbwala</h3>
 <p><img src="images/philip_profile.png" class="round" style="border:4px solid; margin-bottom: 20px" alt="Philip P. Mshelbwala is a PhD student at the Spatial Epidemiology Group, University of Queensland"/></p>
 <center>
-Philip is a veterinarian and lecturer at the <a href="https://web.uniabuja.edu.ng/" target="_blank">University of Abuja, Nigeria</a>. He has worked with the <a href="http://www.afenet.net/" target="_blank">African Epidemiology Network (AFENET)</a>, through which he has contributed to the control of the spread of polio and other vaccine-preventable diseases of children in high risk areas in Northeastern Nigeria. He has coordinated and participated in several rabies control programs in Nigeria and other African countries. He serves as the welfare officer of the Rabies In West Africa (RIWA), Nigeria and contributes to the War Against Rabies Foundation (WAR). He earned a diploma of rabies surveillance and control from the University of Lausanne, Switzerland. He has participated in The United States Center for Disease Prevention and Control (US,CDC) Biosecurity Engagement Program in southwestern Nigeria. The result from the study demonstrated a novel strain of <em>Bartonella</em>, proposed as <em>B. rousetti</em>, in fruit bats which might be capable of infecting humans. Philip’s research interest focus on infectious and zoonotic disease, particularly of companion animals. During his PhD, he will be using spatial and analytical tools to understand the pattern of rabies transmission in Nigeria and China with the view of formulating a robust framework for effective surveillance and control at the human and animal interface. Philip’s advisors are <a href="#ricardo">A/Prof Ricardo Soares Magalhães</a>, <a href="https://researchers.uq.edu.au/researcher/1318" target="_blank">A/Prof Abdullah Mamun</a> and <a href="https://ovc.uoguelph.ca/pathobiology/people/faculty/Scott-Weese" target="_blank">Prof J. Scott Weese</a>. Read more about Philip’s work on his <a href="https://www.researchgate.net/profile/P_Mshelbwala" target="_blank">ResearchGate</a> page.
+Philip is a veterinarian, and a PhD student at the School of Veterinary Science, University of Queensland, with broad interests in infectious diseases, epidemiology and One Health. The central focus of his PhD is to quantify rabies transmission risk in Nigeria to support prevention and control efforts towards attaining zero human rabies deaths mediated via dogs by 2030. His supervisors are <a href="#ricardo">A/Prof Ricardo Soares Magalhães</a>, <a href="#nick">Dr. Nicholas Clark</a>, <a href="https://ovc.uoguelph.ca/pathobiology/people/faculty/Scott-Weese" target="_blank">Prof J. Scott Weese</a> and Professor Joanne Meers. Read more about Philip’s work on his <a href="https://www.researchgate.net/profile/P_Mshelbwala" target="_blank">ResearchGate</a> page.
 </center>
 <br>
 <center>
@@ -3300,6 +3594,48 @@ Authors
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:right;">
+2022
+</td>
+<td style="text-align:left;width: 30em; ">
+Spatiotemporal Heterogeneity and Determinants of Canine Rabies Evidence at Local Government Area Level in Nigeria: Implications for Rabies Prevention and Control
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+One Health
+</td>
+<td style="text-align:left;width: 20em; ">
+PP Mshelbwala, JS Weese, NJ Clark, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Risk Factors for Rift Valley Fever Virus Seropositivity in One-Humped Camels (Camelus Dromedarius) and Pastoralist Knowledge and Practices in Northern Nigeria
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+One Health
+</td>
+<td style="text-align:left;width: 20em; ">
+AM Adamu, L Allam, AKB Sackey, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Rabies Epidemiology, Prevention and Control in Nigeria: Scoping Progress Towards Elimination
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Plos Neglected Tropical Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+PP Mshelbwala, JS Weese, OA Sanni-Adeniyi, et al
+</td>
+</tr>
 <tr>
 <td style="text-align:right;">
 2021
@@ -3375,20 +3711,6 @@ P Mshelbwala, S Weese, A Mamun, et al
 2019
 </td>
 <td style="text-align:left;width: 30em; ">
-Canine Babesiosis in a Male Boerboel: Hematobiochemical and Anatomic Pathological Changes in the Cardiorespiratory and Reproductive Organs
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Veterinary and Animal Science
-</td>
-<td style="text-align:left;width: 20em; ">
-AS Ubah, SE Abalaka, IS Idoko, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
 Two Fatal Cases of Rabies in Humans Who Did not Receive Rabies Postexposure Prophylaxis in Nigeria
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -3396,6 +3718,20 @@ Clinical Case Reports
 </td>
 <td style="text-align:left;width: 20em; ">
 SW Audu, PP Mshelbwala, BM Jahun, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2019
+</td>
+<td style="text-align:left;width: 30em; ">
+Canine Babesiosis in a Male Boerboel: Hematobiochemical and Anatomic Pathological Changes in the Cardiorespiratory and Reproductive Organs
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Veterinary and Animal Science
+</td>
+<td style="text-align:left;width: 20em; ">
+AS Ubah, SE Abalaka, IS Idoko, et al
 </td>
 </tr>
 <tr>
@@ -3501,20 +3837,6 @@ PP Mshelbwala, DK Akinwolemiwa, BV Maikai, et al
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
-Rabies in a Set of Eight-Week Old Puppies in Nigeria: The Need for Review of Current Dog Antirabies Vaccination Schedule
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-African J of Infectious Diseases
-</td>
-<td style="text-align:left;width: 20em; ">
-NA Maurice, PD Luka, MN Maurice, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
 Socioecology of the Canine Population in the Province of El Jadida, Morocco
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
@@ -3522,6 +3844,20 @@ Veterinary Medicine Int
 </td>
 <td style="text-align:left;width: 20em; ">
 K Bouaddi, A Bitar, A Ferssiwi, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;width: 30em; ">
+Rabies in a Set of Eight-Week Old Puppies in Nigeria: The Need for Review of Current Dog Antirabies Vaccination Schedule
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+African J of Infectious Diseases
+</td>
+<td style="text-align:left;width: 20em; ">
+NA Maurice, PD Luka, MN Maurice, et al
 </td>
 </tr>
 <tr>
@@ -3588,23 +3924,10 @@ PP Mshelbwala, JS Weese, JM Idris
 Acute Toxicity, Phytochemistry and Anti-Diarrheal Effects of Celtis Integrifolia Lam. Aqueous Leaf Extract in Wistar Albino Rats
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-J of Pharmaceutical Research Int
+Br. J. Pharm. Res
 </td>
 <td style="text-align:left;width: 20em; ">
-MB Mahre, B Umaru, NA Ojo, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2016
-</td>
-<td style="text-align:left;width: 30em; ">
-Research Article Prevalence of Needlestick Injury and Its Potential Risk among Veterinarians in Nigeria
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-</td>
-<td style="text-align:left;width: 20em; ">
-PP Mshelbwala, JS Weese, JM Idris
+ASS NAO
 </td>
 </tr>
 <tr>
@@ -3618,7 +3941,20 @@ Assessment of Compliance of Referral Veterinary Hospitals to Sample Collection, 
 j Veterinar Sci Technol
 </td>
 <td style="text-align:left;width: 20em; ">
-DT Ojo, BO Olugasa, PP Mshelbwala
+D Ojo, B Olugasa, P Mshelbwala
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2016
+</td>
+<td style="text-align:left;width: 30em; ">
+Research Article Prevalence of Needlestick Injury and Its Potential Risk among Veterinarians in Nigeria
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+</td>
+<td style="text-align:left;width: 20em; ">
+PP Mshelbwala, JS Weese, JM Idris
 </td>
 </tr>
 <tr>
@@ -3646,7 +3982,7 @@ Evaluation of Two Rapid Diagnostic Tests for Rabies Diagnosis under Field and La
 j Vaccines Vaccin
 </td>
 <td style="text-align:left;width: 20em; ">
-PP Mshelbwala, SU Abdullahi, B Maikai, et al
+P Mshelbwala, S Abdullahi, B Maikai, et al
 </td>
 </tr>
 <tr>
@@ -3682,13 +4018,13 @@ CS Ukwueze, CF Orajaka, CO Okorie-Kanu, et al
 2015
 </td>
 <td style="text-align:left;width: 30em; ">
-Dystocia Due to Fetal Malposition with Abrachia in Yankasa Ewe
+Rumenolith in a Greater Kudu Antelope (Tragelaphus Strepsiceros) Kept in Zoo
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
-J of Scientific Research and Reports
+J of Scientific Research &amp; Reports
 </td>
 <td style="text-align:left;width: 20em; ">
-DF Audu, A Aishatu, A Helen, et al
+AF Danjuma, A Abubakar, GR Otolorin, et al
 </td>
 </tr>
 <tr>
@@ -3696,13 +4032,27 @@ DF Audu, A Aishatu, A Helen, et al
 2015
 </td>
 <td style="text-align:left;width: 30em; ">
-Rumenolith in a Greater Kudu Antelope (Tragelaphus Strepsiceros) Kept in Zoo
+Dystocia Due to Fetal Malposition with Abrachia in Yankasa Ewe
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+J of Scientific Research &amp; Reports
+</td>
+<td style="text-align:left;width: 20em; ">
+AF Danjuma, A Abubakar, H Adamu, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2015
+</td>
+<td style="text-align:left;width: 30em; ">
+Dystocia Due to Fetal Malposition with Abrachia in Yankasa Ewe
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
 J of Scientific Research and Reports
 </td>
 <td style="text-align:left;width: 20em; ">
-DF Audu, A Aishatu, OG Richard, et al
+DF Audu, A Aishatu, A Helen, et al
 </td>
 </tr>
 <tr>
@@ -3716,7 +4066,7 @@ Potential Risks for Rabies Spill-over from Apparently Healthy Dogs to Wildlife i
 J of Veterinary Advances
 </td>
 <td style="text-align:left;width: 20em; ">
-YJ Atuman, YA Adawa, A Solomon, et al
+YJ Atuman, DAY Adawa, A Solomon, et al
 </td>
 </tr>
 <tr>
@@ -3730,7 +4080,7 @@ Knowledge, Attitude and Practice About Dog Bite and Rabies Exposure among Dog Me
 J. Vet. Adv
 </td>
 <td style="text-align:left;width: 20em; ">
-PP Mshelbwala, AB Ogunkoya, SU Abdullahi, et al
+P Mshelbwala, A Ogunkoya, B Maikai, et al
 </td>
 </tr>
 <tr>
@@ -3818,15 +4168,42 @@ AB Ogunkoya
 </tr>
 <tr>
 <td style="text-align:right;">
-NA
+2012
 </td>
 <td style="text-align:left;width: 30em; ">
-Covid-19 Pandemic: a Concise Appraisal of the Current Status
+Problems of Rabies in Nigeria: a Review
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
 </td>
 <td style="text-align:left;width: 20em; ">
-GR Otolorin, IO Akefe, OT Olufemi, et al
+A Ogunkoya, S Audu, P Mshelbwala, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;width: 30em; ">
+Knowledge, Attitudes, and Practices Regarding Rabies in El Jadida Region, Morocco. Vet Sci. 2020; 7: 29
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+Pubmed
+</td>
+<td style="text-align:left;width: 20em; ">
+K Bouaddi, A Bitar, M Bouslikhane, et al
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;width: 30em; ">
+Short Communication Liver Fluke Infection in a One-Humped Camel from Nigeria
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+</td>
+<td style="text-align:left;width: 20em; ">
+I Ahmad, PP Mshelbwala, U Muhammad
 </td>
 </tr>
 <tr>
@@ -3878,6 +4255,20 @@ Authors
 <tbody>
 <tr>
 <td style="text-align:right;">
+2021
+</td>
+<td style="text-align:left;width: 30em; ">
+Cow Shelters: Animal Welfare, Human Well-Being and the Environment in an Indian Context
+</td>
+<td style="text-align:left;width: 20em; font-style: italic;">
+One Welfare in Practice
+</td>
+<td style="text-align:left;width: 20em; ">
+U Kennedy, A Sharma, CJC Phillips
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
 2019
 </td>
 <td style="text-align:left;width: 30em; ">
@@ -3920,20 +4311,6 @@ A Sharma, U Kennedy, C Phillips
 </tr>
 <tr>
 <td style="text-align:right;">
-2019
-</td>
-<td style="text-align:left;width: 30em; ">
-The Welfare of Cows in Indian Shelters.
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
-Animals
-</td>
-<td style="text-align:left;width: 20em; ">
-S Arvind, U Kennedy, C Schuetze, et al
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
 2018
 </td>
 <td style="text-align:left;width: 30em; ">
@@ -3941,19 +4318,6 @@ The Sheltering of Unwanted Cattle, Experiences in India and Implications for Cat
 </td>
 <td style="text-align:left;width: 20em; font-style: italic;">
 Animals
-</td>
-<td style="text-align:left;width: 20em; ">
-U Kennedy, A Sharma, CJC Phillips
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2018
-</td>
-<td style="text-align:left;width: 30em; ">
-The Sheltering of Unwanted Cattle, Experiences in India and Implications for Cattle Industries Elsewhere. Animals. 8 (64)
-</td>
-<td style="text-align:left;width: 20em; font-style: italic;">
 </td>
 <td style="text-align:left;width: 20em; ">
 U Kennedy, A Sharma, CJC Phillips
@@ -3974,6 +4338,13 @@ U Kennedy, A Sharma, CJC Phillips
 <h3>Thomas Callaghan</h3>
 <p><img src="images/Thomas.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Thomas Cakkaghna is a PhD student at the Spatial Epidemiology Group, University of Queensland"/></p>
 Thomas is a PhD student interested in zoonotic infectious diseases and a One Health approach to their management. His current research focuses on the spatial epidemiology of zoonotic foodborne disease in Queensland. This work will include identifying which risk factors and exposure pathways are associated with animal infection, human infection, morbidity, and hospitalisation. Thomas has worked as a scientist for several years at Safe Food Production Queensland, Biosecurity Queensland, and the Queensland Department of Agriculture and Fisheries. Thomas completed his prior tertiary studies at UQ with a Bachelor of Environmental Science (Honours) and Graduate Certificate in Animal Science. He is a member of the Australian Society for Microbiology and an alumnus of the Evolutionary Physiology Laboratory at UQ’s School of Biological Science. Thomas’s advisors at UQ are <a href="#ricardo">A/Prof Ricardo Soares Magalhães</a>, <a href="https://public-health.uq.edu.au/profile/6032/colleen-lau" target="_blank">Prof Colleen Lau</a>, <a href="https://researchers.uq.edu.au/researcher/544" target="_blank">A/Prof Rowland Cobbold</a> and <a href="https://researchers.uq.edu.au/researcher/25478" target="_blank">Dr Dwan Vilcins</a>. His external advisors are Robin Sherlock (Safe Food Production Queensland) and Adj A/Professor Jim Smith (Queensland Health and QUT). Read more about Thomas on his <a href="https://www.researchgate.net/profile/Thomas-Callaghan-7" target="_blank">ResearchGate</a> page.
+</center>
+<p><br></p>
+</div>
+<div id="holly-crompton" class="section level3">
+<h3>Holly Crompton</h3>
+<center>
+Holly is a PhD student with a particular interest in infectious disease epidemiology, geospatial analysis and One Health approaches to disease control. Her current PhD work is on identifying risk factors and using spatial analysis techniques with the goal of targeting global rabies elimination. Her Primary supervisor is A/Professor Ricardo Soares Magalhaes and her associate supervisors are Dr. Nicholas Clark, Professor Cassiano Victoria and Dr. Janine Barrett.
 </center>
 <p><br></p>
 </div>
@@ -4059,7 +4430,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -4068,6 +4439,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')
