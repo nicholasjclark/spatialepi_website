@@ -281,7 +281,7 @@ Fran is a PhD candidate currently working on using multivariate modelling approa
 <br> 
 
 ### Thomas Callaghan
-<img src="images/Thomas.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Thomas Cakkaghna is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+<img src="images/Thomas.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Thomas Callaghna is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
 
 Thomas is a PhD student interested in zoonotic infectious diseases and a One Health approach to their management. His current research focuses on the spatial epidemiology of zoonotic foodborne disease in Queensland. This work will include identifying which risk factors and exposure pathways are associated with animal infection, human infection, morbidity, and hospitalisation. Thomas has worked as a scientist for several years at Safe Food Production Queensland, Biosecurity Queensland, and the Queensland Department of Agriculture and Fisheries.
 Thomas completed his prior tertiary studies at UQ with a Bachelor of Environmental Science (Honours) and Graduate Certificate in Animal Science. He is a member of the Australian Society for Microbiology and an alumnus of the Evolutionary Physiology Laboratory at UQ’s School of Biological Science. Thomas’s advisors at UQ are [A/Prof Ricardo Soares Magalhães](#ricardo), [Prof Colleen Lau](https://public-health.uq.edu.au/profile/6032/colleen-lau){target="_blank"}, [A/Prof Rowland Cobbold](https://researchers.uq.edu.au/researcher/544){target="_blank"} and [Dr Dwan Vilcins](https://researchers.uq.edu.au/researcher/25478){target="_blank"}. His external advisors are Robin Sherlock (Safe Food Production Queensland) and Adj A/Professor Jim Smith (Queensland Health and QUT). Read more about Thomas on his [ResearchGate](https://www.researchgate.net/profile/Thomas-Callaghan-7){target="_blank"} page.</center>
@@ -289,6 +289,7 @@ Thomas completed his prior tertiary studies at UQ with a Bachelor of Environment
 <br>
 
 ### Holly Crompton
+<img src="images/holly_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Holly Crompton is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
 
 <center>Holly is a PhD student with a particular interest in infectious disease epidemiology, geospatial analysis and One Health approaches to disease control. Her current PhD work is on identifying risk factors and using spatial analysis techniques with the goal of targeting global rabies elimination. Her Primary supervisor is  [A/Prof Ricardo Soares Magalhães](#ricardo) and her associate supervisors are [Dr. Nicholas Clark](#nick)k, Professor Cassiano Victoria and Dr. Janine Barrett.</center>
 
