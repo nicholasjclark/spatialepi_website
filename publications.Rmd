@@ -11,6 +11,7 @@ output:
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 library(kableExtra)
 library(knitr)
+library(scholar)
 source('functions/scholar_allpubs.R')
 source('./scholar_ids/scholar_ids.R')
 all_pubs <- scholar_allpubs(scholar_ids)
