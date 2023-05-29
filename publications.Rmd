@@ -21,7 +21,6 @@ all_pubs <- scholar_allpubs(scholar_ids)
 
 <br>
 
-
 ## 2023
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 kable(data.frame(all_pubs %>%
