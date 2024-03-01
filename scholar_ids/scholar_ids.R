@@ -12,6 +12,7 @@ tatiana_id <- '8k6aPjIAAAAJ&hl'
 uttara_id <- 'SfoR9d0AAAAJ&hl'
 silvia_id <- '5vV6OfUAAAAJ&hl'
 
+
 # All IDs
-scholar_ids <- c(ricardo_id, nick_id, tarni_id, shovon_id, philip_id, 
-                 javier_id, tatiana_id, uttara_id, silvia_id)
+scholar_ids <- c(ricardo_id, nick_id, tarni_id, shovon_id, 
+                 tatiana_id, uttara_id, silvia_id)

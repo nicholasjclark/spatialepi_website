@@ -13,10 +13,10 @@ Members of our team a wealth of expertise owing to their diverse backgrounds in 
 ## Ricardo Soares Magalhães {#ricardo}
 <img src="images/ricardo_profile.jpeg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Ricardo Soares Magalhães is head of the Spatial Epidemiology Laboratory (SpatialEpiLab) at the University of Queensland"/>
 
-<center>A/Prof Magalhães is an infectious disease epidemiologist with qualifications in both human and veterinary public health. His primary research focus is on the application of spatial risk assessment methods and population-based intervention studies to provide epidemiological evidence for more rational implementation of strategies for the control of infectious diseases of animals and humans. His interests are broad, ranging from the development of geographical models of infectious disease distribution to quantifying the role of spatial variation as an influence on socio-economic indicators such as water, sanitation and hygiene, to assessing the spatial distributions of helminth infection of children and associated morbidities. He has fostered collaborations that encompass many international and domestic partners, with a diversity of ongoing projects supported locally at UQ's [Child Health Research Centre](https://child-health-research.centre.uq.edu.au/){target="_blank"}, [School of Veterinary Science](https://veterinary-science.uq.edu.au/){target="_blank"} and [School of Public Health](https://public-health.uq.edu.au/){target="_blank"}. He is currently seeking PhD candidates with skills in data analysis, statistical programming and machine learning to contribute to projects linking Big Data to spatial and spatio-temporal epidemiology. Read more about A/Prof Magalhães's work on his [ResearchGate](https://www.researchgate.net/profile/Ricardo_Soares_Magalhaes){target="_blank"} and at his [Google Scholar](https://scholar.google.com.au/citations?user=aAh0t1AAAAAJ&hl=en){target="_blank"} page.</center>
+<center>Prof Magalhães is an infectious disease epidemiologist with qualifications in both human and veterinary public health. His primary research focus is on the application of spatial risk assessment methods and population-based intervention studies to provide epidemiological evidence for more rational implementation of strategies for the control of infectious diseases of animals and humans. His interests are broad, ranging from the development of geographical models of infectious disease distribution to quantifying the role of spatial variation as an influence on socio-economic indicators such as water, sanitation and hygiene, to assessing the spatial distributions of helminth infection of children and associated morbidities. He has fostered collaborations that encompass many international and domestic partners, with a diversity of ongoing projects supported locally at UQ's [Child Health Research Centre](https://child-health-research.centre.uq.edu.au/){target="_blank"}, [School of Veterinary Science](https://veterinary-science.uq.edu.au/){target="_blank"} and [School of Public Health](https://public-health.uq.edu.au/){target="_blank"}. He is currently seeking PhD candidates with skills in data analysis, statistical programming and machine learning to contribute to projects linking Big Data to spatial and spatio-temporal epidemiology. Read more about A/Prof Magalhães's work on his [ResearchGate](https://www.researchgate.net/profile/Ricardo_Soares_Magalhaes){target="_blank"} and at his [Google Scholar](https://scholar.google.com.au/citations?user=aAh0t1AAAAAJ&hl=en){target="_blank"} page.</center>
 
 <br>
-<center>`A/Prof Soares Magalhães recent publications`</center>
+<center>`Prof Soares Magalhães recent publications`</center>
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 library(kableExtra)
 library(knitr)
@@ -27,7 +27,7 @@ all_pubs <- scholar_allpubs(ricardo_id)
 
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 kable(data.frame(all_pubs %>%
-          dplyr::filter(Year > 2016)), row.names = F,
+          dplyr::filter(Year > 2017)), row.names = F,
       format = 'html') %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
   column_spec(2, width = '30em') %>%
@@ -37,7 +37,7 @@ kable(data.frame(all_pubs %>%
 ```
 <br>
 
-## Early Career Researchers
+## Early and Mid Career Researchers
 ### Nicholas Clark {#nick}
 <img src="images/nick_profile.JPG" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Nicholas J Clark is a lecturer in molecular epidemiology at the Spatial Epidemiology Laboratory (SpatialEpiLab), University of Queensland"/>
 
@@ -54,33 +54,7 @@ all_pubs <- scholar_allpubs(nick_id)
 
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 kable(data.frame(all_pubs %>%
-          dplyr::filter(Year > 2016)), row.names = F,
-      format = 'html') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
-  column_spec(2, width = '30em') %>%
-  column_spec(3, italic = T, width = '20em') %>%
-  column_spec(4, width = '20em') %>%
-  scroll_box(width = "100%", height = "300px")
-```
-<br>
-
-### Javier Cortes Ramirez
-<img src="images/javier_cropped.png" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Javier Cortes Ramirez is a postdoctoral fellow at the Spatial Epidemiology Group, University of Queensland"/>
-
-<center>Dr Cortes-Ramirez is a medical doctor with clinical experience in diagnosis and treatment of tropical diseases including vector-borne diseases and zoonoses. He worked as a medical practitioner for 10 years in Colombia and Chile, as medical doctor with the International Committee of the Red Cross (2002) and as a consultant for [World Health Organization](https://www.who.int/){target="_blank"} for a national project on Environmental Health in the Solomon Islands (2015). As a researcher, he has experience studying the prevalence of ofidism (snake bite), Chagas disease in tropical countries as well as risk factors associated with silicosis in miners in Chile. In the last four years, he has developed spatial epidemiological studies on the association of coal mining with hospitalisations in Queensland. Dr Cortes-Ramirez is currently a lecturer in Environmental Health at UQ's [School of Public Health](https://public-health.uq.edu.au/){target="_blank"} Read more about his work at his [ResearchGate](https://www.researchgate.net/profile/Javier_Cortes-Ramirez) page.</center>
-
-<br>
-<center>`Dr Ramirez's recent publications`</center>
-```{r, echo = FALSE, warning=FALSE, message=FALSE}
-library(kableExtra)
-library(knitr)
-source('functions/scholar_allpubs.R')
-all_pubs <- scholar_allpubs(javier_id)
-```
-
-```{r, echo = FALSE, warning=FALSE, message=FALSE}
-kable(data.frame(all_pubs %>%
-          dplyr::filter(Year > 2016)), row.names = F,
+          dplyr::filter(Year > 2017)), row.names = F,
       format = 'html') %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
   column_spec(2, width = '30em') %>%
@@ -100,7 +74,7 @@ kable(data.frame(all_pubs %>%
 ### Tatiana Proboste
 <img src="images/tatiana_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Tatiana proboste is a postdoctoral fellow at the Spatial Epidemiology Group, University of Queensland"/>
 
-<centr>Dr Proboste is a post-doctoral fellow at UQ Spatial Epidemiology Laboratory. Her background is in Veterinary Medicine (DVM) and terrestrial ecology and biodiversity management (Msc) with a specialisation in wildlife disease ecology and molecular tools (PhD). As a researcher, Tatiana has worked on molecular detection of tick-borne pathogens under the supervision of [Dr Javier Millan](https://www.researchgate.net/profile/Javier-Millan-2){target="_blanck"} in Spain, and during her PhD, she work on developing tools to investigate the role of wildlife in disease transmission in urbanized environment under the supervision of [Prof Jenny Seddon](https://researchers.uq.edu.au/researcher/1349){target="_blank"}, [Dr Nick Clark](#nick), [Dr Hawthorne Beyer](https://researchers.uq.edu.au/researcher/2719){target="_blank"} and [Prof Jonathan Rhodes](https://researchers.uq.edu.au/researcher/1022){target="_blank"}. Tatiana is currently working on the ["Taking the Query out of Q Fever"](https://blogs.unimelb.edu.au/q-fever/#:~:text=About&text=Taking%20the%20query%20out%20of%20Q%20fever%20is%20a%20multidisciplinary,in%20Australia%20and%20more%20broadly){target="_blanck"} project and in the development of a zoonotic vector-borne disease early warning system to enhance surveillance in Australia.</center>
+<centr>Dr Proboste is a post-doctoral fellow at UQ Spatial Epidemiology Laboratory. Her background is in Veterinary Medicine (DVM) and terrestrial ecology and biodiversity management (Msc) with a specialisation in wildlife disease ecology and spatial analysis. As a researcher, Tatiana has worked on molecular detection of tick-borne pathogens under the supervision of [Dr Javier Millan](https://www.researchgate.net/profile/Javier-Millan-2){target="_blanck"} in Spain, and during her PhD, she worked on developing tools to investigate the role of wildlife in disease transmission in urbanized environment under the supervision of [Prof Jenny Seddon](https://researchers.uq.edu.au/researcher/1349){target="_blank"}, [Dr Nick Clark](#nick), [Dr Hawthorne Beyer](https://researchers.uq.edu.au/researcher/2719){target="_blank"} and [Prof Jonathan Rhodes](https://researchers.uq.edu.au/researcher/1022){target="_blank"}. Tatiana is currently working on the ["Taking the Query out of Q Fever"](https://blogs.unimelb.edu.au/q-fever/#:~:text=About&text=Taking%20the%20query%20out%20of%20Q%20fever%20is%20a%20multidisciplinary,in%20Australia%20and%20more%20broadly){target="_blanck"} project and in the development of a zoonotic vector-borne disease early warning system to enhance surveillance in Australia.</center>
  
 <br>
 
@@ -114,7 +88,7 @@ all_pubs <- scholar_allpubs(tatiana_id)
 
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 kable(data.frame(all_pubs %>%
-          dplyr::filter(Year > 2014)), row.names = F,
+          dplyr::filter(Year > 2017)), row.names = F,
       format = 'html') %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
   column_spec(2, width = '30em') %>%
@@ -141,7 +115,7 @@ all_pubs <- scholar_allpubs(silvia_id)
 
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 kable(data.frame(all_pubs %>%
-          dplyr::filter(Year > 2014)), row.names = F,
+          dplyr::filter(Year > 2017)), row.names = F,
       format = 'html') %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
   column_spec(2, width = '30em') %>%
@@ -168,7 +142,7 @@ all_pubs <- scholar_allpubs(tarni_id)
 
 ```{r, echo = FALSE, warning=FALSE, message=FALSE}
 kable(data.frame(all_pubs %>%
-          dplyr::filter(Year > 2015)), row.names = F,
+          dplyr::filter(Year > 2017)), row.names = F,
       format = 'html') %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
   column_spec(2, width = '30em') %>%
@@ -178,12 +152,6 @@ kable(data.frame(all_pubs %>%
 ```
 <br>
 
-### Hester Rynhoud
-<img src="images/hester_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Hester Rynhoud is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
-
-<center>Hester is a PhD student interested in the study of zoonotic bacterial diseases and how they contribute to the One Health concept. Hester’s current research focuses on the molecular and spatial epidemiology of methicillin resistant *Staphylococcus* spp. carriage in Brisbane's domestic and shelter animals. Hester’s advisors at UQ are [A/Prof Ricardo Soares Magalhães](#ricardo), [Dr Justine Gibson](https://researchers.uq.edu.au/researcher/1359){target="_blank"} and [Dr Erika Meler](https://researchers.uq.edu.au/researcher/11041){target="_blank"}. Read more about Hester’s work on her [ResearchGate](https://www.researchgate.net/profile/Hester_Rynhoud){target="_blank"} page.</center>
-
-<br>
 
 ### Md. Mehedi Hasan
 <img src="images/mehedi_profile.png" class="round" style="border:4px solid; margin-bottom: 20px" alt="Md. Mehedi Hasan is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
@@ -217,33 +185,6 @@ kable(data.frame(all_pubs), row.names = F,
 ```
 
 <br> 
-
-### Philip Mshelbwala
-<img src="images/philip_profile.png" class="round" style="border:4px solid; margin-bottom: 20px" alt="Philip P. Mshelbwala is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
-
-<center> Philip is a veterinarian, and a PhD student at the School of Veterinary Science, University of Queensland, with broad interests in infectious diseases, epidemiology and One Health. The central focus of his PhD is to quantify rabies transmission risk in Nigeria to support prevention and control efforts towards attaining zero human rabies deaths mediated via dogs by 2030. His pimary supervisors is [Dr. Nicholas Clark](#nick), and his co-supervisors are [A/Prof Ricardo Soares Magalhães](#ricardo), [Prof J. Scott Weese](https://ovc.uoguelph.ca/pathobiology/people/faculty/Scott-Weese){target="_blank"} and Professor Joanne Meers. Read more about Philip’s work on his [ResearchGate](https://www.researchgate.net/profile/P_Mshelbwala){target="_blank"} page.</center>
-
-<br>
-<center>`Philip's recent publications`</center>
-```{r, echo = FALSE, warning=FALSE, message=FALSE}
-library(kableExtra)
-library(knitr)
-source('functions/scholar_allpubs.R')
-all_pubs <- scholar_allpubs(philip_id)
-```
-
-```{r, echo = FALSE, warning=FALSE, message=FALSE}
-kable(data.frame(all_pubs), row.names = F,
-      format = 'html') %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
-  column_spec(2, width = '30em') %>%
-  column_spec(3, italic = T, width = '20em') %>%
-  column_spec(4, width = '20em') %>%
-  scroll_box(width = "100%", height = "300px")
-```
-
-<br> 
-
 ### Uttara Kennedy
 <img src="images/Uttara_profile1.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Uttara Kennedy is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
 
@@ -291,11 +232,43 @@ Thomas completed his prior tertiary studies at UQ with a Bachelor of Environment
 ### Holly Crompton
 <img src="images/holly_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Holly Crompton is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
 
-<center>Holly is a PhD student with a particular interest in infectious disease epidemiology, geospatial analysis and One Health approaches to disease control. Her current PhD work is on identifying risk factors and using spatial analysis techniques with the goal of targeting global rabies elimination. Her Primary supervisor is  [A/Prof Ricardo Soares Magalhães](#ricardo) and her associate supervisors are [Dr. Nicholas Clark](#nick)k, Professor Cassiano Victoria and Dr. Janine Barrett.</center>
+<center>Holly is a PhD student with a particular interest in infectious disease epidemiology, geospatial analysis and One Health approaches to disease control. Her current PhD work is on identifying risk factors and using spatial analysis techniques with the goal of targeting global rabies elimination. Her Primary supervisor is  [A/Prof Ricardo Soares Magalhães](#ricardo) and her associate supervisors are [Dr. Nicholas Clark](#nick), Professor Cassiano Victoria and Dr. Janine Barrett.</center>
+
+<br>
+
+### K. A. N. K. Karunarathna
+<img src="images/Nishan.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Nishan is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+
+<center> I am a PhD candidate at School of Veterinary Science, The University of Queensland. Research is being carried out under supervision of [Dr. Nicholas Clark](#nick) in his DECRA project “Modelling Ecological Responses to Climate Change”. 
+
+I hold a B.Sc. (Hons) in Statistics from University of Sri Jayewardenepura, Sri Lanka, a M.Sc. in Applied Statistics and M.Phil. in Statistics. Both M.Sc. and M.Phil. degrees are from University of Peradeniya, Sri Lanka. I have been working at Department of Mathematics, Faculty of Science, Eastern University, Sri Lanka since 2011. Prior to this, I rendered my service as an instructor and teaching staff in University of Sri Jayewardenepura and University of Peradeniya, respectively for couples of years. 
+My research fields of interest are statistical modelling, inferences, and designs of experiments. Most of my research are in the fields such as health, environment, industrial, education, and social science.</center>
+
+<br>
+
+### Josefina Abedin
+<img src="images/Josefina.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Josefina Abedin is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+
+<center>I am a medical Microbiologist and a PhD student at the School of Veterinary Science, University of Queensland funded by Bangladesh Government Scholarship. I have completed M.Phil in Microbiology from Dhaka Medical College, Bangladesh in 2016. My doctoral thesis is focused on molecular characterization of Influenza Viruses at human-poultry high-risk interfaces in Bangladesh. Prior to my PhD studies I have worked with multi-sectoral lab teams for more than 6 years in Bangladesh and contributed to the diagnosis of novel viral agent family, investigating different zoonotic diseases outbreak including covid 19 outbreak and antimicrobial resistance (AMR). During my Professional period, I was involved in several projects focusing on Infectious disease epidemiology and One health research. I was the lab coordinator of IEDCR for the USAID PREDICT project in Bangladesh and maintained liaison with laboratory partners regarding molecular and serological identification of known and novel viruses. I have served as an instructor to train other lab personnel from the government of Bangladesh.</center>
 
 <br>
 
 ## Former lab group members
+### Philip Mshelbwala
+<img src="images/philip_profile.png" class="round" style="border:4px solid; margin-bottom: 20px" alt="Philip P. Mshelbwala is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+
+<center> Philip is a veterinarian, and a PhD student at the School of Veterinary Science, University of Queensland, with broad interests in infectious diseases, epidemiology and One Health. The central focus of his PhD is to quantify rabies transmission risk in Nigeria to support prevention and control efforts towards attaining zero human rabies deaths mediated via dogs by 2030. His pimary supervisors is [Dr. Nicholas Clark](#nick), and his co-supervisors are [A/Prof Ricardo Soares Magalhães](#ricardo), [Prof J. Scott Weese](https://ovc.uoguelph.ca/pathobiology/people/faculty/Scott-Weese){target="_blank"} and Professor Joanne Meers. Read more about Philip’s work on his [ResearchGate](https://www.researchgate.net/profile/P_Mshelbwala){target="_blank"} page.</center>
+
+<br>
+
+
+### Hester Rynhoud
+<img src="images/hester_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Hester Rynhoud is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+
+<center>Hester is interested in the study of zoonotic bacterial diseases and how they contribute to the One Health concept. Hester’s current research focuses on the molecular and spatial epidemiology of methicillin resistant *Staphylococcus* spp. carriage in Brisbane's domestic and shelter animals. Hester’s advisors at UQ are [A/Prof Ricardo Soares Magalhães](#ricardo), [Dr Justine Gibson](https://researchers.uq.edu.au/researcher/1359){target="_blank"} and [Dr Erika Meler](https://researchers.uq.edu.au/researcher/11041){target="_blank"}. Read more about Hester’s work on her [ResearchGate](https://www.researchgate.net/profile/Hester_Rynhoud){target="_blank"} page.</center>
+
+<br>
+
 ### Pandji Dhewantara 
 <img src="images/pandji_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Pandji Dhewantara is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
 
@@ -337,3 +310,31 @@ Xiaoyan’s PhD advisors are [A/Prof Ricardo Soares Magalhães](#ricardo), [Dr C
 <img src="images/alex_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Alex Pekin  is an Honours student at the Spatial Epidemiology Group, University of Queensland"/>
 
 <center>Alex was an Honours scholar at the University of Queensland. He graduated with a Bachelor of Science (Animal and Veterinary Bioscience) in 2018 and is researching risk factors and spatial distribution of dog bite attacks in South-East Queensland; a collaborative project between the University of Queensland and Queensland Health. He is committed to utilizing a One Health approach as a method of improving healthcare infrastructure in developed and developing countries. As an undergraduate he contributed to work quantifying the temporal relationship between H7N9 avian influenza onset in humans with poultry surveillance, live bird movements, and sociodemographic factors. He plans to pursue further study into One Health issues, with a focus on veterinary solutions and interventions. Alex’s advisor was [A/Prof Ricardo Soares Magalhães](#ricardo).</center>
+
+
+<!-- ### Javier Cortes Ramirez -->
+<!-- <img src="images/javier_cropped.png" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Javier Cortes Ramirez is a postdoctoral fellow at the Spatial Epidemiology Group, University of Queensland"/> -->
+
+<!-- <center>Dr Cortes-Ramirez is a medical doctor with clinical experience in diagnosis and treatment of tropical diseases including vector-borne diseases and zoonoses. He worked as a medical practitioner for 10 years in Colombia and Chile, as medical doctor with the International Committee of the Red Cross (2002) and as a consultant for [World Health Organization](https://www.who.int/){target="_blank"} for a national project on Environmental Health in the Solomon Islands (2015). As a researcher, he has experience studying the prevalence of ofidism (snake bite), Chagas disease in tropical countries as well as risk factors associated with silicosis in miners in Chile. In the last four years, he has developed spatial epidemiological studies on the association of coal mining with hospitalisations in Queensland. Dr Cortes-Ramirez is currently a lecturer in Environmental Health at UQ's [School of Public Health](https://public-health.uq.edu.au/){target="_blank"} Read more about his work at his [ResearchGate](https://www.researchgate.net/profile/Javier_Cortes-Ramirez) page.</center> -->
+
+<!-- <br> -->
+<!-- <center>`Dr Ramirez's recent publications`</center> -->
+<!-- ```{r, echo = FALSE, warning=FALSE, message=FALSE} -->
+<!-- library(kableExtra) -->
+<!-- library(knitr) -->
+<!-- source('functions/scholar_allpubs.R') -->
+<!-- all_pubs <- scholar_allpubs(javier_id) -->
+<!-- ``` -->
+
+<!-- ```{r, echo = FALSE, warning=FALSE, message=FALSE} -->
+<!-- kable(data.frame(all_pubs %>% -->
+<!--           dplyr::filter(Year > 2016)), row.names = F, -->
+<!--       format = 'html') %>% -->
+<!--   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% -->
+<!--   column_spec(2, width = '30em') %>% -->
+<!--   column_spec(3, italic = T, width = '20em') %>% -->
+<!--   column_spec(4, width = '20em') %>% -->
+<!--   scroll_box(width = "100%", height = "300px") -->
+<!-- ``` -->
+<!-- <br> -->
+
