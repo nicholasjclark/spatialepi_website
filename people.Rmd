@@ -183,15 +183,14 @@ kable(data.frame(all_pubs), row.names = F,
   column_spec(4, width = '20em') %>%
   scroll_box(width = "100%", height = "300px")
 ```
-
 <br> 
+
 ### Uttara Kennedy
 <img src="images/Uttara_profile1.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Uttara Kennedy is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
 
 <center>Uttara Kennedy has worked for over 18 years as a small animal veterinarian, practice manager and mentor across Australia and India. She has an MSc in International Animal Welfare, Ethics and Law and is a Member of the ANZVCS (Animal Welfare chapter). Alongside pursuing her PhD, she is a veterinarian at RSPCA Queensland’s largest city shelter. Her experience has given her deep insight into the issues pertaining to shelter medicine and control of endemic diseases in the shelter environment. 
 Her PhD work involves using machine learning technology to categorise clinical notes within the RSPCA database for case ascertainment. Accurate case ascertainment is vital in informing shelter policy to improve animal management practices to have a direct positive impact on animal welfare and shelter resource management worldwide. 
-She loves disappearing into the bush on long hiking-camping adventures with her family when she is not working or studying.
-.</center> 
+She loves disappearing into the bush on long hiking-camping adventures with her family when she is not working or studying.</center> 
 
 <br>
 <center>`Uttara's recent publications`</center>
@@ -211,18 +210,17 @@ kable(data.frame(all_pubs), row.names = F,
   column_spec(4, width = '20em') %>%
   scroll_box(width = "100%", height = "300px")
 ```
-
 <br> 
 
 ### Francisca Powell 
 <img src="images/fran_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Francisca Powell is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
 
-Fran is a PhD candidate currently working on using multivariate modelling approaches to predict co-infections in both humans and animals. Her principal advisor is [Dr. Nicholas Clark](#nick), and her associate advisors are [A/Prof. Ricardo Soares Magalhães](#ricardo), [Dr. Nicholas Fountain-Jones](https://rmdb.research.utas.edu.au/public/rmdb/q/indiv_detail_warp_trans/30546){target="_blank"} and [Dr. Konstans Wells](https://www.swansea.ac.uk/staff/science/biosciences/wells-k-l/){target="_blank"}. Fran has broad interests in One Health research and infectious disease epidemiology and control, and has a multidisciplinary academic background in biomedical science, sociology, and French. 
+Fran is a PhD candidate currently working on using multivariate modelling approaches to predict co-infections in both humans and animals. Her principal advisor is [Dr. Nicholas Clark](#nick), and her associate advisors are [A/Prof. Ricardo Soares Magalhães](#ricardo), [Dr. Nicholas Fountain-Jones](https://rmdb.research.utas.edu.au/public/rmdb/q/indiv_detail_warp_trans/30546){target="_blank"} and [Dr. Konstans Wells](https://www.swansea.ac.uk/staff/science/biosciences/wells-k-l/){target="_blank"}. Fran has broad interests in One Health research and infectious disease epidemiology and control, and has a multidisciplinary academic background in biomedical science, sociology, and French.</center>
 
 <br> 
 
 ### Thomas Callaghan
-<img src="images/Thomas.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Thomas Callaghna is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+<img src="images/Thomas.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Thomas Callaghan is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
 
 Thomas is a PhD student interested in zoonotic infectious diseases and a One Health approach to their management. His current research focuses on the spatial epidemiology of zoonotic foodborne disease in Queensland. This work will include identifying which risk factors and exposure pathways are associated with animal infection, human infection, morbidity, and hospitalisation. Thomas has worked as a scientist for several years at Safe Food Production Queensland, Biosecurity Queensland, and the Queensland Department of Agriculture and Fisheries.
 Thomas completed his prior tertiary studies at UQ with a Bachelor of Environmental Science (Honours) and Graduate Certificate in Animal Science. He is a member of the Australian Society for Microbiology and an alumnus of the Evolutionary Physiology Laboratory at UQ’s School of Biological Science. Thomas’s advisors at UQ are [A/Prof Ricardo Soares Magalhães](#ricardo), [Prof Colleen Lau](https://public-health.uq.edu.au/profile/6032/colleen-lau){target="_blank"}, [A/Prof Rowland Cobbold](https://researchers.uq.edu.au/researcher/544){target="_blank"} and [Dr Dwan Vilcins](https://researchers.uq.edu.au/researcher/25478){target="_blank"}. His external advisors are Robin Sherlock (Safe Food Production Queensland) and Adj A/Professor Jim Smith (Queensland Health and QUT). Read more about Thomas on his [ResearchGate](https://www.researchgate.net/profile/Thomas-Callaghan-7){target="_blank"} page.</center>
@@ -300,9 +298,7 @@ My research fields of interest are statistical modelling, inferences, and design
 ### Xiaoyan Zhou
 <img src="images/xiaoyan_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Xiaoyan Zhou is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
 
-<center>Xiaoyan is currently a PhD student studying the spatial epidemiology of emerging infectious diseases. Xiaoyan’s research topic is Spatial Risk Assessment of the Zoonotic Influenza A (H7N9) along the Live Meat Chicken Market Chain in Southeast China. Her research aims to get a better understanding of live poultry market chains in eastern China, with the specific aim to define the risks of sustained transmission of H7N9 virus along the live meat chicken market chain in eastern China. Before she started her PhD, she has been working as national GIS specialist for the [Food and Agriculture Organization of the United Nations in China](http://www.fao.org/china/en/){target="_blank"} for over four years. Here she mainly focused on applying statistical modeling and simulation approaches to conduct risk assessment and spatial prediction to better understand the epidemiological features of zoonotic  diseases in Asian countries. Xiaoyan obtained her master’s degree in Geospatial Sciences and Remote Sensing from the [Chinese Academy of Sciences](http://english.cas.cn/){target="_blank"}.  
-   
-Xiaoyan’s PhD advisors are [A/Prof Ricardo Soares Magalhães](#ricardo), [Dr Carl Smith](https://researchers.uq.edu.au/researcher/732){target="_blank"} from UQ, [Prof Archie C.A. Clements](https://research.curtin.edu.au/supervisor/prof-archie-clements/){target="_blank"} from Curtin University and [Prof John Edwards](http://www.murdoch.edu.au/Murdoch-Commission/Commissions/Second-Murdoch-Commission/Commission-Members/Professor-John-Edwards/){target="_blank"} from Murdoch University. Xiaoyan is funded through a University of Queensland International Postgraduate Research Scholarship (UQ IPRS). Xiaoyan’s field survey was funded by the [Emergency Center for Transboundary Animal Diseases (ECTAD)](http://www.fao.org/emergencies/fao-in-action/ectad/en/){target="_blank"} in China, FAO of the United Nations and the [China Animal Health and Epidemiology Center (CAHEC)](http://safeedpap.feedsafety.org/partners/cahec-china-animal-health-and-epidemiology-cente/){target="_blank"}. Read more about Xiaoyan’s work on her [ResearchGate](https://www.researchgate.net/profile/Xiaoyan_Zhou6){target="_blank"} page.</center>
+<center>Xiaoyan is currently a PhD student studying the spatial epidemiology of emerging infectious diseases. Xiaoyan’s research topic is Spatial Risk Assessment of the Zoonotic Influenza A (H7N9) along the Live Meat Chicken Market Chain in Southeast China. Her research aims to get a better understanding of live poultry market chains in eastern China, with the specific aim to define the risks of sustained transmission of H7N9 virus along the live meat chicken market chain in eastern China. Before she started her PhD, she has been working as national GIS specialist for the [Food and Agriculture Organization of the United Nations in China](http://www.fao.org/china/en/){target="_blank"} for over four years. Here she mainly focused on applying statistical modeling and simulation approaches to conduct risk assessment and spatial prediction to better understand the epidemiological features of zoonotic  diseases in Asian countries. Xiaoyan obtained her master’s degree in Geospatial Sciences and Remote Sensing from the [Chinese Academy of Sciences](http://english.cas.cn/){target="_blank"}.</center>
 
 <br>
 
