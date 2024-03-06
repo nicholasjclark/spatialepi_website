@@ -48,7 +48,7 @@ Some of our recent research has explored how CRFs can be applied to a variety of
 
 <br>
 
-<img src="images/CRF_schematic.jpg" style="width:95%; margin-bottom: 1px" align="top" alt="Conditional Random Fields models can learn from joint species associations to generate better predictions of community responses to change. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in the development and application of multivariate ecological models for disease ecology problems.">
+<img src="images/CRF_schematic.jpg" style="width:95%; margin-bottom: 1px" align="top" alt="Conditional Random Fields models can learn from joint species associations to generate better predictions of community responses to change. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in the development and application of multivariate ecological models for time series analysis and disease ecology problems.">
 
 <br>
 
@@ -66,7 +66,9 @@ Some of our recent research has explored how CRFs can be applied to a variety of
 
 ### Team members on the project
 <center>[Ricardo Soares Magalhães](people.html){target="_blank"}    
-[Nicholas Clark](people.html#nicholas_clark){target="_blank"}</center>
+[Nicholas Clark](people.html#nicholas_clark){target="_blank"}  
+[Francisca Powell](people.html#Francisca_Powell){target="_blank"}   
+[KANK Karunarathna](#K_A_N_K_Karunarathna){target="_blank"}</center>
 
 <br>
 
@@ -87,6 +89,12 @@ Clark, NJ, Owada, K, Ruberanziza, E, Ortu, G, Umulisa, I, Bayisenge, U, Mbonigab
   
 Clark, NJ, Kerry, JT and Fraser, CI. 2020. [Rapid winter warming could disrupt coastal marine fish community structure](https://www.nature.com/articles/s41558-020-0838-5). *Nature Climate Change*. DOI: 10.1038/s41558-41020-40838-41555.  
   
-Fountain‐Jones, NM, Clark, NJ, Kinsley, AC, Carstensen, M, Forester, J, Johnson, TJ, Miller, E, Moore, S, Wolf, TM and Craft, ME. 2019. [Microbial associations and spatial proximity predict North American moose (Alces alces) gastrointestinal community composition](https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1365-2656.13154). *Journal of Animal Ecology* 89:817-828.  
+Clark, NJ and Wells, K. 2023. [Dynamic generalised additive models (DGAMs) for forecasting discrete ecological time series](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13974). *Methods in Ecology and Evolution* 14(3):771-784.
   
-Peel, AJ, Wells, K, Giles, J, Boyd, V, Burroughs, A, Edson, D, Crameri, G, Baker, ML, Field, H, Wang, LF, McCallum, H, Plowright, RK and Clark, NJ. 2019. [Synchronous shedding of multiple bat paramyxoviruses coincides with peak periods of Hendra virus spillover](https://www.tandfonline.com/doi/full/10.1080/22221751.2019.1661217). *Emerging Microbes & Infections* 8:1314-1323.</center>
+Fountain‐Jones, NM, Clark, NJ, Kinsley, AC, Carstensen, M, Forester, J, Johnson, TJ, Miller, E, Moore, S, Wolf, TM and Craft, ME. 2019. [Microbial associations and spatial proximity predict North American moose (*Alces alces*) gastrointestinal community composition](https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1365-2656.13154). *Journal of Animal Ecology* 89:817-828.  
+  
+Karunarathna, KANK, Wells, K, and Clark, NJ. [Modelling nonlinear responses of a desert rodent species to environmental change with hierarchical dynamic generalized additive models](https://www.sciencedirect.com/science/article/pii/S0304380024000371). *Ecological Modelling* 490 (2024): 110648.
+  
+Peel, AJ, Wells, K, Giles, J, Boyd, V, Burroughs, A, Edson, D, Crameri, G, Baker, ML, Field, H, Wang, LF, McCallum, H, Plowright, RK and Clark, NJ. 2019. [Synchronous shedding of multiple bat paramyxoviruses coincides with peak periods of Hendra virus spillover](https://www.tandfonline.com/doi/full/10.1080/22221751.2019.1661217). *Emerging Microbes & Infections* 8:1314-1323.
+  
+Powell‐Romero, F, Fountain‐Jones, NM, Norberg, A, and Clark, NJ. [Improving the predictability and interpretability of co‐occurrence modelling through feature‐based joint species distribution ensembles](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13915). *Methods in Ecology and Evolution* 14.1 (2023): 146-161.</center>
