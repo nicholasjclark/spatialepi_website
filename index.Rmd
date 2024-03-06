@@ -7,7 +7,7 @@ title: ""
 
 <div class = 'col'>**Who is the SpatialEpiLab?**
 <br>
-The *SpatialEpiLab* is a [One Health](https://www.who.int/features/qa/one-health/en/){target="_blank"} medical geography research group based at the [School of Veterinary Science at the University of Queensland](https://veterinary-science.uq.edu.au/){target="_blank"}, Australia, headed by [Associate Professor Ricardo Soares Magalhães](people.html){target="_blank"}. With a diversity of backgrounds and perspectives, we have broad expertise in health sciences, mathematical modelling, social sciences, ecology and epidemiology.
+The *SpatialEpiLab* is a [One Health](https://www.who.int/features/qa/one-health/en/){target="_blank"} medical geography research group based at the [School of Veterinary Science at the University of Queensland](https://veterinary-science.uq.edu.au/){target="_blank"}, Australia, headed by [Professor Ricardo Soares Magalhães](people.html){target="_blank"}. With a diversity of backgrounds and perspectives, we have broad expertise in health sciences, mathematical modelling, social sciences, ecology and epidemiology.
 <br>
 <br>
 **What research is carried out at the SpatialEpiLab?**
@@ -19,7 +19,7 @@ Our work is routinely published in high impact peer reviewed journals in the int
 <br>
 **What are our areas of expertise?**
 <br>
-Please navigate the content on these pages to access more information about the studies that we are currently involved in and some of the outputs we are producing. If you are interested in our work and would like to discuss potential projects, please see [our research opportunities](opportunities.html){target="_blank"} and [our contact details](contact.html){target="_blank"}. We also readily welcome visitors to our lab, especially for our monthly lab chats, so let us know if you're keen for a visit.
+Please navigate the content on these pages to access more information about the studies that we are currently involved in and some of the outputs we are producing. If you are interested in our work and would like to discuss potential projects, please see [our research opportunities](opportunities.html){target="_blank"} and [our contact details](contact.html){target="_blank"}. We also readily welcome visitors to our lab, especially for our weekly lab chats, so let us know if you're keen for a visit.
 <br>
 <br>
 
