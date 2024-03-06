@@ -13,7 +13,7 @@
 
 <title>Research into antimicrobial resistance</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -29,14 +29,14 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -57,6 +57,7 @@ if (window.hljs) {
   }
 }
 </script>
+
 
 
 
@@ -86,6 +87,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -143,11 +147,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -176,8 +184,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -185,16 +193,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -311,7 +312,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -321,7 +322,7 @@ div.tocify {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-globe"></span>
      
     Research
@@ -366,7 +367,7 @@ div.tocify {
   </a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     More
      
     <span class="caret"></span>
@@ -419,19 +420,50 @@ Environmental and animal drivers of antimicrobial resistance
 </p>
 </center>
 <p><br></p>
-<div id="veterinary-antimicrobial-stewardship-in-thai-nguyen-vietnam" class="section level2">
+<div id="veterinary-antimicrobial-stewardship-in-thai-nguyen-vietnam"
+class="section level2">
 <h2>Veterinary antimicrobial stewardship in Thai Nguyen, Vietnam</h2>
 <p><img src="images/vietnam_amr.png" style="width:70%; margin-bottom: 1px" align="top" alt="A systems approach to livelihood-sensitive veterinary antimicrobial stewardship in Thai Nguyen, Vietnam. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in antimicrobial resistance investigations in Vietnam."></p>
 <center>
-In response to the threat posed by antimicrobial resistance (AMR), global attention is increasingly focussed on antimicrobial stewardship (AMS). AMS involves the coordinated effort of all stakeholders to use antimicrobials appropriately, to reduce the development and spread of AMR. In some countries characterised by industrialised livestock systems, veterinary AMS has seen considerable success, largely attributed to greater regulation.<br />
-<br> Countries dominated by smallholder systems are likely to be less responsive to such ‘top-down’ approaches. Vietnam has developed a National Action Plan on AMR and AMU reduction in livestock and aquaculture and is working to increase awareness of the problem. However, there remain significant challenges to achieving widespread AMS in farming communities. Effective AMS policy and action in Vietnam will need to be sensitive to the needs of farming communities.
+In response to the threat posed by antimicrobial resistance (AMR),
+global attention is increasingly focussed on antimicrobial stewardship
+(AMS). AMS involves the coordinated effort of all stakeholders to use
+antimicrobials appropriately, to reduce the development and spread of
+AMR. In some countries characterised by industrialised livestock
+systems, veterinary AMS has seen considerable success, largely
+attributed to greater regulation.<br />
+<br> Countries dominated by smallholder systems are likely to be less
+responsive to such ‘top-down’ approaches. Vietnam has developed a
+National Action Plan on AMR and AMU reduction in livestock and
+aquaculture and is working to increase awareness of the problem.
+However, there remain significant challenges to achieving widespread AMS
+in farming communities. Effective AMS policy and action in Vietnam will
+need to be sensitive to the needs of farming communities.
 </center>
 <p><br></p>
 <div id="spatialepilabs-involvement" class="section level3">
 <h3><em>SpatialEpiLab</em>’s involvement</h3>
 <center>
-Our lab is involved in a project that aims to build an understanding of how antimicrobials were used in the livelihood strategies of smallholder farmers and their animal health networks. The project followed an iterative, mixed-methods design and combined epidemiological and Communication for Development approaches. The first study, in two provinces, revealed complex livelihoods interacting with decisions around antimicrobial use. Based on these findings, cross-sectional and longitudinal surveys were conducted. The final stage involved stakeholder workshops interpreting data and co-constructing an understanding of the system in which AMS decisions were made. Finally, stakeholders came together to identify leverage points for livelihood-sensitive intervention.<br />
-<br> This research contributes to the global effort for greater antimicrobial stewardship (AMS). Beyond implications for the communities studied, the research yields a transferrable approach to contextualising antimicrobial practices in smallholder farming communities. Further, systems practice brings community stakeholders together in support of livelihood-sensitive policy and action for AMS. Concrete, community-developed recommendations for improving AMS are being considered and/or implemented.
+Our lab is involved in a project that aims to build an understanding of
+how antimicrobials were used in the livelihood strategies of smallholder
+farmers and their animal health networks. The project followed an
+iterative, mixed-methods design and combined epidemiological and
+Communication for Development approaches. The first study, in two
+provinces, revealed complex livelihoods interacting with decisions
+around antimicrobial use. Based on these findings, cross-sectional and
+longitudinal surveys were conducted. The final stage involved
+stakeholder workshops interpreting data and co-constructing an
+understanding of the system in which AMS decisions were made. Finally,
+stakeholders came together to identify leverage points for
+livelihood-sensitive intervention.<br />
+<br> This research contributes to the global effort for greater
+antimicrobial stewardship (AMS). Beyond implications for the communities
+studied, the research yields a transferrable approach to contextualising
+antimicrobial practices in smallholder farming communities. Further,
+systems practice brings community stakeholders together in support of
+livelihood-sensitive policy and action for AMS. Concrete,
+community-developed recommendations for improving AMS are being
+considered and/or implemented.
 </center>
 <p><br></p>
 </div>
@@ -446,11 +478,22 @@ Our lab is involved in a project that aims to build an understanding of how anti
 <div id="key-collaborators" class="section level3">
 <h3>Key collaborators</h3>
 <center>
-<a href="https://communication-arts.uq.edu.au/team/centre-communication-social-change" target="_blank">Centre for Communication and Social Change, School of Communication and Arts, The University of Queensland, Australia</a><br />
-<a href="https://www.ilri.org/vietnam" target="_blank">International Livestock Research Institute, Vietnam</a><br />
-<a href="http://tuaf.edu.vn/en-Us" target="_blank">Faculty of Animal Science and Veterinary Medicine, Thai Nguyen University of Agriculture and Forestry, Vietnam</a><br />
-<a href="http://cenpher.huph.edu.vn/" target="_blank">Centre for Public Health and Ecosystem Research, Hanoi University of Public Health, Hanoi, Vietnam</a><br />
-<a href="https://edirc.repec.org/data/fevnavn.html" target="_blank">Faculty of Economics and Rural Development, Vietnam National University of Agriculture</a><br />
+<a
+href="https://communication-arts.uq.edu.au/team/centre-communication-social-change"
+target="_blank">Centre for Communication and Social Change, School of
+Communication and Arts, The University of Queensland,
+Australia</a><br />
+<a href="https://www.ilri.org/vietnam" target="_blank">International
+Livestock Research Institute, Vietnam</a><br />
+<a href="http://tuaf.edu.vn/en-Us" target="_blank">Faculty of Animal
+Science and Veterinary Medicine, Thai Nguyen University of Agriculture
+and Forestry, Vietnam</a><br />
+<a href="http://cenpher.huph.edu.vn/" target="_blank">Centre for Public
+Health and Ecosystem Research, Hanoi University of Public Health, Hanoi,
+Vietnam</a><br />
+<a href="https://edirc.repec.org/data/fevnavn.html"
+target="_blank">Faculty of Economics and Rural Development, Vietnam
+National University of Agriculture</a><br />
 <em>FocusGroupGo</em> Vietnam
 </center>
 <p><br></p>
@@ -460,13 +503,34 @@ Our lab is involved in a project that aims to build an understanding of how anti
 <h2>World Health Organization EpiX</h2>
 <p><img src="images/epix_jakarta.jpeg" style="width:70%; margin-bottom: 1px" align="top" alt="EpiX protocol for investigation of anti-microbial resistance. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in antimicrobial resistance investigations."></p>
 <center>
-Despite growing worldwide attention, there are substantial limitations to our understanding of the burden, distribution and determinants of anti-microbial resistance at the population level. To understand and be prepared for emerging threats, it is imperative to monitor the rise and spread of drug-resistant pathogenic strains and lineages. <br> DNA sequencing-based approaches combined with phylodynamic algorithms and statistical network theory can play an important role in this endeavour. The World Health Organization is leading to multi-year, multi-population epidemiological surveys of anti-microbial resistance in naturally occurring populations of key bacterial pathogens. This project will generate a more complete understanding of transmission events that mediate the spread of resistant isolates and facilitate population-specific monitoring and prevention programmes aimed at limiting the emergence of disease-causing bacteria.
+Despite growing worldwide attention, there are substantial limitations
+to our understanding of the burden, distribution and determinants of
+anti-microbial resistance at the population level. To understand and be
+prepared for emerging threats, it is imperative to monitor the rise and
+spread of drug-resistant pathogenic strains and lineages. <br> DNA
+sequencing-based approaches combined with phylodynamic algorithms and
+statistical network theory can play an important role in this endeavour.
+The World Health Organization is leading to multi-year, multi-population
+epidemiological surveys of anti-microbial resistance in naturally
+occurring populations of key bacterial pathogens. This project will
+generate a more complete understanding of transmission events that
+mediate the spread of resistant isolates and facilitate
+population-specific monitoring and prevention programmes aimed at
+limiting the emergence of disease-causing bacteria.
 </center>
 <p><br></p>
 <div id="spatialepilabs-involvement-1" class="section level3">
 <h3><em>SpatialEpiLab</em>’s involvement</h3>
 <center>
-Our lab is working with non-goverment bodies to lead a multi-source epidemiological investigation into the spread of Extended-spectrum beta-lactamase-producing <em>Escherichia coli</em> (ESBL-Ec). These are diverse and ubiquitous microorganisms that are responsible for severe morbidity and mortality in humans. Moreover, ESBL-Ec can readily cross barriers between humans, animals and the environment in a cyclic and reciprocating manner. They can be considered a highly relevant and representative contemporaneous indicator of the magnitude and leading edge of the global anti-microbial resistance problem.
+Our lab is working with non-goverment bodies to lead a multi-source
+epidemiological investigation into the spread of Extended-spectrum
+beta-lactamase-producing <em>Escherichia coli</em> (ESBL-Ec). These are
+diverse and ubiquitous microorganisms that are responsible for severe
+morbidity and mortality in humans. Moreover, ESBL-Ec can readily cross
+barriers between humans, animals and the environment in a cyclic and
+reciprocating manner. They can be considered a highly relevant and
+representative contemporaneous indicator of the magnitude and leading
+edge of the global anti-microbial resistance problem.
 </center>
 <p><br></p>
 </div>
@@ -474,17 +538,22 @@ Our lab is working with non-goverment bodies to lead a multi-source epidemiologi
 <h3>Team members on the project</h3>
 <center>
 <a href="people.html" target="_blank">Ricardo Soares Magalhães</a><br />
-<a href="people.html#nicholas_clark" target="_blank">Nicholas Clark</a><br />
-<a href="people.html#pandji_dhewantara" target="_blank">Pandji Dhewantara</a><br />
-<a href="people.html#javier_cortes_ramirez" target="_blank">Javier Cortes Ramirez</a>
+<a href="people.html#nicholas_clark" target="_blank">Nicholas
+Clark</a><br />
+<a href="people.html#pandji_dhewantara" target="_blank">Pandji
+Dhewantara</a><br />
+<a href="people.html#javier_cortes_ramirez" target="_blank">Javier
+Cortes Ramirez</a>
 </center>
 <p><br></p>
 </div>
 <div id="key-collaborators-1" class="section level3">
 <h3>Key collaborators</h3>
 <center>
-<a href="http://www.searo.who.int/en/" target="_blank">World Health Organisation - Southeast Asia Regional Office</a><br />
-<a href="http://www.fao.org/home/en/" target="_blank">Food and Agriculture Organization of the United Nations</a>
+<a href="http://www.searo.who.int/en/" target="_blank">World Health
+Organisation - Southeast Asia Regional Office</a><br />
+<a href="http://www.fao.org/home/en/" target="_blank">Food and
+Agriculture Organization of the United Nations</a>
 </center>
 </div>
 </div>

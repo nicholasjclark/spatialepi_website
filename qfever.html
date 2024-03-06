@@ -13,7 +13,7 @@
 
 <title>Q Fever Biosecurity</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -29,14 +29,14 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -57,6 +57,7 @@ if (window.hljs) {
   }
 }
 </script>
+
 
 
 
@@ -86,6 +87,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -143,11 +147,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -176,8 +184,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -185,16 +193,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -311,7 +312,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -321,7 +322,7 @@ div.tocify {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-globe"></span>
      
     Research
@@ -366,7 +367,7 @@ div.tocify {
   </a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     More
      
     <span class="caret"></span>
@@ -422,14 +423,27 @@ Q fever: a zoonotic pathogen of high biosecurity risk
 <div id="what-is-q-fever" class="section level2">
 <h2>What is Q fever?</h2>
 <center>
-Q fever is an illness of both humans and animals caused by the bacterium <em>Coxiella burnetii</em>. This is an environmentally resistant and extremely infectious organism which is typically transmitted to people by either direct or indirect contact with infected animals, animal products or contaminated materials. Sheep, goats and cattle are the main sources of infection for people, however other animals including dogs, cats and macropods may also be implicated.
+Q fever is an illness of both humans and animals caused by the bacterium
+<em>Coxiella burnetii</em>. This is an environmentally resistant and
+extremely infectious organism which is typically transmitted to people
+by either direct or indirect contact with infected animals, animal
+products or contaminated materials. Sheep, goats and cattle are the main
+sources of infection for people, however other animals including dogs,
+cats and macropods may also be implicated.
 </center>
 <p><br></p>
 </div>
 <div id="coxiella-burnetii-in-australia" class="section level2">
 <h2><em>Coxiella burnetii</em> in Australia</h2>
 <center>
-Of particular interest to Australian farmers and livestock workers, intensively managed sheep and dairy goat herds provide conditions favourable for amplification and spread of Q fever. In addition, inland Australia’s hot and dry conditions help the bacterium to spread and cause environmental contamination, particularly since the most common routes of infection are thought to be inhalation of contaminated dust and close contact with infected animals (particularly their birthing products).
+Of particular interest to Australian farmers and livestock workers,
+intensively managed sheep and dairy goat herds provide conditions
+favourable for amplification and spread of Q fever. In addition, inland
+Australia’s hot and dry conditions help the bacterium to spread and
+cause environmental contamination, particularly since the most common
+routes of infection are thought to be inhalation of contaminated dust
+and close contact with infected animals (particularly their birthing
+products).
 </center>
 <p><br></p>
 <p><img src="images/qfever_prevention.png" style="width:65%; margin-bottom: 1px" align="top" alt="Q fever is a zoonotic bacterial disease caused by Coxiella burnetii. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in biosecurity management of Q fever risk in Australia."></p>
@@ -437,16 +451,23 @@ Of particular interest to Australian farmers and livestock workers, intensively 
 <div id="spatialepilabs-involvement" class="section level2">
 <h2><em>SpatialEpiLab</em>’s involvement</h2>
 <center>
-Our lab is involved in a large collaborative project with overall objectives to:<br />
-1. Develop a better understanding of factors influencing the risk of Q fever spread within and between Australian ruminant livestock enterprises<br />
-2. Develop national guidelines for an emergency response plan to be used in the event of future Q fever outbreaks in humans. Read more about the project’s developments by following the Qfever_Group on <a href="https://twitter.com/Qfever_Group" target="_blank">Twitter</a>.
+Our lab is involved in a large collaborative project with overall
+objectives to:<br />
+1. Develop a better understanding of factors influencing the risk of Q
+fever spread within and between Australian ruminant livestock
+enterprises<br />
+2. Develop national guidelines for an emergency response plan to be used
+in the event of future Q fever outbreaks in humans. Read more about the
+project’s developments by following the Qfever_Group on <a
+href="https://twitter.com/Qfever_Group" target="_blank">Twitter</a>.
 </center>
 <p><br></p>
 <div id="team-members-on-the-project" class="section level3">
 <h3>Team members on the project</h3>
 <center>
 <a href="people.html" target="_blank">Ricardo Soares Magalhães</a><br />
-<a href="people.html#nicholas_clark" target="_blank">Nicholas Clark</a><br />
+<a href="people.html#nicholas_clark" target="_blank">Nicholas
+Clark</a><br />
 <a href="people.html" target="_blank">Tatiana Proboste</a>
 </center>
 <p><br></p>
@@ -454,12 +475,19 @@ Our lab is involved in a large collaborative project with overall objectives to:
 <div id="key-collaborators" class="section level3">
 <h3>Key collaborators</h3>
 <center>
-<a href="https://www.findanexpert.unimelb.edu.au/display/person653385" target="_blank">Mark Stevenson (University of Melbourne)</a><br />
-<a href="https://www.findanexpert.unimelb.edu.au/display/person449832" target="_blank">Simon Firestone (University of Melbourne)</a><br />
-<a href="https://www.findanexpert.unimelb.edu.au/display/person772746" target="_blank">Anke Wiethoelter (University of Melbourne)</a><br />
-<a href="https://www.adelaide.edu.au/directory/charles.caraguel" target="_blank">Charles Caraguel (University of Adelaide)</a><br />
-<a href="https://science.csu.edu.au/schools/animal-vet/staff/profiles/associate-professors/jane-heller" target="_blank">Jane Heller (Charles Sturt University)</a><br />
-<a href="https://www.rickettsialab.org.au/" target="_blank">Australian Rickettsial Reference Laboratory</a>
+<a href="https://www.findanexpert.unimelb.edu.au/display/person653385"
+target="_blank">Mark Stevenson (University of Melbourne)</a><br />
+<a href="https://www.findanexpert.unimelb.edu.au/display/person449832"
+target="_blank">Simon Firestone (University of Melbourne)</a><br />
+<a href="https://www.findanexpert.unimelb.edu.au/display/person772746"
+target="_blank">Anke Wiethoelter (University of Melbourne)</a><br />
+<a href="https://www.adelaide.edu.au/directory/charles.caraguel"
+target="_blank">Charles Caraguel (University of Adelaide)</a><br />
+<a
+href="https://science.csu.edu.au/schools/animal-vet/staff/profiles/associate-professors/jane-heller"
+target="_blank">Jane Heller (Charles Sturt University)</a><br />
+<a href="https://www.rickettsialab.org.au/" target="_blank">Australian
+Rickettsial Reference Laboratory</a>
 </center>
 <p><br></p>
 </div>
@@ -467,10 +495,32 @@ Our lab is involved in a large collaborative project with overall objectives to:
 <div id="publications" class="section level2">
 <h2>Publications</h2>
 <center>
-<p>Clark, NJ, Tozer, S, Wood, C, Firestone, SM, Stevenson, M, Caraguel, C, Chaber, AL, Heller, J and Soares Magalhães, RJ. 2020. <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/tbed.13565">Unravelling animal exposure profiles of human Q fever cases in Queensland, Australia using natural language processing</a>. <em>Transboundary and Emerging Diseases</em>. DOI: <a href="https://doi.org/10.1111/tbed.13565" class="uri">https://doi.org/10.1111/tbed.13565</a>.</p>
-<p>Abeykoon, AMH, Clark, NJ, Soares Magalhães, RJ, Vincent, GA, Stevenson, MA, Firestone, SM, and Wiethoelter, AK. 2020. <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/zph.12791" target="_blank">Coxiella burnetii in the environment: A systematic review and critical appraisal of sampling methods</a>. <em>Zoonoses and Public Health</em>. DOI: <a href="https://doi.org/10.1111/zph.12791" class="uri">https://doi.org/10.1111/zph.12791</a>.</p>
-<p>Clark, NJ and Soares Magalhães, RJ. 2018. <a href="https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-018-3135-4" target="_blank">Airborne geographical dispersal of Q fever from livestock holdings to human communities: a systematic review and critical appraisal of evidence</a>. <em>BMC Infectious Diseases</em>. 18:218.</p>
-Clark, NJ, Caraguel, C, Heller, J, Soares Magalhães, RJ and Firestone, S. <a href="https://theconversation.com/australias-drought-could-be-increasing-q-fever-risk-but-there-are-ways-we-can-protect-ourselves-112297" target="_blank">Australia’s drought could be increasing Q fever risk, but there are ways we can protect ourselves</a>. <em>The Conversation</em>. March 12, 2019
+<p>Clark, NJ, Tozer, S, Wood, C, Firestone, SM, Stevenson, M, Caraguel,
+C, Chaber, AL, Heller, J and Soares Magalhães, RJ. 2020. <a
+href="https://onlinelibrary.wiley.com/doi/abs/10.1111/tbed.13565">Unravelling
+animal exposure profiles of human Q fever cases in Queensland, Australia
+using natural language processing</a>. <em>Transboundary and Emerging
+Diseases</em>. DOI: <a href="https://doi.org/10.1111/tbed.13565"
+class="uri">https://doi.org/10.1111/tbed.13565</a>.</p>
+<p>Abeykoon, AMH, Clark, NJ, Soares Magalhães, RJ, Vincent, GA,
+Stevenson, MA, Firestone, SM, and Wiethoelter, AK. 2020. <a
+href="https://onlinelibrary.wiley.com/doi/abs/10.1111/zph.12791"
+target="_blank">Coxiella burnetii in the environment: A systematic
+review and critical appraisal of sampling methods</a>. <em>Zoonoses and
+Public Health</em>. DOI: <a href="https://doi.org/10.1111/zph.12791"
+class="uri">https://doi.org/10.1111/zph.12791</a>.</p>
+<p>Clark, NJ and Soares Magalhães, RJ. 2018. <a
+href="https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-018-3135-4"
+target="_blank">Airborne geographical dispersal of Q fever from
+livestock holdings to human communities: a systematic review and
+critical appraisal of evidence</a>. <em>BMC Infectious Diseases</em>.
+18:218.</p>
+Clark, NJ, Caraguel, C, Heller, J, Soares Magalhães, RJ and Firestone,
+S. <a
+href="https://theconversation.com/australias-drought-could-be-increasing-q-fever-risk-but-there-are-ways-we-can-protect-ourselves-112297"
+target="_blank">Australia’s drought could be increasing Q fever risk,
+but there are ways we can protect ourselves</a>. <em>The
+Conversation</em>. March 12, 2019
 </center>
 </div>
 

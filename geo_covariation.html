@@ -13,7 +13,7 @@
 
 <title>Disease Co-variation</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -29,14 +29,14 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -57,6 +57,7 @@ if (window.hljs) {
   }
 }
 </script>
+
 
 
 
@@ -86,6 +87,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -143,11 +147,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -176,8 +184,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -185,16 +193,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -311,7 +312,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -321,7 +322,7 @@ div.tocify {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-globe"></span>
      
     Research
@@ -366,7 +367,7 @@ div.tocify {
   </a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     More
      
     <span class="caret"></span>
@@ -422,14 +423,33 @@ Co-variation in human and animal disease risk
 <div id="what-are-zoonotic-pathogens" class="section level2">
 <h2>What are zoonotic pathogens?</h2>
 <center>
-<a href="https://www.cdc.gov/onehealth/basics/zoonotic-diseases.html" target="_blank">Zoonotic diseases</a> are caused by pathogens that spread between humans and other animal host species. Many people closely interact with animals on a daily basis. Our pets provide us with a sense of companionship, surrounding wildlife provide us with a strong connection to nature, and livestock provide us with key food sources. However, some animals can act as reservoirs for harmful pathogens that are also able to infect people. These zoonotic diseases can lead to many different types of illnesses in people and animals.
+<a href="https://www.cdc.gov/onehealth/basics/zoonotic-diseases.html"
+target="_blank">Zoonotic diseases</a> are caused by pathogens that
+spread between humans and other animal host species. Many people closely
+interact with animals on a daily basis. Our pets provide us with a sense
+of companionship, surrounding wildlife provide us with a strong
+connection to nature, and livestock provide us with key food sources.
+However, some animals can act as reservoirs for harmful pathogens that
+are also able to infect people. These zoonotic diseases can lead to many
+different types of illnesses in people and animals.
 </center>
 <p><br></p>
 </div>
-<div id="how-can-we-track-the-risk-and-spread-of-zoonotic-diseases" class="section level2">
+<div id="how-can-we-track-the-risk-and-spread-of-zoonotic-diseases"
+class="section level2">
 <h2>How can we track the risk and spread of zoonotic diseases?</h2>
 <center>
-<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5790124/" target="_blank">Model-based geostatistical tools</a> are being increasingly used to study the geographical patterns of infectious diseases and to quantify their associations with potential risk factors. These methods use geostatistics to describe the spatial correlation structure of the data along with with the effects of particular risk factors (such as temperature, animal density or humidity) to understand how the risk of a disease varies across space. These methods provide a valuable and flexible framework that can be used to support the process of decision-making during the implementation of disease control programmes.
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5790124/"
+target="_blank">Model-based geostatistical tools</a> are being
+increasingly used to study the geographical patterns of infectious
+diseases and to quantify their associations with potential risk factors.
+These methods use geostatistics to describe the spatial correlation
+structure of the data along with with the effects of particular risk
+factors (such as temperature, animal density or humidity) to understand
+how the risk of a disease varies across space. These methods provide a
+valuable and flexible framework that can be used to support the process
+of decision-making during the implementation of disease control
+programmes.
 </center>
 <p><br></p>
 <p><img src="images/scrub_typhus.png" style="width:65%; margin-bottom: 1px" align="top" alt="Scrub typhus is a zoonotic disease caused by the bacterium Orientia tsutsugamushi, which infects humans and animals. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in biosecurity management of zoonoses in Australia and elsewhere."></p>
@@ -437,9 +457,17 @@ Co-variation in human and animal disease risk
 <div id="spatialepilabs-involvement" class="section level2">
 <h2><em>SpatialEpiLab</em>’s involvement</h2>
 <center>
-Our lab uses geostatistical models to create risk maps that can be used for developing targeted intervention programmes aimed at reducing risk of disease caused by pathogens that infect humans and animals. We are involved in a number of ongoing collaborative projects. These include producing investigations of: <br> <br> <a href="https://www.cdc.gov/flu/avianflu/index.htm" target="_blank">Avian influenza</a><br />
-<a href="https://www.cdc.gov/rabies/index.html" target="_blank">Rabies virus</a><br />
-<a href="https://www.cdc.gov/typhus/scrub/index.html" target="_blank">Scrub typhus</a>
+Our lab uses geostatistical models to create risk maps that can be used
+for developing targeted intervention programmes aimed at reducing risk
+of disease caused by pathogens that infect humans and animals. We are
+involved in a number of ongoing collaborative projects. These include
+producing investigations of: <br> <br> <a
+href="https://www.cdc.gov/flu/avianflu/index.htm" target="_blank">Avian
+influenza</a><br />
+<a href="https://www.cdc.gov/rabies/index.html" target="_blank">Rabies
+virus</a><br />
+<a href="https://www.cdc.gov/typhus/scrub/index.html"
+target="_blank">Scrub typhus</a>
 </center>
 <p><br></p>
 <div id="team-members-on-the-project" class="section level3">
@@ -453,10 +481,15 @@ Our lab uses geostatistical models to create risk maps that can be used for deve
 <div id="key-collaborators" class="section level3">
 <h3>Key collaborators</h3>
 <center>
-<a href="https://researchers.anu.edu.au/researchers/clements-a" target="_blank">Archie Clements (Australian National University)</a><br />
-<a href="http://www.chinacdc.cn/en/" target="_blank">The Chinese Centre for Disease Control and Prevention</a><br />
-<a href="http://www.fao.org/china/en/" target="_blank">Food and Agriculture Organization of the United Nations in China</a><br />
-<a href="https://www.rickettsialab.org.au/" target="_blank">Australian Rickettsial Reference Laboratory</a>
+<a href="https://researchers.anu.edu.au/researchers/clements-a"
+target="_blank">Archie Clements (Australian National
+University)</a><br />
+<a href="http://www.chinacdc.cn/en/" target="_blank">The Chinese Centre
+for Disease Control and Prevention</a><br />
+<a href="http://www.fao.org/china/en/" target="_blank">Food and
+Agriculture Organization of the United Nations in China</a><br />
+<a href="https://www.rickettsialab.org.au/" target="_blank">Australian
+Rickettsial Reference Laboratory</a>
 </center>
 <p><br></p>
 </div>
@@ -464,9 +497,27 @@ Our lab uses geostatistical models to create risk maps that can be used for deve
 <div id="publications" class="section level2">
 <h2>Publications</h2>
 <center>
-<p>Wu, Y.C., Qian, Q., Soares Magalhaes, R.J., Han, Z.H., Hu, W.B., Haque, U., Weppelmann, T.A., Wang, Y., Liu, Y.X., Li, X.L., Sun, H.L., Sun, Y.S., Clements, A.C.A., Li, S.L. &amp; Zhang, W.Y. (2016) <a href="https://journals.plos.org/plosntds/article?id=10.1371/journal.pntd.0004875" target="_blank">Spatiotemporal Dynamics of Scrub Typhus Transmission in Mainland China, 2006-2014</a>. <em>PLOS Neglected Tropical Diseases</em>, 10, e0004875.</p>
-<p>Cadavid Restrepo, A.M., Yang, Y.R., McManus, D.P., Gray, D.J., Barnes, T.S., Williams, G.M., Soares Magalhães, R.J. &amp; Clements, A.C.A. (2018) <a href="https://parasitesandvectors.biomedcentral.com/articles/10.1186/s13071-018-2764-1#Sec1" target="_blank">Environmental risk factors and changing spatial patterns of human seropositivity for Echinococcus spp. in Xiji County, Ningxia Hui Autonomous Region, China</a>. <em>Parasites &amp; Vectors</em>, 11, 159.</p>
-Guo, D., Zhou, H., Zou, Y., Yin, W., Yu, H., Si, Y., Li, J., Zhou, Y., Zhou, X. &amp; Magalhães, R.J.S. (2013) <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0072352" target="_blank">Geographical analysis of the distribution and spread of human rabies in China from 2005 to 2011</a>. <em>PLOS One</em>, 8, e72352.
+<p>Wu, Y.C., Qian, Q., Soares Magalhaes, R.J., Han, Z.H., Hu, W.B.,
+Haque, U., Weppelmann, T.A., Wang, Y., Liu, Y.X., Li, X.L., Sun, H.L.,
+Sun, Y.S., Clements, A.C.A., Li, S.L. &amp; Zhang, W.Y. (2016) <a
+href="https://journals.plos.org/plosntds/article?id=10.1371/journal.pntd.0004875"
+target="_blank">Spatiotemporal Dynamics of Scrub Typhus Transmission in
+Mainland China, 2006-2014</a>. <em>PLOS Neglected Tropical
+Diseases</em>, 10, e0004875.</p>
+<p>Cadavid Restrepo, A.M., Yang, Y.R., McManus, D.P., Gray, D.J.,
+Barnes, T.S., Williams, G.M., Soares Magalhães, R.J. &amp; Clements,
+A.C.A. (2018) <a
+href="https://parasitesandvectors.biomedcentral.com/articles/10.1186/s13071-018-2764-1#Sec1"
+target="_blank">Environmental risk factors and changing spatial patterns
+of human seropositivity for Echinococcus spp. in Xiji County, Ningxia
+Hui Autonomous Region, China</a>. <em>Parasites &amp; Vectors</em>, 11,
+159.</p>
+Guo, D., Zhou, H., Zou, Y., Yin, W., Yu, H., Si, Y., Li, J., Zhou, Y.,
+Zhou, X. &amp; Magalhães, R.J.S. (2013) <a
+href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0072352"
+target="_blank">Geographical analysis of the distribution and spread of
+human rabies in China from 2005 to 2011</a>. <em>PLOS One</em>, 8,
+e72352.
 </center>
 </div>
 

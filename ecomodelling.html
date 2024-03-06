@@ -13,7 +13,7 @@
 
 <title>Multivariate ecological modelling</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -29,14 +29,14 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -57,6 +57,7 @@ if (window.hljs) {
   }
 }
 </script>
+
 
 
 
@@ -86,6 +87,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -143,11 +147,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -176,8 +184,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -185,16 +193,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -311,7 +312,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -321,7 +322,7 @@ div.tocify {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-globe"></span>
      
     Research
@@ -366,7 +367,7 @@ div.tocify {
   </a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     More
      
     <span class="caret"></span>
@@ -419,72 +420,157 @@ Multivariate ecological models
 </p>
 </center>
 <p><img src="images/ecomodel1.jpg" style="width:95%; margin-bottom: 1px" align="top" alt="Multivariate network models allow deeper investigation of parasite co-infections and their impacts on infection risk. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in the development and application of multivariate ecological models for disease ecology problems."></p>
-<div id="why-are-multivariate-ecological-models-necessary" class="section level2">
+<div id="why-are-multivariate-ecological-models-necessary"
+class="section level2">
 <h2>Why are multivariate ecological models necessary?</h2>
 <center>
-Usually, when modelling community responses (such as ecosystems, microbiomes or multiple infections in the same host individual), we build a series of univariate models that only focus on extraneous covariates (such as the effects of the environment, host demographics or landscape metrics). But this process is not accurate enough for generating predictions about how the entire community of response variables will change in different environments or under different treatment regimes. Newer <a href="https://medium.com/@jonathan_hui/machine-learning-graphical-model-b68b0c27a749" target="_blank">network based graphical models</a> – commonly used in social media analyses to document people’s social interactions – offer an exciting way to address this gap in scientific knowledge. These innovative models give us a more accurate picture of reality by incorporating biology, allowing us to ask how one species responds to both environmental change and to the presence of other species.
+Usually, when modelling community responses (such as ecosystems,
+microbiomes or multiple infections in the same host individual), we
+build a series of univariate models that only focus on extraneous
+covariates (such as the effects of the environment, host demographics or
+landscape metrics). But this process is not accurate enough for
+generating predictions about how the entire community of response
+variables will change in different environments or under different
+treatment regimes. Newer <a
+href="https://medium.com/@jonathan_hui/machine-learning-graphical-model-b68b0c27a749"
+target="_blank">network based graphical models</a> – commonly used in
+social media analyses to document people’s social interactions – offer
+an exciting way to address this gap in scientific knowledge. These
+innovative models give us a more accurate picture of reality by
+incorporating biology, allowing us to ask how one species responds to
+both environmental change and to the presence of other species.
 </center>
 <p><br></p>
 </div>
 <div id="conditional-random-fields-models" class="section level2">
 <h2>Conditional Random Fields models</h2>
 <center>
-<p><a href="https://github.com/nicholasjclark/MRFcov" target="_blank">Conditional Random Fields (CRF)</a> models use species’ occurrences or abundances as outcome variables and allow variance to be partitioned among both abiotic and biotic effects. Some major advantages of these models are that they can:</p>
+<p><a href="https://github.com/nicholasjclark/MRFcov"
+target="_blank">Conditional Random Fields (CRF)</a> models use species’
+occurrences or abundances as outcome variables and allow variance to be
+partitioned among both abiotic and biotic effects. Some major advantages
+of these models are that they can:</p>
 <ol style="list-style-type: decimal">
-<li><p>Produce directly interpretable coefficients that allow users to determine the relative importances (i.e. effect sizes) of biotic associations and environmental covariates in driving abundances or occurrence probabilities</p></li>
-<li><p>Identify association strengths, rather than simply determining whether they are “significantly different from zero”</p></li>
-<li><p>Estimate how associations are predicted to change across environmental gradients.</p></li>
+<li><p>Produce directly interpretable coefficients that allow users to
+determine the relative importances (i.e. effect sizes) of biotic
+associations and environmental covariates in driving abundances or
+occurrence probabilities</p></li>
+<li><p>Identify association strengths, rather than simply determining
+whether they are “significantly different from zero”</p></li>
+<li><p>Estimate how associations are predicted to change across
+environmental gradients.</p></li>
 </ol>
-Some of our recent research has explored how CRFs can be applied to a variety of questions that involve investigating how multiple outcomes (such as co-infecting parasites or co-occurring fish species) associate with one another to form communities. This gives us unprecedented insights into how communities respond to environmental change and improves our ability to predict future variation.
+Some of our recent research has explored how CRFs can be applied to a
+variety of questions that involve investigating how multiple outcomes
+(such as co-infecting parasites or co-occurring fish species) associate
+with one another to form communities. This gives us unprecedented
+insights into how communities respond to environmental change and
+improves our ability to predict future variation.
 </center>
 <p><br></p>
 <p><img src="images/ecomodel2.jpg" style="width:70%; margin-bottom: 1px" align="top" alt="Conditional Random Fields models can learn from joint species associations to generate better predictions of community responses to change. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in the development and application of multivariate ecological models for disease ecology problems."></p>
 <p><br></p>
 </div>
-<div id="leveraging-co-occurrence-associations-to-predict-biodiversity-responses-to-climate-change" class="section level2">
-<h2>Leveraging co-occurrence associations to predict biodiversity responses to climate change</h2>
+<div
+id="leveraging-co-occurrence-associations-to-predict-biodiversity-responses-to-climate-change"
+class="section level2">
+<h2>Leveraging co-occurrence associations to predict biodiversity
+responses to climate change</h2>
 <center>
-Dr Clark recently led a multidisciplinary international research team that used this technique to analyse fish populations in the Mediterranean Sea, a fisheries-based <a href="https://www.iucn.org/downloads/the_mediterranean_a_biodiversity_hotspot_under_threat_factsheet_en.pdf" target="_blank">biodiversity hotspot</a> with its future under threat from rapidly warming seas. Experts from fisheries, ecology and the geographical sciences have compiled decades of research to describe the geographical ranges for more than 600 Mediterranean fish species. We put this information, along with data from the <a href="https://www.ipcc.ch/site/assets/uploads/2018/02/WG1AR5_Chapter09_FINAL.pdf" target="_blank">Intergovernmental Panel on Climate Change’s sophisticated climate models</a> into our graphical network model in a recent manuscript published in <a href="https://www.nature.com/articles/s41558-020-0838-5" target="_blank">Nature Climate Change</a>. We found that warming sea temperatures – particularly in winter – have widespread effects on fish biodiversity. Interestingly, effects of winter warming were on average 4X greater than summer effects, suggesting seasonality should not be ignored when assessing climate-related projections.
+Dr Clark recently led a multidisciplinary international research team
+that used this technique to analyse fish populations in the
+Mediterranean Sea, a fisheries-based <a
+href="https://www.iucn.org/downloads/the_mediterranean_a_biodiversity_hotspot_under_threat_factsheet_en.pdf"
+target="_blank">biodiversity hotspot</a> with its future under threat
+from rapidly warming seas. Experts from fisheries, ecology and the
+geographical sciences have compiled decades of research to describe the
+geographical ranges for more than 600 Mediterranean fish species. We put
+this information, along with data from the <a
+href="https://www.ipcc.ch/site/assets/uploads/2018/02/WG1AR5_Chapter09_FINAL.pdf"
+target="_blank">Intergovernmental Panel on Climate Change’s
+sophisticated climate models</a> into our graphical network model in a
+recent manuscript published in <a
+href="https://www.nature.com/articles/s41558-020-0838-5"
+target="_blank">Nature Climate Change</a>. We found that warming sea
+temperatures – particularly in winter – have widespread effects on fish
+biodiversity. Interestingly, effects of winter warming were on average
+4X greater than summer effects, suggesting seasonality should not be
+ignored when assessing climate-related projections.
 </center>
 <p><br></p>
 <p><img src="images/heat_map.jpeg" style="width:70%; margin-bottom: 1px" align="top" alt="The Mediterranean Sea is wqrming during winter at twice the rate of summer warming. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that has applied multivariate models to understand how this warming is influencing fish biodiversity."></p>
 <p><br></p>
 <center>
-A great deal of research and media attention has been on the impacts of extreme summer temperatures on people and nature, but winters are getting warmer too. Interestingly, coastal water temperatures are expected to increase at a faster rate in winter than in summer in the Mediterranean Sea. Even though winter warming might not reach the extreme high temperatures of summer heatwaves, this research shows that warmer winters could also lead to ecosystem disruption, in some cases more than hotter summer warming will. Our results suggest that winter warming will cause fish species to hang out together in different ways, and some species will disappear from some areas entirely.
+A great deal of research and media attention has been on the impacts of
+extreme summer temperatures on people and nature, but winters are
+getting warmer too. Interestingly, coastal water temperatures are
+expected to increase at a faster rate in winter than in summer in the
+Mediterranean Sea. Even though winter warming might not reach the
+extreme high temperatures of summer heatwaves, this research shows that
+warmer winters could also lead to ecosystem disruption, in some cases
+more than hotter summer warming will. Our results suggest that winter
+warming will cause fish species to hang out together in different ways,
+and some species will disappear from some areas entirely.
 </center>
 <p><br></p>
-<p><img src="images/CRF_schematic.jpg" style="width:95%; margin-bottom: 1px" align="top" alt="Conditional Random Fields models can learn from joint species associations to generate better predictions of community responses to change. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in the development and application of multivariate ecological models for disease ecology problems."></p>
+<p><img src="images/CRF_schematic.jpg" style="width:95%; margin-bottom: 1px" align="top" alt="Conditional Random Fields models can learn from joint species associations to generate better predictions of community responses to change. The Spatial Epidemiology Lab (SpatialEpi) is a medical geography and disease ecology research group based at the University of Queensland that is involved in the development and application of multivariate ecological models for time series analysis and disease ecology problems."></p>
 <p><br></p>
 <center>
-This project utilised a number of recent advances in multivariate modelling and machine learning to generate predictions. It is our hope that this study will emphasise the need to understand community-level responses when trying to predict and address the impacts of climate change. If fish communities are more strongly regulated by winter temperatures as our model suggests, this means that fish diversity may change more quickly than we previously thought. Read more about this project in a <a href="https://natureecoevocommunity.nature.com/posts/winter-warming-has-larger-and-more-widespread-effects-on-fish-communities" target="_blank">blogpost here</a>.
+This project utilised a number of recent advances in multivariate
+modelling and machine learning to generate predictions. It is our hope
+that this study will emphasise the need to understand community-level
+responses when trying to predict and address the impacts of climate
+change. If fish communities are more strongly regulated by winter
+temperatures as our model suggests, this means that fish diversity may
+change more quickly than we previously thought. Read more about this
+project in a <a
+href="https://natureecoevocommunity.nature.com/posts/winter-warming-has-larger-and-more-widespread-effects-on-fish-communities"
+target="_blank">blogpost here</a>.
 </center>
 <p><br></p>
 </div>
 <div id="spatialepilabs-involvement" class="section level2">
 <h2><em>SpatialEpiLab</em>’s involvement</h2>
 <center>
-Our lab is involved in a number of collaborative projects that apply CRFs and other multivariate ecological models to tackle important multiresponse questions in ecology and disease ecology:<br />
-1. How do associations among co-occurring species change across environmental gradients, and how do these associations influence community assembly?<br />
-2. Can co-infection information be leveraged to generate more accurate and informative parasite infection risk models?<br />
-3. Are multivariate text-based models able to identify latent infection exposure demographic groups using patient response questionnaires?
+Our lab is involved in a number of collaborative projects that apply
+CRFs and other multivariate ecological models to tackle important
+multiresponse questions in ecology and disease ecology:<br />
+1. How do associations among co-occurring species change across
+environmental gradients, and how do these associations influence
+community assembly?<br />
+2. Can co-infection information be leveraged to generate more accurate
+and informative parasite infection risk models?<br />
+3. Are multivariate text-based models able to identify latent infection
+exposure demographic groups using patient response questionnaires?
 </center>
 <p><br></p>
 <div id="team-members-on-the-project" class="section level3">
 <h3>Team members on the project</h3>
 <center>
 <a href="people.html" target="_blank">Ricardo Soares Magalhães</a><br />
-<a href="people.html#nicholas_clark" target="_blank">Nicholas Clark</a>
+<a href="people.html#nicholas_clark" target="_blank">Nicholas
+Clark</a><br />
+<a href="people.html#Francisca_Powell" target="_blank">Francisca
+Powell</a><br />
+<a href="#K_A_N_K_Karunarathna" target="_blank">KANK Karunarathna</a>
 </center>
 <p><br></p>
 </div>
 <div id="key-collaborators" class="section level3">
 <h3>Key collaborators</h3>
 <center>
-<a href="https://www.swansea.ac.uk/staff/science/biosciences/wells-k-l/" target="_blank">Konstans Wells (Swansea University)</a><br />
-<a href="https://www.otago.ac.nz/marinescience/people/staff/otago704457.html" target="_blank">Ceridwen Fraser (Otago University)</a><br />
-<a href="https://experts.griffith.edu.au/7586-alison-peel" target="_blank">Alison Peel (Griffith University)</a><br />
-<a href="https://scholar.google.com.au/citations?user=OV-PyoQAAAAJ&amp;hl=en" target="_blank">Nick Fountain-Jones (University of Tasmania)</a><br />
-<a href="https://www.weecology.org/" target="_blank">Ethan White (University of Florida)</a>
+<a href="https://www.swansea.ac.uk/staff/science/biosciences/wells-k-l/"
+target="_blank">Konstans Wells (Swansea University)</a><br />
+<a
+href="https://www.otago.ac.nz/marinescience/people/staff/otago704457.html"
+target="_blank">Ceridwen Fraser (Otago University)</a><br />
+<a href="https://experts.griffith.edu.au/7586-alison-peel"
+target="_blank">Alison Peel (Griffith University)</a><br />
+<a
+href="https://scholar.google.com.au/citations?user=OV-PyoQAAAAJ&amp;hl=en"
+target="_blank">Nick Fountain-Jones (University of Tasmania)</a><br />
+<a href="https://www.weecology.org/" target="_blank">Ethan White
+(University of Florida)</a>
 </center>
 <p><br></p>
 </div>
@@ -492,11 +578,53 @@ Our lab is involved in a number of collaborative projects that apply CRFs and ot
 <div id="publications" class="section level2">
 <h2>Publications</h2>
 <center>
-<p>Clark, NJ, Tozer, S, Wood, C, Firestone, SM, Stevenson, M, Caraguel, C, Chaber, AL, Heller, J and Soares Magalhães, RJ. 2020. <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/tbed.13565">Unravelling animal exposure profiles of human Q fever cases in Queensland, Australia using natural language processing</a>. <em>Transboundary and Emerging Diseases</em>. DOI: <a href="https://doi.org/10.1111/tbed.13565" class="uri">https://doi.org/10.1111/tbed.13565</a>.</p>
-<p>Clark, NJ, Owada, K, Ruberanziza, E, Ortu, G, Umulisa, I, Bayisenge, U, Mbonigaba, JB, Mucaca, JB, Lancaster, W, Fenwick, A, Soares Magalhaes, RJ and Mbituyumuremyi, A. 2020. <a href="https://parasitesandvectors.biomedcentral.com/articles/10.1186/s13071-020-04016-2">Parasite associations predict infection risk: incorporating co-infections in predictive models for neglected tropical diseases</a>. <em>Parasites &amp; Vectors</em> 13:1-16.</p>
-<p>Clark, NJ, Kerry, JT and Fraser, CI. 2020. <a href="https://www.nature.com/articles/s41558-020-0838-5">Rapid winter warming could disrupt coastal marine fish community structure</a>. <em>Nature Climate Change</em>. DOI: 10.1038/s41558-41020-40838-41555.</p>
-<p>Fountain‐Jones, NM, Clark, NJ, Kinsley, AC, Carstensen, M, Forester, J, Johnson, TJ, Miller, E, Moore, S, Wolf, TM and Craft, ME. 2019. <a href="https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1365-2656.13154">Microbial associations and spatial proximity predict North American moose (Alces alces) gastrointestinal community composition</a>. <em>Journal of Animal Ecology</em> 89:817-828.</p>
-Peel, AJ, Wells, K, Giles, J, Boyd, V, Burroughs, A, Edson, D, Crameri, G, Baker, ML, Field, H, Wang, LF, McCallum, H, Plowright, RK and Clark, NJ. 2019. <a href="https://www.tandfonline.com/doi/full/10.1080/22221751.2019.1661217">Synchronous shedding of multiple bat paramyxoviruses coincides with peak periods of Hendra virus spillover</a>. <em>Emerging Microbes &amp; Infections</em> 8:1314-1323.
+<p>Clark, NJ, Tozer, S, Wood, C, Firestone, SM, Stevenson, M, Caraguel,
+C, Chaber, AL, Heller, J and Soares Magalhães, RJ. 2020. <a
+href="https://onlinelibrary.wiley.com/doi/abs/10.1111/tbed.13565">Unravelling
+animal exposure profiles of human Q fever cases in Queensland, Australia
+using natural language processing</a>. <em>Transboundary and Emerging
+Diseases</em>. DOI: <a href="https://doi.org/10.1111/tbed.13565"
+class="uri">https://doi.org/10.1111/tbed.13565</a>.</p>
+<p>Clark, NJ, Owada, K, Ruberanziza, E, Ortu, G, Umulisa, I, Bayisenge,
+U, Mbonigaba, JB, Mucaca, JB, Lancaster, W, Fenwick, A, Soares
+Magalhaes, RJ and Mbituyumuremyi, A. 2020. <a
+href="https://parasitesandvectors.biomedcentral.com/articles/10.1186/s13071-020-04016-2">Parasite
+associations predict infection risk: incorporating co-infections in
+predictive models for neglected tropical diseases</a>. <em>Parasites
+&amp; Vectors</em> 13:1-16.</p>
+<p>Clark, NJ, Kerry, JT and Fraser, CI. 2020. <a
+href="https://www.nature.com/articles/s41558-020-0838-5">Rapid winter
+warming could disrupt coastal marine fish community structure</a>.
+<em>Nature Climate Change</em>. DOI:
+10.1038/s41558-41020-40838-41555.</p>
+<p>Clark, NJ and Wells, K. 2023. <a
+href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13974">Dynamic
+generalised additive models (DGAMs) for forecasting discrete ecological
+time series</a>. <em>Methods in Ecology and Evolution</em>
+14(3):771-784.</p>
+<p>Fountain‐Jones, NM, Clark, NJ, Kinsley, AC, Carstensen, M, Forester,
+J, Johnson, TJ, Miller, E, Moore, S, Wolf, TM and Craft, ME. 2019. <a
+href="https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1365-2656.13154">Microbial
+associations and spatial proximity predict North American moose
+(<em>Alces alces</em>) gastrointestinal community composition</a>.
+<em>Journal of Animal Ecology</em> 89:817-828.</p>
+<p>Karunarathna, KANK, Wells, K, and Clark, NJ. <a
+href="https://www.sciencedirect.com/science/article/pii/S0304380024000371">Modelling
+nonlinear responses of a desert rodent species to environmental change
+with hierarchical dynamic generalized additive models</a>.
+<em>Ecological Modelling</em> 490 (2024): 110648.</p>
+<p>Peel, AJ, Wells, K, Giles, J, Boyd, V, Burroughs, A, Edson, D,
+Crameri, G, Baker, ML, Field, H, Wang, LF, McCallum, H, Plowright, RK
+and Clark, NJ. 2019. <a
+href="https://www.tandfonline.com/doi/full/10.1080/22221751.2019.1661217">Synchronous
+shedding of multiple bat paramyxoviruses coincides with peak periods of
+Hendra virus spillover</a>. <em>Emerging Microbes &amp; Infections</em>
+8:1314-1323.</p>
+Powell‐Romero, F, Fountain‐Jones, NM, Norberg, A, and Clark, NJ. <a
+href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13915">Improving
+the predictability and interpretability of co‐occurrence modelling
+through feature‐based joint species distribution ensembles</a>.
+<em>Methods in Ecology and Evolution</em> 14.1 (2023): 146-161.
 </center>
 </div>
 
