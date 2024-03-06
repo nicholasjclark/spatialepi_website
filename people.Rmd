@@ -71,7 +71,7 @@ kable(data.frame(all_pubs %>%
 
 <br>
 
-### Tatiana Proboste
+### Tatiana Proboste {#tati}
 <img src="images/tatiana_profile.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Dr Tatiana proboste is a postdoctoral fellow at the Spatial Epidemiology Group, University of Queensland"/>
 
 <centr>Dr Proboste is a post-doctoral fellow at UQ Spatial Epidemiology Laboratory. Her background is in Veterinary Medicine (DVM) and terrestrial ecology and biodiversity management (Msc) with a specialisation in wildlife disease ecology and spatial analysis. As a researcher, Tatiana has worked on molecular detection of tick-borne pathogens under the supervision of [Dr Javier Millan](https://www.researchgate.net/profile/Javier-Millan-2){target="_blanck"} in Spain, and during her PhD, she worked on developing tools to investigate the role of wildlife in disease transmission in urbanized environment under the supervision of [Prof Jenny Seddon](https://researchers.uq.edu.au/researcher/1349){target="_blank"}, [Dr Nick Clark](#nick), [Dr Hawthorne Beyer](https://researchers.uq.edu.au/researcher/2719){target="_blank"} and [Prof Jonathan Rhodes](https://researchers.uq.edu.au/researcher/1022){target="_blank"}. Tatiana is currently working on the ["Taking the Query out of Q Fever"](https://blogs.unimelb.edu.au/q-fever/#:~:text=About&text=Taking%20the%20query%20out%20of%20Q%20fever%20is%20a%20multidisciplinary,in%20Australia%20and%20more%20broadly){target="_blanck"} project and in the development of a zoonotic vector-borne disease early warning system to enhance surveillance in Australia.</center>

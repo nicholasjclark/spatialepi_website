@@ -14,7 +14,7 @@ output:
 
 **Needed: candidates with skills in data analysis and / or statistical programming**   
   
-We are always on the lookout for new students to join the *SpatialEpiLab* through the University of Queensland's competitve postgraduate scholarships. An increasing number of our current and future research projects involve analysing large, multistructure *Big Data* outputs to prepare them for spatial and spatio-temporal analysis. Candidates with interests in applying these skills to spatial epidemiology, time series modelling or other aspects of [One Health](https://www.who.int/features/qa/one-health/en/){target="_blank"} should contact [Associate Professor Ricardo Soares Magalhães](people.html){target="_blank"} or [Dr Nicholas Clark](people.html#nicholas_clark){target="_blank"} to discuss opportunities.  
+We are always on the lookout for new students to join the *SpatialEpiLab* through the University of Queensland's competitve postgraduate scholarships. An increasing number of our current and future research projects involve analysing large, multistructure *Big Data* outputs to prepare them for spatial and spatio-temporal analysis. Candidates with interests in applying these skills to spatial epidemiology, time series modelling or other aspects of [One Health](https://www.who.int/features/qa/one-health/en/){target="_blank"} should contact [Professor Ricardo Soares Magalhães](people.html){target="_blank"}, [Dr Nicholas Clark](people.html#nicholas_clark){target="_blank"} or [Dr Tatiana Proboste](people.html#tati){target="_blank"} to discuss opportunities.  
   
 **Helpful links**  
   
