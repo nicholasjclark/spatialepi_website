@@ -68,7 +68,7 @@ Some of our recent research has explored how CRFs can be applied to a variety of
 <center>[Ricardo Soares Magalhães](people.html){target="_blank"}    
 [Nicholas Clark](people.html#nicholas_clark){target="_blank"}  
 [Francisca Powell](people.html#Francisca_Powell){target="_blank"}   
-[KANK Karunarathna](#K_A_N_K_Karunarathna){target="_blank"}</center>
+[KANK Karunarathna](people.html#K_A_N_K_Karunarathna){target="_blank"}</center>
 
 <br>
 
