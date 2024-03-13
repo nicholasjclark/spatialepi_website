@@ -33,16 +33,17 @@ Feline herpesvirus (FHV), feline calicivirus (FCV), Chlamydia felis (C.felis), M
 <br>
 
 ### Team members on the project
-<center>[Uttara Kennedy](people.html){target="_blank"}
-[Nick Clark](people.html#nick){target="_blank"}
+<center>[Uttara Kennedy](people.html){target="_blank"},
+[Nick Clark](people.html#nick){target="_blank"},
 [Ricardo Soares Magalhães](people.html){target="_blank"}
 </center>
 
 <br>
 
 ### Key collaborators
-<center>Dr. Mandy Paterson (RSPCA Queensland) 
-Dr. Doug Hayward & Dr. Susan Jaensch (Vetnostics, NSW).</center>  
+<center>Dr. Mandy Paterson (RSPCA Queensland), 
+Dr. Doug Hayward & Dr.,
+Susan Jaensch (Vetnostics, NSW).</center>  
 
 <br>
 
