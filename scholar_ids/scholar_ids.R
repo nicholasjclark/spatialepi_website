@@ -7,6 +7,7 @@ tatiana_id <- '8k6aPjIAAAAJ&hl'
 uttara_id <- 'SfoR9d0AAAAJ&hl'
 silvia_id <- '5vV6OfUAAAAJ&hl'
 josefina_id <- '0kBkQlcAAAAJ&hl'
+fran_id <- 'NvlK3qYAAAAJ'
 
 tarni_id <- 'yZ2YwK8AAAAJ&hl'
 pandji_id <- 'awhMGaAAAAAJ&hl'

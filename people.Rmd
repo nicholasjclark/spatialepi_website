@@ -217,7 +217,25 @@ kable(data.frame(all_pubs), row.names = F,
 
 <center>Fran is a PhD candidate currently working on using multivariate modelling approaches to predict co-infections in both humans and animals. Her principal advisor is [Dr. Nicholas Clark](#nick), and her associate advisors are [Prof. Ricardo Soares Magalhães](#ricardo), [Dr. Nicholas Fountain-Jones](https://rmdb.research.utas.edu.au/public/rmdb/q/indiv_detail_warp_trans/30546){target="_blank"} and [Dr. Konstans Wells](https://www.swansea.ac.uk/staff/science/biosciences/wells-k-l/){target="_blank"}. Fran has broad interests in One Health research and infectious disease epidemiology and control, and has a multidisciplinary academic background in biomedical science, sociology, and French.</center>
 
-<br> 
+
+<br>
+<center>`Francisca's recent publications`</center>
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+library(kableExtra)
+library(knitr)
+source('functions/scholar_allpubs.R')
+all_pubs <- scholar_allpubs(fran_id)
+```
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+kable(data.frame(all_pubs), row.names = F,
+      format = 'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  column_spec(2, width = '30em') %>%
+  column_spec(3, italic = T, width = '20em') %>%
+  column_spec(4, width = '20em') %>%
+  scroll_box(width = "100%", height = "300px")
+```
 
 ### Thomas Callaghan
 <img src="images/Thomas.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Thomas Callaghan is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
