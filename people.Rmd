@@ -287,6 +287,36 @@ kable(data.frame(all_pubs), row.names = F,
   scroll_box(width = "100%", height = "300px")
 ```
 
+
+<br>
+
+### Sara Horsman 
+<img src="images/Sara.jpg" class="round" style="border:4px solid; margin-bottom: 20px" alt="Sara is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>
+
+<center>Sara is a PhD student focusing on the epidemiology and control of canine skin and ear conditions in Australia. Her work encompasses spatial and spatiotemporal epidemiological approaches, identifying environmental and socio-economic risk factors of skin and ear conditions, and associations between antimicrobial resistance and treatment types for allergies and skin/ear infections in dogs. Along with bacteriology, specifically antimicrobial resistance and usage, and molecular microbiology, including microbiota analyses (16S rRNA gene amplicon sequencing) and whole-genome sequencing. Her principal advisor is [Assoc. Prof. Justine Gibson](https://researchers.uq.edu.au/researcher/1359){target="_blank"}, and her associate ad visors are [Dr Erika Meler](https://researchers.uq.edu.au/researcher/11041){target="_blank"}, [Dr. Deirdre Mikkelsen](https://researchers.uq.edu.au/researcher/972){target="_blank"}, and  [Prof Ricardo Soares Magalhães](#ricardo).</center>
+
+<br>
+
+<center>`Sara's recent publications`</center>
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+library(kableExtra)
+library(knitr)
+source('functions/scholar_allpubs.R')
+all_pubs <- scholar_allpubs(sara_id)
+```
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE}
+kable(data.frame(all_pubs), row.names = F,
+      format = 'html') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  column_spec(2, width = '30em') %>%
+  column_spec(3, italic = T, width = '20em') %>%
+  column_spec(4, width = '20em') %>%
+  scroll_box(width = "100%", height = "300px")
+```
+
+<br>
+
 ## Former lab group members
 ### Philip Mshelbwala
 <img src="images/philip_profile.png" class="round" style="border:4px solid; margin-bottom: 20px" alt="Philip P. Mshelbwala is a PhD student at the Spatial Epidemiology Group, University of Queensland"/>

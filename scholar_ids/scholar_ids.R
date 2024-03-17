@@ -8,6 +8,7 @@ uttara_id <- 'SfoR9d0AAAAJ&hl'
 silvia_id <- '5vV6OfUAAAAJ&hl'
 josefina_id <- '0kBkQlcAAAAJ&hl'
 fran_id <- 'NvlK3qYAAAAJ'
+sara_id <- '-FO3hNYAAAAJ&hl'
 
 tarni_id <- 'yZ2YwK8AAAAJ&hl'
 pandji_id <- 'awhMGaAAAAAJ&hl'
@@ -17,5 +18,14 @@ javier_id <- 'a0m2kUYAAAAJ&hl'
 
 
 # All IDs
-scholar_ids <- c(ricardo_id, nick_id, tarni_id, shovon_id, 
-                 tatiana_id, uttara_id, silvia_id, josefina_id)
+scholar_ids <- c(ricardo_id, 
+                  nick_id,
+                  shovon_id,
+                  philip_id,
+                  tatiana_id, 
+                  uttara_id,
+                  silvia_id, 
+                  josefina_id, 
+                  fran_id, 
+                  sara_id)
+                  
